@@ -1,0 +1,16 @@
+INFO  21:45:47,301 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  21:45:47,311 - #1 program
+INFO  21:45:47,313 - #19 MJProgram
+INFO  21:45:47,313 - #19 int
+INFO  21:45:47,313 - #19 x
+INFO  21:45:47,313 - #40 ,
+INFO  21:45:47,313 - #19 y
+INFO  21:45:47,313 - #39 ;
+INFO  21:45:47,313 - #46 {
+INFO  21:45:47,313 - #15 void
+INFO  21:45:47,313 - #19 main
+INFO  21:45:47,313 - #42 (
+INFO  21:45:47,313 - #43 )
+INFO  21:45:47,313 - #46 {
+INFO  21:45:47,313 - #47 }
+INFO  21:45:47,313 - #47 }

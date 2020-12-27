@@ -1,0 +1,24 @@
+program MJProgram
+	int x; int y;
+	bool trt;
+	char q;
+{
+	
+	int k () int c; {
+		c = 1;
+		q = 'w'; //ovo je glupi komentar
+		return c+2;
+	}
+	
+	int main() {
+		y = 2;
+		if(y <= 56)
+			trt = true;
+		else
+			trt = false;
+		x = y + 2;
+		y = k() + 3;
+		print(y);
+		return 0;
+	}
+}
