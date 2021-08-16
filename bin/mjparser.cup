@@ -50,15 +50,16 @@ scan with {:
 	return s;
 :}
 
-terminal PROG, IDENT, LBRACE, RBRRACE, CONST, EQUAL, SEMI, COMMA, CLASS, EXTENDS;
+terminal PROG, IDENT, LBRACE, RBRRACE, CONST, EQUAL, SEMI, COMMA, CLASS, EXTENDS, VOID;
 
 terminal Integer NUM_CONST ;
 terminal String IDENT ;
 terminal Character CHAR_CONST;
 terminal Boolean BOOL_CONST;
 
-nonterminal Program, DeclsList, MethodDeclList, Decls, ConstDecl, VarDecl, ClassDecl, Consts, ConstList, ConstListEnd, VarArr, VarDeclList, VarDeclListEnd;
-nonterminal ExtendsClass, ListOfVarDecl, Methods;
+nonterminal Program, DeclsList, MethodDeclList, Decls, ConstDecl, VarDecl, ClassDecl, Consts, ConstList, ConstListEnd, Arr, VarDeclList, VarDeclListEnd;
+nonterminal ExtendsClass, ListOfVarDecl, Methods, MethodType, FormParsExists, ListOfStmt, FormPars, Statement;
+nonterminal FormParsList, FormParsListEnd;
 
 Program ::= (Program) PROG IDENT:progName DeclsList LBRACE MethodDeclList RBRACE
 ;
@@ -94,12 +95,12 @@ Consts ::= (NumConst) NUM_CONST:numValue
 			(BoolConst) BOOL_CONST:boolValue
 ;
 
-VarDecl ::= (VarDeclaration) Type:varType IDENT:varName VarArr VarDeclList
+VarDecl ::= (VarDeclaration) Type:varType IDENT:varName Arr VarDeclList
 ;
 
-VarArr ::= (VarArray) L_SQUARE_BRACKET R_SQUARE_BRACKET
+Arr ::= (Array) L_SQUARE_BRACKET R_SQUARE_BRACKET
 		|
-		(NoVarArray) /* epsilon */
+		(NoArray) /* epsilon */
 ;
 
 VarDeclList ::= (VarDeclarationList) VarDeclList VarDeclListEnd
@@ -107,7 +108,7 @@ VarDeclList ::= (VarDeclarationList) VarDeclList VarDeclListEnd
 				(NoVarDeclarationList) /* epsilon */
 ;
 
-VarDeclListEnd ::= (VarDeclarationListEnd) COMMA IDENT:varDeclListEndName VarArr SEMI
+VarDeclListEnd ::= (VarDeclarationListEnd) COMMA IDENT:varDeclListEndName Arr SEMI
 ;
 
 ClassDecl ::= (ClassDeclaration) CLASS IDENT:className ExtendsClass L_BRACE ListOfVarDecl Methods R_BRACE
@@ -134,9 +135,50 @@ MethodDeclList ::= (MethodsDeclarationList) MethodDeclList MethodDecl
 					(NoMethodsDeclarationList) /* epsilon */
 					;
 
-MethodDecl ::= (MethodDeclaration)
+MethodDecl ::= (MethodDeclaration) MethodType IDENT:methodName L_PAREN FormParsExists R_PAREN ListOfVarDecl L_BRACE ListOfStmt R_BRACE
+; 
 
+MethodType ::= (MethodWithType) Type:methodType
+			|
+			(MethodVoid) VOID;
+			
+FormParsExists ::= (FormParsExists) FormPars
+				|
+				(NoFormParsExists) /* epsilon */
+				;
 
+ListOfStmt ::= (ListOfSatemant) ListOfStmt Statement
+			|
+			(NoListOfSatemant) /* epsilon */
+			;
+			
+FormPars ::= (FormParams) Type:formParsType IDENT:formParsName Arr FormParsList
+;
 
+FormParsList ::= (FormParamsList) FormParsList FormParsListEnd
+			|	
+			(NoFormParsList) /* epsilon */
+			;			
+			
+FormParsListEnd ::= (FormParamsListEnd)	COMMA Type:formParsListEndType IDENT:formParsListEndName Arr
+;	
+			
+Type ::= (Type) IDENT:typeName
+;
 
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 
