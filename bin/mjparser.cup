@@ -50,10 +50,93 @@ scan with {:
 	return s;
 :}
 
-terminal PROG, IDENT, LBRACE, RBRRACE;
-terminal Integer NUMBER ;
+terminal PROG, IDENT, LBRACE, RBRRACE, CONST, EQUAL, SEMI, COMMA, CLASS, EXTENDS;
+
+terminal Integer NUM_CONST ;
 terminal String IDENT ;
+terminal Character CHAR_CONST;
+terminal Boolean BOOL_CONST;
 
-nonterminal Program, VarDeclList, MethodDeclList;
+nonterminal Program, DeclsList, MethodDeclList, Decls, ConstDecl, VarDecl, ClassDecl, Consts, ConstList, ConstListEnd, VarArr, VarDeclList, VarDeclListEnd;
+nonterminal ExtendsClass, ListOfVarDecl, Methods;
 
-Program ::= (Program) PROG IDENT VarDeclList LBRACE MethodDeclList RBRACE;
+Program ::= (Program) PROG IDENT:progName DeclsList LBRACE MethodDeclList RBRACE
+;
+
+DeclsList ::= (DeclarationsList) DeclsList Decls
+			|			
+			(NoDeclarationsList) /* epsilon */
+			;
+
+Decls ::= (DeclsConst) ConstDecl 
+		|
+		(DeclsVar) VarDecl
+		|
+		(DeclsClass) ClassDecl
+		;
+		
+
+ConstDecl ::= (ConstDeclaration) CONST Type:constType IDENT:constName EQUAL Consts ConstList SEMI
+;
+
+ConstList ::= (ConstantsList) ConstList ConstListEnd
+			|
+			(NoConstantsList) /* epsilon */
+;
+
+ConstListEnd ::= (ConstantsListEnd) COMMA IDENT:constEndName EQUAL Consts
+;
+
+Consts ::= (NumConst) NUM_CONST:numValue
+			|
+			(CharConst) CHAR_CONST:charValue
+			|
+			(BoolConst) BOOL_CONST:boolValue
+;
+
+VarDecl ::= (VarDeclaration) Type:varType IDENT:varName VarArr VarDeclList
+;
+
+VarArr ::= (VarArray) L_SQUARE_BRACKET R_SQUARE_BRACKET
+		|
+		(NoVarArray) /* epsilon */
+;
+
+VarDeclList ::= (VarDeclarationList) VarDeclList VarDeclListEnd
+				|
+				(NoVarDeclarationList) /* epsilon */
+;
+
+VarDeclListEnd ::= (VarDeclarationListEnd) COMMA IDENT:varDeclListEndName VarArr SEMI
+;
+
+ClassDecl ::= (ClassDeclaration) CLASS IDENT:className ExtendsClass L_BRACE ListOfVarDecl Methods R_BRACE
+;
+
+ExtendsClass := (ClassExtends) EXTENDS Type:extendsType
+				|
+				(NoClassExtends) /* epsilon */
+				;
+
+
+ListOfVarDecl ::= (ListVarDeclaration) ListOfVarDecl VarDecl
+				|
+				(NoListOfVarDeclaration) /* epsilon */
+				;
+
+Methods ::= (Methods) L_BRACE MethodDeclList R_BRACE 
+			|
+			(NoMethods) /* epsilon */
+			;
+
+MethodDeclList ::= (MethodsDeclarationList) MethodDeclList MethodDecl
+					|
+					(NoMethodsDeclarationList) /* epsilon */
+					;
+
+MethodDecl ::= (MethodDeclaration)
+
+
+
+
+
