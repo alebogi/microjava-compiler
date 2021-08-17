@@ -57,7 +57,7 @@ terminal Boolean BOOL_CONST;
 nonterminal Program, DeclsList, MethodDeclList, Decls, ConstDecl, VarDecl, ClassDecl, Consts, ConstList, ConstListEnd, Type, Arr, VarDeclList;
 nonterminal VarDeclListEnd, ExtendsClass, ListOfVarDecl, Methods, MethodType, FormParsExists, ListOfStmt, FormPars, Statement, MethodDecl;
 nonterminal FormParsList, FormParsListEnd, ElseExists, NumConstExists, DesignatorStatement, Designator, Condition, Expr, ExprList, ExprListEnd;
-nonterminal CondTerm, CondTermOrList, CondFact, CondFactAndList, RelopExprExists, ActPars, ActParsExists, DesgnStmtEnd, StmtList, ExprExists;
+nonterminal CondTerm, CondTermOrList, CondFact, CondFactAndList, RelopExprExists, ActPars, ActParsExists, DesgStmtEnd, StmtList, ExprExists;
 nonterminal Assignop, Relop, Addop, Mulop, AddopTermList, MinusExists, Term, ExprArrExists, MulopFactorList, Factor, DesgnListEnd, DesgnList;
 
 Program ::= (Program) PROG IDENT:progName DeclsList L_BRACE MethodDeclList R_BRACE
@@ -170,7 +170,7 @@ Statement ::= (StmtDesgStmt) DesignatorStatement SEMI
 			|	
 			(StmtIfElse) IF L_PAREN Condition R_PAREN Statement ElseExists
 			|
-			(StmtRead) READ L_PAREN Desginator R_PAREN SEMI
+			(StmtRead) READ L_PAREN Designator R_PAREN SEMI
 			|
 			(StmtPrint) PRINT L_PAREN Expr NumConstExists R_PAREN SEMI
 			|
@@ -328,12 +328,12 @@ Relop ::= (RelopE) EQUALS_TO
 		(RelopLE) LESS_OR_EQUAL
 ;		
 			
-Addop ::= (AddOp) PLUS
+Addop ::= (OpAdd) PLUS
 		|
 		(SubOp) MINUS
 ;
 		
-Mulop ::= (MulOp) MULTIPLY
+Mulop ::= (OpMul) MULTIPLY
 		|
 		(DivOp) DIVIDE
 		|

@@ -1,0 +1,131 @@
+// generated with ast extension for cup
+// version 0.8
+// 18/7/2021 0:4:5
+
+
+package rs.ac.bg.etf.pp1.ast;
+
+public class MethodDeclaration extends MethodDecl {
+
+    private MethodType MethodType;
+    private String methodName;
+    private FormParsExists FormParsExists;
+    private ListOfVarDecl ListOfVarDecl;
+    private ListOfStmt ListOfStmt;
+
+    public MethodDeclaration (MethodType MethodType, String methodName, FormParsExists FormParsExists, ListOfVarDecl ListOfVarDecl, ListOfStmt ListOfStmt) {
+        this.MethodType=MethodType;
+        if(MethodType!=null) MethodType.setParent(this);
+        this.methodName=methodName;
+        this.FormParsExists=FormParsExists;
+        if(FormParsExists!=null) FormParsExists.setParent(this);
+        this.ListOfVarDecl=ListOfVarDecl;
+        if(ListOfVarDecl!=null) ListOfVarDecl.setParent(this);
+        this.ListOfStmt=ListOfStmt;
+        if(ListOfStmt!=null) ListOfStmt.setParent(this);
+    }
+
+    public MethodType getMethodType() {
+        return MethodType;
+    }
+
+    public void setMethodType(MethodType MethodType) {
+        this.MethodType=MethodType;
+    }
+
+    public String getMethodName() {
+        return methodName;
+    }
+
+    public void setMethodName(String methodName) {
+        this.methodName=methodName;
+    }
+
+    public FormParsExists getFormParsExists() {
+        return FormParsExists;
+    }
+
+    public void setFormParsExists(FormParsExists FormParsExists) {
+        this.FormParsExists=FormParsExists;
+    }
+
+    public ListOfVarDecl getListOfVarDecl() {
+        return ListOfVarDecl;
+    }
+
+    public void setListOfVarDecl(ListOfVarDecl ListOfVarDecl) {
+        this.ListOfVarDecl=ListOfVarDecl;
+    }
+
+    public ListOfStmt getListOfStmt() {
+        return ListOfStmt;
+    }
+
+    public void setListOfStmt(ListOfStmt ListOfStmt) {
+        this.ListOfStmt=ListOfStmt;
+    }
+
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
+
+    public void childrenAccept(Visitor visitor) {
+        if(MethodType!=null) MethodType.accept(visitor);
+        if(FormParsExists!=null) FormParsExists.accept(visitor);
+        if(ListOfVarDecl!=null) ListOfVarDecl.accept(visitor);
+        if(ListOfStmt!=null) ListOfStmt.accept(visitor);
+    }
+
+    public void traverseTopDown(Visitor visitor) {
+        accept(visitor);
+        if(MethodType!=null) MethodType.traverseTopDown(visitor);
+        if(FormParsExists!=null) FormParsExists.traverseTopDown(visitor);
+        if(ListOfVarDecl!=null) ListOfVarDecl.traverseTopDown(visitor);
+        if(ListOfStmt!=null) ListOfStmt.traverseTopDown(visitor);
+    }
+
+    public void traverseBottomUp(Visitor visitor) {
+        if(MethodType!=null) MethodType.traverseBottomUp(visitor);
+        if(FormParsExists!=null) FormParsExists.traverseBottomUp(visitor);
+        if(ListOfVarDecl!=null) ListOfVarDecl.traverseBottomUp(visitor);
+        if(ListOfStmt!=null) ListOfStmt.traverseBottomUp(visitor);
+        accept(visitor);
+    }
+
+    public String toString(String tab) {
+        StringBuffer buffer=new StringBuffer();
+        buffer.append(tab);
+        buffer.append("MethodDeclaration(\n");
+
+        if(MethodType!=null)
+            buffer.append(MethodType.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(" "+tab+methodName);
+        buffer.append("\n");
+
+        if(FormParsExists!=null)
+            buffer.append(FormParsExists.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(ListOfVarDecl!=null)
+            buffer.append(ListOfVarDecl.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(ListOfStmt!=null)
+            buffer.append(ListOfStmt.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(tab);
+        buffer.append(") [MethodDeclaration]");
+        return buffer.toString();
+    }
+}
