@@ -53,6 +53,7 @@ scan with {:
 terminal PROG, IDENT, L_BRACE, R_BRRACE, CONST, EQUAL, SEMI, COMMA, CLASS, EXTENDS, VOID;
 terminal R_PAREN, L_PAREN, L_SQUARE_BRACKET, R_SQUARE_BRACKET, INCREMENT, DECREMENT;
 terminal EQUALS_TO, NOT_EQUAL, GREATER, GREATER_OR_EQUAL, LESS, LESS_OR_EQUAL, PLUS, MINUS, MULTIPLY, DIVIDE, MOD;
+terminal LOGICAL_OR, LOGICAL_AND, NEW, DOT;
 
 terminal Integer NUM_CONST ;
 terminal String IDENT ;
@@ -61,9 +62,10 @@ terminal Boolean BOOL_CONST;
 
 nonterminal Program, DeclsList, MethodDeclList, Decls, ConstDecl, VarDecl, ClassDecl, Consts, ConstList, ConstListEnd, Type, Arr, VarDeclList, VarDeclListEnd;
 nonterminal ExtendsClass, ListOfVarDecl, Methods, MethodType, FormParsExists, ListOfStmt, FormPars, Statement;
-nonterminal FormParsList, FormParsListEnd, ElseExists, NumConstExists, DesignatorStatement, Designator, Condition, Expr;
+nonterminal FormParsList, FormParsListEnd, ElseExists, NumConstExists, DesignatorStatement, Designator, Condition, Expr, ExprList, ExprListEnd;
+nonterminal CondTerm, CondTermOrList, CondFact, CondFactAndList, RelopExprExists;
 
-nonterminal Assignop, Relop, Addop, Mulop;
+nonterminal Assignop, Relop, Addop, Mulop, AddopTermList, MinusExists, Term, ExprArrExists, MulopFactorList, Factor;
 
 Program ::= (Program) PROG IDENT:progName DeclsList L_BRACE MethodDeclList R_BRACE
 ;
@@ -216,27 +218,105 @@ DesignatorStatement ::=	(DesignStmt) Designator DesgStmtEnd
 
 DesgStmtEnd ::= (DesgnStmtAsgnOp) Assignop Expr
 				|
-				(DesgnStmtActPars) L_PAREN ActParsExists R_PAREN	
+				(DesgnStmtActPars)  ActParsExists 	
 				|
 				(DesgnStmtIncr) INCREMENT
 				|
 				(DesgnStmtDecr) DECREMENT
 				;
 				
-ActParsExists ::= (ActParamsExists) ActPars
+ActParsExists ::= (ActParamsExists) L_PAREN ActPars R_PAREN
 					|
 					(NoActParamsExists) /* epsilon */
 			;
 			
 			
+ActPars ::= (ActParams) Expr ExprList
+;
+
+ExprList ::= (ExpListComma) ExprList ExprListEnd
+			|			
+			(NoExpListComma) /* epsilon */
+			;
+
+ExprListEnd ::= (ExpListEnd) COMMA Expr
+;
+
+Condition ::= (Cond) CondTerm CondTermOrList
+;			
 			
+CondTermOrList ::= (CondTermListOr) CondTermOrList LOGICAL_OR CondTerm	
+				|
+				(NoCondTermLisOr) /* epsilon */
+				;
+
+CondTerm ::= (ConditionTerm) CondFact CondFactAndList
+;
+
+CondFactAndList ::= (CondFactListAnd) CondFactAndList LOGICAL_AND CondFact
+					|
+					(NoCondFactListAnd) /* epsilon */
+					;
+
+CondFact ::= (ConditionFact) Expr RelopExprExists
+;
+
+RelopExprExists ::= (RelopExprExist) Relop Expr
+				|
+				(NoRelopExprExist) /* epsilon */
+				;
+	
+Expr ::= (Expression) MinusExists Term AddopTermList
+;
+
+MinusExists ::= (MinusExs) MINUS
+				|
+				(NoMinusExs) /* epsilon */
+				;	
+				
+AddopTermList ::= (ListAddopTerm) AddopTermList Addop Term
+				|
+				(NoListAddopTerm) /* epsilon */
+				;
+				
+Term ::= (Term) Factor MulopFactorList
+;
+
+MulopFactorList ::= (MullopFactList) MulopFactorList Mulop Factor
+				|
+				(NoMullopFactList) /* epsilon */
+				;
+				
+Factor ::= (FactorDesign) Designator ActParsExists
+		|
+		(FactorNumConst) NUM_CONST
+		|
+		(FactorCharConst) CHAR_CONST
+		|
+		(FactorBoolConst) BOOL_CONST
+		|
+		(FactorNew) NEW Type ExprArrExists
+		|
+		(FactorExpr) L_PAREN Expr R_PAREN
+		;
+
+ExprArrExists ::= (ArrExprExists) L_SQUARE_BRACKET Expr R_SQUARE_BRACKET
+				|
+				(NoArrExprExists) /* epsilon */
+				;
+
+Designator ::= (Design) IDENT:DesgnName DesgnList
+;
+
+DesgnList ::= (DesignList) DesgnList DesgnListEnd
+			|
+			(NoDesignList) /* epsilon */
+			;
 			
-			
-			
-	
-	
-	
-	
+DesgnListEnd ::= (DesignListEnd) DOT IDENT:DesgnNameId
+				|
+				(DesgnListEndExpr) L_SQUARE_BRACKET Expr R_SQUARE_BRACKET
+;	
 	
 Assignop ::= (AssignOperator) EQUAL
 ;
