@@ -1,4 +1,5 @@
 
+
 package rs.ac.bg.etf.pp1;
 
 import java_cup.runtime.*;
@@ -6,8 +7,7 @@ import org.apache.log4j.*;
 import rs.ac.bg.etf.pp1.ast.*;
 
 parser code {:
-	boolean errorDetected = false;
-	
+
 	Logger log = Logger.getLogger(getClass());
    
    
@@ -27,19 +27,13 @@ parser code {:
     }
 
     public void report_error(String message, Object info) {
-    	errorDetected = true;
     	StringBuilder msg = new StringBuilder(message); 
     	if (info instanceof Symbol)
             msg.append (" na liniji ").append(((Symbol)info).left);
         log.error(msg.toString());
     }
-    
-    public void report_info(String message, Object info) {
-    	StringBuilder msg = new StringBuilder(message); 
-    	if (info instanceof Symbol)
-            msg.append (" na liniji ").append(((Symbol)info).left);
-        log.info(msg.toString());
-    }
+
+
 :}
 
 
@@ -50,22 +44,21 @@ scan with {:
 	return s;
 :}
 
-terminal PROG, IDENT, L_BRACE, R_BRRACE, CONST, EQUAL, SEMI, COMMA, CLASS, EXTENDS, VOID;
+terminal PROG, L_BRACE, R_BRACE, CONST, EQUAL, SEMI, COMMA, CLASS, EXTENDS, VOID;
 terminal R_PAREN, L_PAREN, L_SQUARE_BRACKET, R_SQUARE_BRACKET, INCREMENT, DECREMENT;
 terminal EQUALS_TO, NOT_EQUAL, GREATER, GREATER_OR_EQUAL, LESS, LESS_OR_EQUAL, PLUS, MINUS, MULTIPLY, DIVIDE, MOD;
-terminal LOGICAL_OR, LOGICAL_AND, NEW, DOT;
+terminal LOGICAL_OR, LOGICAL_AND, NEW, DOT, CONTINUE, BREAK, DO, WHILE, RETURN, READ, PRINT, IF, ELSE;
 
-terminal Integer NUM_CONST ;
-terminal String IDENT ;
+terminal Integer NUM_CONST;
+terminal String IDENT;
 terminal Character CHAR_CONST;
 terminal Boolean BOOL_CONST;
 
-nonterminal Program, DeclsList, MethodDeclList, Decls, ConstDecl, VarDecl, ClassDecl, Consts, ConstList, ConstListEnd, Type, Arr, VarDeclList, VarDeclListEnd;
-nonterminal ExtendsClass, ListOfVarDecl, Methods, MethodType, FormParsExists, ListOfStmt, FormPars, Statement;
+nonterminal Program, DeclsList, MethodDeclList, Decls, ConstDecl, VarDecl, ClassDecl, Consts, ConstList, ConstListEnd, Type, Arr, VarDeclList;
+nonterminal VarDeclListEnd, ExtendsClass, ListOfVarDecl, Methods, MethodType, FormParsExists, ListOfStmt, FormPars, Statement, MethodDecl;
 nonterminal FormParsList, FormParsListEnd, ElseExists, NumConstExists, DesignatorStatement, Designator, Condition, Expr, ExprList, ExprListEnd;
-nonterminal CondTerm, CondTermOrList, CondFact, CondFactAndList, RelopExprExists;
-
-nonterminal Assignop, Relop, Addop, Mulop, AddopTermList, MinusExists, Term, ExprArrExists, MulopFactorList, Factor;
+nonterminal CondTerm, CondTermOrList, CondFact, CondFactAndList, RelopExprExists, ActPars, ActParsExists, DesgnStmtEnd, StmtList, ExprExists;
+nonterminal Assignop, Relop, Addop, Mulop, AddopTermList, MinusExists, Term, ExprArrExists, MulopFactorList, Factor, DesgnListEnd, DesgnList;
 
 Program ::= (Program) PROG IDENT:progName DeclsList L_BRACE MethodDeclList R_BRACE
 ;
@@ -73,14 +66,14 @@ Program ::= (Program) PROG IDENT:progName DeclsList L_BRACE MethodDeclList R_BRA
 DeclsList ::= (DeclarationsList) DeclsList Decls
 			|			
 			(NoDeclarationsList) /* epsilon */
-			;
+;
 
 Decls ::= (DeclsConst) ConstDecl 
 		|
 		(DeclsVar) VarDecl
 		|
 		(DeclsClass) ClassDecl
-		;
+;
 		
 
 ConstDecl ::= (ConstDeclaration) CONST Type:constType IDENT:constName EQUAL Consts ConstList SEMI
@@ -120,43 +113,44 @@ VarDeclListEnd ::= (VarDeclarationListEnd) COMMA IDENT:varDeclListEndName Arr SE
 ClassDecl ::= (ClassDeclaration) CLASS IDENT:className ExtendsClass L_BRACE ListOfVarDecl Methods R_BRACE
 ;
 
-ExtendsClass := (ClassExtends) EXTENDS Type:extendsType
+ExtendsClass ::= (ClassExtends) EXTENDS Type:extendsType
 				|
 				(NoClassExtends) /* epsilon */
-				;
+;
 
 
 ListOfVarDecl ::= (ListVarDeclaration) ListOfVarDecl VarDecl
 				|
 				(NoListOfVarDeclaration) /* epsilon */
-				;
+;
 
 Methods ::= (Methods) L_BRACE MethodDeclList R_BRACE 
 			|
 			(NoMethods) /* epsilon */
-			;
+;
 
 MethodDeclList ::= (MethodsDeclarationList) MethodDeclList MethodDecl
 					|
 					(NoMethodsDeclarationList) /* epsilon */
-					;
+;
 
 MethodDecl ::= (MethodDeclaration) MethodType IDENT:methodName L_PAREN FormParsExists R_PAREN ListOfVarDecl L_BRACE ListOfStmt R_BRACE
 ; 
 
 MethodType ::= (MethodWithType) Type:methodType
 			|
-			(MethodVoid) VOID;
+			(MethodVoid) VOID
+;
 			
 FormParsExists ::= (FormParsExists) FormPars
 				|
 				(NoFormParsExists) /* epsilon */
-				;
+;
 
 ListOfStmt ::= (ListOfSatemant) ListOfStmt Statement
 			|
 			(NoListOfSatemant) /* epsilon */
-			;
+;
 			
 FormPars ::= (FormParams) Type:formParsType IDENT:formParsName Arr FormParsList
 ;
@@ -164,9 +158,9 @@ FormPars ::= (FormParams) Type:formParsType IDENT:formParsName Arr FormParsList
 FormParsList ::= (FormParamsList) FormParsList FormParsListEnd
 			|	
 			(NoFormParsList) /* epsilon */
-			;			
+;			
 			
-FormParsListEnd ::= (FormParamsListEnd)	COMMA Type:formParsListEndType IDENT:formParsListEndName Arr
+FormParsListEnd ::= (FormParamsListEnd)	COMMA Type:fpListType IDENT:fpListName Arr
 ;	
 			
 Type ::= (Type) IDENT:typeName
@@ -189,29 +183,29 @@ Statement ::= (StmtDesgStmt) DesignatorStatement SEMI
 			(StmtRet) RETURN ExprExists SEMI
 			|
 			(StmtStmt) L_BRACE StmtList R_BRACE 
-			;
+;
 			
 			
-ElseExists ::= (Else) ELSE Statement
+ElseExists ::= (ElseBranch) ELSE Statement
 			|
 			(NoElse) /* epsilon */
-			;			
+;			
 			
 			
-NumConstExists ::= (NumConstExists) COMMA NumConst:numVal
+NumConstExists ::= (NumConstExists) COMMA NUM_CONST:numVal
 				|	
 				(NoNumConstExists) /* epsilon */
-				;	
+;	
 				
 ExprExists ::= (ExpreExists) Expr
 				|
 				(NoExprExists) /* epsilon */
-				;		
+;		
 				
 StmtList ::= (StatementList) StmtList Statement
 			|
 			(NoStatementList) /* epsilon */
-			;
+;
 			
 DesignatorStatement ::=	(DesignStmt) Designator DesgStmtEnd
 ;
@@ -223,12 +217,12 @@ DesgStmtEnd ::= (DesgnStmtAsgnOp) Assignop Expr
 				(DesgnStmtIncr) INCREMENT
 				|
 				(DesgnStmtDecr) DECREMENT
-				;
+;
 				
 ActParsExists ::= (ActParamsExists) L_PAREN ActPars R_PAREN
 					|
 					(NoActParamsExists) /* epsilon */
-			;
+;
 			
 			
 ActPars ::= (ActParams) Expr ExprList
@@ -237,7 +231,7 @@ ActPars ::= (ActParams) Expr ExprList
 ExprList ::= (ExpListComma) ExprList ExprListEnd
 			|			
 			(NoExpListComma) /* epsilon */
-			;
+;
 
 ExprListEnd ::= (ExpListEnd) COMMA Expr
 ;
@@ -248,7 +242,7 @@ Condition ::= (Cond) CondTerm CondTermOrList
 CondTermOrList ::= (CondTermListOr) CondTermOrList LOGICAL_OR CondTerm	
 				|
 				(NoCondTermLisOr) /* epsilon */
-				;
+;
 
 CondTerm ::= (ConditionTerm) CondFact CondFactAndList
 ;
@@ -256,7 +250,7 @@ CondTerm ::= (ConditionTerm) CondFact CondFactAndList
 CondFactAndList ::= (CondFactListAnd) CondFactAndList LOGICAL_AND CondFact
 					|
 					(NoCondFactListAnd) /* epsilon */
-					;
+;
 
 CondFact ::= (ConditionFact) Expr RelopExprExists
 ;
@@ -264,7 +258,7 @@ CondFact ::= (ConditionFact) Expr RelopExprExists
 RelopExprExists ::= (RelopExprExist) Relop Expr
 				|
 				(NoRelopExprExist) /* epsilon */
-				;
+;
 	
 Expr ::= (Expression) MinusExists Term AddopTermList
 ;
@@ -272,12 +266,12 @@ Expr ::= (Expression) MinusExists Term AddopTermList
 MinusExists ::= (MinusExs) MINUS
 				|
 				(NoMinusExs) /* epsilon */
-				;	
+;	
 				
 AddopTermList ::= (ListAddopTerm) AddopTermList Addop Term
 				|
 				(NoListAddopTerm) /* epsilon */
-				;
+;
 				
 Term ::= (Term) Factor MulopFactorList
 ;
@@ -285,7 +279,7 @@ Term ::= (Term) Factor MulopFactorList
 MulopFactorList ::= (MullopFactList) MulopFactorList Mulop Factor
 				|
 				(NoMullopFactList) /* epsilon */
-				;
+;
 				
 Factor ::= (FactorDesign) Designator ActParsExists
 		|
@@ -298,12 +292,12 @@ Factor ::= (FactorDesign) Designator ActParsExists
 		(FactorNew) NEW Type ExprArrExists
 		|
 		(FactorExpr) L_PAREN Expr R_PAREN
-		;
+;
 
 ExprArrExists ::= (ArrExprExists) L_SQUARE_BRACKET Expr R_SQUARE_BRACKET
 				|
 				(NoArrExprExists) /* epsilon */
-				;
+;
 
 Designator ::= (Design) IDENT:DesgnName DesgnList
 ;
@@ -311,7 +305,7 @@ Designator ::= (Design) IDENT:DesgnName DesgnList
 DesgnList ::= (DesignList) DesgnList DesgnListEnd
 			|
 			(NoDesignList) /* epsilon */
-			;
+;
 			
 DesgnListEnd ::= (DesignListEnd) DOT IDENT:DesgnNameId
 				|
@@ -332,16 +326,16 @@ Relop ::= (RelopE) EQUALS_TO
 		(RelopL) LESS
 		|
 		(RelopLE) LESS_OR_EQUAL
-		;		
+;		
 			
 Addop ::= (AddOp) PLUS
 		|
 		(SubOp) MINUS
-		;
+;
 		
 Mulop ::= (MulOp) MULTIPLY
 		|
 		(DivOp) DIVIDE
 		|
 		(ModOp) MOD
-		;
+;
