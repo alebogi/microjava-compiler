@@ -55,8 +55,8 @@ terminal Character CHAR_CONST;
 terminal Boolean BOOL_CONST;
 
 nonterminal Program, DeclsList, MethodDeclList, Decls, ConstDecl, VarDecl, ClassDecl, Consts, ConstList, ConstListEnd, Type, Arr, VarDeclList;
-nonterminal VarDeclListEnd, ExtendsClass, ListOfVarDecl, Methods, MethodType, FormParsExists, ListOfStmt, FormPars, Statement, MethodDecl;
-nonterminal FormParsList, FormParsListEnd, ElseExists, NumConstExists, DesignatorStatement, Designator, Condition, Expr, ExprList, ExprListEnd;
+nonterminal VarDeclListEnd, ExtendsClass, ListOfVarDecl, MethodType, ListOfStmt, FormPars, Statement, MethodDecl;
+nonterminal FormParsList, FormParsListEnd, ElseExists, DesignatorStatement, Designator, Condition, Expr, ExprList, ExprListEnd;
 nonterminal CondTerm, CondTermOrList, CondFact, CondFactAndList, RelopExprExists, ActPars, ActParsExists, DesgStmtEnd, StmtList, ExprExists;
 nonterminal Assignop, Relop, Addop, Mulop, AddopTermList, MinusExists, Term, ExprArrExists, MulopFactorList, Factor, DesgnListEnd, DesgnList;
 
@@ -110,7 +110,9 @@ VarDeclList ::= (VarDeclarationList) VarDeclList VarDeclListEnd
 VarDeclListEnd ::= (VarDeclarationListEnd) COMMA IDENT:varDeclListEndName Arr SEMI
 ;
 
-ClassDecl ::= (ClassDeclaration) CLASS IDENT:className ExtendsClass L_BRACE ListOfVarDecl Methods R_BRACE
+ClassDecl ::= (ClassDeclarationMethods) CLASS IDENT:className ExtendsClass L_BRACE ListOfVarDecl L_BRACE MethodDeclList R_BRACE R_BRACE
+				|
+				(ClassDeclaration) CLASS IDENT:className ExtendsClass L_BRACE ListOfVarDecl  R_BRACE
 ;
 
 ExtendsClass ::= (ClassExtends) EXTENDS Type:extendsType
@@ -124,17 +126,15 @@ ListOfVarDecl ::= (ListVarDeclaration) ListOfVarDecl VarDecl
 				(NoListOfVarDeclaration) /* epsilon */
 ;
 
-Methods ::= (Methods) L_BRACE MethodDeclList R_BRACE 
-			|
-			(NoMethods) /* epsilon */
-;
 
 MethodDeclList ::= (MethodsDeclarationList) MethodDeclList MethodDecl
 					|
 					(NoMethodsDeclarationList) /* epsilon */
 ;
 
-MethodDecl ::= (MethodDeclaration) MethodType IDENT:methodName L_PAREN FormParsExists R_PAREN ListOfVarDecl L_BRACE ListOfStmt R_BRACE
+MethodDecl ::= (MethodDeclarationFormPars) MethodType IDENT:methodName L_PAREN FormPars R_PAREN ListOfVarDecl L_BRACE ListOfStmt R_BRACE
+			|
+			(MethodDeclaration) MethodType IDENT:methodName L_PAREN R_PAREN ListOfVarDecl L_BRACE ListOfStmt R_BRACE
 ; 
 
 MethodType ::= (MethodWithType) Type:methodType
@@ -142,10 +142,6 @@ MethodType ::= (MethodWithType) Type:methodType
 			(MethodVoid) VOID
 ;
 			
-FormParsExists ::= (FormParsExists) FormPars
-				|
-				(NoFormParsExists) /* epsilon */
-;
 
 ListOfStmt ::= (ListOfSatemant) ListOfStmt Statement
 			|
@@ -172,7 +168,9 @@ Statement ::= (StmtDesgStmt) DesignatorStatement SEMI
 			|
 			(StmtRead) READ L_PAREN Designator R_PAREN SEMI
 			|
-			(StmtPrint) PRINT L_PAREN Expr NumConstExists R_PAREN SEMI
+			(StmtPrintNumConst) PRINT L_PAREN Expr COMMA NUM_CONST:numVal R_PAREN SEMI
+			|
+			(StmtPrint) PRINT L_PAREN Expr R_PAREN SEMI
 			|
 			(StmtDoWhile) DO Statement WHILE L_PAREN Condition R_PAREN SEMI
 			|
@@ -192,10 +190,7 @@ ElseExists ::= (ElseBranch) ELSE Statement
 ;			
 			
 			
-NumConstExists ::= (NumConstExists) COMMA NUM_CONST:numVal
-				|	
-				(NoNumConstExists) /* epsilon */
-;	
+	
 				
 ExprExists ::= (ExpreExists) Expr
 				|

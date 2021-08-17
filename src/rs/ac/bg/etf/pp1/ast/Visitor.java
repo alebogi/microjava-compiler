@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 18/7/2021 0:4:5
+// 18/7/2021 0:23:35
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -113,8 +113,6 @@ public interface Visitor {
     public void visit(StatementList StatementList);
     public void visit(NoExprExists NoExprExists);
     public void visit(ExpreExists ExpreExists);
-    public void visit(NoNumConstExists NoNumConstExists);
-    public void visit(NumConstExists NumConstExists);
     public void visit(NoElse NoElse);
     public void visit(ElseBranch ElseBranch);
     public void visit(StmtStmt StmtStmt);
@@ -123,6 +121,7 @@ public interface Visitor {
     public void visit(StmtBreak StmtBreak);
     public void visit(StmtDoWhile StmtDoWhile);
     public void visit(StmtPrint StmtPrint);
+    public void visit(StmtPrintNumConst StmtPrintNumConst);
     public void visit(StmtRead StmtRead);
     public void visit(StmtIfElse StmtIfElse);
     public void visit(StmtDesgStmt StmtDesgStmt);
@@ -133,20 +132,18 @@ public interface Visitor {
     public void visit(FormParams FormParams);
     public void visit(NoListOfSatemant NoListOfSatemant);
     public void visit(ListOfSatemant ListOfSatemant);
-    public void visit(NoFormParsExists NoFormParsExists);
-    public void visit(FormParsExists FormParsExists);
     public void visit(MethodVoid MethodVoid);
     public void visit(MethodWithType MethodWithType);
     public void visit(MethodDeclaration MethodDeclaration);
+    public void visit(MethodDeclarationFormPars MethodDeclarationFormPars);
     public void visit(NoMethodsDeclarationList NoMethodsDeclarationList);
     public void visit(MethodsDeclarationList MethodsDeclarationList);
-    public void visit(NoMethods NoMethods);
-    public void visit(Methods Methods);
     public void visit(NoListOfVarDeclaration NoListOfVarDeclaration);
     public void visit(ListVarDeclaration ListVarDeclaration);
     public void visit(NoClassExtends NoClassExtends);
     public void visit(ClassExtends ClassExtends);
     public void visit(ClassDeclaration ClassDeclaration);
+    public void visit(ClassDeclarationMethods ClassDeclarationMethods);
     public void visit(VarDeclarationListEnd VarDeclarationListEnd);
     public void visit(NoVarDeclarationList NoVarDeclarationList);
     public void visit(VarDeclarationList VarDeclarationList);

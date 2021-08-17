@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 18/7/2021 0:4:5
+// 18/7/2021 0:23:35
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,13 +8,10 @@ package rs.ac.bg.etf.pp1.ast;
 public class StmtPrint extends Statement {
 
     private Expr Expr;
-    private NumConstExists NumConstExists;
 
-    public StmtPrint (Expr Expr, NumConstExists NumConstExists) {
+    public StmtPrint (Expr Expr) {
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
-        this.NumConstExists=NumConstExists;
-        if(NumConstExists!=null) NumConstExists.setParent(this);
     }
 
     public Expr getExpr() {
@@ -25,32 +22,21 @@ public class StmtPrint extends Statement {
         this.Expr=Expr;
     }
 
-    public NumConstExists getNumConstExists() {
-        return NumConstExists;
-    }
-
-    public void setNumConstExists(NumConstExists NumConstExists) {
-        this.NumConstExists=NumConstExists;
-    }
-
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
 
     public void childrenAccept(Visitor visitor) {
         if(Expr!=null) Expr.accept(visitor);
-        if(NumConstExists!=null) NumConstExists.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
-        if(NumConstExists!=null) NumConstExists.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Expr!=null) Expr.traverseBottomUp(visitor);
-        if(NumConstExists!=null) NumConstExists.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -61,12 +47,6 @@ public class StmtPrint extends Statement {
 
         if(Expr!=null)
             buffer.append(Expr.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(NumConstExists!=null)
-            buffer.append(NumConstExists.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

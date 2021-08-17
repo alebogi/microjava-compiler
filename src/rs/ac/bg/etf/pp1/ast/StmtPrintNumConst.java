@@ -5,13 +5,15 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class ArrExprExists extends ExprArrExists {
+public class StmtPrintNumConst extends Statement {
 
     private Expr Expr;
+    private Integer numVal;
 
-    public ArrExprExists (Expr Expr) {
+    public StmtPrintNumConst (Expr Expr, Integer numVal) {
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
+        this.numVal=numVal;
     }
 
     public Expr getExpr() {
@@ -20,6 +22,14 @@ public class ArrExprExists extends ExprArrExists {
 
     public void setExpr(Expr Expr) {
         this.Expr=Expr;
+    }
+
+    public Integer getNumVal() {
+        return numVal;
+    }
+
+    public void setNumVal(Integer numVal) {
+        this.numVal=numVal;
     }
 
     public void accept(Visitor visitor) {
@@ -43,7 +53,7 @@ public class ArrExprExists extends ExprArrExists {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("ArrExprExists(\n");
+        buffer.append("StmtPrintNumConst(\n");
 
         if(Expr!=null)
             buffer.append(Expr.toString("  "+tab));
@@ -51,8 +61,11 @@ public class ArrExprExists extends ExprArrExists {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
+        buffer.append(" "+tab+numVal);
+        buffer.append("\n");
+
         buffer.append(tab);
-        buffer.append(") [ArrExprExists]");
+        buffer.append(") [StmtPrintNumConst]");
         return buffer.toString();
     }
 }

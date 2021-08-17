@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 18/7/2021 0:4:5
+// 18/7/2021 0:23:35
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -113,8 +113,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(StatementList StatementList) { visit(); }
     public void visit(NoExprExists NoExprExists) { visit(); }
     public void visit(ExpreExists ExpreExists) { visit(); }
-    public void visit(NoNumConstExists NoNumConstExists) { visit(); }
-    public void visit(NumConstExists NumConstExists) { visit(); }
     public void visit(NoElse NoElse) { visit(); }
     public void visit(ElseBranch ElseBranch) { visit(); }
     public void visit(StmtStmt StmtStmt) { visit(); }
@@ -123,6 +121,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(StmtBreak StmtBreak) { visit(); }
     public void visit(StmtDoWhile StmtDoWhile) { visit(); }
     public void visit(StmtPrint StmtPrint) { visit(); }
+    public void visit(StmtPrintNumConst StmtPrintNumConst) { visit(); }
     public void visit(StmtRead StmtRead) { visit(); }
     public void visit(StmtIfElse StmtIfElse) { visit(); }
     public void visit(StmtDesgStmt StmtDesgStmt) { visit(); }
@@ -133,20 +132,18 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FormParams FormParams) { visit(); }
     public void visit(NoListOfSatemant NoListOfSatemant) { visit(); }
     public void visit(ListOfSatemant ListOfSatemant) { visit(); }
-    public void visit(NoFormParsExists NoFormParsExists) { visit(); }
-    public void visit(FormParsExists FormParsExists) { visit(); }
     public void visit(MethodVoid MethodVoid) { visit(); }
     public void visit(MethodWithType MethodWithType) { visit(); }
     public void visit(MethodDeclaration MethodDeclaration) { visit(); }
+    public void visit(MethodDeclarationFormPars MethodDeclarationFormPars) { visit(); }
     public void visit(NoMethodsDeclarationList NoMethodsDeclarationList) { visit(); }
     public void visit(MethodsDeclarationList MethodsDeclarationList) { visit(); }
-    public void visit(NoMethods NoMethods) { visit(); }
-    public void visit(Methods Methods) { visit(); }
     public void visit(NoListOfVarDeclaration NoListOfVarDeclaration) { visit(); }
     public void visit(ListVarDeclaration ListVarDeclaration) { visit(); }
     public void visit(NoClassExtends NoClassExtends) { visit(); }
     public void visit(ClassExtends ClassExtends) { visit(); }
     public void visit(ClassDeclaration ClassDeclaration) { visit(); }
+    public void visit(ClassDeclarationMethods ClassDeclarationMethods) { visit(); }
     public void visit(VarDeclarationListEnd VarDeclarationListEnd) { visit(); }
     public void visit(NoVarDeclarationList NoVarDeclarationList) { visit(); }
     public void visit(VarDeclarationList VarDeclarationList) { visit(); }

@@ -5,17 +5,20 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class MethodDeclaration extends MethodDecl {
+public class MethodDeclarationFormPars extends MethodDecl {
 
     private MethodType MethodType;
     private String methodName;
+    private FormPars FormPars;
     private ListOfVarDecl ListOfVarDecl;
     private ListOfStmt ListOfStmt;
 
-    public MethodDeclaration (MethodType MethodType, String methodName, ListOfVarDecl ListOfVarDecl, ListOfStmt ListOfStmt) {
+    public MethodDeclarationFormPars (MethodType MethodType, String methodName, FormPars FormPars, ListOfVarDecl ListOfVarDecl, ListOfStmt ListOfStmt) {
         this.MethodType=MethodType;
         if(MethodType!=null) MethodType.setParent(this);
         this.methodName=methodName;
+        this.FormPars=FormPars;
+        if(FormPars!=null) FormPars.setParent(this);
         this.ListOfVarDecl=ListOfVarDecl;
         if(ListOfVarDecl!=null) ListOfVarDecl.setParent(this);
         this.ListOfStmt=ListOfStmt;
@@ -36,6 +39,14 @@ public class MethodDeclaration extends MethodDecl {
 
     public void setMethodName(String methodName) {
         this.methodName=methodName;
+    }
+
+    public FormPars getFormPars() {
+        return FormPars;
+    }
+
+    public void setFormPars(FormPars FormPars) {
+        this.FormPars=FormPars;
     }
 
     public ListOfVarDecl getListOfVarDecl() {
@@ -60,6 +71,7 @@ public class MethodDeclaration extends MethodDecl {
 
     public void childrenAccept(Visitor visitor) {
         if(MethodType!=null) MethodType.accept(visitor);
+        if(FormPars!=null) FormPars.accept(visitor);
         if(ListOfVarDecl!=null) ListOfVarDecl.accept(visitor);
         if(ListOfStmt!=null) ListOfStmt.accept(visitor);
     }
@@ -67,12 +79,14 @@ public class MethodDeclaration extends MethodDecl {
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(MethodType!=null) MethodType.traverseTopDown(visitor);
+        if(FormPars!=null) FormPars.traverseTopDown(visitor);
         if(ListOfVarDecl!=null) ListOfVarDecl.traverseTopDown(visitor);
         if(ListOfStmt!=null) ListOfStmt.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(MethodType!=null) MethodType.traverseBottomUp(visitor);
+        if(FormPars!=null) FormPars.traverseBottomUp(visitor);
         if(ListOfVarDecl!=null) ListOfVarDecl.traverseBottomUp(visitor);
         if(ListOfStmt!=null) ListOfStmt.traverseBottomUp(visitor);
         accept(visitor);
@@ -81,7 +95,7 @@ public class MethodDeclaration extends MethodDecl {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("MethodDeclaration(\n");
+        buffer.append("MethodDeclarationFormPars(\n");
 
         if(MethodType!=null)
             buffer.append(MethodType.toString("  "+tab));
@@ -90,6 +104,12 @@ public class MethodDeclaration extends MethodDecl {
         buffer.append("\n");
 
         buffer.append(" "+tab+methodName);
+        buffer.append("\n");
+
+        if(FormPars!=null)
+            buffer.append(FormPars.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(ListOfVarDecl!=null)
@@ -105,7 +125,7 @@ public class MethodDeclaration extends MethodDecl {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [MethodDeclaration]");
+        buffer.append(") [MethodDeclarationFormPars]");
         return buffer.toString();
     }
 }
