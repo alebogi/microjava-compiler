@@ -50,18 +50,22 @@ scan with {:
 	return s;
 :}
 
-terminal PROG, IDENT, LBRACE, RBRRACE, CONST, EQUAL, SEMI, COMMA, CLASS, EXTENDS, VOID;
+terminal PROG, IDENT, L_BRACE, R_BRRACE, CONST, EQUAL, SEMI, COMMA, CLASS, EXTENDS, VOID;
+terminal R_PAREN, L_PAREN, L_SQUARE_BRACKET, R_SQUARE_BRACKET, INCREMENT, DECREMENT;
+terminal EQUALS_TO, NOT_EQUAL, GREATER, GREATER_OR_EQUAL, LESS, LESS_OR_EQUAL, PLUS, MINUS, MULTIPLY, DIVIDE, MOD;
 
 terminal Integer NUM_CONST ;
 terminal String IDENT ;
 terminal Character CHAR_CONST;
 terminal Boolean BOOL_CONST;
 
-nonterminal Program, DeclsList, MethodDeclList, Decls, ConstDecl, VarDecl, ClassDecl, Consts, ConstList, ConstListEnd, Arr, VarDeclList, VarDeclListEnd;
+nonterminal Program, DeclsList, MethodDeclList, Decls, ConstDecl, VarDecl, ClassDecl, Consts, ConstList, ConstListEnd, Type, Arr, VarDeclList, VarDeclListEnd;
 nonterminal ExtendsClass, ListOfVarDecl, Methods, MethodType, FormParsExists, ListOfStmt, FormPars, Statement;
-nonterminal FormParsList, FormParsListEnd;
+nonterminal FormParsList, FormParsListEnd, ElseExists, NumConstExists, DesignatorStatement, Designator, Condition, Expr;
 
-Program ::= (Program) PROG IDENT:progName DeclsList LBRACE MethodDeclList RBRACE
+nonterminal Assignop, Relop, Addop, Mulop;
+
+Program ::= (Program) PROG IDENT:progName DeclsList L_BRACE MethodDeclList R_BRACE
 ;
 
 DeclsList ::= (DeclarationsList) DeclsList Decls
@@ -166,19 +170,98 @@ FormParsListEnd ::= (FormParamsListEnd)	COMMA Type:formParsListEndType IDENT:for
 Type ::= (Type) IDENT:typeName
 ;
 
+Statement ::= (StmtDesgStmt) DesignatorStatement SEMI
+			|	
+			(StmtIfElse) IF L_PAREN Condition R_PAREN Statement ElseExists
+			|
+			(StmtRead) READ L_PAREN Desginator R_PAREN SEMI
+			|
+			(StmtPrint) PRINT L_PAREN Expr NumConstExists R_PAREN SEMI
+			|
+			(StmtDoWhile) DO Statement WHILE L_PAREN Condition R_PAREN SEMI
+			|
+			(StmtBreak) BREAK SEMI
+			|
+			(StmtCont) CONTINUE SEMI
+			|
+			(StmtRet) RETURN ExprExists SEMI
+			|
+			(StmtStmt) L_BRACE StmtList R_BRACE 
+			;
 			
 			
+ElseExists ::= (Else) ELSE Statement
+			|
+			(NoElse) /* epsilon */
+			;			
 			
 			
+NumConstExists ::= (NumConstExists) COMMA NumConst:numVal
+				|	
+				(NoNumConstExists) /* epsilon */
+				;	
+				
+ExprExists ::= (ExpreExists) Expr
+				|
+				(NoExprExists) /* epsilon */
+				;		
+				
+StmtList ::= (StatementList) StmtList Statement
+			|
+			(NoStatementList) /* epsilon */
+			;
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+DesignatorStatement ::=	(DesignStmt) Designator DesgStmtEnd
+;
 
+DesgStmtEnd ::= (DesgnStmtAsgnOp) Assignop Expr
+				|
+				(DesgnStmtActPars) L_PAREN ActParsExists R_PAREN	
+				|
+				(DesgnStmtIncr) INCREMENT
+				|
+				(DesgnStmtDecr) DECREMENT
+				;
+				
+ActParsExists ::= (ActParamsExists) ActPars
+					|
+					(NoActParamsExists) /* epsilon */
+			;
+			
+			
+			
+			
+			
+			
+	
+	
+	
+	
+	
+Assignop ::= (AssignOperator) EQUAL
+;
+
+Relop ::= (RelopE) EQUALS_TO
+		|
+		(RelopNE) NOT_EQUAL
+		|
+		(RelopG) GREATER
+		|
+		(RelopGE) GREATER_OR_EQUAL
+		|
+		(RelopL) LESS
+		|
+		(RelopLE) LESS_OR_EQUAL
+		;		
+			
+Addop ::= (AddOp) PLUS
+		|
+		(SubOp) MINUS
+		;
+		
+Mulop ::= (MulOp) MULTIPLY
+		|
+		(DivOp) DIVIDE
+		|
+		(ModOp) MOD
+		;

@@ -38,8 +38,8 @@ public class sym_old {
 	public static final int MOD = 27; 								// %
 	public static final int EQUALS_TO = 28; 						// ==
 	public static final int NOT_EQUAL = 29;							// !=
-	public static final int GRATER = 30; 							// >
-	public static final int GRATER_OR_EQUAL = 31; 					// >=
+	public static final int GREATER = 30; 							// >
+	public static final int GREATER_OR_EQUAL = 31; 					// >=
 	public static final int LESS = 32; 								// <
 	public static final int LESS_OR_EQUAL = 33;						// <=
 	public static final int LOGICAL_AND = 34; 						// &&
