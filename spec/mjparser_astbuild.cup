@@ -144,7 +144,7 @@ Consts ::= (NumConst) NUM_CONST:numValue {: RESULT=new NumConst(numValue); RESUL
 			(BoolConst) BOOL_CONST:boolValue {: RESULT=new BoolConst(boolValue); RESULT.setLine(boolValueleft); :}
 ;
 
-VarDecl ::= (VarDeclaration) Type:varType IDENT:varName Arr:A1 VarDeclList:V2 {: RESULT=new VarDeclaration(varType, varName, A1, V2); RESULT.setLine(varTypeleft); :}
+VarDecl ::= (VarDeclaration) Type:varType IDENT:varName Arr:A1 VarDeclList:V2 SEMI {: RESULT=new VarDeclaration(varType, varName, A1, V2); RESULT.setLine(varTypeleft); :}
 ;
 
 Arr ::= (Array) L_SQUARE_BRACKET R_SQUARE_BRACKET {: RESULT=new Array(); :}
@@ -157,7 +157,7 @@ VarDeclList ::= (VarDeclarationList) VarDeclList:V1 VarDeclListEnd:V2 {: RESULT=
 				(NoVarDeclarationList) {: RESULT=new NoVarDeclarationList(); :} /* epsilon */
 ;
 
-VarDeclListEnd ::= (VarDeclarationListEnd) COMMA IDENT:varDeclListEndName Arr:A1 SEMI {: RESULT=new VarDeclarationListEnd(varDeclListEndName, A1); RESULT.setLine(varDeclListEndNameleft); :}
+VarDeclListEnd ::= (VarDeclarationListEnd) COMMA IDENT:varDeclListEndName Arr:A1 {: RESULT=new VarDeclarationListEnd(varDeclListEndName, A1); RESULT.setLine(varDeclListEndNameleft); :} 
 ;
 
 ClassDecl ::= (ClassDeclarationMethods) CLASS IDENT:className ExtendsClass:E1 L_BRACE ListOfVarDecl:L2 L_BRACE MethodDeclList:M3 R_BRACE R_BRACE {: RESULT=new ClassDeclarationMethods(className, E1, L2, M3); RESULT.setLine(classNameleft); :}
