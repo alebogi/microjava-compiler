@@ -1,0 +1,38 @@
+INFO  19:11:06,934 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  19:11:07,277 - #2 program
+INFO  19:11:07,278 - #43 MJProgram
+INFO  19:11:07,279 - #43 int
+INFO  19:11:07,281 - #43 x
+INFO  19:11:07,283 - #7 ;
+INFO  19:11:07,290 - #43 int
+INFO  19:11:07,292 - #43 y
+INFO  19:11:07,292 - #7 ;
+INFO  19:11:07,292 - #43 bool
+INFO  19:11:07,293 - #43 trt
+INFO  19:11:07,293 - #7 ;
+INFO  19:11:07,293 - #43 char
+INFO  19:11:07,295 - #43 q
+INFO  19:11:07,296 - #7 ;
+INFO  19:11:07,296 - #5 const
+INFO  19:11:07,298 - #43 int
+INFO  19:11:07,298 - #43 konstanta
+INFO  19:11:07,299 - #6 =
+INFO  19:11:07,299 - #42 5
+INFO  19:11:07,304 - #7 ;
+INFO  19:11:07,307 - #3 {
+INFO  19:11:07,307 - #43 int
+INFO  19:11:07,309 - #43 k
+INFO  19:11:07,309 - #13 (
+INFO  19:11:07,310 - #12 )
+INFO  19:11:07,310 - #43 int
+INFO  19:11:07,314 - #43 c
+INFO  19:11:07,315 - #7 ;
+INFO  19:11:07,315 - #3 {
+INFO  19:11:07,315 - #43 c
+INFO  19:11:07,317 - #6 =
+INFO  19:11:07,319 - #42 1
+INFO  19:11:07,325 - #24 +
+INFO  19:11:07,331 - #7 ;
+ERROR 19:11:07,331 - 
+Sintaksna greska na liniji 9
+ERROR 19:11:07,332 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 9

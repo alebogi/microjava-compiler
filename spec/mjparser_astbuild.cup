@@ -131,10 +131,10 @@ ConstDecl ::= (ConstDeclaration) CONST Type:constType IDENT:constName EQUAL Cons
 
 ConstList ::= (ConstantsList) ConstList:C1 ConstListEnd:C2 {: RESULT=new ConstantsList(C1, C2); RESULT.setLine(C1left); :}
 			|
-			(NoConstantsList) {: RESULT=new NoConstantsList(); :} /* epsilon */
+			(NoConstantsList) {: RESULT=new NoConstantsList(); :} /* epsilon */			
 ;
 
-ConstListEnd ::= (ConstantsListEnd) COMMA IDENT:constEndName EQUAL Consts:C1 {: RESULT=new ConstantsListEnd(constEndName, C1); RESULT.setLine(constEndNameleft); :}
+ConstListEnd ::= (ConstantsListEnd) COMMA IDENT:constEndName EQUAL Consts:C1 {: RESULT=new ConstantsListEnd(constEndName, C1); RESULT.setLine(constEndNameleft); :}	
 ;
 
 Consts ::= (NumConst) NUM_CONST:numValue {: RESULT=new NumConst(numValue); RESULT.setLine(numValueleft); :}
@@ -145,6 +145,9 @@ Consts ::= (NumConst) NUM_CONST:numValue {: RESULT=new NumConst(numValue); RESUL
 ;
 
 VarDecl ::= (VarDeclaration) Type:varType IDENT:varName Arr:A1 VarDeclList:V2 SEMI {: RESULT=new VarDeclaration(varType, varName, A1, V2); RESULT.setLine(varTypeleft); :}
+			|
+			(VarDeclError) error SEMI:l
+				{: parser.report_error("(Greska u vardecl) Izvrsen oporavak do ; u liniji " + lleft, null); :} {: RESULT=new VarDeclError(); :}			
 ;
 
 Arr ::= (Array) L_SQUARE_BRACKET R_SQUARE_BRACKET {: RESULT=new Array(); :}
@@ -155,9 +158,13 @@ Arr ::= (Array) L_SQUARE_BRACKET R_SQUARE_BRACKET {: RESULT=new Array(); :}
 VarDeclList ::= (VarDeclarationList) VarDeclList:V1 VarDeclListEnd:V2 {: RESULT=new VarDeclarationList(V1, V2); RESULT.setLine(V1left); :}
 				|
 				(NoVarDeclarationList) {: RESULT=new NoVarDeclarationList(); :} /* epsilon */
+				
 ;
 
 VarDeclListEnd ::= (VarDeclarationListEnd) COMMA IDENT:varDeclListEndName Arr:A1 {: RESULT=new VarDeclarationListEnd(varDeclListEndName, A1); RESULT.setLine(varDeclListEndNameleft); :} 
+				|
+			(VarDeclListEndError) error SEMI:l
+				{: parser.report_error("(Greska u VarDeclListEnd) Izvrsen oporavak do ; u liniji " + lleft, null); :} {: RESULT=new VarDeclListEndError(); :}
 ;
 
 ClassDecl ::= (ClassDeclarationMethods) CLASS IDENT:className ExtendsClass:E1 L_BRACE ListOfVarDecl:L2 L_BRACE MethodDeclList:M3 R_BRACE R_BRACE {: RESULT=new ClassDeclarationMethods(className, E1, L2, M3); RESULT.setLine(classNameleft); :}
@@ -264,6 +271,9 @@ DesgStmtEnd ::= (DesgnStmtAsgnOp) Assignop:A1 Expr:E2 {: RESULT=new DesgnStmtAsg
 				(DesgnStmtIncr) INCREMENT {: RESULT=new DesgnStmtIncr(); :}
 				|
 				(DesgnStmtDecr) DECREMENT {: RESULT=new DesgnStmtDecr(); :}
+				|
+			(DesgStmtEndtError) error SEMI:l
+				{: parser.report_error("(Greska u DesgStmtEnd) Izvrsen oporavak do ; u liniji " + lleft, null); :} {: RESULT=new DesgStmtEndtError(); :}
 ;
 				
 ActParsExists ::= (ActParamsExists) L_PAREN ActPars:A1 R_PAREN {: RESULT=new ActParamsExists(A1); RESULT.setLine(A1left); :}

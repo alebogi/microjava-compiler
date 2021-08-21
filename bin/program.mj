@@ -2,7 +2,7 @@ program MJProgram
 	int x; int y;
 	bool trt;
 	char q;
-	const int konstanta = 5;
+	const int konstanta = 5, kons = ;
 {
 	
 	int k () int c; {

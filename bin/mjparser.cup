@@ -84,10 +84,10 @@ ConstDecl ::= (ConstDeclaration) CONST Type:constType IDENT:constName EQUAL Cons
 
 ConstList ::= (ConstantsList) ConstList ConstListEnd
 			|
-			(NoConstantsList) /* epsilon */
+			(NoConstantsList) /* epsilon */			
 ;
 
-ConstListEnd ::= (ConstantsListEnd) COMMA IDENT:constEndName EQUAL Consts
+ConstListEnd ::= (ConstantsListEnd) COMMA IDENT:constEndName EQUAL Consts	
 ;
 
 Consts ::= (NumConst) NUM_CONST:numValue
@@ -98,6 +98,9 @@ Consts ::= (NumConst) NUM_CONST:numValue
 ;
 
 VarDecl ::= (VarDeclaration) Type:varType IDENT:varName Arr VarDeclList SEMI
+			|
+			(VarDeclError) error SEMI:l
+				{: parser.report_error("(Greska u vardecl) Izvrsen oporavak do ; u liniji " + lleft, null); :}			
 ;
 
 Arr ::= (Array) L_SQUARE_BRACKET R_SQUARE_BRACKET
@@ -108,9 +111,13 @@ Arr ::= (Array) L_SQUARE_BRACKET R_SQUARE_BRACKET
 VarDeclList ::= (VarDeclarationList) VarDeclList VarDeclListEnd
 				|
 				(NoVarDeclarationList) /* epsilon */
+				
 ;
 
 VarDeclListEnd ::= (VarDeclarationListEnd) COMMA IDENT:varDeclListEndName Arr 
+				|
+			(VarDeclListEndError) error SEMI:l
+				{: parser.report_error("(Greska u VarDeclListEnd) Izvrsen oporavak do ; u liniji " + lleft, null); :}
 ;
 
 ClassDecl ::= (ClassDeclarationMethods) CLASS IDENT:className ExtendsClass L_BRACE ListOfVarDecl L_BRACE MethodDeclList R_BRACE R_BRACE
@@ -217,6 +224,9 @@ DesgStmtEnd ::= (DesgnStmtAsgnOp) Assignop Expr
 				(DesgnStmtIncr) INCREMENT
 				|
 				(DesgnStmtDecr) DECREMENT
+				|
+			(DesgStmtEndtError) error SEMI:l
+				{: parser.report_error("(Greska u DesgStmtEnd) Izvrsen oporavak do ; u liniji " + lleft, null); :}
 ;
 				
 ActParsExists ::= (ActParamsExists) L_PAREN ActPars R_PAREN
