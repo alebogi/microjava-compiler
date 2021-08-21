@@ -1,23 +1,23 @@
 // generated with ast extension for cup
 // version 0.8
-// 18/7/2021 0:23:35
+// 21/7/2021 17:44:8
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class StmtIfElse extends Statement {
+public class StmtIfElse extends StmtMatched {
 
     private Condition Condition;
-    private Statement Statement;
-    private ElseExists ElseExists;
+    private StmtMatched StmtMatched;
+    private StmtMatched StmtMatched1;
 
-    public StmtIfElse (Condition Condition, Statement Statement, ElseExists ElseExists) {
+    public StmtIfElse (Condition Condition, StmtMatched StmtMatched, StmtMatched StmtMatched1) {
         this.Condition=Condition;
         if(Condition!=null) Condition.setParent(this);
-        this.Statement=Statement;
-        if(Statement!=null) Statement.setParent(this);
-        this.ElseExists=ElseExists;
-        if(ElseExists!=null) ElseExists.setParent(this);
+        this.StmtMatched=StmtMatched;
+        if(StmtMatched!=null) StmtMatched.setParent(this);
+        this.StmtMatched1=StmtMatched1;
+        if(StmtMatched1!=null) StmtMatched1.setParent(this);
     }
 
     public Condition getCondition() {
@@ -28,20 +28,20 @@ public class StmtIfElse extends Statement {
         this.Condition=Condition;
     }
 
-    public Statement getStatement() {
-        return Statement;
+    public StmtMatched getStmtMatched() {
+        return StmtMatched;
     }
 
-    public void setStatement(Statement Statement) {
-        this.Statement=Statement;
+    public void setStmtMatched(StmtMatched StmtMatched) {
+        this.StmtMatched=StmtMatched;
     }
 
-    public ElseExists getElseExists() {
-        return ElseExists;
+    public StmtMatched getStmtMatched1() {
+        return StmtMatched1;
     }
 
-    public void setElseExists(ElseExists ElseExists) {
-        this.ElseExists=ElseExists;
+    public void setStmtMatched1(StmtMatched StmtMatched1) {
+        this.StmtMatched1=StmtMatched1;
     }
 
     public void accept(Visitor visitor) {
@@ -50,21 +50,21 @@ public class StmtIfElse extends Statement {
 
     public void childrenAccept(Visitor visitor) {
         if(Condition!=null) Condition.accept(visitor);
-        if(Statement!=null) Statement.accept(visitor);
-        if(ElseExists!=null) ElseExists.accept(visitor);
+        if(StmtMatched!=null) StmtMatched.accept(visitor);
+        if(StmtMatched1!=null) StmtMatched1.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Condition!=null) Condition.traverseTopDown(visitor);
-        if(Statement!=null) Statement.traverseTopDown(visitor);
-        if(ElseExists!=null) ElseExists.traverseTopDown(visitor);
+        if(StmtMatched!=null) StmtMatched.traverseTopDown(visitor);
+        if(StmtMatched1!=null) StmtMatched1.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Condition!=null) Condition.traverseBottomUp(visitor);
-        if(Statement!=null) Statement.traverseBottomUp(visitor);
-        if(ElseExists!=null) ElseExists.traverseBottomUp(visitor);
+        if(StmtMatched!=null) StmtMatched.traverseBottomUp(visitor);
+        if(StmtMatched1!=null) StmtMatched1.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -79,14 +79,14 @@ public class StmtIfElse extends Statement {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Statement!=null)
-            buffer.append(Statement.toString("  "+tab));
+        if(StmtMatched!=null)
+            buffer.append(StmtMatched.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(ElseExists!=null)
-            buffer.append(ElseExists.toString("  "+tab));
+        if(StmtMatched1!=null)
+            buffer.append(StmtMatched1.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

@@ -54,6 +54,8 @@ terminal String IDENT;
 terminal Character CHAR_CONST;
 terminal Boolean BOOL_CONST;
 
+terminal COLON, SWITCH, QUESTIONMARK, ENUM, CASE;
+
 nonterminal Program Program;
 nonterminal DeclsList DeclsList;
 nonterminal MethodDeclList MethodDeclList;
@@ -77,7 +79,6 @@ nonterminal Statement Statement;
 nonterminal MethodDecl MethodDecl;
 nonterminal FormParsList FormParsList;
 nonterminal FormParsListEnd FormParsListEnd;
-nonterminal ElseExists ElseExists;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal Designator Designator;
 nonterminal Condition Condition;
@@ -106,6 +107,8 @@ nonterminal MulopFactorList MulopFactorList;
 nonterminal Factor Factor;
 nonterminal DesgnListEnd DesgnListEnd;
 nonterminal DesgnList DesgnList;
+nonterminal StmtMatched StmtMatched;
+nonterminal StmtUnmatched StmtUnmatched;
 
 Program ::= (Program) PROG IDENT:progName DeclsList:D1 L_BRACE MethodDeclList:M2 R_BRACE {: RESULT=new Program(progName, D1, M2); RESULT.setLine(progNameleft); :}
 ;
@@ -209,10 +212,13 @@ FormParsListEnd ::= (FormParamsListEnd)	COMMA Type:fpListType IDENT:fpListName A
 Type ::= (Type) IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(typeNameleft); :}
 ;
 
-Statement ::= (StmtDesgStmt) DesignatorStatement:D1 SEMI {: RESULT=new StmtDesgStmt(D1); RESULT.setLine(D1left); :}
-			|	
-			(StmtIfElse) IF L_PAREN Condition:C1 R_PAREN Statement:S2 ElseExists:E3 {: RESULT=new StmtIfElse(C1, S2, E3); RESULT.setLine(C1left); :}
+Statement ::= (MatchedStmt) StmtMatched:S1 {: RESULT=new MatchedStmt(S1); RESULT.setLine(S1left); :}
 			|
+			(UnmatchedStmt) StmtUnmatched:S1 {: RESULT=new UnmatchedStmt(S1); RESULT.setLine(S1left); :}
+;
+
+StmtMatched ::= (StmtDesgStmt) DesignatorStatement:D1 SEMI {: RESULT=new StmtDesgStmt(D1); RESULT.setLine(D1left); :}
+			|	
 			(StmtRead) READ L_PAREN Designator:D1 R_PAREN SEMI {: RESULT=new StmtRead(D1); RESULT.setLine(D1left); :}
 			|
 			(StmtPrintNumConst) PRINT L_PAREN Expr:E1 COMMA NUM_CONST:numVal R_PAREN SEMI {: RESULT=new StmtPrintNumConst(E1, numVal); RESULT.setLine(E1left); :}
@@ -228,15 +234,14 @@ Statement ::= (StmtDesgStmt) DesignatorStatement:D1 SEMI {: RESULT=new StmtDesgS
 			(StmtRet) RETURN ExprExists:E1 SEMI {: RESULT=new StmtRet(E1); RESULT.setLine(E1left); :}
 			|
 			(StmtStmt) L_BRACE StmtList:S1 R_BRACE {: RESULT=new StmtStmt(S1); RESULT.setLine(S1left); :} 
-;
-			
-			
-ElseExists ::= (ElseBranch) ELSE Statement:S1 {: RESULT=new ElseBranch(S1); RESULT.setLine(S1left); :}
 			|
-			(NoElse) {: RESULT=new NoElse(); :} /* epsilon */
-;			
-			
-			
+			(StmtIfElse) IF L_PAREN Condition:C1 R_PAREN StmtMatched:S2 ELSE StmtMatched:S3 {: RESULT=new StmtIfElse(C1, S2, S3); RESULT.setLine(C1left); :}
+;
+		
+StmtUnmatched ::= (StmtUnamtchedIf) IF L_PAREN Condition:C1 R_PAREN Statement:S2 {: RESULT=new StmtUnamtchedIf(C1, S2); RESULT.setLine(C1left); :}
+				|
+				(StmtUnamtchedIfElse) IF  L_PAREN Condition:C1 R_PAREN StmtMatched:S2 ELSE StmtUnmatched:S3 {: RESULT=new StmtUnamtchedIfElse(C1, S2, S3); RESULT.setLine(C1left); :}
+;
 	
 				
 ExprExists ::= (ExpreExists) Expr:E1 {: RESULT=new ExpreExists(E1); RESULT.setLine(E1left); :}

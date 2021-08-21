@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 18/7/2021 0:23:35
+// 21/7/2021 17:44:8
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -10,7 +10,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(VarDeclListEnd VarDeclListEnd) { }
     public void visit(Mulop Mulop) { }
     public void visit(MethodDecl MethodDecl) { }
-    public void visit(ElseExists ElseExists) { }
     public void visit(Arr Arr) { }
     public void visit(ConstListEnd ConstListEnd) { }
     public void visit(Relop Relop) { }
@@ -23,6 +22,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(RelopExprExists RelopExprExists) { }
     public void visit(Addop Addop) { }
     public void visit(ExprListEnd ExprListEnd) { }
+    public void visit(StmtUnmatched StmtUnmatched) { }
     public void visit(Factor Factor) { }
     public void visit(CondTerm CondTerm) { }
     public void visit(ConstList ConstList) { }
@@ -50,6 +50,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(CondFact CondFact) { }
     public void visit(MethodDeclList MethodDeclList) { }
     public void visit(Decls Decls) { }
+    public void visit(StmtMatched StmtMatched) { }
     public void visit(ExtendsClass ExtendsClass) { }
     public void visit(Consts Consts) { }
     public void visit(FormPars FormPars) { }
@@ -113,8 +114,9 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(StatementList StatementList) { visit(); }
     public void visit(NoExprExists NoExprExists) { visit(); }
     public void visit(ExpreExists ExpreExists) { visit(); }
-    public void visit(NoElse NoElse) { visit(); }
-    public void visit(ElseBranch ElseBranch) { visit(); }
+    public void visit(StmtUnamtchedIfElse StmtUnamtchedIfElse) { visit(); }
+    public void visit(StmtUnamtchedIf StmtUnamtchedIf) { visit(); }
+    public void visit(StmtIfElse StmtIfElse) { visit(); }
     public void visit(StmtStmt StmtStmt) { visit(); }
     public void visit(StmtRet StmtRet) { visit(); }
     public void visit(StmtCont StmtCont) { visit(); }
@@ -123,8 +125,9 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(StmtPrint StmtPrint) { visit(); }
     public void visit(StmtPrintNumConst StmtPrintNumConst) { visit(); }
     public void visit(StmtRead StmtRead) { visit(); }
-    public void visit(StmtIfElse StmtIfElse) { visit(); }
     public void visit(StmtDesgStmt StmtDesgStmt) { visit(); }
+    public void visit(UnmatchedStmt UnmatchedStmt) { visit(); }
+    public void visit(MatchedStmt MatchedStmt) { visit(); }
     public void visit(Type Type) { visit(); }
     public void visit(FormParamsListEnd FormParamsListEnd) { visit(); }
     public void visit(NoFormParsList NoFormParsList) { visit(); }

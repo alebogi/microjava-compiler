@@ -6,7 +6,7 @@
 			<fileset dir="src/rs/ac/bg/etf/pp1">
 				<exclude name="sym_old.java"/>
 				<exclude name="util/Log4JUtils.java"/>
-				
+				<exclude name="RuleVisitor.java"/>
 			</fileset>
 		</delete>
 		<delete>
@@ -20,7 +20,7 @@
 	<target name="lexerGen" depends="delete">
 		<java jar="lib/JFlex.jar" fork="true">
 			<arg value="-d"/>
-			<arg value="./src/rs/ac/bg/etf//pp1"/>
+			<arg value="./src/rs/ac/bg/etf/pp1"/>
 			<arg value="spec/mjlexer.lex"/>
 		</java>
 	</target>
@@ -34,6 +34,7 @@
 			<arg value="-parser"/>
 			<arg value="MJParser"/>
 			<arg value="-buildtree"/>
+			<arg value="-dump_states"/>
 			<arg value="spec/mjparser.cup"/>
 		</java>
 	</target>

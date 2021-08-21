@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 18/7/2021 0:23:35
+// 21/7/2021 17:44:8
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -10,7 +10,6 @@ public interface Visitor {
     public void visit(VarDeclListEnd VarDeclListEnd);
     public void visit(Mulop Mulop);
     public void visit(MethodDecl MethodDecl);
-    public void visit(ElseExists ElseExists);
     public void visit(Arr Arr);
     public void visit(ConstListEnd ConstListEnd);
     public void visit(Relop Relop);
@@ -23,6 +22,7 @@ public interface Visitor {
     public void visit(RelopExprExists RelopExprExists);
     public void visit(Addop Addop);
     public void visit(ExprListEnd ExprListEnd);
+    public void visit(StmtUnmatched StmtUnmatched);
     public void visit(Factor Factor);
     public void visit(CondTerm CondTerm);
     public void visit(ConstList ConstList);
@@ -50,6 +50,7 @@ public interface Visitor {
     public void visit(CondFact CondFact);
     public void visit(MethodDeclList MethodDeclList);
     public void visit(Decls Decls);
+    public void visit(StmtMatched StmtMatched);
     public void visit(ExtendsClass ExtendsClass);
     public void visit(Consts Consts);
     public void visit(FormPars FormPars);
@@ -113,8 +114,9 @@ public interface Visitor {
     public void visit(StatementList StatementList);
     public void visit(NoExprExists NoExprExists);
     public void visit(ExpreExists ExpreExists);
-    public void visit(NoElse NoElse);
-    public void visit(ElseBranch ElseBranch);
+    public void visit(StmtUnamtchedIfElse StmtUnamtchedIfElse);
+    public void visit(StmtUnamtchedIf StmtUnamtchedIf);
+    public void visit(StmtIfElse StmtIfElse);
     public void visit(StmtStmt StmtStmt);
     public void visit(StmtRet StmtRet);
     public void visit(StmtCont StmtCont);
@@ -123,8 +125,9 @@ public interface Visitor {
     public void visit(StmtPrint StmtPrint);
     public void visit(StmtPrintNumConst StmtPrintNumConst);
     public void visit(StmtRead StmtRead);
-    public void visit(StmtIfElse StmtIfElse);
     public void visit(StmtDesgStmt StmtDesgStmt);
+    public void visit(UnmatchedStmt UnmatchedStmt);
+    public void visit(MatchedStmt MatchedStmt);
     public void visit(Type Type);
     public void visit(FormParamsListEnd FormParamsListEnd);
     public void visit(NoFormParsList NoFormParsList);
