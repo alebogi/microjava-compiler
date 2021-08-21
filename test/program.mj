@@ -7,8 +7,8 @@ program MJProgram
 	
 	int k () int c; {
 		c = 1;
-		q = 'w'; //ovo je glupi komentar
-		return c+2;
+		q = 'w'; 
+		return c+2; //ovo je glupi komentar
 	}
 	
 	int main() {
@@ -18,7 +18,7 @@ program MJProgram
 		else
 			trt = false;
 		x = y + 2;
-		y = k() + 3;
+		y = 5 + 3; //k()
 		print(y);
 		return 0;
 	}

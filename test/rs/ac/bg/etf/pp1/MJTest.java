@@ -15,7 +15,7 @@ import rs.ac.bg.etf.pp1.util.Log4JUtils;
 
 public class MJTest {
 
-/*	static {
+	static {
 		DOMConfigurator.configure(Log4JUtils.instance().findLoggerConfigFile());
 		Log4JUtils.instance().prepareLogFile(Logger.getRootLogger());
 	}
@@ -41,5 +41,5 @@ public class MJTest {
 			if (br != null) try { br.close(); } catch (IOException e1) { log.error(e1.getMessage(), e1); }
 		}
 	}
-	*/
+	
 }
