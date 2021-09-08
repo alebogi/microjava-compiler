@@ -9,6 +9,9 @@ public class MyVariable {
 	private Struct type;
 	private boolean arr = false;
 	private boolean constant = false;
+	private char charVal;
+	private int intVal;
+	private boolean boolVal;
 	
 	public MyVariable(String name) {
 		super();
@@ -54,6 +57,30 @@ public class MyVariable {
 
 
 
+
+	public char getCharVal() {
+		return charVal;
+	}
+
+	public void setCharVal(char charVal) {
+		this.charVal = charVal;
+	}
+
+	public int getIntVal() {
+		return intVal;
+	}
+
+	public void setIntVal(int intVal) {
+		this.intVal = intVal;
+	}
+
+	public boolean isBoolVal() {
+		return boolVal;
+	}
+
+	public void setBoolVal(boolean boolVal) {
+		this.boolVal = boolVal;
+	}
 
 	public String getName() {
 		return name;

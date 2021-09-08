@@ -1,0 +1,119 @@
+INFO  22:24:11,519 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  22:24:11,800 - #2 program
+INFO  22:24:11,800 - #43 MJProgram
+INFO  22:24:11,800 - #43 int
+INFO  22:24:11,816 - #43 x
+INFO  22:24:11,816 - #8 ,
+INFO  22:24:11,831 - #43 y
+INFO  22:24:11,831 - #14 [
+INFO  22:24:11,831 - #15 ]
+INFO  22:24:11,831 - #8 ,
+INFO  22:24:11,831 - #43 z
+INFO  22:24:11,831 - #7 ;
+INFO  22:24:11,831 - #5 const
+INFO  22:24:11,831 - #43 char
+INFO  22:24:11,831 - #43 i
+INFO  22:24:11,847 - #7 ;
+ERROR 22:24:11,847 - 
+Sintaksna greska na liniji 3
+INFO  22:24:11,847 - #43 bool
+INFO  22:24:11,847 - #43 e
+INFO  22:24:11,847 - #8 ,
+ERROR 22:24:11,847 - (Greska u definisanju promenljive) [VarDecl] Izvrsen oporavak do ; u liniji 3
+INFO  22:24:11,847 - #43 r
+INFO  22:24:11,847 - #14 [
+INFO  22:24:11,847 - #15 ]
+INFO  22:24:11,847 - #7 ;
+INFO  22:24:11,847 - #3 {
+INFO  22:24:11,847 - #4 }
+INFO  22:24:11,894 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    DeclarationsList(
+      DeclarationsList(
+        NoDeclarationsList(
+        ) [NoDeclarationsList]
+        DeclsVar(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+           x
+            NoArray(
+            ) [NoArray]
+            VarDeclarationList(
+              VarDeclarationList(
+                NoVarDeclarationList(
+                ) [NoVarDeclarationList]
+                VarDeclarationListEnd(
+                 y
+                  Array(
+                  ) [Array]
+                ) [VarDeclarationListEnd]
+              ) [VarDeclarationList]
+              VarDeclarationListEnd(
+               z
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclarationListEnd]
+            ) [VarDeclarationList]
+          ) [VarDeclaration]
+        ) [DeclsVar]
+      ) [DeclarationsList]
+      DeclsVar(
+        VarDeclError(
+        ) [VarDeclError]
+      ) [DeclsVar]
+    ) [DeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         bool
+        ) [Type]
+       e
+        NoArray(
+        ) [NoArray]
+        VarDeclarationList(
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+          VarDeclarationListEnd(
+           r
+            Array(
+            ) [Array]
+          ) [VarDeclarationListEnd]
+        ) [VarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  NoMethodsDeclarationList(
+  ) [NoMethodsDeclarationList]
+) [Program]
+INFO  22:24:11,894 - ===================================
+INFO  22:24:11,909 - Pocetak obrade programa MJProgram na liniji 1
+INFO  22:24:11,909 - type posetio
+INFO  22:24:11,909 - NoArray posetio
+INFO  22:24:11,909 - NoVarDeclList posetio, kraj rekurzije
+INFO  22:24:11,909 - Array posetio
+INFO  22:24:11,909 - varDeclListEnd posetio
+INFO  22:24:11,941 - varDeclList posetio
+INFO  22:24:11,941 - NoArray posetio
+INFO  22:24:11,941 - varDeclListEnd posetio
+INFO  22:24:11,941 - varDeclList posetio
+INFO  22:24:11,941 - varDecl posetio
+INFO  22:24:11,941 - Deklarisana promenljiva x
+INFO  22:24:11,941 - Deklarisan niz y na liniji 2
+INFO  22:24:11,941 - Deklarisana promenljiva z
+INFO  22:24:11,956 - type posetio
+INFO  22:24:11,956 - NoArray posetio
+INFO  22:24:11,956 - NoVarDeclList posetio, kraj rekurzije
+INFO  22:24:11,956 - Array posetio
+INFO  22:24:11,956 - varDeclListEnd posetio
+INFO  22:24:11,956 - varDeclList posetio
+INFO  22:24:11,956 - varDecl posetio
+INFO  22:24:11,956 - Deklarisana promenljiva e
+INFO  22:24:11,956 - Deklarisan niz r na liniji 4
+INFO  22:24:11,956 - Kraj semanticke obrade programa MJProgram
+INFO  22:24:11,956 - ===================================
+ERROR 22:24:11,956 - Parsiranje NIJE uspesno zavrseno!

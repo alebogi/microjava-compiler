@@ -1,0 +1,63 @@
+INFO  17:07:33,783 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  17:07:34,011 - #2 program
+INFO  17:07:34,011 - #43 MJProgram
+INFO  17:07:34,012 - #43 int
+INFO  17:07:34,018 - #43 x
+INFO  17:07:34,019 - #7 ;
+INFO  17:07:34,024 - #43 char
+INFO  17:07:34,026 - #43 x
+INFO  17:07:34,026 - #14 [
+INFO  17:07:34,026 - #15 ]
+INFO  17:07:34,027 - #7 ;
+INFO  17:07:34,029 - #3 {
+INFO  17:07:34,029 - #4 }
+INFO  17:07:34,062 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    DeclarationsList(
+      NoDeclarationsList(
+      ) [NoDeclarationsList]
+      DeclsVar(
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+         x
+          NoArray(
+          ) [NoArray]
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+        ) [VarDeclaration]
+      ) [DeclsVar]
+    ) [DeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         char
+        ) [Type]
+       x
+        Array(
+        ) [Array]
+        NoVarDeclarationList(
+        ) [NoVarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  NoMethodsDeclarationList(
+  ) [NoMethodsDeclarationList]
+) [Program]
+INFO  17:07:34,063 - ===================================
+INFO  17:07:34,069 - Pocetak obrade programa MJProgram na liniji 1
+INFO  17:07:34,070 - type posetio
+INFO  17:07:34,071 - NoArray posetio
+INFO  17:07:34,071 - varDecl posetio
+INFO  17:07:34,074 - Deklarisana promenljiva x
+INFO  17:07:34,077 - type posetio
+INFO  17:07:34,078 - Array posetio
+INFO  17:07:34,079 - varDecl posetio
+ERROR 17:07:34,080 - Semanticka greska: Promenljiva 'x' vec postoji na liniji 3
+INFO  17:07:34,081 - Kraj semanticke obrade programa MJProgram
+INFO  17:07:34,081 - ===================================
+ERROR 17:07:34,084 - Parsiranje NIJE uspesno zavrseno!

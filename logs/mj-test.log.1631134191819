@@ -1,0 +1,216 @@
+INFO  22:49:31,863 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  22:49:32,049 - #2 program
+INFO  22:49:32,049 - #43 MJProgram
+INFO  22:49:32,049 - #43 int
+INFO  22:49:32,049 - #43 x
+INFO  22:49:32,065 - #8 ,
+INFO  22:49:32,065 - #43 y
+INFO  22:49:32,065 - #14 [
+INFO  22:49:32,065 - #15 ]
+INFO  22:49:32,065 - #8 ,
+INFO  22:49:32,065 - #43 z
+INFO  22:49:32,065 - #7 ;
+INFO  22:49:32,065 - #5 const
+INFO  22:49:32,065 - #43 char
+INFO  22:49:32,065 - #43 i
+INFO  22:49:32,065 - #6 =
+INFO  22:49:32,065 - #44 c
+INFO  22:49:32,065 - #7 ;
+INFO  22:49:32,080 - #5 const
+INFO  22:49:32,080 - #43 int
+INFO  22:49:32,080 - #43 ii
+INFO  22:49:32,080 - #6 =
+INFO  22:49:32,080 - #42 1
+INFO  22:49:32,080 - #8 ,
+INFO  22:49:32,080 - #43 bb
+INFO  22:49:32,080 - #6 =
+INFO  22:49:32,080 - #42 3
+INFO  22:49:32,080 - #8 ,
+INFO  22:49:32,080 - #43 ff
+INFO  22:49:32,080 - #6 =
+INFO  22:49:32,080 - #42 5
+INFO  22:49:32,080 - #7 ;
+INFO  22:49:32,080 - #5 const
+INFO  22:49:32,080 - #43 bool
+INFO  22:49:32,080 - #43 ioo
+INFO  22:49:32,080 - #6 =
+INFO  22:49:32,080 - #45 true
+INFO  22:49:32,080 - #7 ;
+INFO  22:49:32,080 - #43 bool
+INFO  22:49:32,080 - #43 e
+INFO  22:49:32,080 - #8 ,
+INFO  22:49:32,080 - #43 r
+INFO  22:49:32,080 - #14 [
+INFO  22:49:32,080 - #15 ]
+INFO  22:49:32,080 - #7 ;
+INFO  22:49:32,080 - #3 {
+INFO  22:49:32,080 - #4 }
+INFO  22:49:32,127 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    DeclarationsList(
+      DeclarationsList(
+        DeclarationsList(
+          DeclarationsList(
+            NoDeclarationsList(
+            ) [NoDeclarationsList]
+            DeclsVar(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+               x
+                NoArray(
+                ) [NoArray]
+                VarDeclarationList(
+                  VarDeclarationList(
+                    NoVarDeclarationList(
+                    ) [NoVarDeclarationList]
+                    VarDeclarationListEnd(
+                     y
+                      Array(
+                      ) [Array]
+                    ) [VarDeclarationListEnd]
+                  ) [VarDeclarationList]
+                  VarDeclarationListEnd(
+                   z
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclarationListEnd]
+                ) [VarDeclarationList]
+              ) [VarDeclaration]
+            ) [DeclsVar]
+          ) [DeclarationsList]
+          DeclsConst(
+            ConstDeclaration(
+              Type(
+               char
+              ) [Type]
+             i
+              CharConst(
+               c
+              ) [CharConst]
+              NoConstantsList(
+              ) [NoConstantsList]
+            ) [ConstDeclaration]
+          ) [DeclsConst]
+        ) [DeclarationsList]
+        DeclsConst(
+          ConstDeclaration(
+            Type(
+             int
+            ) [Type]
+           ii
+            NumConst(
+             1
+            ) [NumConst]
+            ConstantsList(
+              ConstantsList(
+                NoConstantsList(
+                ) [NoConstantsList]
+                ConstantsListEnd(
+                 bb
+                  NumConst(
+                   3
+                  ) [NumConst]
+                ) [ConstantsListEnd]
+              ) [ConstantsList]
+              ConstantsListEnd(
+               ff
+                NumConst(
+                 5
+                ) [NumConst]
+              ) [ConstantsListEnd]
+            ) [ConstantsList]
+          ) [ConstDeclaration]
+        ) [DeclsConst]
+      ) [DeclarationsList]
+      DeclsConst(
+        ConstDeclaration(
+          Type(
+           bool
+          ) [Type]
+         ioo
+          BoolConst(
+           true
+          ) [BoolConst]
+          NoConstantsList(
+          ) [NoConstantsList]
+        ) [ConstDeclaration]
+      ) [DeclsConst]
+    ) [DeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         bool
+        ) [Type]
+       e
+        NoArray(
+        ) [NoArray]
+        VarDeclarationList(
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+          VarDeclarationListEnd(
+           r
+            Array(
+            ) [Array]
+          ) [VarDeclarationListEnd]
+        ) [VarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  NoMethodsDeclarationList(
+  ) [NoMethodsDeclarationList]
+) [Program]
+INFO  22:49:32,127 - ===================================
+INFO  22:49:32,143 - Pocetak obrade programa MJProgram na liniji 1
+INFO  22:49:32,143 - type posetio
+INFO  22:49:32,143 - NoArray posetio
+INFO  22:49:32,143 - NoVarDeclList posetio, kraj rekurzije
+INFO  22:49:32,143 - Array posetio
+INFO  22:49:32,143 - varDeclListEnd posetio
+INFO  22:49:32,143 - varDeclList posetio
+INFO  22:49:32,143 - NoArray posetio
+INFO  22:49:32,143 - varDeclListEnd posetio
+INFO  22:49:32,143 - varDeclList posetio
+INFO  22:49:32,143 - varDecl posetio
+INFO  22:49:32,143 - Deklarisana promenljiva x
+INFO  22:49:32,143 - Deklarisan niz y na liniji 2
+INFO  22:49:32,143 - Deklarisana promenljiva z
+INFO  22:49:32,143 - type posetio
+INFO  22:49:32,143 - CharConst posetio, vrednost=c
+INFO  22:49:32,143 - NoConstantsList posetio, kraj rekurzije
+INFO  22:49:32,143 - ConstDeclaration posetio
+INFO  22:49:32,143 - Deklarisana konstanta i
+INFO  22:49:32,143 - type posetio
+INFO  22:49:32,158 - NumConst posetio, vrednost=1
+INFO  22:49:32,158 - NoConstantsList posetio, kraj rekurzije
+INFO  22:49:32,158 - NumConst posetio, vrednost=3
+INFO  22:49:32,158 - ConstantsListEnd posetio
+INFO  22:49:32,158 - ConstantsList posetio
+INFO  22:49:32,158 - NumConst posetio, vrednost=5
+INFO  22:49:32,158 - ConstantsListEnd posetio
+INFO  22:49:32,158 - ConstantsList posetio
+INFO  22:49:32,158 - ConstDeclaration posetio
+INFO  22:49:32,158 - Deklarisana konstanta ii
+INFO  22:49:32,158 - Deklarisana konstanta bb
+INFO  22:49:32,158 - Deklarisana konstanta ff
+INFO  22:49:32,158 - type posetio
+INFO  22:49:32,158 - BoolConst posetio, vrednost=true
+INFO  22:49:32,158 - NoConstantsList posetio, kraj rekurzije
+INFO  22:49:32,158 - ConstDeclaration posetio
+INFO  22:49:32,158 - Deklarisana konstanta ioo
+INFO  22:49:32,158 - type posetio
+INFO  22:49:32,158 - NoArray posetio
+INFO  22:49:32,158 - NoVarDeclList posetio, kraj rekurzije
+INFO  22:49:32,158 - Array posetio
+INFO  22:49:32,158 - varDeclListEnd posetio
+INFO  22:49:32,158 - varDeclList posetio
+INFO  22:49:32,158 - varDecl posetio
+INFO  22:49:32,158 - Deklarisana promenljiva e
+INFO  22:49:32,158 - Deklarisan niz r na liniji 6
+INFO  22:49:32,158 - Kraj semanticke obrade programa MJProgram
+INFO  22:49:32,158 - ===================================
+INFO  22:49:32,174 - Parsiranje uspesno zavrseno!

@@ -25,6 +25,12 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	private boolean isArray = false;
 	private boolean isArrayUsed = false;
 	
+	private int lastConstIntVal;
+	private char lastConstCharVal;
+	private boolean lastConstBoolVal;
+	private Struct lastTypeRight;
+	private Type lastTypeLeft;
+	
 	Logger log = Logger.getLogger(getClass());
 	
 	//==========================================================================
@@ -91,6 +97,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     	}
     	
     	report_info("type posetio", null);
+    	lastTypeLeft = type;
 	}
     
     // =======================================================================================
@@ -199,31 +206,128 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     
     // izlaz - root
     public void visit(ConstDeclaration constDecl) {
+    	report_info("ConstDeclaration posetio", null);
     	
+    	String constName = constDecl.getConstName();
+    	Type constTypeLeft = constDecl.getType();
+    	Obj obj = Tab.find(constName);
+    	boolean exists = false;   	
+		if (obj == Tab.noObj) {
+			for(MyVariable var: constDeclarations) {
+				if(var.getName().equals(constName)) {
+					report_error("Semanticka greska: Konstanta '" + constName + "' vec postoji", constDecl);
+					exists = true;
+					break;
+				}
+			}
+			
+			if(!exists) {
+				MyVariable newVar = new MyVariable(constName, (Object)constName, constTypeLeft.struct, false);
+				newVar.setConstant(true);	
+				if(lastTypeRight != constTypeLeft.struct) {
+					report_error("Semanticka greska: Tipovi se ne poklapaju.", null);
+				}
+				else if(constTypeLeft.struct == Tab.charType) {
+					newVar.setCharVal(lastConstCharVal);
+				}else if (constTypeLeft.struct == Tab.intType) {
+					newVar.setIntVal(lastConstIntVal);
+				}else if (constTypeLeft.struct == boolType) {
+					newVar.setBoolVal(lastConstBoolVal);
+				}
+				constDeclarations.addFirst(newVar); 	
+			}
+		}else { 			
+			report_error("Semanticka greska: Konstanta '" + constName + "' vec postoji", constDecl);
+		}
+		
+		//ubacivanje u tabelu simbola
+		for(MyVariable var: constDeclarations) {
+			String name = var.getName();
+			report_info("Deklarisana konstanta " + var.getName(), null);
+    		Obj constNode = Tab.insert(Obj.Con, name, constTypeLeft.struct);
+    		if(constTypeLeft.struct == Tab.charType) {
+				constNode.setAdr(lastConstCharVal);
+			}else if (constTypeLeft.struct == Tab.intType) {
+				constNode.setAdr(lastConstIntVal);
+			}else if (constTypeLeft.struct == boolType) {
+				if(lastConstBoolVal)
+					constNode.setAdr(1);
+				else
+					constNode.setAdr(0);
+			}
+    		
+		}
+		
+		constDeclarations.clear();
+		
     }
        
     public void visit(NumConst consts) {
+    	report_info("NumConst posetio, vrednost=" + consts.getNumValue(), null);
     	
+    	lastConstIntVal = consts.getNumValue();
+    	lastTypeRight = Tab.intType;
+    	consts.struct = Tab.intType;
     }
     
     public void visit(CharConst consts) {
+    	report_info("CharConst posetio, vrednost=" + consts.getCharValue(), null);
     	
+    	lastConstCharVal = consts.getCharValue();
+    	lastTypeRight = Tab.charType;
+    	consts.struct = Tab.charType;
     }
 
 	public void visit(BoolConst consts) {
+		report_info("BoolConst posetio, vrednost=" + consts.getBoolValue(), null);
 		
+		lastConstBoolVal = consts.getBoolValue();
+		lastTypeRight = boolType;
+		consts.struct = boolType;
 	}
     
     public void visit(ConstantsList constsLists) {
-    	
+    	report_info("ConstantsList posetio", null);
     }
     
     public void visit(NoConstantsList noConstsLists) {
-    	
+    	report_info("NoConstantsList posetio, kraj rekurzije", null);
     }
     
     public void visit(ConstantsListEnd constsListEnd) {
+    	report_info("ConstantsListEnd posetio", null);
     	
+    	String constName = constsListEnd.getConstEndName();
+    	Obj obj = Tab.find(constName);
+    	boolean exists = false;   	
+		if (obj == Tab.noObj) {
+			for(MyVariable var: constDeclarations) {
+				if(var.getName().equals(constName)) {
+					report_error("Semanticka greska: Konstanta '" + constName + "' vec postoji", constsListEnd);
+					exists = true;
+					break;
+				}
+			}
+			
+			if(!exists) {
+				MyVariable newVar = new MyVariable(constName, (Object)constName, lastTypeLeft.struct, false);
+				newVar.setConstant(true);	
+				if(lastTypeRight != lastTypeLeft.struct) {
+					report_error("Semanticka greska: Tipovi se ne poklapaju.", null);
+					return;
+				}
+				else if(lastTypeLeft.struct == Tab.charType) {
+					newVar.setCharVal(lastConstCharVal);
+				}else if (lastTypeLeft.struct == Tab.intType) {
+					newVar.setIntVal(lastConstIntVal);
+				}else if (lastTypeLeft.struct == boolType) {
+					newVar.setBoolVal(lastConstBoolVal);
+				}
+				constDeclarations.add(newVar); 	
+			}
+		}else { 			
+			report_error("Semanticka greska: Konstanta '" + constName + "' vec postoji", constsListEnd);
+		}
     }
     
     // --------------------------------------------------------------

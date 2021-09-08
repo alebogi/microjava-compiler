@@ -64,7 +64,6 @@ nonterminal MethodDeclList MethodDeclList;
 nonterminal Decls Decls;
 nonterminal ConstDecl ConstDecl;
 nonterminal ClassDecl ClassDecl;
-nonterminal Consts Consts;
 nonterminal ConstList ConstList;
 nonterminal ConstListEnd ConstListEnd;
 nonterminal Arr Arr;
@@ -108,7 +107,7 @@ nonterminal StmtMatched StmtMatched;
 nonterminal StmtUnmatched StmtUnmatched;
 
 nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType;
-nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type;
+nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts;
 
 Program ::= (Program) PROG ProgName:p DeclsList:D1 L_BRACE MethodDeclList:M2 R_BRACE {: RESULT=new Program(p, D1, M2); RESULT.setLine(pleft); :}
 ;
@@ -129,7 +128,7 @@ Decls ::= (DeclsConst) ConstDecl:C1 {: RESULT=new DeclsConst(C1); RESULT.setLine
 ;
 		
 
-ConstDecl ::= (ConstDeclaration) CONST Type:constType IDENT:constName EQUAL Consts:C1 ConstList:C2 SEMI {: RESULT=new ConstDeclaration(constType, constName, C1, C2); RESULT.setLine(constTypeleft); :}
+ConstDecl ::= (ConstDeclaration) CONST Type:constType IDENT:constName EQUAL Consts:val ConstList:C1 SEMI {: RESULT=new ConstDeclaration(constType, constName, val, C1); RESULT.setLine(constTypeleft); :}
 ;
 
 ConstList ::= (ConstantsList) ConstList:C1 ConstListEnd:C2 {: RESULT=new ConstantsList(C1, C2); RESULT.setLine(C1left); :}

@@ -1,0 +1,128 @@
+INFO  17:40:23,955 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  17:40:24,132 - #2 program
+INFO  17:40:24,132 - #43 MJProgram
+INFO  17:40:24,133 - #43 int
+INFO  17:40:24,138 - #43 x
+INFO  17:40:24,139 - #8 ,
+INFO  17:40:24,145 - #43 y
+INFO  17:40:24,145 - #14 [
+INFO  17:40:24,146 - #15 ]
+INFO  17:40:24,146 - #8 ,
+INFO  17:40:24,147 - #43 z
+INFO  17:40:24,148 - #7 ;
+INFO  17:40:24,148 - #43 char
+INFO  17:40:24,149 - #43 i
+INFO  17:40:24,149 - #7 ;
+INFO  17:40:24,150 - #43 bool
+INFO  17:40:24,150 - #43 e
+INFO  17:40:24,152 - #8 ,
+INFO  17:40:24,152 - #43 r
+INFO  17:40:24,152 - #14 [
+INFO  17:40:24,153 - #15 ]
+INFO  17:40:24,153 - #7 ;
+INFO  17:40:24,154 - #3 {
+INFO  17:40:24,154 - #4 }
+INFO  17:40:24,169 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    DeclarationsList(
+      DeclarationsList(
+        NoDeclarationsList(
+        ) [NoDeclarationsList]
+        DeclsVar(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+           x
+            NoArray(
+            ) [NoArray]
+            VarDeclarationList(
+              VarDeclarationList(
+                NoVarDeclarationList(
+                ) [NoVarDeclarationList]
+                VarDeclarationListEnd(
+                 y
+                  Array(
+                  ) [Array]
+                ) [VarDeclarationListEnd]
+              ) [VarDeclarationList]
+              VarDeclarationListEnd(
+               z
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclarationListEnd]
+            ) [VarDeclarationList]
+          ) [VarDeclaration]
+        ) [DeclsVar]
+      ) [DeclarationsList]
+      DeclsVar(
+        VarDeclaration(
+          Type(
+           char
+          ) [Type]
+         i
+          NoArray(
+          ) [NoArray]
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+        ) [VarDeclaration]
+      ) [DeclsVar]
+    ) [DeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         bool
+        ) [Type]
+       e
+        NoArray(
+        ) [NoArray]
+        VarDeclarationList(
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+          VarDeclarationListEnd(
+           r
+            Array(
+            ) [Array]
+          ) [VarDeclarationListEnd]
+        ) [VarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  NoMethodsDeclarationList(
+  ) [NoMethodsDeclarationList]
+) [Program]
+INFO  17:40:24,170 - ===================================
+INFO  17:40:24,177 - Pocetak obrade programa MJProgram na liniji 1
+INFO  17:40:24,177 - type posetio
+INFO  17:40:24,177 - NoArray posetio
+INFO  17:40:24,178 - NoVarDeclList posetio, kraj rekurzije
+INFO  17:40:24,178 - Array posetio
+INFO  17:40:24,178 - varDeclListEnd posetio
+INFO  17:40:24,181 - varDeclList posetio
+INFO  17:40:24,181 - NoArray posetio
+INFO  17:40:24,181 - varDeclListEnd posetio
+INFO  17:40:24,182 - varDeclList posetio
+INFO  17:40:24,182 - varDecl posetio
+INFO  17:40:24,182 - Deklarisan niz y na liniji 2
+INFO  17:40:24,183 - Deklarisana promenljiva z
+INFO  17:40:24,183 - Deklarisana promenljiva x
+INFO  17:40:24,183 - type posetio
+INFO  17:40:24,183 - NoArray posetio
+INFO  17:40:24,184 - NoVarDeclList posetio, kraj rekurzije
+INFO  17:40:24,186 - varDecl posetio
+INFO  17:40:24,186 - Deklarisana promenljiva i
+INFO  17:40:24,186 - type posetio
+INFO  17:40:24,186 - NoArray posetio
+INFO  17:40:24,186 - NoVarDeclList posetio, kraj rekurzije
+INFO  17:40:24,186 - Array posetio
+INFO  17:40:24,187 - varDeclListEnd posetio
+INFO  17:40:24,187 - varDeclList posetio
+INFO  17:40:24,187 - varDecl posetio
+INFO  17:40:24,187 - Deklarisan niz r na liniji 4
+INFO  17:40:24,187 - Deklarisana promenljiva e
+INFO  17:40:24,189 - Kraj semanticke obrade programa MJProgram
+INFO  17:40:24,189 - ===================================
+INFO  17:40:24,196 - Parsiranje uspesno zavrseno!

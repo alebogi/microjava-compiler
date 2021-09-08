@@ -1,0 +1,56 @@
+INFO  17:24:25,777 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  17:24:25,990 - #2 program
+INFO  17:24:25,992 - #43 MJProgram
+INFO  17:24:25,992 - #43 int
+INFO  17:24:25,992 - #43 x
+INFO  17:24:26,000 - #8 ,
+INFO  17:24:26,002 - #43 y
+INFO  17:24:26,002 - #14 [
+INFO  17:24:26,002 - #15 ]
+INFO  17:24:26,002 - #7 ;
+INFO  17:24:26,010 - #3 {
+INFO  17:24:26,012 - #4 }
+INFO  17:24:26,032 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    NoDeclarationsList(
+    ) [NoDeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         int
+        ) [Type]
+       x
+        NoArray(
+        ) [NoArray]
+        VarDeclarationList(
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+          VarDeclarationListEnd(
+           y
+            Array(
+            ) [Array]
+          ) [VarDeclarationListEnd]
+        ) [VarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  NoMethodsDeclarationList(
+  ) [NoMethodsDeclarationList]
+) [Program]
+INFO  17:24:26,032 - ===================================
+INFO  17:24:26,042 - Pocetak obrade programa MJProgram na liniji 1
+INFO  17:24:26,042 - type posetio
+INFO  17:24:26,042 - NoArray posetio
+INFO  17:24:26,042 - NoVarDeclList posetio, kraj rekurzije
+INFO  17:24:26,042 - Array posetio
+INFO  17:24:26,042 - varDeclListEnd posetio
+INFO  17:24:26,042 - varDeclList posetio
+INFO  17:24:26,042 - varDecl posetio
+INFO  17:24:26,042 - Deklarisan niz y na liniji 2
+INFO  17:24:26,042 - Deklarisana promenljiva x
+INFO  17:24:26,042 - Kraj semanticke obrade programa MJProgram
+INFO  17:24:26,042 - ===================================
+INFO  17:24:26,063 - Parsiranje uspesno zavrseno!

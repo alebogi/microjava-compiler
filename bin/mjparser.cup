@@ -59,7 +59,7 @@ terminal Boolean BOOL_CONST;
 
 terminal COLON, SWITCH, QUESTIONMARK, ENUM, CASE;
 
-nonterminal DeclsList, MethodDeclList, Decls, ConstDecl, ClassDecl, Consts, ConstList, ConstListEnd, Arr, VarDeclList;
+nonterminal DeclsList, MethodDeclList, Decls, ConstDecl, ClassDecl, ConstList, ConstListEnd, Arr, VarDeclList;
 nonterminal ExtendsClass, ListOfVarDecl, ListOfStmt, FormPars, Statement, MethodDecl;
 nonterminal FormParsList, FormParsListEnd, DesignatorStatement, Condition, Expr, ExprList, ExprListEnd;
 nonterminal CondTerm, CondTermOrList, CondFact, CondFactAndList, RelopExprExists, ActPars, ActParsExists, DesgStmtEnd, StmtList, ExprExists;
@@ -67,7 +67,7 @@ nonterminal Assignop, Relop, Addop, Mulop, AddopTermList, MinusExists, Term, Exp
 nonterminal StmtMatched, StmtUnmatched;
 
 nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType;
-nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type;
+nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts;
 
 Program ::= (Program) PROG ProgName:p DeclsList L_BRACE MethodDeclList R_BRACE
 ;
@@ -88,7 +88,7 @@ Decls ::= (DeclsConst) ConstDecl
 ;
 		
 
-ConstDecl ::= (ConstDeclaration) CONST Type:constType IDENT:constName EQUAL Consts ConstList SEMI
+ConstDecl ::= (ConstDeclaration) CONST Type:constType IDENT:constName EQUAL Consts:val ConstList SEMI
 ;
 
 ConstList ::= (ConstantsList) ConstList ConstListEnd

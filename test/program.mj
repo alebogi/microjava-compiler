@@ -1,4 +1,8 @@
 program MJProgram
-	int x, y[];
+	int x, y[], z;
+	const char i = 6;
+	const int ii = 1, bb=3, ff=5;
+	const bool ioo = true;
+	bool e, r[];
 {	
 }
