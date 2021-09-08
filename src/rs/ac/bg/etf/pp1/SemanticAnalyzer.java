@@ -333,6 +333,52 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     // --------------------------------------------------------------
     // *** METHOD DECLARATIONS ***
     
+    // izlaz - root
+    public void visit(MethodDeclList mdl) {
+    	
+    }
+    
+    // izlaz - root
+    public void visit(MethodsDeclarationList mdl) {
+    	
+    }
+    
+    // izlaz iz rekurzije 
+    public void visit(NoMethodsDeclarationList mdl) {
+    	
+    }
+    
+    public void visit(MethodDecl md) {
+    	
+    }
+    
+    public void visit(MethodDeclarationFormPars mdfp) {
+    	
+    }
+    
+    public void visit(MethodDeclaration md) {
+    	
+    }
+    
+    public void visit(MethodWithType mt) {
+    	
+    }
+    
+    public void visit(MethodVoid mv) {
+    	
+    }
+    
+    public void visit(FormPars fp) {
+    	
+    }
+    
+    public void visit(FormParsList fpl) {
+    	
+    }
+    
+    public void visit(FormParsListEnd fple) {
+    	
+    }
     
     // ---------------------------------------------------------------
 }
