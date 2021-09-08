@@ -1,25 +1,4 @@
 program MJProgram
-	int x; int y;
-	bool trt;
-	char q;
-	const int konstanta = 5, kons = ;
-{
-	
-	int k () int c; {
-		c = 1;
-		q = 'w'; 
-		return c+2; //ovo je glupi komentar
-	}
-	
-	int main() {
-		y = 2;
-		if(y <= 56)
-			trt = true;
-		else
-			trt = false;
-		x = y + 2;
-		y = 5 + 3; //k()
-		print(y);
-		return 0;
-	}
+	int x, y[];
+{	
 }

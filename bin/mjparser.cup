@@ -8,6 +8,8 @@ import rs.ac.bg.etf.pp1.ast.*;
 
 parser code {:
 
+	boolean errorDetected;
+	
 	Logger log = Logger.getLogger(getClass());
    
    
@@ -27,6 +29,7 @@ parser code {:
     }
 
     public void report_error(String message, Object info) {
+    	errorDetected = true;
     	StringBuilder msg = new StringBuilder(message); 
     	if (info instanceof Symbol)
             msg.append (" na liniji ").append(((Symbol)info).left);
@@ -56,14 +59,20 @@ terminal Boolean BOOL_CONST;
 
 terminal COLON, SWITCH, QUESTIONMARK, ENUM, CASE;
 
-nonterminal Program, DeclsList, MethodDeclList, Decls, ConstDecl, VarDecl, ClassDecl, Consts, ConstList, ConstListEnd, Type, Arr, VarDeclList;
-nonterminal VarDeclListEnd, ExtendsClass, ListOfVarDecl, MethodType, ListOfStmt, FormPars, Statement, MethodDecl;
-nonterminal FormParsList, FormParsListEnd, DesignatorStatement, Designator, Condition, Expr, ExprList, ExprListEnd;
+nonterminal DeclsList, MethodDeclList, Decls, ConstDecl, ClassDecl, Consts, ConstList, ConstListEnd, Arr, VarDeclList;
+nonterminal ExtendsClass, ListOfVarDecl, ListOfStmt, FormPars, Statement, MethodDecl;
+nonterminal FormParsList, FormParsListEnd, DesignatorStatement, Condition, Expr, ExprList, ExprListEnd;
 nonterminal CondTerm, CondTermOrList, CondFact, CondFactAndList, RelopExprExists, ActPars, ActParsExists, DesgStmtEnd, StmtList, ExprExists;
 nonterminal Assignop, Relop, Addop, Mulop, AddopTermList, MinusExists, Term, ExprArrExists, MulopFactorList, Factor, DesgnListEnd, DesgnList;
 nonterminal StmtMatched, StmtUnmatched;
 
-Program ::= (Program) PROG IDENT:progName DeclsList L_BRACE MethodDeclList R_BRACE
+nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType;
+nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type;
+
+Program ::= (Program) PROG ProgName:p DeclsList L_BRACE MethodDeclList R_BRACE
+;
+
+ProgName ::= (ProgName) IDENT:progName
 ;
 
 DeclsList ::= (DeclarationsList) DeclsList Decls
@@ -87,7 +96,7 @@ ConstList ::= (ConstantsList) ConstList ConstListEnd
 			(NoConstantsList) /* epsilon */			
 ;
 
-ConstListEnd ::= (ConstantsListEnd) COMMA IDENT:constEndName EQUAL Consts	
+ConstListEnd ::= (ConstantsListEnd) COMMA IDENT:constEndName EQUAL Consts:val	
 ;
 
 Consts ::= (NumConst) NUM_CONST:numValue
@@ -97,10 +106,10 @@ Consts ::= (NumConst) NUM_CONST:numValue
 			(BoolConst) BOOL_CONST:boolValue
 ;
 
-VarDecl ::= (VarDeclaration) Type:varType IDENT:varName Arr VarDeclList SEMI
+VarDecl ::= (VarDeclaration) Type:varType IDENT:varName Arr:a VarDeclList SEMI
 			|
 			(VarDeclError) error SEMI:l
-				{: parser.report_error("(Greska u vardecl) Izvrsen oporavak do ; u liniji " + lleft, null); :}			
+				{: parser.report_error("(Greska u definisanju promenljive) [VarDecl] Izvrsen oporavak do ; u liniji " + lleft, null); :}			
 ;
 
 Arr ::= (Array) L_SQUARE_BRACKET R_SQUARE_BRACKET
@@ -108,7 +117,7 @@ Arr ::= (Array) L_SQUARE_BRACKET R_SQUARE_BRACKET
 		(NoArray) /* epsilon */
 ;
 
-VarDeclList ::= (VarDeclarationList) VarDeclList VarDeclListEnd
+VarDeclList ::= (VarDeclarationList) VarDeclList VarDeclListEnd     
 				|
 				(NoVarDeclarationList) /* epsilon */
 				
@@ -116,8 +125,8 @@ VarDeclList ::= (VarDeclarationList) VarDeclList VarDeclListEnd
 
 VarDeclListEnd ::= (VarDeclarationListEnd) COMMA IDENT:varDeclListEndName Arr 
 				|
-			(VarDeclListEndError) error SEMI:l
-				{: parser.report_error("(Greska u VarDeclListEnd) Izvrsen oporavak do ; u liniji " + lleft, null); :}
+			(VarDeclListEndError) error COMMA:l
+				{: parser.report_error("(Greska u definisanju promenljive) [VarDeclListEnd] Izvrsen oporavak do , u liniji " + lleft, null); :}
 ;
 
 ClassDecl ::= (ClassDeclarationMethods) CLASS IDENT:className ExtendsClass L_BRACE ListOfVarDecl L_BRACE MethodDeclList R_BRACE R_BRACE
@@ -142,14 +151,14 @@ MethodDeclList ::= (MethodsDeclarationList) MethodDeclList MethodDecl
 					(NoMethodsDeclarationList) /* epsilon */
 ;
 
-MethodDecl ::= (MethodDeclarationFormPars) MethodType IDENT:methodName L_PAREN FormPars R_PAREN ListOfVarDecl L_BRACE ListOfStmt R_BRACE
+MethodDecl ::= (MethodDeclarationFormPars) MethodType  L_PAREN FormPars R_PAREN ListOfVarDecl L_BRACE ListOfStmt R_BRACE
 			|
-			(MethodDeclaration) MethodType IDENT:methodName L_PAREN R_PAREN ListOfVarDecl L_BRACE ListOfStmt R_BRACE
+			(MethodDeclaration) MethodType  L_PAREN R_PAREN ListOfVarDecl L_BRACE ListOfStmt R_BRACE
 ; 
 
-MethodType ::= (MethodWithType) Type:methodType
+MethodType ::= (MethodWithType) Type:methodType IDENT:methodName
 			|
-			(MethodVoid) VOID
+			(MethodVoid) VOID IDENT:methodName
 ;
 			
 
@@ -159,6 +168,9 @@ ListOfStmt ::= (ListOfSatemant) ListOfStmt Statement
 ;
 			
 FormPars ::= (FormParams) Type:formParsType IDENT:formParsName Arr FormParsList
+			|
+			(FormParsError) error COMMA:l
+			{: parser.report_error("(Greska u deklaraciji form.par.funkcije) [FormPars] Izvrsen oporavak do ) u liniji " + lleft, null); :}
 ;
 
 FormParsList ::= (FormParamsList) FormParsList FormParsListEnd
@@ -167,6 +179,9 @@ FormParsList ::= (FormParamsList) FormParsList FormParsListEnd
 ;			
 			
 FormParsListEnd ::= (FormParamsListEnd)	COMMA Type:fpListType IDENT:fpListName Arr
+					|
+				(FormParsListEndError) error COMMA:l
+				{: parser.report_error("(Greska u deklaraciji form.par.funkcije) [FormParsListEnd] Izvrsen oporavak do , u liniji " + lleft, null); :}
 ;	
 			
 Type ::= (Type) IDENT:typeName
@@ -226,7 +241,7 @@ DesgStmtEnd ::= (DesgnStmtAsgnOp) Assignop Expr
 				(DesgnStmtDecr) DECREMENT
 				|
 			(DesgStmtEndtError) error SEMI:l
-				{: parser.report_error("(Greska u DesgStmtEnd) Izvrsen oporavak do ; u liniji " + lleft, null); :}
+				{: parser.report_error("(Greska u iskazu dodele) [DesgStmtEnd] Izvrsen oporavak do ; u liniji " + lleft, null); :}
 ;
 				
 ActParsExists ::= (ActParamsExists) L_PAREN ActPars R_PAREN
@@ -251,10 +266,13 @@ Condition ::= (Cond) CondTerm CondTermOrList
 			
 CondTermOrList ::= (CondTermListOr) CondTermOrList LOGICAL_OR CondTerm	
 				|
-				(NoCondTermLisOr) /* epsilon */
+				(NoCondTermLisOr) /* epsilon */			
 ;
 
 CondTerm ::= (ConditionTerm) CondFact CondFactAndList
+				|
+				(CondTermError) error R_PAREN:l
+				{: parser.report_error("(Greska u logickom izrazu unutar if) [CondTerm] Izvrsen oporavak do ) u liniji " + lleft, null); :}
 ;
 
 CondFactAndList ::= (CondFactListAnd) CondFactAndList LOGICAL_AND CondFact
@@ -271,6 +289,9 @@ RelopExprExists ::= (RelopExprExist) Relop Expr
 ;
 	
 Expr ::= (Expression) MinusExists Term AddopTermList
+		|
+		(ExprError) error SEMI:l
+		{: parser.report_error("(Greska u iskazu dodele) [Expr] Izvrsen oporavak do ; u liniji " + lleft, null); :}
 ;
 
 MinusExists ::= (MinusExs) MINUS
@@ -293,11 +314,11 @@ MulopFactorList ::= (MullopFactList) MulopFactorList Mulop Factor
 				
 Factor ::= (FactorDesign) Designator ActParsExists
 		|
-		(FactorNumConst) NUM_CONST
+		(FactorNumConst) NUM_CONST:numVal
 		|
-		(FactorCharConst) CHAR_CONST
+		(FactorCharConst) CHAR_CONST:numVal
 		|
-		(FactorBoolConst) BOOL_CONST
+		(FactorBoolConst) BOOL_CONST:numVal
 		|
 		(FactorNew) NEW Type ExprArrExists
 		|
@@ -309,7 +330,7 @@ ExprArrExists ::= (ArrExprExists) L_SQUARE_BRACKET Expr R_SQUARE_BRACKET
 				(NoArrExprExists) /* epsilon */
 ;
 
-Designator ::= (Design) IDENT:DesgnName DesgnList
+Designator ::= (Designator) IDENT:dsgnName DesgnList
 ;
 
 DesgnList ::= (DesignList) DesgnList DesgnListEnd

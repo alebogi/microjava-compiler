@@ -1,0 +1,52 @@
+INFO  13:40:03,677 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  13:40:04,019 - #2 program
+INFO  13:40:04,019 - #43 MJProgram
+INFO  13:40:04,020 - #43 int
+INFO  13:40:04,027 - #43 x
+INFO  13:40:04,032 - #8 ,
+INFO  13:40:04,040 - #43 y
+INFO  13:40:04,040 - #14 [
+INFO  13:40:04,041 - #15 ]
+INFO  13:40:04,041 - #7 ;
+INFO  13:40:04,044 - #3 {
+INFO  13:40:04,051 - #4 }
+INFO  13:40:04,129 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    NoDeclarationsList(
+    ) [NoDeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         int
+        ) [Type]
+       x
+        NoArray(
+        ) [NoArray]
+        VarDeclarationList(
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+          VarDeclarationListEnd(
+           y
+            Array(
+            ) [Array]
+          ) [VarDeclarationListEnd]
+        ) [VarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  NoMethodsDeclarationList(
+  ) [NoMethodsDeclarationList]
+) [Program]
+INFO  13:40:04,137 - ===================================
+INFO  13:40:04,145 - Pocetak obrade programa MJProgram na liniji 1
+INFO  13:40:04,146 - NoArr uso
+INFO  13:40:04,147 - ArrayPostoji uso
+INFO  13:40:04,147 - varDeclListEnd uso
+INFO  13:40:04,147 - varDeclList uso
+INFO  13:40:04,150 - varDecl uso
+INFO  13:40:04,153 - Kraj semanticke obrade programa MJProgram
+INFO  13:40:04,155 - ===================================
+INFO  13:40:04,158 - Parsiranje uspesno zavrseno!

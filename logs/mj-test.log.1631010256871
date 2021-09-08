@@ -1,0 +1,35 @@
+INFO  01:04:04,358 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  01:04:04,591 - #2 program
+INFO  01:04:04,593 - #43 MJProgram
+INFO  01:04:04,593 - #43 int
+INFO  01:04:04,598 - #43 x
+INFO  01:04:04,603 - #14 [
+INFO  01:04:04,603 - #15 ]
+INFO  01:04:04,603 - #7 ;
+INFO  01:04:04,614 - #3 {
+INFO  01:04:04,618 - #4 }
+INFO  01:04:04,642 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    NoDeclarationsList(
+    ) [NoDeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         int
+        ) [Type]
+       x
+        Array(
+        ) [Array]
+        NoVarDeclarationList(
+        ) [NoVarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  NoMethodsDeclarationList(
+  ) [NoMethodsDeclarationList]
+) [Program]
+INFO  01:04:04,648 - ===================================
+INFO  01:04:04,658 - Pocetak obrade programa MJProgram na liniji 1

@@ -1,0 +1,46 @@
+INFO  00:35:34,601 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  00:35:35,460 - #2 program
+INFO  00:35:35,460 - #43 MJProgram
+INFO  00:35:35,461 - #43 int
+INFO  00:35:35,470 - #43 x
+INFO  00:35:35,483 - #8 ,
+INFO  00:35:35,493 - #43 y
+INFO  00:35:35,493 - #7 ;
+INFO  00:35:35,494 - #3 {
+INFO  00:35:35,495 - #4 }
+INFO  00:35:35,541 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    NoDeclarationsList(
+    ) [NoDeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         int
+        ) [Type]
+       x
+        NoArray(
+        ) [NoArray]
+        VarDeclarationList(
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+          VarDeclarationListEnd(
+           y
+            NoArray(
+            ) [NoArray]
+          ) [VarDeclarationListEnd]
+        ) [VarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  NoMethodsDeclarationList(
+  ) [NoMethodsDeclarationList]
+) [Program]
+INFO  00:35:35,543 - ===================================
+INFO  00:35:35,554 - Pocetak obrade programa MJProgram na liniji 1
+INFO  00:35:35,559 - Deklarisana promenljiva y
+INFO  00:35:35,560 - Deklarisana promenljiva x
+INFO  00:35:35,560 - Kraj semanticke obrade programa MJProgram
+INFO  00:35:35,560 - ===================================

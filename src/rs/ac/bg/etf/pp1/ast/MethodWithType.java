@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/7/2021 23:13:17
+// 7/8/2021 13:48:30
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,10 +8,12 @@ package rs.ac.bg.etf.pp1.ast;
 public class MethodWithType extends MethodType {
 
     private Type Type;
+    private String methodName;
 
-    public MethodWithType (Type Type) {
+    public MethodWithType (Type Type, String methodName) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
+        this.methodName=methodName;
     }
 
     public Type getType() {
@@ -20,6 +22,14 @@ public class MethodWithType extends MethodType {
 
     public void setType(Type Type) {
         this.Type=Type;
+    }
+
+    public String getMethodName() {
+        return methodName;
+    }
+
+    public void setMethodName(String methodName) {
+        this.methodName=methodName;
     }
 
     public void accept(Visitor visitor) {
@@ -49,6 +59,9 @@ public class MethodWithType extends MethodType {
             buffer.append(Type.toString("  "+tab));
         else
             buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(" "+tab+methodName);
         buffer.append("\n");
 
         buffer.append(tab);

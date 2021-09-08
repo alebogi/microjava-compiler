@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/7/2021 23:13:17
+// 7/8/2021 13:48:30
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,14 +8,12 @@ package rs.ac.bg.etf.pp1.ast;
 public class MethodDeclaration extends MethodDecl {
 
     private MethodType MethodType;
-    private String methodName;
     private ListOfVarDecl ListOfVarDecl;
     private ListOfStmt ListOfStmt;
 
-    public MethodDeclaration (MethodType MethodType, String methodName, ListOfVarDecl ListOfVarDecl, ListOfStmt ListOfStmt) {
+    public MethodDeclaration (MethodType MethodType, ListOfVarDecl ListOfVarDecl, ListOfStmt ListOfStmt) {
         this.MethodType=MethodType;
         if(MethodType!=null) MethodType.setParent(this);
-        this.methodName=methodName;
         this.ListOfVarDecl=ListOfVarDecl;
         if(ListOfVarDecl!=null) ListOfVarDecl.setParent(this);
         this.ListOfStmt=ListOfStmt;
@@ -28,14 +26,6 @@ public class MethodDeclaration extends MethodDecl {
 
     public void setMethodType(MethodType MethodType) {
         this.MethodType=MethodType;
-    }
-
-    public String getMethodName() {
-        return methodName;
-    }
-
-    public void setMethodName(String methodName) {
-        this.methodName=methodName;
     }
 
     public ListOfVarDecl getListOfVarDecl() {
@@ -87,9 +77,6 @@ public class MethodDeclaration extends MethodDecl {
             buffer.append(MethodType.toString("  "+tab));
         else
             buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        buffer.append(" "+tab+methodName);
         buffer.append("\n");
 
         if(ListOfVarDecl!=null)

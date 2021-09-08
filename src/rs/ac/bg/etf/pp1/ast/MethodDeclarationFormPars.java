@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/7/2021 23:13:17
+// 7/8/2021 13:48:30
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,15 +8,13 @@ package rs.ac.bg.etf.pp1.ast;
 public class MethodDeclarationFormPars extends MethodDecl {
 
     private MethodType MethodType;
-    private String methodName;
     private FormPars FormPars;
     private ListOfVarDecl ListOfVarDecl;
     private ListOfStmt ListOfStmt;
 
-    public MethodDeclarationFormPars (MethodType MethodType, String methodName, FormPars FormPars, ListOfVarDecl ListOfVarDecl, ListOfStmt ListOfStmt) {
+    public MethodDeclarationFormPars (MethodType MethodType, FormPars FormPars, ListOfVarDecl ListOfVarDecl, ListOfStmt ListOfStmt) {
         this.MethodType=MethodType;
         if(MethodType!=null) MethodType.setParent(this);
-        this.methodName=methodName;
         this.FormPars=FormPars;
         if(FormPars!=null) FormPars.setParent(this);
         this.ListOfVarDecl=ListOfVarDecl;
@@ -31,14 +29,6 @@ public class MethodDeclarationFormPars extends MethodDecl {
 
     public void setMethodType(MethodType MethodType) {
         this.MethodType=MethodType;
-    }
-
-    public String getMethodName() {
-        return methodName;
-    }
-
-    public void setMethodName(String methodName) {
-        this.methodName=methodName;
     }
 
     public FormPars getFormPars() {
@@ -101,9 +91,6 @@ public class MethodDeclarationFormPars extends MethodDecl {
             buffer.append(MethodType.toString("  "+tab));
         else
             buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        buffer.append(" "+tab+methodName);
         buffer.append("\n");
 
         if(FormPars!=null)

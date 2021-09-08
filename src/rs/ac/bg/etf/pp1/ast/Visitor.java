@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/7/2021 23:13:17
+// 7/8/2021 13:48:30
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -13,10 +13,10 @@ public interface Visitor {
     public void visit(Arr Arr);
     public void visit(ConstListEnd ConstListEnd);
     public void visit(Relop Relop);
-    public void visit(Assignop Assignop);
     public void visit(CondTermOrList CondTermOrList);
-    public void visit(MulopFactorList MulopFactorList);
+    public void visit(Assignop Assignop);
     public void visit(MethodType MethodType);
+    public void visit(MulopFactorList MulopFactorList);
     public void visit(ActParsExists ActParsExists);
     public void visit(MinusExists MinusExists);
     public void visit(RelopExprExists RelopExprExists);
@@ -26,15 +26,14 @@ public interface Visitor {
     public void visit(Factor Factor);
     public void visit(CondTerm CondTerm);
     public void visit(ConstList ConstList);
-    public void visit(Designator Designator);
     public void visit(FormParsList FormParsList);
     public void visit(Condition Condition);
     public void visit(DesgnList DesgnList);
     public void visit(ListOfStmt ListOfStmt);
     public void visit(StmtList StmtList);
     public void visit(ExprList ExprList);
-    public void visit(DesgStmtEnd DesgStmtEnd);
     public void visit(ListOfVarDecl ListOfVarDecl);
+    public void visit(DesgStmtEnd DesgStmtEnd);
     public void visit(FormParsListEnd FormParsListEnd);
     public void visit(VarDeclList VarDeclList);
     public void visit(Expr Expr);
@@ -73,7 +72,7 @@ public interface Visitor {
     public void visit(DesignListEnd DesignListEnd);
     public void visit(NoDesignList NoDesignList);
     public void visit(DesignList DesignList);
-    public void visit(Design Design);
+    public void visit(Designator Designator);
     public void visit(NoArrExprExists NoArrExprExists);
     public void visit(ArrExprExists ArrExprExists);
     public void visit(FactorExpr FactorExpr);
@@ -89,12 +88,14 @@ public interface Visitor {
     public void visit(ListAddopTerm ListAddopTerm);
     public void visit(NoMinusExs NoMinusExs);
     public void visit(MinusExs MinusExs);
+    public void visit(ExprError ExprError);
     public void visit(Expression Expression);
     public void visit(NoRelopExprExist NoRelopExprExist);
     public void visit(RelopExprExist RelopExprExist);
     public void visit(ConditionFact ConditionFact);
     public void visit(NoCondFactListAnd NoCondFactListAnd);
     public void visit(CondFactListAnd CondFactListAnd);
+    public void visit(CondTermError CondTermError);
     public void visit(ConditionTerm ConditionTerm);
     public void visit(NoCondTermLisOr NoCondTermLisOr);
     public void visit(CondTermListOr CondTermListOr);
@@ -130,9 +131,11 @@ public interface Visitor {
     public void visit(UnmatchedStmt UnmatchedStmt);
     public void visit(MatchedStmt MatchedStmt);
     public void visit(Type Type);
+    public void visit(FormParsListEndError FormParsListEndError);
     public void visit(FormParamsListEnd FormParamsListEnd);
     public void visit(NoFormParsList NoFormParsList);
     public void visit(FormParamsList FormParamsList);
+    public void visit(FormParsError FormParsError);
     public void visit(FormParams FormParams);
     public void visit(NoListOfSatemant NoListOfSatemant);
     public void visit(ListOfSatemant ListOfSatemant);
@@ -168,6 +171,7 @@ public interface Visitor {
     public void visit(DeclsConst DeclsConst);
     public void visit(NoDeclarationsList NoDeclarationsList);
     public void visit(DeclarationsList DeclarationsList);
+    public void visit(ProgName ProgName);
     public void visit(Program Program);
 
 }
