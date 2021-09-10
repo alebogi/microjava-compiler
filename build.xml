@@ -9,6 +9,7 @@
 				<exclude name="RuleVisitor.java"/>
 				<exclude name="SemanticAnalyzer.java"/>
 				<exclude name="MyVariable.java"/>
+				<exclude name="MyMethod.java"/>
 			</fileset>
 		</delete>
 		<delete>

@@ -1,17 +1,17 @@
 // generated with ast extension for cup
 // version 0.8
-// 8/8/2021 22:45:42
+// 10/8/2021 13:48:57
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class StmtUnamtchedIfElse extends StmtUnmatched {
+public class StmtUnmatchedIfElse extends StmtUnmatched {
 
     private Condition Condition;
     private StmtMatched StmtMatched;
     private StmtUnmatched StmtUnmatched;
 
-    public StmtUnamtchedIfElse (Condition Condition, StmtMatched StmtMatched, StmtUnmatched StmtUnmatched) {
+    public StmtUnmatchedIfElse (Condition Condition, StmtMatched StmtMatched, StmtUnmatched StmtUnmatched) {
         this.Condition=Condition;
         if(Condition!=null) Condition.setParent(this);
         this.StmtMatched=StmtMatched;
@@ -71,7 +71,7 @@ public class StmtUnamtchedIfElse extends StmtUnmatched {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("StmtUnamtchedIfElse(\n");
+        buffer.append("StmtUnmatchedIfElse(\n");
 
         if(Condition!=null)
             buffer.append(Condition.toString("  "+tab));
@@ -92,7 +92,7 @@ public class StmtUnamtchedIfElse extends StmtUnmatched {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [StmtUnamtchedIfElse]");
+        buffer.append(") [StmtUnmatchedIfElse]");
         return buffer.toString();
     }
 }

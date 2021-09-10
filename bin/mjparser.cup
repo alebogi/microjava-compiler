@@ -60,13 +60,13 @@ terminal Boolean BOOL_CONST;
 terminal COLON, SWITCH, QUESTIONMARK, ENUM, CASE;
 
 nonterminal DeclsList, MethodDeclList, Decls, ConstDecl, ClassDecl, ConstList, ConstListEnd, Arr, VarDeclList;
-nonterminal ExtendsClass, ListOfVarDecl, ListOfStmt, FormPars, Statement, MethodDecl;
-nonterminal FormParsList, FormParsListEnd, DesignatorStatement, Condition, Expr, ExprList, ExprListEnd;
+nonterminal ExtendsClass, ListOfVarDecl, ListOfStmt, Statement, MethodDecl;
+nonterminal FormParsList, DesignatorStatement, Condition, Expr, ExprList, ExprListEnd;
 nonterminal CondTerm, CondTermOrList, CondFact, CondFactAndList, RelopExprExists, ActPars, ActParsExists, DesgStmtEnd, StmtList, ExprExists;
 nonterminal Assignop, Relop, Addop, Mulop, AddopTermList, MinusExists, Term, ExprArrExists, MulopFactorList, Factor, DesgnListEnd, DesgnList;
 nonterminal StmtMatched, StmtUnmatched;
 
-nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType;
+nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType, FormPars, FormParsListEnd;
 nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts;
 
 Program ::= (Program) PROG ProgName:p DeclsList L_BRACE MethodDeclList R_BRACE
@@ -213,9 +213,9 @@ StmtMatched ::= (StmtDesgStmt) DesignatorStatement SEMI
 			(StmtIfElse) IF L_PAREN Condition R_PAREN StmtMatched ELSE StmtMatched
 ;
 		
-StmtUnmatched ::= (StmtUnamtchedIf) IF L_PAREN Condition R_PAREN Statement
+StmtUnmatched ::= (StmtUnmatchedIf) IF L_PAREN Condition R_PAREN Statement
 				|
-				(StmtUnamtchedIfElse) IF  L_PAREN Condition R_PAREN StmtMatched ELSE StmtUnmatched
+				(StmtUnmatchedIfElse) IF  L_PAREN Condition R_PAREN StmtMatched ELSE StmtUnmatched
 ;
 	
 				

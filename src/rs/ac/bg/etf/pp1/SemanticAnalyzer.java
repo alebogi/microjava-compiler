@@ -18,9 +18,11 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	
 	private boolean hasMain = false;
 	private boolean hasReturn = false;
+	private boolean methodIsVoid = false;
 		
 	private LinkedList<MyVariable> varDeclarations = new LinkedList<MyVariable>();
 	private LinkedList<MyVariable> constDeclarations = new LinkedList<MyVariable>();
+	private LinkedList<MyVariable> methodArgs = new LinkedList<MyVariable>();
 	
 	private boolean isArray = false;
 	private boolean isArrayUsed = false;
@@ -30,6 +32,14 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	private boolean lastConstBoolVal;
 	private Struct lastTypeRight;
 	private Type lastTypeLeft;
+	
+	private int firstConstIntVal;
+	private char firstConstCharVal;
+	private boolean firstConstBoolVal;
+	private int constCnt = 0;
+	
+	
+	
 	
 	Logger log = Logger.getLogger(getClass());
 	
@@ -72,9 +82,9 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     	Tab.chainLocalSymbols(program.getProgName().obj);
     	Tab.closeScope();
     	
-    	/*if (!hasMain) {
+    	if (!hasMain) {
 			report_error("Semanticka greska - ne postoji metoda MAIN!", null);
-		}*/
+		}
     	
 		report_info("Kraj semanticke obrade programa " + program.getProgName().getProgName(), null);
 	}
@@ -228,11 +238,11 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 					report_error("Semanticka greska: Tipovi se ne poklapaju.", null);
 				}
 				else if(constTypeLeft.struct == Tab.charType) {
-					newVar.setCharVal(lastConstCharVal);
+					newVar.setCharVal(firstConstCharVal);
 				}else if (constTypeLeft.struct == Tab.intType) {
-					newVar.setIntVal(lastConstIntVal);
+					newVar.setIntVal(firstConstIntVal);
 				}else if (constTypeLeft.struct == boolType) {
-					newVar.setBoolVal(lastConstBoolVal);
+					newVar.setBoolVal(firstConstBoolVal);
 				}
 				constDeclarations.addFirst(newVar); 	
 			}
@@ -246,11 +256,11 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 			report_info("Deklarisana konstanta " + var.getName(), null);
     		Obj constNode = Tab.insert(Obj.Con, name, constTypeLeft.struct);
     		if(constTypeLeft.struct == Tab.charType) {
-				constNode.setAdr(lastConstCharVal);
+				constNode.setAdr(var.getCharVal());
 			}else if (constTypeLeft.struct == Tab.intType) {
-				constNode.setAdr(lastConstIntVal);
+				constNode.setAdr(var.getIntVal());
 			}else if (constTypeLeft.struct == boolType) {
-				if(lastConstBoolVal)
+				if(var.isBoolVal())
 					constNode.setAdr(1);
 				else
 					constNode.setAdr(0);
@@ -259,31 +269,43 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 		}
 		
 		constDeclarations.clear();
-		
+		constCnt = 0;
     }
        
     public void visit(NumConst consts) {
     	report_info("NumConst posetio, vrednost=" + consts.getNumValue(), null);
     	
-    	lastConstIntVal = consts.getNumValue();
+    	if(constCnt<1)
+    		firstConstIntVal = consts.getNumValue();
+    	else
+    		lastConstIntVal = consts.getNumValue();
     	lastTypeRight = Tab.intType;
     	consts.struct = Tab.intType;
+    	constCnt++;
     }
     
     public void visit(CharConst consts) {
     	report_info("CharConst posetio, vrednost=" + consts.getCharValue(), null);
     	
-    	lastConstCharVal = consts.getCharValue();
+    	if(constCnt<1)
+    		firstConstCharVal = consts.getCharValue();
+    	else
+    		lastConstCharVal = consts.getCharValue();
     	lastTypeRight = Tab.charType;
     	consts.struct = Tab.charType;
+    	constCnt++;
     }
 
 	public void visit(BoolConst consts) {
 		report_info("BoolConst posetio, vrednost=" + consts.getBoolValue(), null);
 		
-		lastConstBoolVal = consts.getBoolValue();
+		if(constCnt<1)
+    		firstConstBoolVal = consts.getBoolValue();
+    	else
+    		lastConstBoolVal = consts.getBoolValue();
 		lastTypeRight = boolType;
 		consts.struct = boolType;
+		constCnt++;
 	}
     
     public void visit(ConstantsList constsLists) {
@@ -361,24 +383,126 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     }
     
     public void visit(MethodWithType mt) {
+    	report_info("MethodWithType posetili", null);
+    	
+    	String name = mt.getMethodName();
+    	Type type = mt.getType();
+    	currentMethod = Tab.insert(Obj.Meth, name, type.struct);
+    	mt.obj = currentMethod;
+    	Tab.openScope();
+		report_info("Obradjuje se funkcija " + name, mt);
+		methodIsVoid = false;
+		if (name.equals("main"))
+			report_error("Greska - main metoda mora da bude tipa void ", mt);
+		else
+			report_info("Obradjuje se metoda: " + name + " , koja ima povratnu vrednost: " + type.struct.toString(), mt);
     	
     }
     
     public void visit(MethodVoid mv) {
+    	report_info("MethodVoid posetili", null);
     	
+    	String name = mv.getMethodName();
+    	currentMethod = Tab.insert(Obj.Meth, name, Tab.noType);
+    	mv.obj = currentMethod;
+    	Tab.openScope();
+		report_info("Obradjuje se void metoda: " + name, mv);
+		methodIsVoid = true;
+		if(name.equals("main")) {
+			hasMain = true;
+		}
     }
     
-    public void visit(FormPars fp) {
+    public void visit(FormParams fp) {
+    	report_info("FormParams posetili", null);
     	
+    	String varName = fp.getFormParsName();
+    	Type varType = fp.getType();
+    	Obj obj = Tab.find(varName);  	
+    	boolean exists = false;   	
+		if (obj == Tab.noObj) {
+			for(MyVariable var: methodArgs) {
+				if(var.getName().equals(varName)) {
+					report_error("Semanticka greska: Argument s nazivom '" + varName + "' vec postoji", fp);
+					exists = true;
+					break;
+				}
+			}
+			
+			if(!exists) {
+				MyVariable newVar = new MyVariable(varName, (Object)fp, varType.struct);
+				newVar.setConstant(false);
+				if(!isArrayUsed) {
+					newVar.setArr(isArray);
+					isArrayUsed = true;
+				}			
+				methodArgs.addFirst(newVar); 	
+			}
+		}else { 			
+			report_error("Semanticka greska: Argument s nazivom '" + varName + "' vec postoji", fp);
+		}
+		
+		//dodavanje svih vars u tabelu simbola
+		for(MyVariable var: methodArgs) {
+			String name = var.getName();
+			if(var.isArr()) {
+				Obj varNode = Tab.insert(Obj.Var, var.getName(), new Struct(Struct.Array, varType.struct));
+				int lvl = currentMethod.getLevel(); //lvl = broj form.argumenata
+				varNode.setFpPos(lvl); //fpPos=redni broj argumenta == trenutni broj form.argumenata
+				currentMethod.setLevel(lvl + 1); //povecavamo trenutni broj form.argumenata
+	    		report_info("Deklarisan niz " + var.getName() + " kao argument metode.", null);
+			}else {
+				report_info("Deklarisana promenljiva " + var.getName() + " kao argument metode.", null);
+	    		Obj varNode2 = Tab.insert(Obj.Var, var.getName(), varType.struct);
+	    		int lvl2 = currentMethod.getLevel(); //lvl = broj form.argumenata
+				varNode2.setFpPos(lvl2); //fpPos=redni broj argumenta == trenutni broj form.argumenata
+				currentMethod.setLevel(lvl2 + 1); //povecavamo trenutni broj form.argumenata
+			}
+		}
+		
+		methodArgs.clear();
     }
     
     public void visit(FormParsList fpl) {
     	
     }
     
-    public void visit(FormParsListEnd fple) {
+    public void visit(FormParamsListEnd fple) {
+    	report_info("FormParsListEnd posetili", null);
     	
+    	String varName = fple.getFpListName();
+    	Type varType = fple.getType();
+    	Obj obj = Tab.find(varName);  	
+    	boolean exists = false;   	
+		if (obj == Tab.noObj) {
+			for(MyVariable var: methodArgs) {
+				if(var.getName().equals(varName)) {
+					report_error("Semanticka greska: Argument s nazivom '" + varName + "' vec postoji", fple);
+					exists = true;
+					break;
+				}
+			}
+			
+			if(!exists) {
+				MyVariable newVar = new MyVariable(varName, (Object)fple, varType.struct);
+				newVar.setConstant(false);
+				if(!isArrayUsed) {
+					newVar.setArr(isArray);
+					isArrayUsed = true;
+				}			
+				methodArgs.add(newVar); 	
+			}
+		}else { 			
+			report_error("Semanticka greska: Argument s nazivom '" + varName + "' vec postoji", fple);
+		}
     }
     
     // ---------------------------------------------------------------
+    // *** STATEMENTS ***
+    
+   /* public void visit() {
+    	
+    }*/
+    
+    // -----------------------------------------------------------------
 }

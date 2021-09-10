@@ -1,8 +1,11 @@
 program MJProgram
 	int x, y[], z;
-	const char i = 6;
+	const char i = 'w';
 	const int ii = 1, bb=3, ff=5;
-	const bool ioo = true;
+	const bool ioo = true, ppp=false;
 	bool e, r[];
 {	
+	void main(){
+	
+	}
 }

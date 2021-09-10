@@ -1,0 +1,233 @@
+INFO  11:03:10,965 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  11:03:11,191 - #2 program
+INFO  11:03:11,191 - #43 MJProgram
+INFO  11:03:11,191 - #43 int
+INFO  11:03:11,197 - #43 x
+INFO  11:03:11,202 - #8 ,
+INFO  11:03:11,212 - #43 y
+INFO  11:03:11,212 - #14 [
+INFO  11:03:11,212 - #15 ]
+INFO  11:03:11,212 - #8 ,
+INFO  11:03:11,216 - #43 z
+INFO  11:03:11,216 - #7 ;
+INFO  11:03:11,217 - #5 const
+INFO  11:03:11,217 - #43 char
+INFO  11:03:11,218 - #43 i
+INFO  11:03:11,222 - #6 =
+INFO  11:03:11,222 - #44 w
+INFO  11:03:11,222 - #7 ;
+INFO  11:03:11,222 - #5 const
+INFO  11:03:11,222 - #43 int
+INFO  11:03:11,227 - #43 ii
+INFO  11:03:11,227 - #6 =
+INFO  11:03:11,227 - #42 1
+INFO  11:03:11,227 - #8 ,
+INFO  11:03:11,229 - #43 bb
+INFO  11:03:11,229 - #6 =
+INFO  11:03:11,229 - #42 3
+INFO  11:03:11,229 - #8 ,
+INFO  11:03:11,229 - #43 ff
+INFO  11:03:11,229 - #6 =
+INFO  11:03:11,232 - #42 5
+INFO  11:03:11,232 - #7 ;
+INFO  11:03:11,232 - #5 const
+INFO  11:03:11,232 - #43 bool
+INFO  11:03:11,232 - #43 ioo
+INFO  11:03:11,232 - #6 =
+INFO  11:03:11,232 - #45 true
+INFO  11:03:11,232 - #8 ,
+INFO  11:03:11,232 - #43 ppp
+INFO  11:03:11,232 - #6 =
+INFO  11:03:11,232 - #45 false
+INFO  11:03:11,232 - #7 ;
+INFO  11:03:11,232 - #43 bool
+INFO  11:03:11,232 - #43 e
+INFO  11:03:11,232 - #8 ,
+INFO  11:03:11,232 - #43 r
+INFO  11:03:11,232 - #14 [
+INFO  11:03:11,232 - #15 ]
+INFO  11:03:11,232 - #7 ;
+INFO  11:03:11,232 - #3 {
+INFO  11:03:11,232 - #4 }
+INFO  11:03:11,269 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    DeclarationsList(
+      DeclarationsList(
+        DeclarationsList(
+          DeclarationsList(
+            NoDeclarationsList(
+            ) [NoDeclarationsList]
+            DeclsVar(
+              VarDeclaration(
+                Type(
+                 int
+                ) [Type]
+               x
+                NoArray(
+                ) [NoArray]
+                VarDeclarationList(
+                  VarDeclarationList(
+                    NoVarDeclarationList(
+                    ) [NoVarDeclarationList]
+                    VarDeclarationListEnd(
+                     y
+                      Array(
+                      ) [Array]
+                    ) [VarDeclarationListEnd]
+                  ) [VarDeclarationList]
+                  VarDeclarationListEnd(
+                   z
+                    NoArray(
+                    ) [NoArray]
+                  ) [VarDeclarationListEnd]
+                ) [VarDeclarationList]
+              ) [VarDeclaration]
+            ) [DeclsVar]
+          ) [DeclarationsList]
+          DeclsConst(
+            ConstDeclaration(
+              Type(
+               char
+              ) [Type]
+             i
+              CharConst(
+               w
+              ) [CharConst]
+              NoConstantsList(
+              ) [NoConstantsList]
+            ) [ConstDeclaration]
+          ) [DeclsConst]
+        ) [DeclarationsList]
+        DeclsConst(
+          ConstDeclaration(
+            Type(
+             int
+            ) [Type]
+           ii
+            NumConst(
+             1
+            ) [NumConst]
+            ConstantsList(
+              ConstantsList(
+                NoConstantsList(
+                ) [NoConstantsList]
+                ConstantsListEnd(
+                 bb
+                  NumConst(
+                   3
+                  ) [NumConst]
+                ) [ConstantsListEnd]
+              ) [ConstantsList]
+              ConstantsListEnd(
+               ff
+                NumConst(
+                 5
+                ) [NumConst]
+              ) [ConstantsListEnd]
+            ) [ConstantsList]
+          ) [ConstDeclaration]
+        ) [DeclsConst]
+      ) [DeclarationsList]
+      DeclsConst(
+        ConstDeclaration(
+          Type(
+           bool
+          ) [Type]
+         ioo
+          BoolConst(
+           true
+          ) [BoolConst]
+          ConstantsList(
+            NoConstantsList(
+            ) [NoConstantsList]
+            ConstantsListEnd(
+             ppp
+              BoolConst(
+               false
+              ) [BoolConst]
+            ) [ConstantsListEnd]
+          ) [ConstantsList]
+        ) [ConstDeclaration]
+      ) [DeclsConst]
+    ) [DeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         bool
+        ) [Type]
+       e
+        NoArray(
+        ) [NoArray]
+        VarDeclarationList(
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+          VarDeclarationListEnd(
+           r
+            Array(
+            ) [Array]
+          ) [VarDeclarationListEnd]
+        ) [VarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  NoMethodsDeclarationList(
+  ) [NoMethodsDeclarationList]
+) [Program]
+INFO  11:03:11,288 - ===================================
+INFO  11:03:11,302 - Pocetak obrade programa MJProgram na liniji 1
+INFO  11:03:11,302 - type posetio
+INFO  11:03:11,302 - NoArray posetio
+INFO  11:03:11,302 - NoVarDeclList posetio, kraj rekurzije
+INFO  11:03:11,302 - Array posetio
+INFO  11:03:11,302 - varDeclListEnd posetio
+INFO  11:03:11,302 - varDeclList posetio
+INFO  11:03:11,302 - NoArray posetio
+INFO  11:03:11,302 - varDeclListEnd posetio
+INFO  11:03:11,302 - varDeclList posetio
+INFO  11:03:11,302 - varDecl posetio
+INFO  11:03:11,307 - Deklarisana promenljiva x
+INFO  11:03:11,308 - Deklarisan niz y na liniji 2
+INFO  11:03:11,308 - Deklarisana promenljiva z
+INFO  11:03:11,308 - type posetio
+INFO  11:03:11,308 - CharConst posetio, vrednost=w
+INFO  11:03:11,312 - NoConstantsList posetio, kraj rekurzije
+INFO  11:03:11,312 - ConstDeclaration posetio
+INFO  11:03:11,312 - Deklarisana konstanta i
+INFO  11:03:11,312 - type posetio
+INFO  11:03:11,312 - NumConst posetio, vrednost=1
+INFO  11:03:11,317 - NoConstantsList posetio, kraj rekurzije
+INFO  11:03:11,317 - NumConst posetio, vrednost=3
+INFO  11:03:11,317 - ConstantsListEnd posetio
+INFO  11:03:11,317 - ConstantsList posetio
+INFO  11:03:11,317 - NumConst posetio, vrednost=5
+INFO  11:03:11,317 - ConstantsListEnd posetio
+INFO  11:03:11,317 - ConstantsList posetio
+INFO  11:03:11,317 - ConstDeclaration posetio
+INFO  11:03:11,317 - Deklarisana konstanta ii
+INFO  11:03:11,317 - Deklarisana konstanta bb
+INFO  11:03:11,317 - Deklarisana konstanta ff
+INFO  11:03:11,317 - type posetio
+INFO  11:03:11,319 - BoolConst posetio, vrednost=true
+INFO  11:03:11,319 - NoConstantsList posetio, kraj rekurzije
+INFO  11:03:11,319 - BoolConst posetio, vrednost=false
+INFO  11:03:11,319 - ConstantsListEnd posetio
+INFO  11:03:11,319 - ConstantsList posetio
+INFO  11:03:11,319 - ConstDeclaration posetio
+INFO  11:03:11,319 - Deklarisana konstanta ioo
+INFO  11:03:11,319 - Deklarisana konstanta ppp
+INFO  11:03:11,321 - type posetio
+INFO  11:03:11,322 - NoArray posetio
+INFO  11:03:11,322 - NoVarDeclList posetio, kraj rekurzije
+INFO  11:03:11,322 - Array posetio
+INFO  11:03:11,322 - varDeclListEnd posetio
+INFO  11:03:11,322 - varDeclList posetio
+INFO  11:03:11,322 - varDecl posetio
+INFO  11:03:11,322 - Deklarisana promenljiva e
+INFO  11:03:11,322 - Deklarisan niz r na liniji 6
+ERROR 11:03:11,322 - Semanticka greska - ne postoji metoda MAIN!
+INFO  11:03:11,322 - Kraj semanticke obrade programa MJProgram
+INFO  11:03:11,322 - ===================================
+ERROR 11:03:11,329 - Parsiranje NIJE uspesno zavrseno!
