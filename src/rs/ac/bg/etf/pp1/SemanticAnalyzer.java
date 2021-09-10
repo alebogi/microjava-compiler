@@ -390,11 +390,19 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     // izlaz - root - DAAAAA
     public void visit(MethodsDeclarationList mdl) {
     	report_info("MethodsDeclarationList posetili", null);
+    	
+    	if (!methodIsVoid && !hasReturn) {
+			report_error("Semanticka greska: metoda " + currentMethod.getName() + " treba da ima povratnu vrednost!", null);
+		}
+    	
     	Tab.chainLocalSymbols(currentMethod);
     	Tab.closeScope();
     	
+    	report_info("Zavrsetak obrade metode " + currentMethod.getName(), mdl);
     	hasReturn = false;
     	currentMethod = null;
+    	
+    	
     }
     
     // izlaz iz rekurzije 
@@ -553,9 +561,69 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     // ---------------------------------------------------------------
     // *** STATEMENTS ***
     
-   /* public void visit() {
+    public void visit(DesignStmt ds) {
     	
-    }*/
+    }
+    
+    public void visit(StmtRead sr) {
+    	report_info("StmtRead posetili", null);
+    	
+    	Struct type = sr.getDesignator().obj.getType();
+    	if (type!=Tab.charType && type!=Tab.intType && type!=boolType) {
+			report_error("Semanticka greska: read na liniji " + sr.getLine() + " : " + ": dozvoljeni tipovi su int, char, bool! ", null);
+    	}
+    }
+    
+    public void visit(StmtPrintNumConst sp) {
+    	report_info("StmtPrintNumConst posetili", null);
+    	
+    	Struct type = sp.getExpr().struct;
+		if (type!=Tab.charType && type!=Tab.intType && type!=boolType) {
+			report_error("Semanticka greska: read na liniji " + sp.getLine() + " : " + ": dozvoljeni tipovi su int, char, bool! ", null);
+		} 
+    }
+    
+    public void visit(StmtPrint sp) {
+    	
+    }
+    // *** TERM *** 
+    
+    
+    // *** FACTOR ***
+    public void visit(FactorNumConst f) {
+    	f.struct = Tab.intType;
+    }
+    
+    public void visit(FactorCharConst f) {
+    	f.struct = Tab.charType;
+    }
+
+	public void visit(FactorBoolConst f) {
+		f.struct = boolType;
+	}
+    
+    // *** RETURNS ***
+    public void visit(StmtRet sr) {
+    	report_info("StmtRet posetili", null);
+    	
+    	hasReturn = true;
+    }
+    
+    // return expr
+    public void visit(ExpreExists e) {
+    	report_info("ExpreExists posetili", null);
+    	Struct curMethTypeStruct = currentMethod.getType();
+		if (!curMethTypeStruct.compatibleWith(e.getExpr().struct)) {
+			report_error("Semanticka greska na liniji " + e.getLine()+ ": tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije "
+					+ currentMethod.getName(), null);
+		}
+    }
+    
+    // return
+    public void visit(NoExprExists e) {
+    	report_info("NoExprExists posetili", null);
+    	
+    }
     
     // -----------------------------------------------------------------
     

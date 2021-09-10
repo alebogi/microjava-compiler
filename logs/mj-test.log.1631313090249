@@ -1,0 +1,218 @@
+INFO  00:31:03,893 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  00:31:04,194 - #2 program
+INFO  00:31:04,194 - #43 MJProgram
+INFO  00:31:04,194 - #43 int
+INFO  00:31:04,202 - #43 x
+INFO  00:31:04,204 - #8 ,
+INFO  00:31:04,214 - #43 y
+INFO  00:31:04,218 - #14 [
+INFO  00:31:04,218 - #15 ]
+INFO  00:31:04,218 - #8 ,
+INFO  00:31:04,224 - #43 z
+INFO  00:31:04,224 - #7 ;
+INFO  00:31:04,224 - #5 const
+INFO  00:31:04,224 - #43 char
+INFO  00:31:04,224 - #43 i
+INFO  00:31:04,233 - #6 =
+INFO  00:31:04,235 - #44 w
+INFO  00:31:04,235 - #7 ;
+INFO  00:31:04,235 - #3 {
+INFO  00:31:04,238 - #11 void
+INFO  00:31:04,238 - #43 main
+INFO  00:31:04,238 - #13 (
+INFO  00:31:04,243 - #12 )
+INFO  00:31:04,245 - #43 int
+INFO  00:31:04,245 - #43 x
+INFO  00:31:04,245 - #7 ;
+INFO  00:31:04,245 - #3 {
+INFO  00:31:04,245 - #37 return
+INFO  00:31:04,248 - #7 ;
+INFO  00:31:04,253 - #4 }
+INFO  00:31:04,253 - #43 int
+INFO  00:31:04,255 - #43 f
+INFO  00:31:04,255 - #13 (
+INFO  00:31:04,255 - #43 int
+INFO  00:31:04,255 - #43 x
+INFO  00:31:04,258 - #12 )
+INFO  00:31:04,258 - #43 int
+INFO  00:31:04,258 - #43 b
+INFO  00:31:04,263 - #7 ;
+INFO  00:31:04,263 - #3 {
+INFO  00:31:04,263 - #37 return
+INFO  00:31:04,263 - #44 c
+INFO  00:31:04,268 - #7 ;
+INFO  00:31:04,278 - #4 }
+INFO  00:31:04,278 - #4 }
+INFO  00:31:04,366 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    DeclarationsList(
+      NoDeclarationsList(
+      ) [NoDeclarationsList]
+      DeclsVar(
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+         x
+          NoArray(
+          ) [NoArray]
+          VarDeclarationList(
+            VarDeclarationList(
+              NoVarDeclarationList(
+              ) [NoVarDeclarationList]
+              VarDeclarationListEnd(
+               y
+                Array(
+                ) [Array]
+              ) [VarDeclarationListEnd]
+            ) [VarDeclarationList]
+            VarDeclarationListEnd(
+             z
+              NoArray(
+              ) [NoArray]
+            ) [VarDeclarationListEnd]
+          ) [VarDeclarationList]
+        ) [VarDeclaration]
+      ) [DeclsVar]
+    ) [DeclarationsList]
+    DeclsConst(
+      ConstDeclaration(
+        Type(
+         char
+        ) [Type]
+       i
+        CharConst(
+         w
+        ) [CharConst]
+        NoConstantsList(
+        ) [NoConstantsList]
+      ) [ConstDeclaration]
+    ) [DeclsConst]
+  ) [DeclarationsList]
+  MethodsDeclarationList(
+    MethodsDeclarationList(
+      NoMethodsDeclarationList(
+      ) [NoMethodsDeclarationList]
+      MethodDeclaration(
+        MethodVoid(
+         main
+        ) [MethodVoid]
+        ListVarDeclaration(
+          NoListOfVarDeclaration(
+          ) [NoListOfVarDeclaration]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+           x
+            NoArray(
+            ) [NoArray]
+            NoVarDeclarationList(
+            ) [NoVarDeclarationList]
+          ) [VarDeclaration]
+        ) [ListVarDeclaration]
+        ListOfSatemant(
+          NoListOfSatemant(
+          ) [NoListOfSatemant]
+          MatchedStmt(
+            StmtRet(
+              NoExprExists(
+              ) [NoExprExists]
+            ) [StmtRet]
+          ) [MatchedStmt]
+        ) [ListOfSatemant]
+      ) [MethodDeclaration]
+    ) [MethodsDeclarationList]
+    MethodDeclarationFormPars(
+      MethodWithType(
+        Type(
+         int
+        ) [Type]
+       f
+      ) [MethodWithType]
+      FormParams(
+        Type(
+         int
+        ) [Type]
+       x
+        NoArray(
+        ) [NoArray]
+        NoFormParsList(
+        ) [NoFormParsList]
+      ) [FormParams]
+      ListVarDeclaration(
+        NoListOfVarDeclaration(
+        ) [NoListOfVarDeclaration]
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+         b
+          NoArray(
+          ) [NoArray]
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+        ) [VarDeclaration]
+      ) [ListVarDeclaration]
+      ListOfSatemant(
+        NoListOfSatemant(
+        ) [NoListOfSatemant]
+        MatchedStmt(
+          StmtRet(
+            ExpreExists(
+              Expression(
+                NoMinusExs(
+                ) [NoMinusExs]
+                Term(
+                  FactorCharConst(
+                   c
+                  ) [FactorCharConst]
+                  NoMullopFactList(
+                  ) [NoMullopFactList]
+                ) [Term]
+                NoListAddopTerm(
+                ) [NoListAddopTerm]
+              ) [Expression]
+            ) [ExpreExists]
+          ) [StmtRet]
+        ) [MatchedStmt]
+      ) [ListOfSatemant]
+    ) [MethodDeclarationFormPars]
+  ) [MethodsDeclarationList]
+) [Program]
+INFO  00:31:04,373 - ===================================
+INFO  00:31:04,387 - Pocetak obrade programa MJProgram na liniji 1
+INFO  00:31:04,389 - type posetio
+INFO  00:31:04,390 - NoArray posetio
+INFO  00:31:04,391 - NoVarDeclList posetio, kraj rekurzije
+INFO  00:31:04,391 - Array posetio
+INFO  00:31:04,391 - varDeclListEnd posetio
+INFO  00:31:04,394 - varDeclList posetio
+INFO  00:31:04,395 - NoArray posetio
+INFO  00:31:04,395 - varDeclListEnd posetio
+INFO  00:31:04,395 - varDeclList posetio
+INFO  00:31:04,395 - varDecl posetio
+INFO  00:31:04,396 - Deklarisana globalna promenljiva x
+INFO  00:31:04,396 - Deklarisan globalni niz y na liniji 2
+INFO  00:31:04,396 - Deklarisana globalna promenljiva z
+INFO  00:31:04,397 - type posetio
+INFO  00:31:04,397 - CharConst posetio, vrednost=w
+INFO  00:31:04,399 - NoConstantsList posetio, kraj rekurzije
+INFO  00:31:04,405 - ConstDeclaration posetio
+INFO  00:31:04,405 - Deklarisana konstanta i
+INFO  00:31:04,405 - NoMethodsDeclarationList posetili
+INFO  00:31:04,406 - MethodVoid posetili
+INFO  00:31:04,406 - Obradjuje se void metoda: main na liniji 6
+INFO  00:31:04,414 - type posetio
+INFO  00:31:04,414 - NoArray posetio
+INFO  00:31:04,414 - NoVarDeclList posetio, kraj rekurzije
+INFO  00:31:04,414 - varDecl posetio
+INFO  00:31:04,418 - Deklarisana lokalna promenljiva x
+INFO  00:31:04,418 - ListVarDeclaration posetili
+INFO  00:31:04,419 - NoExprExists posetili
+INFO  00:31:04,420 - StmtRet posetili
+INFO  00:31:04,426 - MethodDeclaration posetili
+INFO  00:31:04,426 - MethodsDeclarationList posetili

@@ -61,13 +61,13 @@ terminal COLON, SWITCH, QUESTIONMARK, ENUM, CASE;
 
 nonterminal DeclsList, MethodDeclList, Decls, ConstDecl, ClassDecl, ConstList, ConstListEnd, Arr, VarDeclList;
 nonterminal ExtendsClass, ListOfVarDecl, ListOfStmt, Statement, MethodDecl;
-nonterminal FormParsList, DesignatorStatement, Condition, Expr, ExprList, ExprListEnd;
+nonterminal FormParsList, DesignatorStatement, Condition, ExprList, ExprListEnd;
 nonterminal CondTerm, CondTermOrList, CondFact, CondFactAndList, RelopExprExists, ActPars, ActParsExists, DesgStmtEnd, StmtList, ExprExists;
-nonterminal Assignop, Relop, Addop, Mulop, AddopTermList, MinusExists, Term, ExprArrExists, MulopFactorList, Factor, DesgnListEnd, DesgnList;
+nonterminal Assignop, Relop, Addop, Mulop, AddopTermList, MinusExists, Term, ExprArrExists, MulopFactorList, DesgnListEnd, DesgnList;
 nonterminal StmtMatched, StmtUnmatched;
 
 nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType, FormPars, FormParsListEnd;
-nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts;
+nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor;
 
 Program ::= (Program) PROG ProgName:p DeclsList L_BRACE MethodDeclList R_BRACE
 ;
