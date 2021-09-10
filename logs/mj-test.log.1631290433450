@@ -1,0 +1,171 @@
+INFO  18:13:10,370 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  18:13:10,605 - #2 program
+INFO  18:13:10,605 - #43 MJProgram
+INFO  18:13:10,605 - #43 int
+INFO  18:13:10,612 - #43 x
+INFO  18:13:10,615 - #8 ,
+INFO  18:13:10,655 - #43 y
+INFO  18:13:10,655 - #14 [
+INFO  18:13:10,660 - #15 ]
+INFO  18:13:10,660 - #8 ,
+INFO  18:13:10,662 - #43 z
+INFO  18:13:10,665 - #7 ;
+INFO  18:13:10,665 - #5 const
+INFO  18:13:10,665 - #43 char
+INFO  18:13:10,665 - #43 i
+INFO  18:13:10,673 - #6 =
+INFO  18:13:10,675 - #44 w
+INFO  18:13:10,675 - #7 ;
+INFO  18:13:10,681 - #3 {
+INFO  18:13:10,683 - #11 void
+INFO  18:13:10,685 - #43 main
+INFO  18:13:10,685 - #13 (
+INFO  18:13:10,685 - #12 )
+INFO  18:13:10,685 - #3 {
+INFO  18:13:10,691 - #4 }
+INFO  18:13:10,693 - #11 void
+INFO  18:13:10,693 - #43 f
+INFO  18:13:10,693 - #13 (
+INFO  18:13:10,693 - #43 int
+INFO  18:13:10,693 - #43 a
+INFO  18:13:10,695 - #8 ,
+INFO  18:13:10,695 - #43 char
+INFO  18:13:10,695 - #43 b
+INFO  18:13:10,695 - #12 )
+INFO  18:13:10,700 - #3 {
+INFO  18:13:10,701 - #4 }
+INFO  18:13:10,701 - #4 }
+INFO  18:13:10,803 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    DeclarationsList(
+      NoDeclarationsList(
+      ) [NoDeclarationsList]
+      DeclsVar(
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+         x
+          NoArray(
+          ) [NoArray]
+          VarDeclarationList(
+            VarDeclarationList(
+              NoVarDeclarationList(
+              ) [NoVarDeclarationList]
+              VarDeclarationListEnd(
+               y
+                Array(
+                ) [Array]
+              ) [VarDeclarationListEnd]
+            ) [VarDeclarationList]
+            VarDeclarationListEnd(
+             z
+              NoArray(
+              ) [NoArray]
+            ) [VarDeclarationListEnd]
+          ) [VarDeclarationList]
+        ) [VarDeclaration]
+      ) [DeclsVar]
+    ) [DeclarationsList]
+    DeclsConst(
+      ConstDeclaration(
+        Type(
+         char
+        ) [Type]
+       i
+        CharConst(
+         w
+        ) [CharConst]
+        NoConstantsList(
+        ) [NoConstantsList]
+      ) [ConstDeclaration]
+    ) [DeclsConst]
+  ) [DeclarationsList]
+  MethodsDeclarationList(
+    MethodsDeclarationList(
+      NoMethodsDeclarationList(
+      ) [NoMethodsDeclarationList]
+      MethodDeclaration(
+        MethodVoid(
+         main
+        ) [MethodVoid]
+        NoListOfVarDeclaration(
+        ) [NoListOfVarDeclaration]
+        NoListOfSatemant(
+        ) [NoListOfSatemant]
+      ) [MethodDeclaration]
+    ) [MethodsDeclarationList]
+    MethodDeclarationFormPars(
+      MethodVoid(
+       f
+      ) [MethodVoid]
+      FormParams(
+        Type(
+         int
+        ) [Type]
+       a
+        NoArray(
+        ) [NoArray]
+        FormParamsList(
+          NoFormParsList(
+          ) [NoFormParsList]
+          FormParamsListEnd(
+            Type(
+             char
+            ) [Type]
+           b
+            NoArray(
+            ) [NoArray]
+          ) [FormParamsListEnd]
+        ) [FormParamsList]
+      ) [FormParams]
+      NoListOfVarDeclaration(
+      ) [NoListOfVarDeclaration]
+      NoListOfSatemant(
+      ) [NoListOfSatemant]
+    ) [MethodDeclarationFormPars]
+  ) [MethodsDeclarationList]
+) [Program]
+INFO  18:13:10,810 - ===================================
+INFO  18:13:10,830 - Pocetak obrade programa MJProgram na liniji 1
+INFO  18:13:10,830 - type posetio
+INFO  18:13:10,830 - NoArray posetio
+INFO  18:13:10,830 - NoVarDeclList posetio, kraj rekurzije
+INFO  18:13:10,845 - Array posetio
+INFO  18:13:10,846 - varDeclListEnd posetio
+INFO  18:13:10,850 - varDeclList posetio
+INFO  18:13:10,850 - NoArray posetio
+INFO  18:13:10,850 - varDeclListEnd posetio
+INFO  18:13:10,850 - varDeclList posetio
+INFO  18:13:10,850 - varDecl posetio
+INFO  18:13:10,850 - Deklarisana promenljiva x
+INFO  18:13:10,850 - Deklarisan niz y na liniji 2
+INFO  18:13:10,855 - Deklarisana promenljiva z
+INFO  18:13:10,860 - type posetio
+INFO  18:13:10,860 - CharConst posetio, vrednost=w
+INFO  18:13:10,864 - NoConstantsList posetio, kraj rekurzije
+INFO  18:13:10,866 - ConstDeclaration posetio
+INFO  18:13:10,866 - Deklarisana konstanta i
+INFO  18:13:10,880 - NoMethodsDeclarationList posetili
+INFO  18:13:10,884 - MethodVoid posetili
+INFO  18:13:10,884 - Obradjuje se void metoda: main na liniji 5
+INFO  18:13:10,885 - MethodDeclaration posetili
+INFO  18:13:10,885 - MethodsDeclarationList posetili
+INFO  18:13:10,887 - MethodVoid posetili
+INFO  18:13:10,890 - Obradjuje se void metoda: f na liniji 9
+INFO  18:13:10,890 - type posetio
+INFO  18:13:10,890 - NoArray posetio
+INFO  18:13:10,890 - type posetio
+INFO  18:13:10,890 - NoArray posetio
+INFO  18:13:10,900 - FormParsListEnd posetili
+INFO  18:13:10,900 - FormParams posetili
+INFO  18:13:10,900 - Deklarisana promenljiva a kao argument metode.
+INFO  18:13:10,900 - Deklarisana promenljiva b kao argument metode.
+INFO  18:13:10,900 - MethodDeclarationFormPars posetili
+INFO  18:13:10,900 - MethodsDeclarationList posetili
+INFO  18:13:10,905 - Kraj semanticke obrade programa MJProgram
+INFO  18:13:10,905 - ===================================
+INFO  18:13:10,910 - Parsiranje uspesno zavrseno!

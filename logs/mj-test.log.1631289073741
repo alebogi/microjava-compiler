@@ -1,0 +1,133 @@
+INFO  17:41:56,580 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  17:41:57,024 - #2 program
+INFO  17:41:57,024 - #43 MJProgram
+INFO  17:41:57,029 - #43 int
+INFO  17:41:57,042 - #43 x
+INFO  17:41:57,044 - #8 ,
+INFO  17:41:57,059 - #43 y
+INFO  17:41:57,059 - #14 [
+INFO  17:41:57,062 - #15 ]
+INFO  17:41:57,062 - #8 ,
+INFO  17:41:57,074 - #43 z
+INFO  17:41:57,074 - #7 ;
+INFO  17:41:57,074 - #5 const
+INFO  17:41:57,074 - #43 char
+INFO  17:41:57,074 - #43 i
+INFO  17:41:57,095 - #6 =
+INFO  17:41:57,099 - #44 w
+INFO  17:41:57,099 - #7 ;
+INFO  17:41:57,105 - #3 {
+INFO  17:41:57,105 - #11 void
+INFO  17:41:57,109 - #43 main
+INFO  17:41:57,109 - #13 (
+INFO  17:41:57,109 - #12 )
+INFO  17:41:57,109 - #3 {
+INFO  17:41:57,113 - #4 }
+INFO  17:41:57,115 - #11 void
+INFO  17:41:57,115 - #43 f
+INFO  17:41:57,115 - #13 (
+INFO  17:41:57,115 - #12 )
+INFO  17:41:57,115 - #3 {
+INFO  17:41:57,115 - #4 }
+INFO  17:41:57,115 - #4 }
+INFO  17:41:57,195 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    DeclarationsList(
+      NoDeclarationsList(
+      ) [NoDeclarationsList]
+      DeclsVar(
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+         x
+          NoArray(
+          ) [NoArray]
+          VarDeclarationList(
+            VarDeclarationList(
+              NoVarDeclarationList(
+              ) [NoVarDeclarationList]
+              VarDeclarationListEnd(
+               y
+                Array(
+                ) [Array]
+              ) [VarDeclarationListEnd]
+            ) [VarDeclarationList]
+            VarDeclarationListEnd(
+             z
+              NoArray(
+              ) [NoArray]
+            ) [VarDeclarationListEnd]
+          ) [VarDeclarationList]
+        ) [VarDeclaration]
+      ) [DeclsVar]
+    ) [DeclarationsList]
+    DeclsConst(
+      ConstDeclaration(
+        Type(
+         char
+        ) [Type]
+       i
+        CharConst(
+         w
+        ) [CharConst]
+        NoConstantsList(
+        ) [NoConstantsList]
+      ) [ConstDeclaration]
+    ) [DeclsConst]
+  ) [DeclarationsList]
+  MethodsDeclarationList(
+    MethodsDeclarationList(
+      NoMethodsDeclarationList(
+      ) [NoMethodsDeclarationList]
+      MethodDeclaration(
+        MethodVoid(
+         main
+        ) [MethodVoid]
+        NoListOfVarDeclaration(
+        ) [NoListOfVarDeclaration]
+        NoListOfSatemant(
+        ) [NoListOfSatemant]
+      ) [MethodDeclaration]
+    ) [MethodsDeclarationList]
+    MethodDeclaration(
+      MethodVoid(
+       f
+      ) [MethodVoid]
+      NoListOfVarDeclaration(
+      ) [NoListOfVarDeclaration]
+      NoListOfSatemant(
+      ) [NoListOfSatemant]
+    ) [MethodDeclaration]
+  ) [MethodsDeclarationList]
+) [Program]
+INFO  17:41:57,197 - ===================================
+INFO  17:41:57,209 - Pocetak obrade programa MJProgram na liniji 1
+INFO  17:41:57,209 - type posetio
+INFO  17:41:57,209 - NoArray posetio
+INFO  17:41:57,214 - NoVarDeclList posetio, kraj rekurzije
+INFO  17:41:57,214 - Array posetio
+INFO  17:41:57,215 - varDeclListEnd posetio
+INFO  17:41:57,219 - varDeclList posetio
+INFO  17:41:57,219 - NoArray posetio
+INFO  17:41:57,219 - varDeclListEnd posetio
+INFO  17:41:57,225 - varDeclList posetio
+INFO  17:41:57,225 - varDecl posetio
+INFO  17:41:57,225 - Deklarisana promenljiva x
+INFO  17:41:57,225 - Deklarisan niz y na liniji 2
+INFO  17:41:57,228 - Deklarisana promenljiva z
+INFO  17:41:57,228 - type posetio
+INFO  17:41:57,228 - CharConst posetio, vrednost=w
+INFO  17:41:57,228 - NoConstantsList posetio, kraj rekurzije
+INFO  17:41:57,235 - ConstDeclaration posetio
+INFO  17:41:57,235 - Deklarisana konstanta i
+INFO  17:41:57,236 - MethodVoid posetili
+INFO  17:41:57,236 - Obradjuje se void metoda: main na liniji 5
+INFO  17:41:57,236 - MethodVoid posetili
+INFO  17:41:57,240 - Obradjuje se void metoda: f na liniji 9
+INFO  17:41:57,240 - Kraj semanticke obrade programa MJProgram
+INFO  17:41:57,240 - ===================================
+INFO  17:41:57,244 - Parsiranje uspesno zavrseno!

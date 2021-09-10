@@ -24,6 +24,8 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	private LinkedList<MyVariable> constDeclarations = new LinkedList<MyVariable>();
 	private LinkedList<MyVariable> methodArgs = new LinkedList<MyVariable>();
 	
+	private LinkedList<MyMethod> methods = new LinkedList<MyMethod>();
+	
 	private boolean isArray = false;
 	private boolean isArrayUsed = false;
 	
@@ -38,10 +40,26 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	private boolean firstConstBoolVal;
 	private int constCnt = 0;
 	
+	private Scope globalScope;
 	
-	
+
 	
 	Logger log = Logger.getLogger(getClass());
+	
+	// =========================
+	
+	public boolean methodExists(String name) {
+		boolean res = false;
+		
+		for(MyMethod m: methods) {
+			if(m.getName().equals(name)) {
+				res = true;
+				return res;
+			}
+		}
+		
+		return res;
+	}
 	
 	//==========================================================================
 	public void report_error(String message, SyntaxNode info) {
@@ -72,7 +90,8 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     public void visit(ProgName progName) {
 		progName.obj = Tab.insert(Obj.Prog, progName.getProgName(), Tab.noType);
 		Tab.openScope();
-		
+		globalScope = Tab.currentScope;
+
 		report_info("Pocetak obrade programa " + progName.getProgName() , progName);
 	}
 
@@ -119,9 +138,10 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     	
     	String varName = varDecl.getVarName();
     	Type varType = varDecl.getType();
-    	Obj obj = Tab.find(varName);  	
+    	//Obj obj = Tab.find(varName);  	
+    	Obj obj = Tab.currentScope.findSymbol(varName);
     	boolean exists = false;   	
-		if (obj == Tab.noObj) {
+		if (obj == null) { //Tab.noObj
 			for(MyVariable var: varDeclarations) {
 				if(var.getName().equals(varName)) {
 					report_error("Semanticka greska: Promenljiva '" + varDecl.getVarName() + "' vec postoji", varDecl);
@@ -139,7 +159,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 				}			
 				varDeclarations.addFirst(newVar); 	
 			}
-		}else { 			
+		}else { 		
 			report_error("Semanticka greska: Promenljiva '" + varDecl.getVarName() + "' vec postoji", varDecl);
 		}
 		
@@ -148,10 +168,16 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 			String name = var.getName();
 			if(var.isArr()) {
 				Obj varNode = Tab.insert(Obj.Var, var.getName(), new Struct(Struct.Array, varType.struct));
-	    		report_info("Deklarisan niz " + var.getName(), varDecl);
-			}else {
-				report_info("Deklarisana promenljiva " + var.getName(), null);
-	    		Obj obj2 = Tab.insert(Obj.Var, var.getName(), varType.struct);
+				if(globalScope == Tab.currentScope)
+					report_info("Deklarisan globalni niz " + var.getName(), varDecl);
+				else
+					report_info("Deklarisan lokalni niz " + var.getName(), varDecl);
+			}else {		
+	    		Obj varNode2 = Tab.insert(Obj.Var, var.getName(), varType.struct);
+	    		if(globalScope == Tab.currentScope)
+	    			report_info("Deklarisana globalna promenljiva " + var.getName(), null);
+				else
+					report_info("Deklarisana lokalna promenljiva " + var.getName(), null);
 			}
 		}
 		
@@ -170,9 +196,10 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     	report_info("varDeclListEnd posetio", null);
     	
     	String varName = varDecl.getVarDeclListEndName();
-    	Obj obj = Tab.find(varName);  	
+    	//Obj obj = Tab.find(varName);  	
+    	Obj obj = Tab.currentScope.findSymbol(varName);
     	boolean exists = false;   	
-		if (obj == Tab.noObj) {
+		if (obj == null) { //Tab.noObj
 			for(MyVariable var: varDeclarations) {
 				if(var.getName().equals(varName)) {
 					report_error("Semanticka greska: Promenljiva '" + varName + "' vec postoji", varDecl);
@@ -355,38 +382,50 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     // --------------------------------------------------------------
     // *** METHOD DECLARATIONS ***
     
-    // izlaz - root
+    // izlaz - root - NE
     public void visit(MethodDeclList mdl) {
-    	
+    	report_info("MethodDeclList posetili", null);
     }
     
-    // izlaz - root
+    // izlaz - root - DAAAAA
     public void visit(MethodsDeclarationList mdl) {
+    	report_info("MethodsDeclarationList posetili", null);
+    	Tab.chainLocalSymbols(currentMethod);
+    	Tab.closeScope();
     	
+    	hasReturn = false;
+    	currentMethod = null;
     }
     
     // izlaz iz rekurzije 
     public void visit(NoMethodsDeclarationList mdl) {
-    	
+    	report_info("NoMethodsDeclarationList posetili", null);
     }
     
+    //izlaz ???
     public void visit(MethodDecl md) {
+    	Tab.chainLocalSymbols(currentMethod);
+    	Tab.closeScope();
     	
+    //	returnFound = false;
+    	currentMethod = null;
     }
     
+    // IZLAZ KAD IMAMO FORM PARS
     public void visit(MethodDeclarationFormPars mdfp) {
-    	
+    	report_info("MethodDeclarationFormPars posetili", null);
     }
     
+    // IZLAZ KAD NEMAMO FORM PARS
     public void visit(MethodDeclaration md) {
-    	
+    	report_info("MethodDeclaration posetili", null);
     }
     
     public void visit(MethodWithType mt) {
     	report_info("MethodWithType posetili", null);
     	
     	String name = mt.getMethodName();
-    	Type type = mt.getType();
+    	Type type = mt.getType();	
     	currentMethod = Tab.insert(Obj.Meth, name, type.struct);
     	mt.obj = currentMethod;
     	Tab.openScope();
@@ -418,9 +457,12 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     	
     	String varName = fp.getFormParsName();
     	Type varType = fp.getType();
-    	Obj obj = Tab.find(varName);  	
+    	//Obj obj = Tab.find(varName);  	
+    	Obj obj = Tab.currentScope.findSymbol(varName);  
     	boolean exists = false;   	
-		if (obj == Tab.noObj) {
+    	
+    	
+		if (obj == null) { //Tab.noObj
 			for(MyVariable var: methodArgs) {
 				if(var.getName().equals(varName)) {
 					report_error("Semanticka greska: Argument s nazivom '" + varName + "' vec postoji", fp);
@@ -441,6 +483,9 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 		}else { 			
 			report_error("Semanticka greska: Argument s nazivom '" + varName + "' vec postoji", fp);
 		}
+		
+    	
+    	
 		
 		//dodavanje svih vars u tabelu simbola
 		for(MyVariable var: methodArgs) {
@@ -464,7 +509,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     }
     
     public void visit(FormParsList fpl) {
-    	
+    	report_info("FormParsList posetili", null);
     }
     
     public void visit(FormParamsListEnd fple) {
@@ -472,9 +517,10 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     	
     	String varName = fple.getFpListName();
     	Type varType = fple.getType();
-    	Obj obj = Tab.find(varName);  	
+    	//Obj obj = Tab.find(varName);  
+    	Obj obj = Tab.currentScope.findSymbol(varName);
     	boolean exists = false;   	
-		if (obj == Tab.noObj) {
+		if (obj == null) { //Tab.noObj
 			for(MyVariable var: methodArgs) {
 				if(var.getName().equals(varName)) {
 					report_error("Semanticka greska: Argument s nazivom '" + varName + "' vec postoji", fple);
@@ -495,6 +541,13 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 		}else { 			
 			report_error("Semanticka greska: Argument s nazivom '" + varName + "' vec postoji", fple);
 		}
+		
+    	
+
+    }
+    
+    public void visit(ListVarDeclaration lvd) {
+    	report_info("ListVarDeclaration posetili", null);
     }
     
     // ---------------------------------------------------------------
@@ -505,4 +558,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     }*/
     
     // -----------------------------------------------------------------
+    
+
+
 }
