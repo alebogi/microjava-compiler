@@ -730,6 +730,12 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 			f.struct = new Struct(Struct.Array, f.getType().struct);
 		}
     }
+	
+	
+	public void visit(FactorExpr f) {
+		report_info("FactorExpr posetili", null);
+		f.struct = f.getExpr().struct;
+	}
 
 
 	//----- MULOP ADDOP

@@ -1,0 +1,431 @@
+INFO  00:36:13,240 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  00:36:13,583 - #2 program
+INFO  00:36:13,600 - #43 test301
+INFO  00:36:13,600 - #5 const
+INFO  00:36:13,604 - #43 int
+INFO  00:36:13,604 - #43 nula
+INFO  00:36:13,604 - #6 =
+INFO  00:36:13,604 - #42 0
+INFO  00:36:13,604 - #7 ;
+INFO  00:36:13,614 - #5 const
+INFO  00:36:13,614 - #43 int
+INFO  00:36:13,614 - #43 jedan
+INFO  00:36:13,614 - #6 =
+INFO  00:36:13,614 - #42 1
+INFO  00:36:13,614 - #7 ;
+INFO  00:36:13,614 - #5 const
+INFO  00:36:13,614 - #43 int
+INFO  00:36:13,614 - #43 pet
+INFO  00:36:13,624 - #6 =
+INFO  00:36:13,624 - #42 5
+INFO  00:36:13,624 - #7 ;
+INFO  00:36:13,624 - #43 int
+INFO  00:36:13,624 - #43 niz
+INFO  00:36:13,624 - #14 [
+INFO  00:36:13,632 - #15 ]
+INFO  00:36:13,632 - #7 ;
+INFO  00:36:13,634 - #43 char
+INFO  00:36:13,634 - #43 nizch
+INFO  00:36:13,634 - #14 [
+INFO  00:36:13,634 - #15 ]
+INFO  00:36:13,634 - #7 ;
+INFO  00:36:13,634 - #3 {
+INFO  00:36:13,634 - #11 void
+INFO  00:36:13,642 - #43 main
+INFO  00:36:13,642 - #13 (
+INFO  00:36:13,642 - #12 )
+INFO  00:36:13,642 - #43 int
+INFO  00:36:13,708 - #43 bodovi
+INFO  00:36:13,709 - #7 ;
+INFO  00:36:13,715 - #43 bool
+INFO  00:36:13,715 - #43 bt
+INFO  00:36:13,715 - #7 ;
+INFO  00:36:13,715 - #3 {
+INFO  00:36:13,723 - #43 bodovi
+INFO  00:36:13,723 - #6 =
+INFO  00:36:13,725 - #43 bodovi
+INFO  00:36:13,725 - #24 +
+INFO  00:36:13,745 - #13 (
+INFO  00:36:13,745 - #43 pet
+INFO  00:36:13,745 - #26 *
+INFO  00:36:13,745 - #43 jedan
+INFO  00:36:13,756 - #25 -
+INFO  00:36:13,756 - #42 1
+INFO  00:36:13,764 - #12 )
+INFO  00:36:13,766 - #26 *
+INFO  00:36:13,766 - #43 bodovi
+INFO  00:36:13,766 - #25 -
+INFO  00:36:13,766 - #13 (
+INFO  00:36:13,766 - #42 3
+INFO  00:36:13,766 - #28 %
+INFO  00:36:13,766 - #42 2
+INFO  00:36:13,826 - #24 +
+INFO  00:36:13,826 - #42 3
+INFO  00:36:13,835 - #26 *
+INFO  00:36:13,835 - #42 2
+INFO  00:36:13,837 - #25 -
+INFO  00:36:13,837 - #42 3
+INFO  00:36:13,837 - #12 )
+INFO  00:36:13,837 - #7 ;
+INFO  00:36:13,837 - #4 }
+INFO  00:36:13,847 - #4 }
+INFO  00:36:13,877 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  DeclarationsList(
+    DeclarationsList(
+      DeclarationsList(
+        DeclarationsList(
+          DeclarationsList(
+            NoDeclarationsList(
+            ) [NoDeclarationsList]
+            DeclsConst(
+              ConstDeclaration(
+                Type(
+                 int
+                ) [Type]
+               nula
+                NumConst(
+                 0
+                ) [NumConst]
+                NoConstantsList(
+                ) [NoConstantsList]
+              ) [ConstDeclaration]
+            ) [DeclsConst]
+          ) [DeclarationsList]
+          DeclsConst(
+            ConstDeclaration(
+              Type(
+               int
+              ) [Type]
+             jedan
+              NumConst(
+               1
+              ) [NumConst]
+              NoConstantsList(
+              ) [NoConstantsList]
+            ) [ConstDeclaration]
+          ) [DeclsConst]
+        ) [DeclarationsList]
+        DeclsConst(
+          ConstDeclaration(
+            Type(
+             int
+            ) [Type]
+           pet
+            NumConst(
+             5
+            ) [NumConst]
+            NoConstantsList(
+            ) [NoConstantsList]
+          ) [ConstDeclaration]
+        ) [DeclsConst]
+      ) [DeclarationsList]
+      DeclsVar(
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+         niz
+          Array(
+          ) [Array]
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+        ) [VarDeclaration]
+      ) [DeclsVar]
+    ) [DeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         char
+        ) [Type]
+       nizch
+        Array(
+        ) [Array]
+        NoVarDeclarationList(
+        ) [NoVarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  MethodsDeclarationList(
+    NoMethodsDeclarationList(
+    ) [NoMethodsDeclarationList]
+    MethodDeclaration(
+      MethodVoid(
+       main
+      ) [MethodVoid]
+      ListVarDeclaration(
+        ListVarDeclaration(
+          NoListOfVarDeclaration(
+          ) [NoListOfVarDeclaration]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+           bodovi
+            NoArray(
+            ) [NoArray]
+            NoVarDeclarationList(
+            ) [NoVarDeclarationList]
+          ) [VarDeclaration]
+        ) [ListVarDeclaration]
+        VarDeclaration(
+          Type(
+           bool
+          ) [Type]
+         bt
+          NoArray(
+          ) [NoArray]
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+        ) [VarDeclaration]
+      ) [ListVarDeclaration]
+      ListOfSatemant(
+        NoListOfSatemant(
+        ) [NoListOfSatemant]
+        MatchedStmt(
+          StmtDesgStmt(
+            DesgnStmtAsgnOp(
+              DesignatorIdent(
+               bodovi
+              ) [DesignatorIdent]
+              AssignOperator(
+              ) [AssignOperator]
+              Expression(
+                NoMinusExs(
+                ) [NoMinusExs]
+                Term(
+                  FactorDesign(
+                    DesignatorIdent(
+                     bodovi
+                    ) [DesignatorIdent]
+                    NoActParamsExists(
+                    ) [NoActParamsExists]
+                  ) [FactorDesign]
+                  NoMullopFactList(
+                  ) [NoMullopFactList]
+                ) [Term]
+                ListAddopTerm(
+                  ListAddopTerm(
+                    NoListAddopTerm(
+                    ) [NoListAddopTerm]
+                    OpAdd(
+                    ) [OpAdd]
+                    Term(
+                      FactorExpr(
+                        Expression(
+                          NoMinusExs(
+                          ) [NoMinusExs]
+                          Term(
+                            FactorDesign(
+                              DesignatorIdent(
+                               pet
+                              ) [DesignatorIdent]
+                              NoActParamsExists(
+                              ) [NoActParamsExists]
+                            ) [FactorDesign]
+                            MullopFactList(
+                              NoMullopFactList(
+                              ) [NoMullopFactList]
+                              OpMul(
+                              ) [OpMul]
+                              FactorDesign(
+                                DesignatorIdent(
+                                 jedan
+                                ) [DesignatorIdent]
+                                NoActParamsExists(
+                                ) [NoActParamsExists]
+                              ) [FactorDesign]
+                            ) [MullopFactList]
+                          ) [Term]
+                          ListAddopTerm(
+                            NoListAddopTerm(
+                            ) [NoListAddopTerm]
+                            SubOp(
+                            ) [SubOp]
+                            Term(
+                              FactorNumConst(
+                               1
+                              ) [FactorNumConst]
+                              NoMullopFactList(
+                              ) [NoMullopFactList]
+                            ) [Term]
+                          ) [ListAddopTerm]
+                        ) [Expression]
+                      ) [FactorExpr]
+                      MullopFactList(
+                        NoMullopFactList(
+                        ) [NoMullopFactList]
+                        OpMul(
+                        ) [OpMul]
+                        FactorDesign(
+                          DesignatorIdent(
+                           bodovi
+                          ) [DesignatorIdent]
+                          NoActParamsExists(
+                          ) [NoActParamsExists]
+                        ) [FactorDesign]
+                      ) [MullopFactList]
+                    ) [Term]
+                  ) [ListAddopTerm]
+                  SubOp(
+                  ) [SubOp]
+                  Term(
+                    FactorExpr(
+                      Expression(
+                        NoMinusExs(
+                        ) [NoMinusExs]
+                        Term(
+                          FactorNumConst(
+                           3
+                          ) [FactorNumConst]
+                          MullopFactList(
+                            NoMullopFactList(
+                            ) [NoMullopFactList]
+                            ModOp(
+                            ) [ModOp]
+                            FactorNumConst(
+                             2
+                            ) [FactorNumConst]
+                          ) [MullopFactList]
+                        ) [Term]
+                        ListAddopTerm(
+                          ListAddopTerm(
+                            NoListAddopTerm(
+                            ) [NoListAddopTerm]
+                            OpAdd(
+                            ) [OpAdd]
+                            Term(
+                              FactorNumConst(
+                               3
+                              ) [FactorNumConst]
+                              MullopFactList(
+                                NoMullopFactList(
+                                ) [NoMullopFactList]
+                                OpMul(
+                                ) [OpMul]
+                                FactorNumConst(
+                                 2
+                                ) [FactorNumConst]
+                              ) [MullopFactList]
+                            ) [Term]
+                          ) [ListAddopTerm]
+                          SubOp(
+                          ) [SubOp]
+                          Term(
+                            FactorNumConst(
+                             3
+                            ) [FactorNumConst]
+                            NoMullopFactList(
+                            ) [NoMullopFactList]
+                          ) [Term]
+                        ) [ListAddopTerm]
+                      ) [Expression]
+                    ) [FactorExpr]
+                    NoMullopFactList(
+                    ) [NoMullopFactList]
+                  ) [Term]
+                ) [ListAddopTerm]
+              ) [Expression]
+            ) [DesgnStmtAsgnOp]
+          ) [StmtDesgStmt]
+        ) [MatchedStmt]
+      ) [ListOfSatemant]
+    ) [MethodDeclaration]
+  ) [MethodsDeclarationList]
+) [Program]
+INFO  00:36:13,922 - ===================================
+INFO  00:36:13,936 - Pocetak obrade programa test301 na liniji 3
+INFO  00:36:13,937 - type posetio
+INFO  00:36:13,937 - NumConst posetio, vrednost=0
+INFO  00:36:13,937 - NoConstantsList posetio, kraj rekurzije
+INFO  00:36:13,937 - ConstDeclaration posetio
+INFO  00:36:13,940 - Deklarisana konstanta nula
+INFO  00:36:13,940 - type posetio
+INFO  00:36:13,941 - NumConst posetio, vrednost=1
+INFO  00:36:13,943 - NoConstantsList posetio, kraj rekurzije
+INFO  00:36:13,944 - ConstDeclaration posetio
+INFO  00:36:13,945 - Deklarisana konstanta jedan
+INFO  00:36:13,945 - type posetio
+INFO  00:36:13,945 - NumConst posetio, vrednost=5
+INFO  00:36:13,945 - NoConstantsList posetio, kraj rekurzije
+INFO  00:36:13,945 - ConstDeclaration posetio
+INFO  00:36:13,945 - Deklarisana konstanta pet
+INFO  00:36:13,946 - type posetio
+INFO  00:36:13,946 - Array posetio
+INFO  00:36:13,946 - NoVarDeclList posetio, kraj rekurzije
+INFO  00:36:13,946 - varDecl posetio
+INFO  00:36:13,948 - Deklarisan globalni niz niz na liniji 9
+INFO  00:36:13,948 - type posetio
+INFO  00:36:13,949 - Array posetio
+INFO  00:36:13,949 - NoVarDeclList posetio, kraj rekurzije
+INFO  00:36:13,950 - varDecl posetio
+INFO  00:36:13,950 - Deklarisan globalni niz nizch na liniji 10
+INFO  00:36:13,950 - NoMethodsDeclarationList posetili
+INFO  00:36:13,950 - MethodVoid posetili
+INFO  00:36:13,951 - Obradjuje se void metoda: main na liniji 13
+INFO  00:36:13,952 - type posetio
+INFO  00:36:13,952 - NoArray posetio
+INFO  00:36:13,953 - NoVarDeclList posetio, kraj rekurzije
+INFO  00:36:13,953 - varDecl posetio
+INFO  00:36:13,953 - Deklarisana lokalna promenljiva bodovi
+INFO  00:36:13,954 - ListVarDeclaration posetili
+INFO  00:36:13,954 - type posetio
+INFO  00:36:13,954 - NoArray posetio
+INFO  00:36:13,954 - NoVarDeclList posetio, kraj rekurzije
+INFO  00:36:13,954 - varDecl posetio
+INFO  00:36:13,954 - Deklarisana lokalna promenljiva bt
+INFO  00:36:13,955 - ListVarDeclaration posetili
+INFO  00:36:13,955 - Designator posetili
+INFO  00:36:13,955 - Designator posetili
+INFO  00:36:13,956 - FactorDesign posetili
+INFO  00:36:13,956 - Term posetili
+INFO  00:36:13,956 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:13,957 - Designator posetili
+INFO  00:36:13,957 - FactorDesign posetili
+INFO  00:36:13,957 - Designator posetili
+INFO  00:36:13,958 - FactorDesign posetili
+INFO  00:36:13,958 - MullopFactList posetili
+INFO  00:36:13,958 - Term posetili
+INFO  00:36:13,958 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:13,959 - FactorNumConst posetili
+INFO  00:36:13,959 - Term posetili
+INFO  00:36:13,959 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:13,961 - ListAddopTerm posetili
+INFO  00:36:13,961 - Expression posetili
+INFO  00:36:13,961 - FactorExpr posetili
+INFO  00:36:13,961 - Designator posetili
+INFO  00:36:13,961 - FactorDesign posetili
+INFO  00:36:13,961 - MullopFactList posetili
+INFO  00:36:13,961 - Term posetili
+INFO  00:36:13,961 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:13,961 - ListAddopTerm posetili
+INFO  00:36:13,961 - FactorNumConst posetili
+INFO  00:36:13,961 - FactorNumConst posetili
+INFO  00:36:13,961 - MullopFactList posetili
+INFO  00:36:13,961 - Term posetili
+INFO  00:36:13,961 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:13,961 - FactorNumConst posetili
+INFO  00:36:13,961 - FactorNumConst posetili
+INFO  00:36:13,961 - MullopFactList posetili
+INFO  00:36:13,961 - Term posetili
+INFO  00:36:13,961 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:13,961 - ListAddopTerm posetili
+INFO  00:36:13,961 - FactorNumConst posetili
+INFO  00:36:13,961 - Term posetili
+INFO  00:36:13,961 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:13,961 - ListAddopTerm posetili
+INFO  00:36:13,961 - Expression posetili
+INFO  00:36:13,961 - FactorExpr posetili
+INFO  00:36:13,961 - Term posetili
+INFO  00:36:13,961 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:13,961 - ListAddopTerm posetili
+INFO  00:36:13,961 - Expression posetili
+INFO  00:36:13,961 - DesgnStmtAsgnOp posetili
+INFO  00:36:13,961 - MethodDeclaration posetili
+INFO  00:36:13,966 - MethodsDeclarationList posetili
+INFO  00:36:13,966 - Zavrsetak obrade metode main
+INFO  00:36:13,966 - Kraj semanticke obrade programa test301
+INFO  00:36:13,966 - ===================================
+INFO  00:36:13,968 - Parsiranje uspesno zavrseno!

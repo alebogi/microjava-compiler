@@ -1,272 +1,272 @@
-INFO  00:42:49,819 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
-INFO  00:42:50,010 - #2 program
-INFO  00:42:50,010 - #43 test301
-INFO  00:42:50,010 - #5 const
-INFO  00:42:50,022 - #43 int
-INFO  00:42:50,022 - #43 nula
-INFO  00:42:50,022 - #6 =
-INFO  00:42:50,022 - #42 0
-INFO  00:42:50,022 - #7 ;
-INFO  00:42:50,022 - #5 const
-INFO  00:42:50,022 - #43 int
-INFO  00:42:50,022 - #43 jedan
-INFO  00:42:50,022 - #6 =
-INFO  00:42:50,022 - #42 1
-INFO  00:42:50,030 - #7 ;
-INFO  00:42:50,030 - #5 const
-INFO  00:42:50,030 - #43 int
-INFO  00:42:50,030 - #43 pet
-INFO  00:42:50,030 - #6 =
-INFO  00:42:50,032 - #42 5
-INFO  00:42:50,032 - #7 ;
-INFO  00:42:50,032 - #43 int
-INFO  00:42:50,032 - #43 niz
-INFO  00:42:50,032 - #14 [
-INFO  00:42:50,032 - #15 ]
-INFO  00:42:50,032 - #7 ;
-INFO  00:42:50,040 - #43 char
-INFO  00:42:50,040 - #43 nizch
-INFO  00:42:50,040 - #14 [
-INFO  00:42:50,040 - #15 ]
-INFO  00:42:50,042 - #7 ;
-INFO  00:42:50,042 - #3 {
-INFO  00:42:50,042 - #11 void
-INFO  00:42:50,042 - #43 main
-INFO  00:42:50,042 - #13 (
-INFO  00:42:50,042 - #12 )
-INFO  00:42:50,042 - #43 int
-INFO  00:42:50,042 - #43 bodovi
-INFO  00:42:50,042 - #7 ;
-INFO  00:42:50,042 - #43 bool
-INFO  00:42:50,042 - #43 bt
-INFO  00:42:50,042 - #7 ;
-INFO  00:42:50,042 - #3 {
-INFO  00:42:50,042 - #43 bodovi
-INFO  00:42:50,050 - #6 =
-INFO  00:42:50,050 - #42 0
-INFO  00:42:50,052 - #7 ;
-INFO  00:42:50,062 - #43 bodovi
-INFO  00:42:50,062 - #16 ++
-INFO  00:42:50,062 - #7 ;
-INFO  00:42:50,062 - #43 bodovi
-INFO  00:42:50,062 - #6 =
-INFO  00:42:50,062 - #43 bodovi
-INFO  00:42:50,062 - #24 +
-INFO  00:42:50,070 - #43 jedan
-INFO  00:42:50,072 - #7 ;
-INFO  00:42:50,072 - #43 bodovi
-INFO  00:42:50,072 - #6 =
-INFO  00:42:50,072 - #43 bodovi
-INFO  00:42:50,072 - #26 *
-INFO  00:42:50,072 - #43 pet
-INFO  00:42:50,072 - #7 ;
-INFO  00:42:50,072 - #43 bodovi
-INFO  00:42:50,083 - #17 --
-INFO  00:42:50,083 - #7 ;
-INFO  00:42:50,083 - #39 print
-INFO  00:42:50,083 - #13 (
-INFO  00:42:50,083 - #43 bodovi
-INFO  00:42:50,083 - #12 )
-INFO  00:42:50,083 - #7 ;
-INFO  00:42:50,091 - #43 niz
-INFO  00:42:50,093 - #6 =
-INFO  00:42:50,093 - #31 new
-INFO  00:42:50,093 - #43 int
-INFO  00:42:50,093 - #14 [
-INFO  00:42:50,093 - #42 3
-INFO  00:42:50,093 - #15 ]
-INFO  00:42:50,093 - #7 ;
-INFO  00:42:50,093 - #43 niz
-INFO  00:42:50,093 - #14 [
-INFO  00:42:50,093 - #43 nula
-INFO  00:42:50,093 - #15 ]
-INFO  00:42:50,093 - #6 =
-INFO  00:42:50,093 - #43 jedan
-INFO  00:42:50,093 - #7 ;
-INFO  00:42:50,093 - #43 niz
-INFO  00:42:50,093 - #14 [
-INFO  00:42:50,093 - #42 1
-INFO  00:42:50,093 - #15 ]
-INFO  00:42:50,093 - #6 =
-INFO  00:42:50,093 - #42 2
-INFO  00:42:50,093 - #7 ;
-INFO  00:42:50,093 - #43 niz
-INFO  00:42:50,093 - #14 [
-INFO  00:42:50,093 - #43 niz
-INFO  00:42:50,093 - #14 [
-INFO  00:42:50,093 - #43 jedan
-INFO  00:42:50,093 - #15 ]
-INFO  00:42:50,093 - #15 ]
-INFO  00:42:50,093 - #6 =
-INFO  00:42:50,093 - #43 niz
-INFO  00:42:50,093 - #14 [
-INFO  00:42:50,093 - #43 niz
-INFO  00:42:50,093 - #14 [
-INFO  00:42:50,093 - #42 0
-INFO  00:42:50,093 - #15 ]
-INFO  00:42:50,093 - #15 ]
-INFO  00:42:50,093 - #26 *
-INFO  00:42:50,093 - #42 3
-INFO  00:42:50,093 - #7 ;
-INFO  00:42:50,093 - #43 bodovi
-INFO  00:42:50,093 - #6 =
-INFO  00:42:50,093 - #43 niz
-INFO  00:42:50,093 - #14 [
-INFO  00:42:50,093 - #42 2
-INFO  00:42:50,093 - #15 ]
-INFO  00:42:50,093 - #27 /
-INFO  00:42:50,093 - #43 niz
-INFO  00:42:50,101 - #14 [
-INFO  00:42:50,101 - #42 0
-INFO  00:42:50,101 - #15 ]
-INFO  00:42:50,101 - #7 ;
-INFO  00:42:50,101 - #39 print
-INFO  00:42:50,101 - #13 (
-INFO  00:42:50,101 - #43 bodovi
-INFO  00:42:50,101 - #12 )
-INFO  00:42:50,103 - #7 ;
-INFO  00:42:50,103 - #39 print
-INFO  00:42:50,103 - #13 (
-INFO  00:42:50,103 - #43 niz
-INFO  00:42:50,103 - #14 [
-INFO  00:42:50,103 - #42 2
-INFO  00:42:50,103 - #15 ]
-INFO  00:42:50,103 - #12 )
-INFO  00:42:50,103 - #7 ;
-INFO  00:42:50,103 - #43 nizch
-INFO  00:42:50,110 - #6 =
-INFO  00:42:50,110 - #31 new
-INFO  00:42:50,111 - #43 char
-INFO  00:42:50,215 - #14 [
-INFO  00:42:50,215 - #42 3
-INFO  00:42:50,215 - #15 ]
-INFO  00:42:50,215 - #7 ;
-INFO  00:42:50,215 - #43 nizch
-INFO  00:42:50,215 - #14 [
-INFO  00:42:50,215 - #42 0
-INFO  00:42:50,215 - #15 ]
-INFO  00:42:50,215 - #6 =
-INFO  00:42:50,215 - #44 a
-INFO  00:42:50,215 - #7 ;
-INFO  00:42:50,215 - #43 nizch
-INFO  00:42:50,215 - #14 [
-INFO  00:42:50,215 - #43 jedan
-INFO  00:42:50,215 - #15 ]
-INFO  00:42:50,215 - #6 =
-INFO  00:42:50,215 - #44 b
-INFO  00:42:50,215 - #7 ;
-INFO  00:42:50,215 - #43 nizch
-INFO  00:42:50,215 - #14 [
-INFO  00:42:50,215 - #43 pet
-INFO  00:42:50,215 - #25 -
-INFO  00:42:50,215 - #42 3
-INFO  00:42:50,225 - #15 ]
-INFO  00:42:50,225 - #6 =
-INFO  00:42:50,225 - #44 c
-INFO  00:42:50,225 - #7 ;
-INFO  00:42:50,225 - #39 print
-INFO  00:42:50,225 - #13 (
-INFO  00:42:50,225 - #43 nizch
-INFO  00:42:50,225 - #14 [
-INFO  00:42:50,225 - #42 1
-INFO  00:42:50,225 - #15 ]
-INFO  00:42:50,225 - #12 )
-INFO  00:42:50,225 - #7 ;
-INFO  00:42:50,225 - #39 print
-INFO  00:42:50,225 - #13 (
-INFO  00:42:50,225 - #43 nizch
-INFO  00:42:50,225 - #14 [
-INFO  00:42:50,225 - #43 jedan
-INFO  00:42:50,225 - #26 *
-INFO  00:42:50,225 - #42 2
-INFO  00:42:50,225 - #15 ]
-INFO  00:42:50,225 - #12 )
-INFO  00:42:50,225 - #7 ;
-INFO  00:42:50,225 - #43 bodovi
-INFO  00:42:50,225 - #6 =
-INFO  00:42:50,225 - #43 bodovi
-INFO  00:42:50,225 - #24 +
-INFO  00:42:50,225 - #13 (
-INFO  00:42:50,225 - #43 pet
-INFO  00:42:50,225 - #26 *
-INFO  00:42:50,225 - #43 jedan
-INFO  00:42:50,225 - #25 -
-INFO  00:42:50,225 - #42 1
-INFO  00:42:50,225 - #12 )
-INFO  00:42:50,225 - #26 *
-INFO  00:42:50,225 - #43 bodovi
-INFO  00:42:50,225 - #25 -
-INFO  00:42:50,225 - #13 (
-INFO  00:42:50,225 - #42 3
-INFO  00:42:50,225 - #28 %
-INFO  00:42:50,225 - #42 2
-INFO  00:42:50,225 - #24 +
-INFO  00:42:50,225 - #42 3
-INFO  00:42:50,225 - #26 *
-INFO  00:42:50,225 - #42 2
-INFO  00:42:50,225 - #25 -
-INFO  00:42:50,225 - #42 3
-INFO  00:42:50,225 - #12 )
-INFO  00:42:50,225 - #7 ;
-INFO  00:42:50,225 - #39 print
-INFO  00:42:50,225 - #13 (
-INFO  00:42:50,225 - #43 bodovi
-INFO  00:42:50,225 - #12 )
-INFO  00:42:50,225 - #7 ;
-INFO  00:42:50,225 - #38 read
-INFO  00:42:50,225 - #13 (
-INFO  00:42:50,233 - #43 bodovi
-INFO  00:42:50,233 - #12 )
-INFO  00:42:50,233 - #7 ;
-INFO  00:42:50,233 - #43 bt
-INFO  00:42:50,233 - #6 =
-INFO  00:42:50,233 - #45 true
-INFO  00:42:50,233 - #7 ;
-INFO  00:42:50,235 - #40 if
-INFO  00:42:50,235 - #13 (
-INFO  00:42:50,235 - #43 bt
-INFO  00:42:50,235 - #12 )
-INFO  00:42:50,235 - #3 {
-INFO  00:42:50,235 - #39 print
-INFO  00:42:50,235 - #13 (
-INFO  00:42:50,235 - #43 bodovi
-INFO  00:42:50,235 - #12 )
-INFO  00:42:50,235 - #7 ;
-INFO  00:42:50,235 - #4 }
-INFO  00:42:50,235 - #41 else
-INFO  00:42:50,235 - #3 {
-INFO  00:42:50,235 - #39 print
-INFO  00:42:50,235 - #13 (
-INFO  00:42:50,235 - #43 bodovi
-INFO  00:42:50,235 - #24 +
-INFO  00:42:50,235 - #42 10
-INFO  00:42:50,235 - #12 )
-INFO  00:42:50,235 - #7 ;
-INFO  00:42:50,243 - #4 }
-INFO  00:42:50,243 - #40 if
-INFO  00:42:50,243 - #13 (
-INFO  00:42:50,243 - #43 bodovi
-INFO  00:42:50,243 - #20 >
-INFO  00:42:50,243 - #42 10
-INFO  00:42:50,245 - #12 )
-INFO  00:42:50,245 - #3 {
-INFO  00:42:50,245 - #39 print
-INFO  00:42:50,245 - #13 (
-INFO  00:42:50,245 - #44 +
-INFO  00:42:50,245 - #12 )
-INFO  00:42:50,245 - #7 ;
-INFO  00:42:50,245 - #4 }
-INFO  00:42:50,245 - #41 else
-INFO  00:42:50,245 - #3 {
-INFO  00:42:50,245 - #39 print
-INFO  00:42:50,245 - #13 (
-INFO  00:42:50,245 - #44 -
-INFO  00:42:50,245 - #12 )
-INFO  00:42:50,245 - #7 ;
-INFO  00:42:50,245 - #4 }
-INFO  00:42:50,245 - #4 }
-INFO  00:42:50,245 - #4 }
-INFO  00:42:50,296 - Program(
+INFO  00:36:38,618 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  00:36:38,780 - #2 program
+INFO  00:36:38,780 - #43 test301
+INFO  00:36:38,784 - #5 const
+INFO  00:36:38,788 - #43 int
+INFO  00:36:38,788 - #43 nula
+INFO  00:36:38,790 - #6 =
+INFO  00:36:38,790 - #42 0
+INFO  00:36:38,790 - #7 ;
+INFO  00:36:38,790 - #5 const
+INFO  00:36:38,790 - #43 int
+INFO  00:36:38,790 - #43 jedan
+INFO  00:36:38,790 - #6 =
+INFO  00:36:38,790 - #42 1
+INFO  00:36:38,790 - #7 ;
+INFO  00:36:38,790 - #5 const
+INFO  00:36:38,790 - #43 int
+INFO  00:36:38,790 - #43 pet
+INFO  00:36:38,790 - #6 =
+INFO  00:36:38,790 - #42 5
+INFO  00:36:38,790 - #7 ;
+INFO  00:36:38,790 - #43 int
+INFO  00:36:38,790 - #43 niz
+INFO  00:36:38,790 - #14 [
+INFO  00:36:38,798 - #15 ]
+INFO  00:36:38,798 - #7 ;
+INFO  00:36:38,798 - #43 char
+INFO  00:36:38,798 - #43 nizch
+INFO  00:36:38,798 - #14 [
+INFO  00:36:38,798 - #15 ]
+INFO  00:36:38,798 - #7 ;
+INFO  00:36:38,798 - #3 {
+INFO  00:36:38,798 - #11 void
+INFO  00:36:38,798 - #43 main
+INFO  00:36:38,798 - #13 (
+INFO  00:36:38,798 - #12 )
+INFO  00:36:38,798 - #43 int
+INFO  00:36:38,808 - #43 bodovi
+INFO  00:36:38,808 - #7 ;
+INFO  00:36:38,808 - #43 bool
+INFO  00:36:38,808 - #43 bt
+INFO  00:36:38,808 - #7 ;
+INFO  00:36:38,808 - #3 {
+INFO  00:36:38,808 - #43 bodovi
+INFO  00:36:38,808 - #6 =
+INFO  00:36:38,808 - #42 0
+INFO  00:36:38,808 - #7 ;
+INFO  00:36:38,808 - #43 bodovi
+INFO  00:36:38,808 - #16 ++
+INFO  00:36:38,808 - #7 ;
+INFO  00:36:38,808 - #43 bodovi
+INFO  00:36:38,808 - #6 =
+INFO  00:36:38,808 - #43 bodovi
+INFO  00:36:38,808 - #24 +
+INFO  00:36:38,824 - #43 jedan
+INFO  00:36:38,824 - #7 ;
+INFO  00:36:38,824 - #43 bodovi
+INFO  00:36:38,824 - #6 =
+INFO  00:36:38,824 - #43 bodovi
+INFO  00:36:38,824 - #26 *
+INFO  00:36:38,824 - #43 pet
+INFO  00:36:38,824 - #7 ;
+INFO  00:36:38,824 - #43 bodovi
+INFO  00:36:38,824 - #17 --
+INFO  00:36:38,824 - #7 ;
+INFO  00:36:38,824 - #39 print
+INFO  00:36:38,824 - #13 (
+INFO  00:36:38,824 - #43 bodovi
+INFO  00:36:38,824 - #12 )
+INFO  00:36:38,824 - #7 ;
+INFO  00:36:38,839 - #43 niz
+INFO  00:36:38,839 - #6 =
+INFO  00:36:38,839 - #31 new
+INFO  00:36:38,839 - #43 int
+INFO  00:36:38,839 - #14 [
+INFO  00:36:38,839 - #42 3
+INFO  00:36:38,839 - #15 ]
+INFO  00:36:38,839 - #7 ;
+INFO  00:36:38,839 - #43 niz
+INFO  00:36:38,839 - #14 [
+INFO  00:36:38,839 - #43 nula
+INFO  00:36:38,839 - #15 ]
+INFO  00:36:38,839 - #6 =
+INFO  00:36:38,855 - #43 jedan
+INFO  00:36:38,855 - #7 ;
+INFO  00:36:38,855 - #43 niz
+INFO  00:36:38,855 - #14 [
+INFO  00:36:38,855 - #42 1
+INFO  00:36:38,855 - #15 ]
+INFO  00:36:38,855 - #6 =
+INFO  00:36:38,855 - #42 2
+INFO  00:36:38,855 - #7 ;
+INFO  00:36:38,855 - #43 niz
+INFO  00:36:38,855 - #14 [
+INFO  00:36:38,855 - #43 niz
+INFO  00:36:38,855 - #14 [
+INFO  00:36:38,855 - #43 jedan
+INFO  00:36:38,855 - #15 ]
+INFO  00:36:38,855 - #15 ]
+INFO  00:36:38,855 - #6 =
+INFO  00:36:38,855 - #43 niz
+INFO  00:36:38,855 - #14 [
+INFO  00:36:38,855 - #43 niz
+INFO  00:36:38,855 - #14 [
+INFO  00:36:38,855 - #42 0
+INFO  00:36:38,855 - #15 ]
+INFO  00:36:38,855 - #15 ]
+INFO  00:36:38,855 - #26 *
+INFO  00:36:38,855 - #42 3
+INFO  00:36:38,855 - #7 ;
+INFO  00:36:38,855 - #43 bodovi
+INFO  00:36:38,855 - #6 =
+INFO  00:36:38,855 - #43 niz
+INFO  00:36:38,855 - #14 [
+INFO  00:36:38,855 - #42 2
+INFO  00:36:38,855 - #15 ]
+INFO  00:36:38,855 - #27 /
+INFO  00:36:38,855 - #43 niz
+INFO  00:36:38,855 - #14 [
+INFO  00:36:38,855 - #42 0
+INFO  00:36:38,855 - #15 ]
+INFO  00:36:38,855 - #7 ;
+INFO  00:36:38,855 - #39 print
+INFO  00:36:38,855 - #13 (
+INFO  00:36:38,855 - #43 bodovi
+INFO  00:36:38,855 - #12 )
+INFO  00:36:38,855 - #7 ;
+INFO  00:36:38,855 - #39 print
+INFO  00:36:38,855 - #13 (
+INFO  00:36:38,855 - #43 niz
+INFO  00:36:38,855 - #14 [
+INFO  00:36:38,855 - #42 2
+INFO  00:36:38,855 - #15 ]
+INFO  00:36:38,855 - #12 )
+INFO  00:36:38,855 - #7 ;
+INFO  00:36:38,855 - #43 nizch
+INFO  00:36:38,870 - #6 =
+INFO  00:36:38,870 - #31 new
+INFO  00:36:38,870 - #43 char
+INFO  00:36:38,870 - #14 [
+INFO  00:36:38,870 - #42 3
+INFO  00:36:38,870 - #15 ]
+INFO  00:36:38,870 - #7 ;
+INFO  00:36:38,870 - #43 nizch
+INFO  00:36:38,870 - #14 [
+INFO  00:36:38,870 - #42 0
+INFO  00:36:38,870 - #15 ]
+INFO  00:36:38,870 - #6 =
+INFO  00:36:38,870 - #44 a
+INFO  00:36:38,870 - #7 ;
+INFO  00:36:38,870 - #43 nizch
+INFO  00:36:38,870 - #14 [
+INFO  00:36:38,870 - #43 jedan
+INFO  00:36:38,870 - #15 ]
+INFO  00:36:38,870 - #6 =
+INFO  00:36:38,870 - #44 b
+INFO  00:36:38,870 - #7 ;
+INFO  00:36:38,870 - #43 nizch
+INFO  00:36:38,870 - #14 [
+INFO  00:36:38,870 - #43 pet
+INFO  00:36:38,870 - #25 -
+INFO  00:36:38,870 - #42 3
+INFO  00:36:38,870 - #15 ]
+INFO  00:36:38,870 - #6 =
+INFO  00:36:38,870 - #44 c
+INFO  00:36:38,870 - #7 ;
+INFO  00:36:38,870 - #39 print
+INFO  00:36:38,870 - #13 (
+INFO  00:36:38,870 - #43 nizch
+INFO  00:36:38,870 - #14 [
+INFO  00:36:38,870 - #42 1
+INFO  00:36:38,870 - #15 ]
+INFO  00:36:38,870 - #12 )
+INFO  00:36:38,870 - #7 ;
+INFO  00:36:38,870 - #39 print
+INFO  00:36:38,870 - #13 (
+INFO  00:36:38,870 - #43 nizch
+INFO  00:36:38,870 - #14 [
+INFO  00:36:38,870 - #43 jedan
+INFO  00:36:38,870 - #26 *
+INFO  00:36:38,870 - #42 2
+INFO  00:36:38,870 - #15 ]
+INFO  00:36:38,870 - #12 )
+INFO  00:36:38,870 - #7 ;
+INFO  00:36:38,870 - #43 bodovi
+INFO  00:36:38,870 - #6 =
+INFO  00:36:38,870 - #43 bodovi
+INFO  00:36:38,870 - #24 +
+INFO  00:36:38,870 - #13 (
+INFO  00:36:38,870 - #43 pet
+INFO  00:36:38,870 - #26 *
+INFO  00:36:38,870 - #43 jedan
+INFO  00:36:38,886 - #25 -
+INFO  00:36:38,886 - #42 1
+INFO  00:36:38,886 - #12 )
+INFO  00:36:38,886 - #26 *
+INFO  00:36:38,886 - #43 bodovi
+INFO  00:36:38,886 - #25 -
+INFO  00:36:38,886 - #13 (
+INFO  00:36:38,886 - #42 3
+INFO  00:36:38,886 - #28 %
+INFO  00:36:38,886 - #42 2
+INFO  00:36:38,886 - #24 +
+INFO  00:36:38,886 - #42 3
+INFO  00:36:38,886 - #26 *
+INFO  00:36:38,886 - #42 2
+INFO  00:36:38,886 - #25 -
+INFO  00:36:38,886 - #42 3
+INFO  00:36:38,886 - #12 )
+INFO  00:36:38,886 - #7 ;
+INFO  00:36:38,886 - #39 print
+INFO  00:36:38,886 - #13 (
+INFO  00:36:38,886 - #43 bodovi
+INFO  00:36:38,886 - #12 )
+INFO  00:36:38,886 - #7 ;
+INFO  00:36:38,886 - #38 read
+INFO  00:36:38,886 - #13 (
+INFO  00:36:38,886 - #43 bodovi
+INFO  00:36:38,886 - #12 )
+INFO  00:36:38,886 - #7 ;
+INFO  00:36:38,886 - #43 bt
+INFO  00:36:38,886 - #6 =
+INFO  00:36:38,886 - #45 true
+INFO  00:36:38,886 - #7 ;
+INFO  00:36:38,909 - #40 if
+INFO  00:36:38,909 - #13 (
+INFO  00:36:38,909 - #43 bt
+INFO  00:36:38,909 - #12 )
+INFO  00:36:38,912 - #3 {
+INFO  00:36:38,912 - #39 print
+INFO  00:36:38,914 - #13 (
+INFO  00:36:38,914 - #43 bodovi
+INFO  00:36:38,914 - #12 )
+INFO  00:36:38,914 - #7 ;
+INFO  00:36:38,915 - #4 }
+INFO  00:36:38,915 - #41 else
+INFO  00:36:38,916 - #3 {
+INFO  00:36:38,917 - #39 print
+INFO  00:36:38,917 - #13 (
+INFO  00:36:38,917 - #43 bodovi
+INFO  00:36:38,917 - #24 +
+INFO  00:36:38,917 - #42 10
+INFO  00:36:38,918 - #12 )
+INFO  00:36:38,918 - #7 ;
+INFO  00:36:38,918 - #4 }
+INFO  00:36:38,918 - #40 if
+INFO  00:36:38,919 - #13 (
+INFO  00:36:38,919 - #43 bodovi
+INFO  00:36:38,919 - #20 >
+INFO  00:36:38,923 - #42 10
+INFO  00:36:38,925 - #12 )
+INFO  00:36:38,926 - #3 {
+INFO  00:36:38,926 - #39 print
+INFO  00:36:38,926 - #13 (
+INFO  00:36:38,926 - #44 +
+INFO  00:36:38,926 - #12 )
+INFO  00:36:38,927 - #7 ;
+INFO  00:36:38,927 - #4 }
+INFO  00:36:38,927 - #41 else
+INFO  00:36:38,927 - #3 {
+INFO  00:36:38,927 - #39 print
+INFO  00:36:38,928 - #13 (
+INFO  00:36:38,928 - #44 -
+INFO  00:36:38,928 - #12 )
+INFO  00:36:38,928 - #7 ;
+INFO  00:36:38,928 - #4 }
+INFO  00:36:38,929 - #4 }
+INFO  00:36:38,929 - #4 }
+INFO  00:36:38,971 - Program(
   ProgName(
    test301
   ) [ProgName]
@@ -1549,363 +1549,363 @@ INFO  00:42:50,296 - Program(
     ) [MethodDeclaration]
   ) [MethodsDeclarationList]
 ) [Program]
-INFO  00:42:50,406 - ===================================
-INFO  00:42:50,416 - Pocetak obrade programa test301 na liniji 3
-INFO  00:42:50,418 - type posetio
-INFO  00:42:50,418 - NumConst posetio, vrednost=0
-INFO  00:42:50,418 - NoConstantsList posetio, kraj rekurzije
-INFO  00:42:50,418 - ConstDeclaration posetio
-INFO  00:42:50,418 - Deklarisana konstanta nula
-INFO  00:42:50,418 - type posetio
-INFO  00:42:50,418 - NumConst posetio, vrednost=1
-INFO  00:42:50,418 - NoConstantsList posetio, kraj rekurzije
-INFO  00:42:50,426 - ConstDeclaration posetio
-INFO  00:42:50,426 - Deklarisana konstanta jedan
-INFO  00:42:50,426 - type posetio
-INFO  00:42:50,426 - NumConst posetio, vrednost=5
-INFO  00:42:50,426 - NoConstantsList posetio, kraj rekurzije
-INFO  00:42:50,426 - ConstDeclaration posetio
-INFO  00:42:50,426 - Deklarisana konstanta pet
-INFO  00:42:50,426 - type posetio
-INFO  00:42:50,426 - Array posetio
-INFO  00:42:50,426 - NoVarDeclList posetio, kraj rekurzije
-INFO  00:42:50,428 - varDecl posetio
-INFO  00:42:50,428 - Deklarisan globalni niz niz na liniji 9
-INFO  00:42:50,428 - type posetio
-INFO  00:42:50,428 - Array posetio
-INFO  00:42:50,428 - NoVarDeclList posetio, kraj rekurzije
-INFO  00:42:50,428 - varDecl posetio
-INFO  00:42:50,428 - Deklarisan globalni niz nizch na liniji 10
-INFO  00:42:50,428 - NoMethodsDeclarationList posetili
-INFO  00:42:50,428 - MethodVoid posetili
-INFO  00:42:50,428 - Obradjuje se void metoda: main na liniji 13
-INFO  00:42:50,428 - type posetio
-INFO  00:42:50,428 - NoArray posetio
-INFO  00:42:50,428 - NoVarDeclList posetio, kraj rekurzije
-INFO  00:42:50,428 - varDecl posetio
-INFO  00:42:50,428 - Deklarisana lokalna promenljiva bodovi
-INFO  00:42:50,428 - ListVarDeclaration posetili
-INFO  00:42:50,428 - type posetio
-INFO  00:42:50,428 - NoArray posetio
-INFO  00:42:50,428 - NoVarDeclList posetio, kraj rekurzije
-INFO  00:42:50,428 - varDecl posetio
-INFO  00:42:50,428 - Deklarisana lokalna promenljiva bt
-INFO  00:42:50,428 - ListVarDeclaration posetili
-INFO  00:42:50,428 - Designator posetili
-INFO  00:42:50,428 - FactorNumConst posetili
-INFO  00:42:50,428 - Term posetili
-INFO  00:42:50,428 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,428 - Expression posetili
-INFO  00:42:50,428 - DesgnStmtAsgnOp posetili
-INFO  00:42:50,428 - Designator posetili
-INFO  00:42:50,436 - DesgnStmtIncr posetili
-INFO  00:42:50,436 - Designator posetili
-INFO  00:42:50,436 - Designator posetili
-INFO  00:42:50,436 - FactorDesign posetili
-INFO  00:42:50,436 - Term posetili
-INFO  00:42:50,436 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,436 - Designator posetili
-INFO  00:42:50,436 - FactorDesign posetili
-INFO  00:42:50,436 - Term posetili
-INFO  00:42:50,436 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,436 - ListAddopTerm posetili
-INFO  00:42:50,436 - Expression posetili
-INFO  00:42:50,436 - DesgnStmtAsgnOp posetili
-INFO  00:42:50,436 - Designator posetili
-INFO  00:42:50,438 - Designator posetili
-INFO  00:42:50,438 - FactorDesign posetili
-INFO  00:42:50,438 - Designator posetili
-INFO  00:42:50,438 - FactorDesign posetili
-INFO  00:42:50,438 - MullopFactList posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,438 - DesgnStmtAsgnOp posetili
-INFO  00:42:50,438 - Designator posetili
-INFO  00:42:50,438 - DesgnStmtDecr posetili
-INFO  00:42:50,438 - Designator posetili
-INFO  00:42:50,438 - FactorDesign posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,438 - StmtPrint posetili
-INFO  00:42:50,438 - Designator posetili
-INFO  00:42:50,438 - type posetio
-INFO  00:42:50,438 - FactorNumConst posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,438 - FactorNewArr posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@4783da3f
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,438 - DesgnStmtAsgnOp posetili
-INFO  00:42:50,438 - Designator posetili
-INFO  00:42:50,438 - FactorDesign posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,438 - DesignatorArr posetili
-INFO  00:42:50,438 - Designator posetili
-INFO  00:42:50,438 - FactorDesign posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,438 - DesgnStmtAsgnOp posetili
-INFO  00:42:50,438 - FactorNumConst posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,438 - DesignatorArr posetili
-INFO  00:42:50,438 - FactorNumConst posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,438 - DesgnStmtAsgnOp posetili
-INFO  00:42:50,438 - Designator posetili
-INFO  00:42:50,438 - FactorDesign posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,438 - DesignatorArr posetili
-INFO  00:42:50,438 - FactorDesign posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,438 - DesignatorArr posetili
-INFO  00:42:50,438 - FactorNumConst posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,438 - DesignatorArr posetili
-INFO  00:42:50,438 - FactorDesign posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,438 - DesignatorArr posetili
-INFO  00:42:50,438 - FactorDesign posetili
-INFO  00:42:50,438 - FactorNumConst posetili
-INFO  00:42:50,438 - MullopFactList posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,438 - DesgnStmtAsgnOp posetili
-INFO  00:42:50,438 - Designator posetili
-INFO  00:42:50,438 - FactorNumConst posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,438 - DesignatorArr posetili
-INFO  00:42:50,438 - FactorDesign posetili
-INFO  00:42:50,438 - FactorNumConst posetili
-INFO  00:42:50,438 - Term posetili
-INFO  00:42:50,438 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,438 - Expression posetili
-INFO  00:42:50,446 - DesignatorArr posetili
-INFO  00:42:50,446 - FactorDesign posetili
-INFO  00:42:50,446 - MullopFactList posetili
-INFO  00:42:50,446 - Term posetili
-INFO  00:42:50,446 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,446 - Expression posetili
-INFO  00:42:50,446 - DesgnStmtAsgnOp posetili
-INFO  00:42:50,446 - Designator posetili
-INFO  00:42:50,446 - FactorDesign posetili
-INFO  00:42:50,446 - Term posetili
-INFO  00:42:50,446 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,446 - Expression posetili
-INFO  00:42:50,446 - StmtPrint posetili
-INFO  00:42:50,446 - FactorNumConst posetili
-INFO  00:42:50,446 - Term posetili
-INFO  00:42:50,446 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,446 - Expression posetili
-INFO  00:42:50,446 - DesignatorArr posetili
-INFO  00:42:50,446 - FactorDesign posetili
-INFO  00:42:50,446 - Term posetili
-INFO  00:42:50,446 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,446 - Expression posetili
-INFO  00:42:50,446 - StmtPrint posetili
-INFO  00:42:50,446 - Designator posetili
-INFO  00:42:50,446 - type posetio
-INFO  00:42:50,446 - FactorNumConst posetili
-INFO  00:42:50,446 - Term posetili
-INFO  00:42:50,446 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,446 - Expression posetili
-INFO  00:42:50,446 - FactorNewArr posetili
-INFO  00:42:50,446 - Term posetili
-INFO  00:42:50,446 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@378fd1ac
-INFO  00:42:50,446 - Expression posetili
-INFO  00:42:50,446 - DesgnStmtAsgnOp posetili
-INFO  00:42:50,446 - FactorNumConst posetili
-INFO  00:42:50,448 - Term posetili
-INFO  00:42:50,448 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,448 - Expression posetili
-INFO  00:42:50,448 - DesignatorArr posetili
-INFO  00:42:50,448 - FactorCharConst posetili
-INFO  00:42:50,448 - Term posetili
-INFO  00:42:50,448 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@49097b5d
-INFO  00:42:50,448 - Expression posetili
-INFO  00:42:50,448 - DesgnStmtAsgnOp posetili
-INFO  00:42:50,448 - Designator posetili
-INFO  00:42:50,448 - FactorDesign posetili
-INFO  00:42:50,448 - Term posetili
-INFO  00:42:50,448 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,448 - Expression posetili
-INFO  00:42:50,448 - DesignatorArr posetili
-INFO  00:42:50,448 - FactorCharConst posetili
-INFO  00:42:50,448 - Term posetili
-INFO  00:42:50,448 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@49097b5d
-INFO  00:42:50,448 - Expression posetili
-INFO  00:42:50,458 - DesgnStmtAsgnOp posetili
-INFO  00:42:50,458 - Designator posetili
-INFO  00:42:50,458 - FactorDesign posetili
-INFO  00:42:50,458 - Term posetili
-INFO  00:42:50,458 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,458 - FactorNumConst posetili
-INFO  00:42:50,458 - Term posetili
-INFO  00:42:50,458 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,458 - ListAddopTerm posetili
-INFO  00:42:50,458 - Expression posetili
-INFO  00:42:50,458 - DesignatorArr posetili
-INFO  00:42:50,458 - FactorCharConst posetili
-INFO  00:42:50,458 - Term posetili
-INFO  00:42:50,458 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@49097b5d
-INFO  00:42:50,458 - Expression posetili
-INFO  00:42:50,458 - DesgnStmtAsgnOp posetili
-INFO  00:42:50,458 - FactorNumConst posetili
-INFO  00:42:50,458 - Term posetili
-INFO  00:42:50,458 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,458 - Expression posetili
-INFO  00:42:50,458 - DesignatorArr posetili
-INFO  00:42:50,458 - FactorDesign posetili
-INFO  00:42:50,458 - Term posetili
-INFO  00:42:50,458 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@49097b5d
-INFO  00:42:50,458 - Expression posetili
-INFO  00:42:50,458 - StmtPrint posetili
-INFO  00:42:50,458 - Designator posetili
-INFO  00:42:50,458 - FactorDesign posetili
-INFO  00:42:50,458 - FactorNumConst posetili
-INFO  00:42:50,458 - MullopFactList posetili
-INFO  00:42:50,466 - Term posetili
-INFO  00:42:50,466 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,466 - Expression posetili
-INFO  00:42:50,466 - DesignatorArr posetili
-INFO  00:42:50,466 - FactorDesign posetili
-INFO  00:42:50,466 - Term posetili
-INFO  00:42:50,468 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@49097b5d
-INFO  00:42:50,468 - Expression posetili
-INFO  00:42:50,468 - StmtPrint posetili
-INFO  00:42:50,468 - Designator posetili
-INFO  00:42:50,468 - Designator posetili
-INFO  00:42:50,468 - FactorDesign posetili
-INFO  00:42:50,468 - Term posetili
-INFO  00:42:50,468 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,468 - Designator posetili
-INFO  00:42:50,468 - FactorDesign posetili
-INFO  00:42:50,468 - Designator posetili
-INFO  00:42:50,468 - FactorDesign posetili
-INFO  00:42:50,468 - MullopFactList posetili
-INFO  00:42:50,468 - Term posetili
-INFO  00:42:50,468 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,468 - FactorNumConst posetili
-INFO  00:42:50,468 - Term posetili
-INFO  00:42:50,468 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,468 - ListAddopTerm posetili
-INFO  00:42:50,468 - Expression posetili
-INFO  00:42:50,468 - FactorExpr posetili
-INFO  00:42:50,468 - Designator posetili
-INFO  00:42:50,468 - FactorDesign posetili
-INFO  00:42:50,468 - MullopFactList posetili
-INFO  00:42:50,468 - Term posetili
-INFO  00:42:50,476 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,476 - ListAddopTerm posetili
-INFO  00:42:50,476 - FactorNumConst posetili
-INFO  00:42:50,476 - FactorNumConst posetili
-INFO  00:42:50,476 - MullopFactList posetili
-INFO  00:42:50,476 - Term posetili
-INFO  00:42:50,476 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,476 - FactorNumConst posetili
-INFO  00:42:50,476 - FactorNumConst posetili
-INFO  00:42:50,476 - MullopFactList posetili
-INFO  00:42:50,476 - Term posetili
-INFO  00:42:50,476 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,478 - ListAddopTerm posetili
-INFO  00:42:50,478 - FactorNumConst posetili
-INFO  00:42:50,478 - Term posetili
-INFO  00:42:50,478 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,478 - ListAddopTerm posetili
-INFO  00:42:50,478 - Expression posetili
-INFO  00:42:50,478 - FactorExpr posetili
-INFO  00:42:50,478 - Term posetili
-INFO  00:42:50,478 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,478 - ListAddopTerm posetili
-INFO  00:42:50,478 - Expression posetili
-INFO  00:42:50,478 - DesgnStmtAsgnOp posetili
-INFO  00:42:50,478 - Designator posetili
-INFO  00:42:50,478 - FactorDesign posetili
-INFO  00:42:50,478 - Term posetili
-INFO  00:42:50,478 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,478 - Expression posetili
-INFO  00:42:50,478 - StmtPrint posetili
-INFO  00:42:50,478 - Designator posetili
-INFO  00:42:50,478 - StmtRead posetili
-INFO  00:42:50,478 - Designator posetili
-INFO  00:42:50,478 - FactorBoolConst posetili
-INFO  00:42:50,478 - Term posetili
-INFO  00:42:50,478 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@6e2c634b
-INFO  00:42:50,478 - Expression posetili
-INFO  00:42:50,478 - DesgnStmtAsgnOp posetili
-INFO  00:42:50,478 - Designator posetili
-INFO  00:42:50,478 - FactorDesign posetili
-INFO  00:42:50,478 - Term posetili
-INFO  00:42:50,478 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@6e2c634b
-INFO  00:42:50,478 - Expression posetili
-INFO  00:42:50,478 - ConditionFact posetili
-INFO  00:42:50,478 - ConditionTerm posetili
-INFO  00:42:50,478 - Cond posetili
-INFO  00:42:50,478 - Designator posetili
-INFO  00:42:50,478 - FactorDesign posetili
-INFO  00:42:50,478 - Term posetili
-INFO  00:42:50,478 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,478 - Expression posetili
-INFO  00:42:50,478 - StmtPrint posetili
-INFO  00:42:50,478 - Designator posetili
-INFO  00:42:50,478 - FactorDesign posetili
-INFO  00:42:50,478 - Term posetili
-INFO  00:42:50,478 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,478 - FactorNumConst posetili
-INFO  00:42:50,478 - Term posetili
-INFO  00:42:50,478 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,478 - ListAddopTerm posetili
-INFO  00:42:50,478 - Expression posetili
-INFO  00:42:50,478 - StmtPrint posetili
-INFO  00:42:50,478 - StmtIfElse posetili
-INFO  00:42:50,478 - Designator posetili
-INFO  00:42:50,478 - FactorDesign posetili
-INFO  00:42:50,478 - Term posetili
-INFO  00:42:50,478 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,478 - Expression posetili
-INFO  00:42:50,478 - FactorNumConst posetili
-INFO  00:42:50,478 - Term posetili
-INFO  00:42:50,478 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
-INFO  00:42:50,478 - Expression posetili
-INFO  00:42:50,478 - RelopExprExist posetili
-INFO  00:42:50,478 - ConditionFact posetili
-INFO  00:42:50,478 - ConditionTerm posetili
-INFO  00:42:50,487 - Cond posetili
-INFO  00:42:50,487 - FactorCharConst posetili
-INFO  00:42:50,487 - Term posetili
-INFO  00:42:50,487 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@49097b5d
-INFO  00:42:50,487 - Expression posetili
-INFO  00:42:50,487 - StmtPrint posetili
-INFO  00:42:50,487 - FactorCharConst posetili
-INFO  00:42:50,487 - Term posetili
-INFO  00:42:50,487 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@49097b5d
-INFO  00:42:50,487 - Expression posetili
-INFO  00:42:50,487 - StmtPrint posetili
-INFO  00:42:50,487 - StmtIfElse posetili
-INFO  00:42:50,487 - MethodDeclaration posetili
-INFO  00:42:50,487 - MethodsDeclarationList posetili
-INFO  00:42:50,487 - Zavrsetak obrade metode main
-INFO  00:42:50,487 - Kraj semanticke obrade programa test301
-INFO  00:42:50,489 - ===================================
-INFO  00:42:50,489 - Parsiranje uspesno zavrseno!
+INFO  00:36:39,024 - ===================================
+INFO  00:36:39,024 - Pocetak obrade programa test301 na liniji 3
+INFO  00:36:39,024 - type posetio
+INFO  00:36:39,024 - NumConst posetio, vrednost=0
+INFO  00:36:39,024 - NoConstantsList posetio, kraj rekurzije
+INFO  00:36:39,040 - ConstDeclaration posetio
+INFO  00:36:39,040 - Deklarisana konstanta nula
+INFO  00:36:39,040 - type posetio
+INFO  00:36:39,040 - NumConst posetio, vrednost=1
+INFO  00:36:39,040 - NoConstantsList posetio, kraj rekurzije
+INFO  00:36:39,040 - ConstDeclaration posetio
+INFO  00:36:39,040 - Deklarisana konstanta jedan
+INFO  00:36:39,040 - type posetio
+INFO  00:36:39,040 - NumConst posetio, vrednost=5
+INFO  00:36:39,040 - NoConstantsList posetio, kraj rekurzije
+INFO  00:36:39,040 - ConstDeclaration posetio
+INFO  00:36:39,040 - Deklarisana konstanta pet
+INFO  00:36:39,040 - type posetio
+INFO  00:36:39,040 - Array posetio
+INFO  00:36:39,040 - NoVarDeclList posetio, kraj rekurzije
+INFO  00:36:39,040 - varDecl posetio
+INFO  00:36:39,040 - Deklarisan globalni niz niz na liniji 9
+INFO  00:36:39,040 - type posetio
+INFO  00:36:39,040 - Array posetio
+INFO  00:36:39,040 - NoVarDeclList posetio, kraj rekurzije
+INFO  00:36:39,040 - varDecl posetio
+INFO  00:36:39,040 - Deklarisan globalni niz nizch na liniji 10
+INFO  00:36:39,040 - NoMethodsDeclarationList posetili
+INFO  00:36:39,040 - MethodVoid posetili
+INFO  00:36:39,040 - Obradjuje se void metoda: main na liniji 13
+INFO  00:36:39,040 - type posetio
+INFO  00:36:39,040 - NoArray posetio
+INFO  00:36:39,040 - NoVarDeclList posetio, kraj rekurzije
+INFO  00:36:39,040 - varDecl posetio
+INFO  00:36:39,040 - Deklarisana lokalna promenljiva bodovi
+INFO  00:36:39,040 - ListVarDeclaration posetili
+INFO  00:36:39,040 - type posetio
+INFO  00:36:39,040 - NoArray posetio
+INFO  00:36:39,040 - NoVarDeclList posetio, kraj rekurzije
+INFO  00:36:39,040 - varDecl posetio
+INFO  00:36:39,040 - Deklarisana lokalna promenljiva bt
+INFO  00:36:39,040 - ListVarDeclaration posetili
+INFO  00:36:39,040 - Designator posetili
+INFO  00:36:39,040 - FactorNumConst posetili
+INFO  00:36:39,040 - Term posetili
+INFO  00:36:39,040 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,040 - Expression posetili
+INFO  00:36:39,040 - DesgnStmtAsgnOp posetili
+INFO  00:36:39,040 - Designator posetili
+INFO  00:36:39,040 - DesgnStmtIncr posetili
+INFO  00:36:39,040 - Designator posetili
+INFO  00:36:39,056 - Designator posetili
+INFO  00:36:39,056 - FactorDesign posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - Designator posetili
+INFO  00:36:39,056 - FactorDesign posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - ListAddopTerm posetili
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - DesgnStmtAsgnOp posetili
+INFO  00:36:39,056 - Designator posetili
+INFO  00:36:39,056 - Designator posetili
+INFO  00:36:39,056 - FactorDesign posetili
+INFO  00:36:39,056 - Designator posetili
+INFO  00:36:39,056 - FactorDesign posetili
+INFO  00:36:39,056 - MullopFactList posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - DesgnStmtAsgnOp posetili
+INFO  00:36:39,056 - Designator posetili
+INFO  00:36:39,056 - DesgnStmtDecr posetili
+INFO  00:36:39,056 - Designator posetili
+INFO  00:36:39,056 - FactorDesign posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - StmtPrint posetili
+INFO  00:36:39,056 - Designator posetili
+INFO  00:36:39,056 - type posetio
+INFO  00:36:39,056 - FactorNumConst posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - FactorNewArr posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@4783da3f
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - DesgnStmtAsgnOp posetili
+INFO  00:36:39,056 - Designator posetili
+INFO  00:36:39,056 - FactorDesign posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - DesignatorArr posetili
+INFO  00:36:39,056 - Designator posetili
+INFO  00:36:39,056 - FactorDesign posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - DesgnStmtAsgnOp posetili
+INFO  00:36:39,056 - FactorNumConst posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - DesignatorArr posetili
+INFO  00:36:39,056 - FactorNumConst posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - DesgnStmtAsgnOp posetili
+INFO  00:36:39,056 - Designator posetili
+INFO  00:36:39,056 - FactorDesign posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - DesignatorArr posetili
+INFO  00:36:39,056 - FactorDesign posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - DesignatorArr posetili
+INFO  00:36:39,056 - FactorNumConst posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - DesignatorArr posetili
+INFO  00:36:39,056 - FactorDesign posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - DesignatorArr posetili
+INFO  00:36:39,056 - FactorDesign posetili
+INFO  00:36:39,056 - FactorNumConst posetili
+INFO  00:36:39,056 - MullopFactList posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - DesgnStmtAsgnOp posetili
+INFO  00:36:39,056 - Designator posetili
+INFO  00:36:39,056 - FactorNumConst posetili
+INFO  00:36:39,056 - Term posetili
+INFO  00:36:39,056 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,056 - Expression posetili
+INFO  00:36:39,056 - DesignatorArr posetili
+INFO  00:36:39,056 - FactorDesign posetili
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - DesignatorArr posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - MullopFactList posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - DesgnStmtAsgnOp posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - StmtPrint posetili
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - DesignatorArr posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - StmtPrint posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - type posetio
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - FactorNewArr posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@378fd1ac
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - DesgnStmtAsgnOp posetili
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - DesignatorArr posetili
+INFO  00:36:39,071 - FactorCharConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@49097b5d
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - DesgnStmtAsgnOp posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - DesignatorArr posetili
+INFO  00:36:39,071 - FactorCharConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@49097b5d
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - DesgnStmtAsgnOp posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - ListAddopTerm posetili
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - DesignatorArr posetili
+INFO  00:36:39,071 - FactorCharConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@49097b5d
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - DesgnStmtAsgnOp posetili
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - DesignatorArr posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@49097b5d
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - StmtPrint posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - MullopFactList posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - DesignatorArr posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@49097b5d
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - StmtPrint posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - MullopFactList posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - ListAddopTerm posetili
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - FactorExpr posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - MullopFactList posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - ListAddopTerm posetili
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - MullopFactList posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - MullopFactList posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - ListAddopTerm posetili
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - ListAddopTerm posetili
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - FactorExpr posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - ListAddopTerm posetili
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - DesgnStmtAsgnOp posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - StmtPrint posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - StmtRead posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - FactorBoolConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@6e2c634b
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - DesgnStmtAsgnOp posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@6e2c634b
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - ConditionFact posetili
+INFO  00:36:39,071 - ConditionTerm posetili
+INFO  00:36:39,071 - Cond posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - StmtPrint posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - ListAddopTerm posetili
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - StmtPrint posetili
+INFO  00:36:39,071 - StmtIfElse posetili
+INFO  00:36:39,071 - Designator posetili
+INFO  00:36:39,071 - FactorDesign posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - FactorNumConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@5e9f23b4
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - RelopExprExist posetili
+INFO  00:36:39,071 - ConditionFact posetili
+INFO  00:36:39,071 - ConditionTerm posetili
+INFO  00:36:39,071 - Cond posetili
+INFO  00:36:39,071 - FactorCharConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@49097b5d
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - StmtPrint posetili
+INFO  00:36:39,071 - FactorCharConst posetili
+INFO  00:36:39,071 - Term posetili
+INFO  00:36:39,071 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@49097b5d
+INFO  00:36:39,071 - Expression posetili
+INFO  00:36:39,071 - StmtPrint posetili
+INFO  00:36:39,071 - StmtIfElse posetili
+INFO  00:36:39,071 - MethodDeclaration posetili
+INFO  00:36:39,071 - MethodsDeclarationList posetili
+INFO  00:36:39,071 - Zavrsetak obrade metode main
+INFO  00:36:39,071 - Kraj semanticke obrade programa test301
+INFO  00:36:39,071 - ===================================
+INFO  00:36:39,071 - Parsiranje uspesno zavrseno!
