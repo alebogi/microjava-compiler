@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/8/2021 1:17:19
+// 11/8/2021 18:37:8
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,13 +8,10 @@ package rs.ac.bg.etf.pp1.ast;
 public class ConditionTerm extends CondTerm {
 
     private CondFact CondFact;
-    private CondFactAndList CondFactAndList;
 
-    public ConditionTerm (CondFact CondFact, CondFactAndList CondFactAndList) {
+    public ConditionTerm (CondFact CondFact) {
         this.CondFact=CondFact;
         if(CondFact!=null) CondFact.setParent(this);
-        this.CondFactAndList=CondFactAndList;
-        if(CondFactAndList!=null) CondFactAndList.setParent(this);
     }
 
     public CondFact getCondFact() {
@@ -25,32 +22,21 @@ public class ConditionTerm extends CondTerm {
         this.CondFact=CondFact;
     }
 
-    public CondFactAndList getCondFactAndList() {
-        return CondFactAndList;
-    }
-
-    public void setCondFactAndList(CondFactAndList CondFactAndList) {
-        this.CondFactAndList=CondFactAndList;
-    }
-
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
 
     public void childrenAccept(Visitor visitor) {
         if(CondFact!=null) CondFact.accept(visitor);
-        if(CondFactAndList!=null) CondFactAndList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(CondFact!=null) CondFact.traverseTopDown(visitor);
-        if(CondFactAndList!=null) CondFactAndList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(CondFact!=null) CondFact.traverseBottomUp(visitor);
-        if(CondFactAndList!=null) CondFactAndList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -61,12 +47,6 @@ public class ConditionTerm extends CondTerm {
 
         if(CondFact!=null)
             buffer.append(CondFact.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(CondFactAndList!=null)
-            buffer.append(CondFactAndList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/8/2021 1:17:19
+// 11/8/2021 18:37:8
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -13,7 +13,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Arr Arr) { }
     public void visit(ConstListEnd ConstListEnd) { }
     public void visit(Relop Relop) { }
-    public void visit(CondTermOrList CondTermOrList) { }
     public void visit(Assignop Assignop) { }
     public void visit(MethodType MethodType) { }
     public void visit(MulopFactorList MulopFactorList) { }
@@ -41,7 +40,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DesgnListEnd DesgnListEnd) { }
     public void visit(ActPars ActPars) { }
     public void visit(DesignatorStatement DesignatorStatement) { }
-    public void visit(CondFactAndList CondFactAndList) { }
     public void visit(Statement Statement) { }
     public void visit(VarDecl VarDecl) { }
     public void visit(ClassDecl ClassDecl) { }
@@ -73,9 +71,8 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(NoDesignList NoDesignList) { visit(); }
     public void visit(DesignList DesignList) { visit(); }
     public void visit(Designator Designator) { visit(); }
-    public void visit(NoArrExprExists NoArrExprExists) { visit(); }
-    public void visit(ArrExprExists ArrExprExists) { visit(); }
     public void visit(FactorExpr FactorExpr) { visit(); }
+    public void visit(FactorNewArr FactorNewArr) { visit(); }
     public void visit(FactorNew FactorNew) { visit(); }
     public void visit(FactorBoolConst FactorBoolConst) { visit(); }
     public void visit(FactorCharConst FactorCharConst) { visit(); }
@@ -93,13 +90,10 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(NoRelopExprExist NoRelopExprExist) { visit(); }
     public void visit(RelopExprExist RelopExprExist) { visit(); }
     public void visit(ConditionFact ConditionFact) { visit(); }
-    public void visit(NoCondFactListAnd NoCondFactListAnd) { visit(); }
-    public void visit(CondFactListAnd CondFactListAnd) { visit(); }
-    public void visit(CondTermError CondTermError) { visit(); }
     public void visit(ConditionTerm ConditionTerm) { visit(); }
-    public void visit(NoCondTermLisOr NoCondTermLisOr) { visit(); }
-    public void visit(CondTermListOr CondTermListOr) { visit(); }
+    public void visit(ConditionTermAnd ConditionTermAnd) { visit(); }
     public void visit(Cond Cond) { visit(); }
+    public void visit(CondOr CondOr) { visit(); }
     public void visit(ExpListEnd ExpListEnd) { visit(); }
     public void visit(NoExpListComma NoExpListComma) { visit(); }
     public void visit(ExpListComma ExpListComma) { visit(); }

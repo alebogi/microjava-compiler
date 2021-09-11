@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/8/2021 1:17:19
+// 11/8/2021 18:37:8
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -13,7 +13,6 @@ public interface Visitor {
     public void visit(Arr Arr);
     public void visit(ConstListEnd ConstListEnd);
     public void visit(Relop Relop);
-    public void visit(CondTermOrList CondTermOrList);
     public void visit(Assignop Assignop);
     public void visit(MethodType MethodType);
     public void visit(MulopFactorList MulopFactorList);
@@ -41,7 +40,6 @@ public interface Visitor {
     public void visit(DesgnListEnd DesgnListEnd);
     public void visit(ActPars ActPars);
     public void visit(DesignatorStatement DesignatorStatement);
-    public void visit(CondFactAndList CondFactAndList);
     public void visit(Statement Statement);
     public void visit(VarDecl VarDecl);
     public void visit(ClassDecl ClassDecl);
@@ -73,9 +71,8 @@ public interface Visitor {
     public void visit(NoDesignList NoDesignList);
     public void visit(DesignList DesignList);
     public void visit(Designator Designator);
-    public void visit(NoArrExprExists NoArrExprExists);
-    public void visit(ArrExprExists ArrExprExists);
     public void visit(FactorExpr FactorExpr);
+    public void visit(FactorNewArr FactorNewArr);
     public void visit(FactorNew FactorNew);
     public void visit(FactorBoolConst FactorBoolConst);
     public void visit(FactorCharConst FactorCharConst);
@@ -93,13 +90,10 @@ public interface Visitor {
     public void visit(NoRelopExprExist NoRelopExprExist);
     public void visit(RelopExprExist RelopExprExist);
     public void visit(ConditionFact ConditionFact);
-    public void visit(NoCondFactListAnd NoCondFactListAnd);
-    public void visit(CondFactListAnd CondFactListAnd);
-    public void visit(CondTermError CondTermError);
     public void visit(ConditionTerm ConditionTerm);
-    public void visit(NoCondTermLisOr NoCondTermLisOr);
-    public void visit(CondTermListOr CondTermListOr);
+    public void visit(ConditionTermAnd ConditionTermAnd);
     public void visit(Cond Cond);
+    public void visit(CondOr CondOr);
     public void visit(ExpListEnd ExpListEnd);
     public void visit(NoExpListComma NoExpListComma);
     public void visit(ExpListComma ExpListComma);

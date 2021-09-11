@@ -61,13 +61,13 @@ terminal COLON, SWITCH, QUESTIONMARK, ENUM, CASE;
 
 nonterminal DeclsList, MethodDeclList, Decls, ConstDecl, ClassDecl, ConstList, ConstListEnd, Arr, VarDeclList;
 nonterminal ExtendsClass, ListOfVarDecl, ListOfStmt, Statement, MethodDecl;
-nonterminal FormParsList, DesignatorStatement, Condition, ExprList, ExprListEnd;
-nonterminal CondTerm, CondTermOrList, CondFact, CondFactAndList, RelopExprExists, ActPars, ActParsExists, DesgStmtEnd, StmtList, ExprExists;
-nonterminal Assignop, Relop, Addop, Mulop, AddopTermList, MinusExists, Term, ExprArrExists, MulopFactorList, DesgnListEnd, DesgnList;
+nonterminal FormParsList, DesignatorStatement, ExprList, ExprListEnd;
+nonterminal RelopExprExists, ActPars, ActParsExists, DesgStmtEnd, StmtList, ExprExists;
+nonterminal Assignop, Relop, Addop, Mulop, AddopTermList, MinusExists, MulopFactorList, DesgnListEnd, DesgnList;
 nonterminal StmtMatched, StmtUnmatched;
 
 nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType, FormPars, FormParsListEnd;
-nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor;
+nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor, Term, CondFact, CondTerm, Condition, ExprArrExists;
 
 Program ::= (Program) PROG ProgName:p DeclsList L_BRACE MethodDeclList R_BRACE
 ;
@@ -261,24 +261,18 @@ ExprList ::= (ExpListComma) ExprList ExprListEnd
 ExprListEnd ::= (ExpListEnd) COMMA Expr
 ;
 
-Condition ::= (Cond) CondTerm CondTermOrList
-;			
+	
+
+Condition ::= (CondOr) Condition LOGICAL_OR CondTerm
+				|
+				(Cond) CondTerm
+;		
 			
-CondTermOrList ::= (CondTermListOr) CondTermOrList LOGICAL_OR CondTerm	
-				|
-				(NoCondTermLisOr) /* epsilon */			
+CondTerm ::= (ConditionTermAnd) CondTerm LOGICAL_AND CondFact
+			|	
+			(ConditionTerm) CondFact
 ;
 
-CondTerm ::= (ConditionTerm) CondFact CondFactAndList
-				|
-				(CondTermError) error R_PAREN:l
-				{: parser.report_error("(Greska u logickom izrazu unutar if) [CondTerm] Izvrsen oporavak do ) u liniji " + lleft, null); :}
-;
-
-CondFactAndList ::= (CondFactListAnd) CondFactAndList LOGICAL_AND CondFact
-					|
-					(NoCondFactListAnd) /* epsilon */
-;
 
 CondFact ::= (ConditionFact) Expr RelopExprExists
 ;
@@ -320,15 +314,14 @@ Factor ::= (FactorDesign) Designator ActParsExists
 		|
 		(FactorBoolConst) BOOL_CONST:numVal
 		|
-		(FactorNew) NEW Type ExprArrExists
+		(FactorNew) NEW Type 
+		|
+		(FactorNewArr) NEW Type L_SQUARE_BRACKET Expr R_SQUARE_BRACKET
 		|
 		(FactorExpr) L_PAREN Expr R_PAREN
 ;
 
-ExprArrExists ::= (ArrExprExists) L_SQUARE_BRACKET Expr R_SQUARE_BRACKET
-				|
-				(NoArrExprExists) /* epsilon */
-;
+
 
 Designator ::= (Designator) IDENT:dsgnName DesgnList
 ;

@@ -410,13 +410,9 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     	report_info("NoMethodsDeclarationList posetili", null);
     }
     
-    //izlaz ???
+    //izlaz - NE
     public void visit(MethodDecl md) {
-    	Tab.chainLocalSymbols(currentMethod);
-    	Tab.closeScope();
-    	
-    //	returnFound = false;
-    	currentMethod = null;
+    	report_info("MethodsDecl posetili", null);
     }
     
     // IZLAZ KAD IMAMO FORM PARS
@@ -467,9 +463,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     	Type varType = fp.getType();
     	//Obj obj = Tab.find(varName);  	
     	Obj obj = Tab.currentScope.findSymbol(varName);  
-    	boolean exists = false;   	
-    	
-    	
+    	boolean exists = false;   		
 		if (obj == null) { //Tab.noObj
 			for(MyVariable var: methodArgs) {
 				if(var.getName().equals(varName)) {
@@ -491,10 +485,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 		}else { 			
 			report_error("Semanticka greska: Argument s nazivom '" + varName + "' vec postoji", fp);
 		}
-		
-    	
-    	
-		
+				
 		//dodavanje svih vars u tabelu simbola
 		for(MyVariable var: methodArgs) {
 			String name = var.getName();
@@ -549,8 +540,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 		}else { 			
 			report_error("Semanticka greska: Argument s nazivom '" + varName + "' vec postoji", fple);
 		}
-		
-    	
+		   	
 
     }
     
@@ -561,35 +551,87 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     // ---------------------------------------------------------------
     // *** STATEMENTS ***
     
+    // ---------DESIGNATOR
     public void visit(DesignStmt ds) {
     	
     }
     
-    public void visit(StmtRead sr) {
-    	report_info("StmtRead posetili", null);
-    	
-    	Struct type = sr.getDesignator().obj.getType();
-    	if (type!=Tab.charType && type!=Tab.intType && type!=boolType) {
-			report_error("Semanticka greska: read na liniji " + sr.getLine() + " : " + ": dozvoljeni tipovi su int, char, bool! ", null);
-    	}
-    }
-    
-    public void visit(StmtPrintNumConst sp) {
-    	report_info("StmtPrintNumConst posetili", null);
-    	
-    	Struct type = sp.getExpr().struct;
-		if (type!=Tab.charType && type!=Tab.intType && type!=boolType) {
-			report_error("Semanticka greska: read na liniji " + sp.getLine() + " : " + ": dozvoljeni tipovi su int, char, bool! ", null);
-		} 
-    }
-    
-    public void visit(StmtPrint sp) {
+    public void visit(Designator d) {
     	
     }
-    // *** TERM *** 
     
+    public void visit(DesignList d) {
+    	
+    }
     
-    // *** FACTOR ***
+    public void visit(DesignListEnd d) {
+    	
+    }
+
+	public void visit(DesgnListEndExpr d) {
+		
+	}
+    
+	public void visit(DesgnStmtAsgnOp d) {
+		
+	}
+	
+	public void visit(DesgnStmtIncr d) {
+		
+	}
+
+	public void visit(DesgnStmtDecr d) {
+		
+	}
+	
+	//-------- IF ELSE
+	
+	public void visit(StmtIfElse s) {
+		
+	}
+	
+	public void visit(StmtUnmatchedIf s) {
+		
+	}
+	
+	public void visit(StmtUnmatchedIfElse s) {
+		
+	}
+	
+	
+	// ---- CONDITION
+	public void visit(Cond c) {
+		c.struct = c.getCondTerm().struct;
+	}
+	
+	public void visit(CondOr c) {
+		c.struct = c.getCondTerm().struct;
+	}
+	
+	public void visit(ConditionTerm c) {
+		c.struct = c.getCondFact().struct;
+	}
+
+	public void visit(ConditionTermAnd c) {
+		c.struct =c.getCondFact().struct;
+	}
+
+	public void visit(ConditionFact c) {
+		c.struct = c.getExpr().struct;
+	}
+	
+	// --- EXPR
+	public void visit(Expression e) {
+		e.struct = e.getTerm().struct;
+	}
+	
+	
+	// ---- TERM
+	public void visit(Term t) {
+		t.struct = t.getFactor().struct;
+	}
+	
+	// *** FACTOR *** propagiramo ovima gore 
     public void visit(FactorNumConst f) {
     	f.struct = Tab.intType;
     }
@@ -601,7 +643,67 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	public void visit(FactorBoolConst f) {
 		f.struct = boolType;
 	}
+	
+	public void visit(FactorNew f) {
+		f.struct = f.getType().struct; //?
+	}
+	
+	public void visit(FactorNewArr f) {
+		if (f.getExpr().struct != Tab.intType) {
+			report_error("Semanticka greska na liniji " + f.getLine() + ": pri alociranju niza treba proslediti int", f);
+			f.struct = new Struct(Struct.Array, f.getType().struct); 
+		} else {
+			f.struct = new Struct(Struct.Array, f.getType().struct);
+		}
+    }
+
+
+	//----- MULOP ADDOP
+	public void visit(ListAddopTerm l) {
+		if (l.getTerm().struct != Tab.intType) {
+			report_error("Greska na liniji " + l.getLine() + " - Samo int tipovi mogu da se sabiraju", l);
+		}
+	}
+	
+	public void visit(MullopFactList m) {
+		if (m.getFactor().struct != Tab.intType) {
+			report_error("Greska na liniji " + m.getLine() + " - Samo int tipovi mogu da se mnoze", m);
+		}
+	}
+
+
+	// ------ READ
+    public void visit(StmtRead sr) {
+    	report_info("StmtRead posetili", null);
+    	
+    	Struct type = sr.getDesignator().obj.getType();
+    	if (type!=Tab.charType && type!=Tab.intType && type!=boolType) {
+			report_error("Semanticka greska: read na liniji " + sr.getLine() + " : " + ": dozvoljeni tipovi su int, char, bool! ", null);
+    	}
+    }
     
+    
+    // ---- PRINT
+    public void visit(StmtPrintNumConst sp) {
+    	report_info("StmtPrintNumConst posetili", null);
+    	
+    	Struct type = sp.getExpr().struct;
+		if (type!=Tab.charType && type!=Tab.intType && type!=boolType) {
+			report_error("Semanticka greska: print na liniji " + sp.getLine() + " : " + ": dozvoljeni tipovi su int, char, bool! ", null);
+		} 
+    }
+    
+    public void visit(StmtPrint sp) {
+    	report_info("StmtPrint posetili", null);
+    	
+    	Struct type = sp.getExpr().struct;
+		if (type!=Tab.charType && type!=Tab.intType && type!=boolType) {
+			report_error("Semanticka greska: print na liniji " + sp.getLine() + " : " + ": dozvoljeni tipovi su int, char, bool! ", null);
+		}
+    }
+   
+    
+
     // *** RETURNS ***
     public void visit(StmtRet sr) {
     	report_info("StmtRet posetili", null);
@@ -624,6 +726,12 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     	report_info("NoExprExists posetili", null);
     	
     }
+    
+    // -----
+    
+    
+
+
     
     // -----------------------------------------------------------------
     

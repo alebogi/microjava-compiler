@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/8/2021 1:17:19
+// 11/8/2021 18:37:8
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,13 +8,10 @@ package rs.ac.bg.etf.pp1.ast;
 public class FactorNew extends Factor {
 
     private Type Type;
-    private ExprArrExists ExprArrExists;
 
-    public FactorNew (Type Type, ExprArrExists ExprArrExists) {
+    public FactorNew (Type Type) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
-        this.ExprArrExists=ExprArrExists;
-        if(ExprArrExists!=null) ExprArrExists.setParent(this);
     }
 
     public Type getType() {
@@ -25,32 +22,21 @@ public class FactorNew extends Factor {
         this.Type=Type;
     }
 
-    public ExprArrExists getExprArrExists() {
-        return ExprArrExists;
-    }
-
-    public void setExprArrExists(ExprArrExists ExprArrExists) {
-        this.ExprArrExists=ExprArrExists;
-    }
-
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
 
     public void childrenAccept(Visitor visitor) {
         if(Type!=null) Type.accept(visitor);
-        if(ExprArrExists!=null) ExprArrExists.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Type!=null) Type.traverseTopDown(visitor);
-        if(ExprArrExists!=null) ExprArrExists.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Type!=null) Type.traverseBottomUp(visitor);
-        if(ExprArrExists!=null) ExprArrExists.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -61,12 +47,6 @@ public class FactorNew extends Factor {
 
         if(Type!=null)
             buffer.append(Type.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(ExprArrExists!=null)
-            buffer.append(ExprArrExists.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

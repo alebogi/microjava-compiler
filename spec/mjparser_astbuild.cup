@@ -75,13 +75,8 @@ nonterminal Statement Statement;
 nonterminal MethodDecl MethodDecl;
 nonterminal FormParsList FormParsList;
 nonterminal DesignatorStatement DesignatorStatement;
-nonterminal Condition Condition;
 nonterminal ExprList ExprList;
 nonterminal ExprListEnd ExprListEnd;
-nonterminal CondTerm CondTerm;
-nonterminal CondTermOrList CondTermOrList;
-nonterminal CondFact CondFact;
-nonterminal CondFactAndList CondFactAndList;
 nonterminal RelopExprExists RelopExprExists;
 nonterminal ActPars ActPars;
 nonterminal ActParsExists ActParsExists;
@@ -94,8 +89,6 @@ nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 nonterminal AddopTermList AddopTermList;
 nonterminal MinusExists MinusExists;
-nonterminal Term Term;
-nonterminal ExprArrExists ExprArrExists;
 nonterminal MulopFactorList MulopFactorList;
 nonterminal DesgnListEnd DesgnListEnd;
 nonterminal DesgnList DesgnList;
@@ -103,7 +96,7 @@ nonterminal StmtMatched StmtMatched;
 nonterminal StmtUnmatched StmtUnmatched;
 
 nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType, FormPars, FormParsListEnd;
-nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor;
+nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor, Term, CondFact, CondTerm, Condition, ExprArrExists;
 
 Program ::= (Program) PROG ProgName:p DeclsList:D1 L_BRACE MethodDeclList:M2 R_BRACE {: RESULT=new Program(p, D1, M2); RESULT.setLine(pleft); :}
 ;
@@ -297,24 +290,18 @@ ExprList ::= (ExpListComma) ExprList:E1 ExprListEnd:E2 {: RESULT=new ExpListComm
 ExprListEnd ::= (ExpListEnd) COMMA Expr:E1 {: RESULT=new ExpListEnd(E1); RESULT.setLine(E1left); :}
 ;
 
-Condition ::= (Cond) CondTerm:C1 CondTermOrList:C2 {: RESULT=new Cond(C1, C2); RESULT.setLine(C1left); :}
-;			
+	
+
+Condition ::= (CondOr) Condition:C1 LOGICAL_OR CondTerm:C2 {: RESULT=new CondOr(C1, C2); RESULT.setLine(C1left); :}
+				|
+				(Cond) CondTerm:C1 {: RESULT=new Cond(C1); RESULT.setLine(C1left); :}
+;		
 			
-CondTermOrList ::= (CondTermListOr) CondTermOrList:C1 LOGICAL_OR CondTerm:C2 {: RESULT=new CondTermListOr(C1, C2); RESULT.setLine(C1left); :}	
-				|
-				(NoCondTermLisOr) {: RESULT=new NoCondTermLisOr(); :} /* epsilon */			
+CondTerm ::= (ConditionTermAnd) CondTerm:C1 LOGICAL_AND CondFact:C2 {: RESULT=new ConditionTermAnd(C1, C2); RESULT.setLine(C1left); :}
+			|	
+			(ConditionTerm) CondFact:C1 {: RESULT=new ConditionTerm(C1); RESULT.setLine(C1left); :}
 ;
 
-CondTerm ::= (ConditionTerm) CondFact:C1 CondFactAndList:C2 {: RESULT=new ConditionTerm(C1, C2); RESULT.setLine(C1left); :}
-				|
-				(CondTermError) error R_PAREN:l
-				{: parser.report_error("(Greska u logickom izrazu unutar if) [CondTerm] Izvrsen oporavak do ) u liniji " + lleft, null); :} {: RESULT=new CondTermError(); :}
-;
-
-CondFactAndList ::= (CondFactListAnd) CondFactAndList:C1 LOGICAL_AND CondFact:C2 {: RESULT=new CondFactListAnd(C1, C2); RESULT.setLine(C1left); :}
-					|
-					(NoCondFactListAnd) {: RESULT=new NoCondFactListAnd(); :} /* epsilon */
-;
 
 CondFact ::= (ConditionFact) Expr:E1 RelopExprExists:R2 {: RESULT=new ConditionFact(E1, R2); RESULT.setLine(E1left); :}
 ;
@@ -356,15 +343,14 @@ Factor ::= (FactorDesign) Designator:D1 ActParsExists:A2 {: RESULT=new FactorDes
 		|
 		(FactorBoolConst) BOOL_CONST:numVal {: RESULT=new FactorBoolConst(numVal); RESULT.setLine(numValleft); :}
 		|
-		(FactorNew) NEW Type:T1 ExprArrExists:E2 {: RESULT=new FactorNew(T1, E2); RESULT.setLine(T1left); :}
+		(FactorNew) NEW Type:T1 {: RESULT=new FactorNew(T1); RESULT.setLine(T1left); :} 
+		|
+		(FactorNewArr) NEW Type:T1 L_SQUARE_BRACKET Expr:E2 R_SQUARE_BRACKET {: RESULT=new FactorNewArr(T1, E2); RESULT.setLine(T1left); :}
 		|
 		(FactorExpr) L_PAREN Expr:E1 R_PAREN {: RESULT=new FactorExpr(E1); RESULT.setLine(E1left); :}
 ;
 
-ExprArrExists ::= (ArrExprExists) L_SQUARE_BRACKET Expr:E1 R_SQUARE_BRACKET {: RESULT=new ArrExprExists(E1); RESULT.setLine(E1left); :}
-				|
-				(NoArrExprExists) {: RESULT=new NoArrExprExists(); :} /* epsilon */
-;
+
 
 Designator ::= (Designator) IDENT:dsgnName DesgnList:D1 {: RESULT=new Designator(dsgnName, D1); RESULT.setLine(dsgnNameleft); :}
 ;
