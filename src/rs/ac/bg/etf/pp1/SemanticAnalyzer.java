@@ -552,103 +552,177 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     // *** STATEMENTS ***
     
     // ---------DESIGNATOR
-    public void visit(DesignStmt ds) {
+    public void visit(FactorDesign fd) { //??	ZASTO OVDE ULAZI
+    	report_info("FactorDesign posetili", null);
+    	fd.struct = fd.getDesignator().obj.getType();
+    }
+   
+    public void visit(DesignatorIdent d) {
+    	report_info("Designator posetili", null);
     	
+    	String name = d.getDsgnName();
+    	Obj obj = Tab.find(name);
+    	if(obj == Tab.noObj){
+			report_error("Semanticka greska na liniji " + d.getLine()+ ": ime "+ name+" nije deklarisano! ", null);
+    	}
+    	d.obj = obj;
     }
     
-    public void visit(Designator d) {
+    public void visit(DesignatorArr d) {
+    	report_info("DesignatorArr posetili", null);
     	
+    	String name = d.getDsgnName();
+    	Obj node = Tab.find(name);
+    	if(node == Tab.noObj){
+			report_error("Semanticka greska na liniji " + d.getLine()+ ": ime "+ name+" nije deklarisano! ", null);
+    	}
+    	
+    	if(node.getType().getKind() != Struct.Array) {
+    		report_error("Semanticka greska na liniji " + d.getLine()+ ": pokusaj da se pristupi elementu niza, a u pitanju je promenljiva koja nije niz ", null);
+    	}
+    	
+    	if(d.getExpr().struct != Tab.intType) {
+    		report_error("Semanticka greska na liniji " + d.getLine()+ ": indeks niza mora da bude int! ", null);
+    	}
+    	
+    	d.obj = new Obj(Obj.Elem, name, node.getType().getElemType());	
+    	
+    	if(node.getFpPos() == 1) {
+			d.obj.setFpPos(1);
+		} else {
+			d.obj.setFpPos(0);
+		}
+			
     }
     
-    public void visit(DesignList d) {
-    	
-    }
     
-    public void visit(DesignListEnd d) {
-    	
-    }
-
-	public void visit(DesgnListEndExpr d) {
-		
-	}
-    
+    //--
 	public void visit(DesgnStmtAsgnOp d) {
+		report_info("DesgnStmtAsgnOp posetili", null);
 		
+		Struct leftStrType = d.getDesignator().obj.getType();
+		Struct rightStrType = d.getExpr().struct;
+		if(!rightStrType.assignableTo(leftStrType)) {
+			report_error("Semanticka greska: nekompatibilni tipovi za dodelu vrednosti", d);
+		}
 	}
 	
 	public void visit(DesgnStmtIncr d) {
+		report_info("DesgnStmtIncr posetili", null);
 		
+		Struct rightStrType = d.getDesignator().obj.getType();
+		if (rightStrType != Tab.intType  && d.getDesignator().obj.getKind() != Obj.Elem) {
+			report_error("Semanticka greska - tip za inkrement moze biti jedino int", d);
+		}
 	}
 
 	public void visit(DesgnStmtDecr d) {
+		report_info("DesgnStmtDecr posetili", null);
 		
+		Struct rightStrType = d.getDesignator().obj.getType();
+		if (rightStrType != Tab.intType   && d.getDesignator().obj.getKind() != Obj.Elem) {
+			report_error("Semanticka greska - tip za dekrement moze biti jedino int", d);
+		}
 	}
 	
 	//-------- IF ELSE
 	
-	public void visit(StmtIfElse s) {
+	//IF L_PAREN Condition R_PAREN StmtMatched ELSE StmtMatched  						!!!!!!!!!!!!!1
+	public void visit(StmtIfElse s) { 
+		report_info("StmtIfElse posetili", null);
+		
+	/*	if(s.getCondition().struct != boolType) {
+			report_error("Semanticka greska - Condition mora biti tipa bool", s);
+		}*/
 		
 	}
 	
+	//IF L_PAREN Condition R_PAREN Statement			 						!!!!!!!!!!!!!1
 	public void visit(StmtUnmatchedIf s) {
+		report_info("StmtUnmatchedIf posetili", null);
 		
+	/*	if(s.getCondition().struct != boolType) {
+			report_error("Semanticka greska - Condition mora biti tipa bool", s);
+		}*/
 	}
 	
+	//IF  L_PAREN Condition R_PAREN StmtMatched ELSE StmtUnmatched		 						!!!!!!!!!!!!!1
 	public void visit(StmtUnmatchedIfElse s) {
+		report_info("StmtUnmatchedIfElse posetili", null);
 		
+	/*	if(s.getCondition().struct != boolType) {
+			report_error("Semanticka greska - Condition mora biti tipa bool", s);
+		}*/
 	}
 	
 	
 	// ---- CONDITION
 	public void visit(Cond c) {
+		report_info("Cond posetili", null);
 		c.struct = c.getCondTerm().struct;
 	}
 	
 	public void visit(CondOr c) {
+		report_info("CondOr posetili", null);
 		c.struct = c.getCondTerm().struct;
 	}
 	
 	public void visit(ConditionTerm c) {
+		report_info("ConditionTerm posetili", null);
 		c.struct = c.getCondFact().struct;
 	}
 
 	public void visit(ConditionTermAnd c) {
+		report_info("ConditionTermAnd posetili", null);
 		c.struct =c.getCondFact().struct;
 	}
 
 	public void visit(ConditionFact c) {
+		report_info("ConditionFact posetili", null);
 		c.struct = c.getExpr().struct;
 	}
 	
 	// --- EXPR
 	public void visit(Expression e) {
+		report_info("Expression posetili", null);
 		e.struct = e.getTerm().struct;
 	}
 	
+	public void visit(RelopExprExist e) {
+		report_info("RelopExprExist posetili", null);
+		e.struct = e.getExpr().struct;
+	}
 	
 	// ---- TERM
 	public void visit(Term t) {
+		report_info("Term posetili", null);
 		t.struct = t.getFactor().struct;
+		report_info("Term govno ----> " + t.struct, null);
 	}
+	
 	
 	// *** FACTOR *** propagiramo ovima gore 
     public void visit(FactorNumConst f) {
+    	report_info("FactorNumConst posetili", null);
     	f.struct = Tab.intType;
     }
     
     public void visit(FactorCharConst f) {
+    	report_info("FactorCharConst posetili", null);
     	f.struct = Tab.charType;
     }
 
 	public void visit(FactorBoolConst f) {
+		report_info("FactorBoolConst posetili", null);
 		f.struct = boolType;
 	}
 	
 	public void visit(FactorNew f) {
-		f.struct = f.getType().struct; //?
+	//	za klase
 	}
 	
 	public void visit(FactorNewArr f) {
+		report_info("FactorNewArr posetili", null);
 		if (f.getExpr().struct != Tab.intType) {
 			report_error("Semanticka greska na liniji " + f.getLine() + ": pri alociranju niza treba proslediti int", f);
 			f.struct = new Struct(Struct.Array, f.getType().struct); 
@@ -660,14 +734,18 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 
 	//----- MULOP ADDOP
 	public void visit(ListAddopTerm l) {
+		report_info("ListAddopTerm posetili", null);
+		l.struct = l.getTerm().struct;
 		if (l.getTerm().struct != Tab.intType) {
-			report_error("Greska na liniji " + l.getLine() + " - Samo int tipovi mogu da se sabiraju", l);
+			report_error("Greska - Samo int tipovi mogu da se sabiraju ---> " + l.struct, l);
 		}
 	}
 	
 	public void visit(MullopFactList m) {
+		report_info("MullopFactList posetili", null);
+		m.struct = m.getFactor().struct;
 		if (m.getFactor().struct != Tab.intType) {
-			report_error("Greska na liniji " + m.getLine() + " - Samo int tipovi mogu da se mnoze", m);
+			report_error("Greska  - Samo int tipovi mogu da se mnoze", m);
 		}
 	}
 

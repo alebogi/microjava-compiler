@@ -77,26 +77,20 @@ nonterminal FormParsList FormParsList;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal ExprList ExprList;
 nonterminal ExprListEnd ExprListEnd;
-nonterminal RelopExprExists RelopExprExists;
 nonterminal ActPars ActPars;
 nonterminal ActParsExists ActParsExists;
-nonterminal DesgStmtEnd DesgStmtEnd;
 nonterminal StmtList StmtList;
 nonterminal ExprExists ExprExists;
 nonterminal Assignop Assignop;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
-nonterminal AddopTermList AddopTermList;
 nonterminal MinusExists MinusExists;
-nonterminal MulopFactorList MulopFactorList;
-nonterminal DesgnListEnd DesgnListEnd;
-nonterminal DesgnList DesgnList;
 nonterminal StmtMatched StmtMatched;
 nonterminal StmtUnmatched StmtUnmatched;
 
 nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType, FormPars, FormParsListEnd;
-nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor, Term, CondFact, CondTerm, Condition, ExprArrExists;
+nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor, Term, CondFact, CondTerm, Condition, ExprArrExists, MulopFactorList, AddopTermList, RelopExprExists;
 
 Program ::= (Program) PROG ProgName:p DeclsList:D1 L_BRACE MethodDeclList:M2 R_BRACE {: RESULT=new Program(p, D1, M2); RESULT.setLine(pleft); :}
 ;
@@ -258,20 +252,19 @@ StmtList ::= (StatementList) StmtList:S1 Statement:S2 {: RESULT=new StatementLis
 			(NoStatementList) {: RESULT=new NoStatementList(); :} /* epsilon */
 ;
 			
-DesignatorStatement ::=	(DesignStmt) Designator:D1 DesgStmtEnd:D2 {: RESULT=new DesignStmt(D1, D2); RESULT.setLine(D1left); :}
+DesignatorStatement ::=	(DesgnStmtAsgnOp) Designator:D1 Assignop:A2 Expr:E3 {: RESULT=new DesgnStmtAsgnOp(D1, A2, E3); RESULT.setLine(D1left); :}
+						|
+						(DesgnStmtActPars) Designator:D1 ActParsExists:A2 {: RESULT=new DesgnStmtActPars(D1, A2); RESULT.setLine(D1left); :} 	
+						|
+						(DesgnStmtIncr) Designator:D1 INCREMENT {: RESULT=new DesgnStmtIncr(D1); RESULT.setLine(D1left); :}
+						|
+						(DesgnStmtDecr) Designator:D1 DECREMENT {: RESULT=new DesgnStmtDecr(D1); RESULT.setLine(D1left); :}
+						|
+					(DesgStmtEndtError) error SEMI:l
+						{: parser.report_error("(Greska u iskazu dodele) [DesgStmt] Izvrsen oporavak do ; u liniji " + lleft, null); :} {: RESULT=new DesgStmtEndtError(); :}
 ;
 
-DesgStmtEnd ::= (DesgnStmtAsgnOp) Assignop:A1 Expr:E2 {: RESULT=new DesgnStmtAsgnOp(A1, E2); RESULT.setLine(A1left); :}
-				|
-				(DesgnStmtActPars)  ActParsExists:A1 {: RESULT=new DesgnStmtActPars(A1); RESULT.setLine(A1left); :} 	
-				|
-				(DesgnStmtIncr) INCREMENT {: RESULT=new DesgnStmtIncr(); :}
-				|
-				(DesgnStmtDecr) DECREMENT {: RESULT=new DesgnStmtDecr(); :}
-				|
-			(DesgStmtEndtError) error SEMI:l
-				{: parser.report_error("(Greska u iskazu dodele) [DesgStmtEnd] Izvrsen oporavak do ; u liniji " + lleft, null); :} {: RESULT=new DesgStmtEndtError(); :}
-;
+
 				
 ActParsExists ::= (ActParamsExists) L_PAREN ActPars:A1 R_PAREN {: RESULT=new ActParamsExists(A1); RESULT.setLine(A1left); :}
 					|
@@ -352,18 +345,11 @@ Factor ::= (FactorDesign) Designator:D1 ActParsExists:A2 {: RESULT=new FactorDes
 
 
 
-Designator ::= (Designator) IDENT:dsgnName DesgnList:D1 {: RESULT=new Designator(dsgnName, D1); RESULT.setLine(dsgnNameleft); :}
+Designator ::= (DesignatorIdent) IDENT:dsgnName {: RESULT=new DesignatorIdent(dsgnName); RESULT.setLine(dsgnNameleft); :}
+				|
+				(DesignatorArr) IDENT:dsgnName L_SQUARE_BRACKET Expr:i R_SQUARE_BRACKET {: RESULT=new DesignatorArr(dsgnName, i); RESULT.setLine(dsgnNameleft); :}
 ;
 
-DesgnList ::= (DesignList) DesgnList:D1 DesgnListEnd:D2 {: RESULT=new DesignList(D1, D2); RESULT.setLine(D1left); :}
-			|
-			(NoDesignList) {: RESULT=new NoDesignList(); :} /* epsilon */
-;
-			
-DesgnListEnd ::= (DesignListEnd) DOT IDENT:DesgnNameId {: RESULT=new DesignListEnd(DesgnNameId); RESULT.setLine(DesgnNameIdleft); :}
-				|
-				(DesgnListEndExpr) L_SQUARE_BRACKET Expr:E1 R_SQUARE_BRACKET {: RESULT=new DesgnListEndExpr(E1); RESULT.setLine(E1left); :}
-;	
 	
 Assignop ::= (AssignOperator) EQUAL {: RESULT=new AssignOperator(); :}
 ;

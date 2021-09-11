@@ -1,40 +1,17 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/8/2021 18:37:8
+// 11/8/2021 22:0:44
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class Designator implements SyntaxNode {
+public abstract class Designator implements SyntaxNode {
 
     private SyntaxNode parent;
+
     private int line;
+
     public rs.etf.pp1.symboltable.concepts.Obj obj = null;
-
-    private String dsgnName;
-    private DesgnList DesgnList;
-
-    public Designator (String dsgnName, DesgnList DesgnList) {
-        this.dsgnName=dsgnName;
-        this.DesgnList=DesgnList;
-        if(DesgnList!=null) DesgnList.setParent(this);
-    }
-
-    public String getDsgnName() {
-        return dsgnName;
-    }
-
-    public void setDsgnName(String dsgnName) {
-        this.dsgnName=dsgnName;
-    }
-
-    public DesgnList getDesgnList() {
-        return DesgnList;
-    }
-
-    public void setDesgnList(DesgnList DesgnList) {
-        this.DesgnList=DesgnList;
-    }
 
     public SyntaxNode getParent() {
         return parent;
@@ -52,40 +29,11 @@ public class Designator implements SyntaxNode {
         this.line=line;
     }
 
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
+    public abstract void accept(Visitor visitor);
+    public abstract void childrenAccept(Visitor visitor);
+    public abstract void traverseTopDown(Visitor visitor);
+    public abstract void traverseBottomUp(Visitor visitor);
 
-    public void childrenAccept(Visitor visitor) {
-        if(DesgnList!=null) DesgnList.accept(visitor);
-    }
-
-    public void traverseTopDown(Visitor visitor) {
-        accept(visitor);
-        if(DesgnList!=null) DesgnList.traverseTopDown(visitor);
-    }
-
-    public void traverseBottomUp(Visitor visitor) {
-        if(DesgnList!=null) DesgnList.traverseBottomUp(visitor);
-        accept(visitor);
-    }
-
-    public String toString(String tab) {
-        StringBuffer buffer=new StringBuffer();
-        buffer.append(tab);
-        buffer.append("Designator(\n");
-
-        buffer.append(" "+tab+dsgnName);
-        buffer.append("\n");
-
-        if(DesgnList!=null)
-            buffer.append(DesgnList.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        buffer.append(tab);
-        buffer.append(") [Designator]");
-        return buffer.toString();
-    }
+    public String toString() { return toString(""); }
+    public abstract String toString(String tab);
 }

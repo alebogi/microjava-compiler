@@ -62,12 +62,12 @@ terminal COLON, SWITCH, QUESTIONMARK, ENUM, CASE;
 nonterminal DeclsList, MethodDeclList, Decls, ConstDecl, ClassDecl, ConstList, ConstListEnd, Arr, VarDeclList;
 nonterminal ExtendsClass, ListOfVarDecl, ListOfStmt, Statement, MethodDecl;
 nonterminal FormParsList, DesignatorStatement, ExprList, ExprListEnd;
-nonterminal RelopExprExists, ActPars, ActParsExists, DesgStmtEnd, StmtList, ExprExists;
-nonterminal Assignop, Relop, Addop, Mulop, AddopTermList, MinusExists, MulopFactorList, DesgnListEnd, DesgnList;
+nonterminal ActPars, ActParsExists, StmtList, ExprExists;
+nonterminal Assignop, Relop, Addop, Mulop, MinusExists;
 nonterminal StmtMatched, StmtUnmatched;
 
 nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType, FormPars, FormParsListEnd;
-nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor, Term, CondFact, CondTerm, Condition, ExprArrExists;
+nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor, Term, CondFact, CondTerm, Condition, ExprArrExists, MulopFactorList, AddopTermList, RelopExprExists;
 
 Program ::= (Program) PROG ProgName:p DeclsList L_BRACE MethodDeclList R_BRACE
 ;
@@ -229,20 +229,19 @@ StmtList ::= (StatementList) StmtList Statement
 			(NoStatementList) /* epsilon */
 ;
 			
-DesignatorStatement ::=	(DesignStmt) Designator DesgStmtEnd
+DesignatorStatement ::=	(DesgnStmtAsgnOp) Designator Assignop Expr
+						|
+						(DesgnStmtActPars) Designator ActParsExists 	
+						|
+						(DesgnStmtIncr) Designator INCREMENT
+						|
+						(DesgnStmtDecr) Designator DECREMENT
+						|
+					(DesgStmtEndtError) error SEMI:l
+						{: parser.report_error("(Greska u iskazu dodele) [DesgStmt] Izvrsen oporavak do ; u liniji " + lleft, null); :}
 ;
 
-DesgStmtEnd ::= (DesgnStmtAsgnOp) Assignop Expr
-				|
-				(DesgnStmtActPars)  ActParsExists 	
-				|
-				(DesgnStmtIncr) INCREMENT
-				|
-				(DesgnStmtDecr) DECREMENT
-				|
-			(DesgStmtEndtError) error SEMI:l
-				{: parser.report_error("(Greska u iskazu dodele) [DesgStmtEnd] Izvrsen oporavak do ; u liniji " + lleft, null); :}
-;
+
 				
 ActParsExists ::= (ActParamsExists) L_PAREN ActPars R_PAREN
 					|
@@ -323,18 +322,11 @@ Factor ::= (FactorDesign) Designator ActParsExists
 
 
 
-Designator ::= (Designator) IDENT:dsgnName DesgnList
+Designator ::= (DesignatorIdent) IDENT:dsgnName
+				|
+				(DesignatorArr) IDENT:dsgnName L_SQUARE_BRACKET Expr:i R_SQUARE_BRACKET
 ;
 
-DesgnList ::= (DesignList) DesgnList DesgnListEnd
-			|
-			(NoDesignList) /* epsilon */
-;
-			
-DesgnListEnd ::= (DesignListEnd) DOT IDENT:DesgnNameId
-				|
-				(DesgnListEndExpr) L_SQUARE_BRACKET Expr R_SQUARE_BRACKET
-;	
 	
 Assignop ::= (AssignOperator) EQUAL
 ;

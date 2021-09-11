@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 11/8/2021 18:37:8
+// 11/8/2021 22:0:44
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -14,8 +14,8 @@ public interface Visitor {
     public void visit(ConstListEnd ConstListEnd);
     public void visit(Relop Relop);
     public void visit(Assignop Assignop);
-    public void visit(MethodType MethodType);
     public void visit(MulopFactorList MulopFactorList);
+    public void visit(MethodType MethodType);
     public void visit(ActParsExists ActParsExists);
     public void visit(MinusExists MinusExists);
     public void visit(RelopExprExists RelopExprExists);
@@ -25,19 +25,17 @@ public interface Visitor {
     public void visit(StmtUnmatched StmtUnmatched);
     public void visit(CondTerm CondTerm);
     public void visit(ConstList ConstList);
+    public void visit(Designator Designator);
     public void visit(FormParsList FormParsList);
     public void visit(Condition Condition);
-    public void visit(DesgnList DesgnList);
     public void visit(ListOfStmt ListOfStmt);
     public void visit(StmtList StmtList);
     public void visit(ExprList ExprList);
     public void visit(FormParsListEnd FormParsListEnd);
     public void visit(ListOfVarDecl ListOfVarDecl);
-    public void visit(DesgStmtEnd DesgStmtEnd);
     public void visit(VarDeclList VarDeclList);
     public void visit(Expr Expr);
     public void visit(DeclsList DeclsList);
-    public void visit(DesgnListEnd DesgnListEnd);
     public void visit(ActPars ActPars);
     public void visit(DesignatorStatement DesignatorStatement);
     public void visit(Statement Statement);
@@ -66,11 +64,8 @@ public interface Visitor {
     public void visit(RelopNE RelopNE);
     public void visit(RelopE RelopE);
     public void visit(AssignOperator AssignOperator);
-    public void visit(DesgnListEndExpr DesgnListEndExpr);
-    public void visit(DesignListEnd DesignListEnd);
-    public void visit(NoDesignList NoDesignList);
-    public void visit(DesignList DesignList);
-    public void visit(Designator Designator);
+    public void visit(DesignatorArr DesignatorArr);
+    public void visit(DesignatorIdent DesignatorIdent);
     public void visit(FactorExpr FactorExpr);
     public void visit(FactorNewArr FactorNewArr);
     public void visit(FactorNew FactorNew);
@@ -105,7 +100,6 @@ public interface Visitor {
     public void visit(DesgnStmtIncr DesgnStmtIncr);
     public void visit(DesgnStmtActPars DesgnStmtActPars);
     public void visit(DesgnStmtAsgnOp DesgnStmtAsgnOp);
-    public void visit(DesignStmt DesignStmt);
     public void visit(NoStatementList NoStatementList);
     public void visit(StatementList StatementList);
     public void visit(NoExprExists NoExprExists);
