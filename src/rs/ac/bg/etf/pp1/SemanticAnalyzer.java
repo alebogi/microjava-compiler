@@ -13,7 +13,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	
 	private boolean errorDetected = false;
 	
-	private int nVars;
+	int nVars;
 	private Obj currentMethod = null;
 	
 	private boolean hasMain = false;
@@ -39,6 +39,8 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	private char firstConstCharVal;
 	private boolean firstConstBoolVal;
 	private int constCnt = 0;
+	
+	private boolean condExprAlone = false;
 	
 	private Scope globalScope;
 	
@@ -671,6 +673,12 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	public void visit(ConditionTerm c) {
 		report_info("ConditionTerm posetili", null);
 		c.struct = c.getCondFact().struct;
+		
+		if(condExprAlone) { //	!!!
+			if(c.getCondFact().struct != boolType) {
+				report_error("Semanticka greska - Condition mora biti tipa bool", c);
+			}
+		}
 	}
 
 	public void visit(ConditionTermAnd c) {
@@ -692,13 +700,18 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	public void visit(RelopExprExist e) {
 		report_info("RelopExprExist posetili", null);
 		e.struct = e.getExpr().struct;
+		condExprAlone = false;
+	}
+	
+	public void visit(NoRelopExprExist e) {
+		report_info("NoRelopExprExist posetili", null);
+		condExprAlone = true;
 	}
 	
 	// ---- TERM
 	public void visit(Term t) {
 		report_info("Term posetili", null);
 		t.struct = t.getFactor().struct;
-		report_info("Term govno ----> " + t.struct, null);
 	}
 	
 	

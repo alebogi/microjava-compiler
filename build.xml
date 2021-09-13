@@ -10,6 +10,8 @@
 				<exclude name="SemanticAnalyzer.java"/>
 				<exclude name="MyVariable.java"/>
 				<exclude name="MyMethod.java"/>
+				<exclude name="CodeGenerator.java"/>
+				<exclude name="CounterVisitor.java"/>
 			</fileset>
 		</delete>
 		<delete>
@@ -55,6 +57,24 @@
 				<pathelement path="lib/symboltable-1-1.jar"/>
 			</classpath>
 		</javac>
+	</target>
+	
+	<target name="disasm">
+		<java classname="rs.etf.pp1.mj.runtime.disasm">
+			<arg value="test/program.obj"/>
+			<classpath>
+				<pathelement location="lib/mj-runtime.jar"/>
+			</classpath>
+		</java>
+	</target>
+
+	<target name="runObj" depends="disasm" >
+		<java classname="rs.etf.pp1.mj.runtime.Run">
+			<arg value="test/program.obj"/>
+			<classpath>
+				<pathelement location="lib/mj-runtime.jar"/>
+			</classpath>
+		</java>
 	</target>
 
 </project>
