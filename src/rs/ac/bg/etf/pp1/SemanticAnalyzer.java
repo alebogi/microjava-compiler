@@ -46,20 +46,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	
 	Logger log = Logger.getLogger(getClass());
 	
-	// =========================
 	
-	public boolean methodExists(String name) {
-		boolean res = false;
-		
-		for(MyMethod m: methods) {
-			if(m.getName().equals(name)) {
-				res = true;
-				return res;
-			}
-		}
-		
-		return res;
-	}
 	
 	//==========================================================================
 	public void report_error(String message, SyntaxNode info) {
@@ -84,6 +71,20 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	public boolean passed(){
     	return !errorDetected;
     }
+	// =========================
+	
+		public boolean methodExists(String name) {
+			boolean res = false;
+			
+			for(MyMethod m: methods) {
+				if(m.getName().equals(name)) {
+					res = true;
+					return res;
+				}
+			}
+			
+			return res;
+		}
 
 	//==============================================================================
 	   // Ulaz u program

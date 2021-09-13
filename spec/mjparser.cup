@@ -231,7 +231,9 @@ StmtList ::= (StatementList) StmtList Statement
 			
 DesignatorStatement ::=	(DesgnStmtAsgnOp) Designator Assignop Expr
 						|
-						(DesgnStmtActPars) Designator ActParsExists 	
+						(DesgnStmtActPars) Designator L_PAREN ActPars R_PAREN
+						|
+						(DesgnStmtNoActPars) Designator L_PAREN R_PAREN
 						|
 						(DesgnStmtIncr) Designator INCREMENT
 						|
@@ -241,15 +243,13 @@ DesignatorStatement ::=	(DesgnStmtAsgnOp) Designator Assignop Expr
 						{: parser.report_error("(Greska u iskazu dodele) [DesgStmt] Izvrsen oporavak do ; u liniji " + lleft, null); :}
 ;
 
+			
+ActPars ::= (ActParams) Expr ExprList
+;
 
-				
 ActParsExists ::= (ActParamsExists) L_PAREN ActPars R_PAREN
 					|
 					(NoActParamsExists) /* epsilon */
-;
-			
-			
-ActPars ::= (ActParams) Expr ExprList
 ;
 
 ExprList ::= (ExpListComma) ExprList ExprListEnd

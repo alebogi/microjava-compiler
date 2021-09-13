@@ -254,7 +254,9 @@ StmtList ::= (StatementList) StmtList:S1 Statement:S2 {: RESULT=new StatementLis
 			
 DesignatorStatement ::=	(DesgnStmtAsgnOp) Designator:D1 Assignop:A2 Expr:E3 {: RESULT=new DesgnStmtAsgnOp(D1, A2, E3); RESULT.setLine(D1left); :}
 						|
-						(DesgnStmtActPars) Designator:D1 ActParsExists:A2 {: RESULT=new DesgnStmtActPars(D1, A2); RESULT.setLine(D1left); :} 	
+						(DesgnStmtActPars) Designator:D1 L_PAREN ActPars:A2 R_PAREN {: RESULT=new DesgnStmtActPars(D1, A2); RESULT.setLine(D1left); :}
+						|
+						(DesgnStmtNoActPars) Designator:D1 L_PAREN R_PAREN {: RESULT=new DesgnStmtNoActPars(D1); RESULT.setLine(D1left); :}
 						|
 						(DesgnStmtIncr) Designator:D1 INCREMENT {: RESULT=new DesgnStmtIncr(D1); RESULT.setLine(D1left); :}
 						|
@@ -264,15 +266,13 @@ DesignatorStatement ::=	(DesgnStmtAsgnOp) Designator:D1 Assignop:A2 Expr:E3 {: R
 						{: parser.report_error("(Greska u iskazu dodele) [DesgStmt] Izvrsen oporavak do ; u liniji " + lleft, null); :} {: RESULT=new DesgStmtEndtError(); :}
 ;
 
+			
+ActPars ::= (ActParams) Expr:E1 ExprList:E2 {: RESULT=new ActParams(E1, E2); RESULT.setLine(E1left); :}
+;
 
-				
 ActParsExists ::= (ActParamsExists) L_PAREN ActPars:A1 R_PAREN {: RESULT=new ActParamsExists(A1); RESULT.setLine(A1left); :}
 					|
 					(NoActParamsExists) {: RESULT=new NoActParamsExists(); :} /* epsilon */
-;
-			
-			
-ActPars ::= (ActParams) Expr:E1 ExprList:E2 {: RESULT=new ActParams(E1, E2); RESULT.setLine(E1left); :}
 ;
 
 ExprList ::= (ExpListComma) ExprList:E1 ExprListEnd:E2 {: RESULT=new ExpListComma(E1, E2); RESULT.setLine(E1left); :}

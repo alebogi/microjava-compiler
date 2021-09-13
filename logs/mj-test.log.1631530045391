@@ -1,0 +1,246 @@
+INFO  12:47:16,712 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  12:47:16,904 - #2 program
+INFO  12:47:16,904 - #43 test301
+INFO  12:47:16,904 - #5 const
+INFO  12:47:16,913 - #43 int
+INFO  12:47:16,915 - #43 nula
+INFO  12:47:16,915 - #6 =
+INFO  12:47:16,915 - #42 0
+INFO  12:47:16,915 - #7 ;
+INFO  12:47:16,925 - #5 const
+INFO  12:47:16,925 - #43 int
+INFO  12:47:16,925 - #43 jedan
+INFO  12:47:16,943 - #6 =
+INFO  12:47:16,943 - #42 1
+INFO  12:47:16,943 - #7 ;
+INFO  12:47:16,945 - #5 const
+INFO  12:47:16,945 - #43 int
+INFO  12:47:16,945 - #43 pet
+INFO  12:47:16,945 - #6 =
+INFO  12:47:16,945 - #42 5
+INFO  12:47:16,945 - #7 ;
+INFO  12:47:16,945 - #43 int
+INFO  12:47:16,945 - #43 niz
+INFO  12:47:16,945 - #14 [
+INFO  12:47:16,953 - #15 ]
+INFO  12:47:16,953 - #7 ;
+INFO  12:47:16,955 - #43 char
+INFO  12:47:16,955 - #43 nizch
+INFO  12:47:16,963 - #14 [
+INFO  12:47:16,963 - #15 ]
+INFO  12:47:16,963 - #7 ;
+INFO  12:47:16,965 - #3 {
+INFO  12:47:16,965 - #11 void
+INFO  12:47:16,965 - #43 main
+INFO  12:47:16,965 - #13 (
+INFO  12:47:16,973 - #12 )
+INFO  12:47:16,975 - #43 int
+INFO  12:47:16,975 - #43 bodovi
+INFO  12:47:16,975 - #7 ;
+INFO  12:47:16,985 - #43 bool
+INFO  12:47:16,985 - #43 bt
+INFO  12:47:16,985 - #7 ;
+INFO  12:47:16,985 - #3 {
+INFO  12:47:16,996 - #43 bodovi
+INFO  12:47:16,996 - #6 =
+INFO  12:47:16,996 - #42 0
+INFO  12:47:17,014 - #7 ;
+INFO  12:47:17,049 - #4 }
+INFO  12:47:17,057 - #4 }
+INFO  12:47:17,587 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  DeclarationsList(
+    DeclarationsList(
+      DeclarationsList(
+        DeclarationsList(
+          DeclarationsList(
+            NoDeclarationsList(
+            ) [NoDeclarationsList]
+            DeclsConst(
+              ConstDeclaration(
+                Type(
+                 int
+                ) [Type]
+               nula
+                NumConst(
+                 0
+                ) [NumConst]
+                NoConstantsList(
+                ) [NoConstantsList]
+              ) [ConstDeclaration]
+            ) [DeclsConst]
+          ) [DeclarationsList]
+          DeclsConst(
+            ConstDeclaration(
+              Type(
+               int
+              ) [Type]
+             jedan
+              NumConst(
+               1
+              ) [NumConst]
+              NoConstantsList(
+              ) [NoConstantsList]
+            ) [ConstDeclaration]
+          ) [DeclsConst]
+        ) [DeclarationsList]
+        DeclsConst(
+          ConstDeclaration(
+            Type(
+             int
+            ) [Type]
+           pet
+            NumConst(
+             5
+            ) [NumConst]
+            NoConstantsList(
+            ) [NoConstantsList]
+          ) [ConstDeclaration]
+        ) [DeclsConst]
+      ) [DeclarationsList]
+      DeclsVar(
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+         niz
+          Array(
+          ) [Array]
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+        ) [VarDeclaration]
+      ) [DeclsVar]
+    ) [DeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         char
+        ) [Type]
+       nizch
+        Array(
+        ) [Array]
+        NoVarDeclarationList(
+        ) [NoVarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  MethodsDeclarationList(
+    NoMethodsDeclarationList(
+    ) [NoMethodsDeclarationList]
+    MethodDeclaration(
+      MethodVoid(
+       main
+      ) [MethodVoid]
+      ListVarDeclaration(
+        ListVarDeclaration(
+          NoListOfVarDeclaration(
+          ) [NoListOfVarDeclaration]
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+           bodovi
+            NoArray(
+            ) [NoArray]
+            NoVarDeclarationList(
+            ) [NoVarDeclarationList]
+          ) [VarDeclaration]
+        ) [ListVarDeclaration]
+        VarDeclaration(
+          Type(
+           bool
+          ) [Type]
+         bt
+          NoArray(
+          ) [NoArray]
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+        ) [VarDeclaration]
+      ) [ListVarDeclaration]
+      ListOfSatemant(
+        NoListOfSatemant(
+        ) [NoListOfSatemant]
+        MatchedStmt(
+          StmtDesgStmt(
+            DesgnStmtAsgnOp(
+              DesignatorIdent(
+               bodovi
+              ) [DesignatorIdent]
+              AssignOperator(
+              ) [AssignOperator]
+              Expression(
+                NoMinusExs(
+                ) [NoMinusExs]
+                Term(
+                  FactorNumConst(
+                   0
+                  ) [FactorNumConst]
+                  NoMullopFactList(
+                  ) [NoMullopFactList]
+                ) [Term]
+                NoListAddopTerm(
+                ) [NoListAddopTerm]
+              ) [Expression]
+            ) [DesgnStmtAsgnOp]
+          ) [StmtDesgStmt]
+        ) [MatchedStmt]
+      ) [ListOfSatemant]
+    ) [MethodDeclaration]
+  ) [MethodsDeclarationList]
+) [Program]
+INFO  12:47:17,615 - ===================================
+INFO  12:47:17,641 - Pocetak obrade programa test301 na liniji 3
+INFO  12:47:17,644 - type posetio
+INFO  12:47:17,644 - NumConst posetio, vrednost=0
+INFO  12:47:17,644 - NoConstantsList posetio, kraj rekurzije
+INFO  12:47:17,644 - ConstDeclaration posetio
+INFO  12:47:17,647 - Deklarisana konstanta nula
+INFO  12:47:17,647 - type posetio
+INFO  12:47:17,647 - NumConst posetio, vrednost=1
+INFO  12:47:17,648 - NoConstantsList posetio, kraj rekurzije
+INFO  12:47:17,648 - ConstDeclaration posetio
+INFO  12:47:17,648 - Deklarisana konstanta jedan
+INFO  12:47:17,648 - type posetio
+INFO  12:47:17,649 - NumConst posetio, vrednost=5
+INFO  12:47:17,708 - NoConstantsList posetio, kraj rekurzije
+INFO  12:47:17,708 - ConstDeclaration posetio
+INFO  12:47:17,709 - Deklarisana konstanta pet
+INFO  12:47:17,710 - type posetio
+INFO  12:47:17,715 - Array posetio
+INFO  12:47:17,715 - NoVarDeclList posetio, kraj rekurzije
+INFO  12:47:17,717 - varDecl posetio
+INFO  12:47:17,718 - Deklarisan globalni niz niz na liniji 9
+INFO  12:47:17,718 - type posetio
+INFO  12:47:17,718 - Array posetio
+INFO  12:47:17,719 - NoVarDeclList posetio, kraj rekurzije
+INFO  12:47:17,719 - varDecl posetio
+INFO  12:47:17,719 - Deklarisan globalni niz nizch na liniji 10
+INFO  12:47:17,719 - NoMethodsDeclarationList posetili
+INFO  12:47:17,727 - MethodVoid posetili
+INFO  12:47:17,728 - Obradjuje se void metoda: main na liniji 13
+INFO  12:47:17,728 - type posetio
+INFO  12:47:17,728 - NoArray posetio
+INFO  12:47:17,729 - NoVarDeclList posetio, kraj rekurzije
+INFO  12:47:17,729 - varDecl posetio
+INFO  12:47:17,729 - Deklarisana lokalna promenljiva bodovi
+INFO  12:47:17,730 - ListVarDeclaration posetili
+INFO  12:47:17,730 - type posetio
+INFO  12:47:17,731 - NoArray posetio
+INFO  12:47:17,731 - NoVarDeclList posetio, kraj rekurzije
+INFO  12:47:17,731 - varDecl posetio
+INFO  12:47:17,731 - Deklarisana lokalna promenljiva bt
+INFO  12:47:17,731 - ListVarDeclaration posetili
+INFO  12:47:17,732 - Designator posetili
+INFO  12:47:17,734 - FactorNumConst posetili
+INFO  12:47:17,735 - Term posetili
+INFO  12:47:17,737 - Term govno ----> rs.etf.pp1.symboltable.concepts.Struct@378fd1ac
+INFO  12:47:17,737 - Expression posetili
+INFO  12:47:17,738 - DesgnStmtAsgnOp posetili
+INFO  12:47:17,739 - MethodDeclaration posetili
+INFO  12:47:17,814 - MethodsDeclarationList posetili
+INFO  12:47:17,814 - Zavrsetak obrade metode main
+INFO  12:47:17,814 - Kraj semanticke obrade programa test301
+INFO  12:47:17,814 - ===================================
+INFO  12:47:17,814 - Parsiranje uspesno zavrseno!
