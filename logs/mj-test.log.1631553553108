@@ -1,0 +1,63 @@
+INFO  19:16:59,793 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  19:17:00,097 - #2 program
+INFO  19:17:00,098 - #43 test301
+INFO  19:17:00,098 - #3 {
+INFO  19:17:00,102 - #11 void
+INFO  19:17:00,105 - #43 main
+INFO  19:17:00,105 - #13 (
+INFO  19:17:00,105 - #12 )
+INFO  19:17:00,106 - #43 int
+INFO  19:17:00,111 - #43 x
+INFO  19:17:00,124 - #7 ;
+INFO  19:17:00,128 - #3 {
+INFO  19:17:00,130 - #4 }
+INFO  19:17:00,133 - #4 }
+INFO  19:17:00,204 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NoDeclarationsList(
+  ) [NoDeclarationsList]
+  MethodsDeclarationList(
+    NoMethodsDeclarationList(
+    ) [NoMethodsDeclarationList]
+    MethodDeclaration(
+      MethodVoid(
+       main
+      ) [MethodVoid]
+      ListVarDeclaration(
+        NoListOfVarDeclaration(
+        ) [NoListOfVarDeclaration]
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+         x
+          NoArray(
+          ) [NoArray]
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+        ) [VarDeclaration]
+      ) [ListVarDeclaration]
+      NoListOfSatemant(
+      ) [NoListOfSatemant]
+    ) [MethodDeclaration]
+  ) [MethodsDeclarationList]
+) [Program]
+INFO  19:17:00,219 - ===================================
+INFO  19:17:00,225 - Pocetak obrade programa test301 na liniji 3
+INFO  19:17:00,226 - NoMethodsDeclarationList posetili
+INFO  19:17:00,226 - MethodVoid posetili
+INFO  19:17:00,226 - Obradjuje se void metoda: main na liniji 7
+INFO  19:17:00,226 - type posetio
+INFO  19:17:00,226 - NoArray posetio
+INFO  19:17:00,227 - NoVarDeclList posetio, kraj rekurzije
+INFO  19:17:00,227 - varDecl posetio
+INFO  19:17:00,231 - Deklarisana lokalna promenljiva x
+INFO  19:17:00,231 - ListVarDeclaration posetili
+INFO  19:17:00,231 - MethodDeclaration posetili
+INFO  19:17:00,231 - MethodsDeclarationList posetili
+INFO  19:17:00,231 - Zavrsetak obrade metode main
+INFO  19:17:00,231 - Kraj semanticke obrade programa test301
+INFO  19:17:00,231 - ===================================
+INFO  19:17:00,247 - Parsiranje uspesno zavrseno!

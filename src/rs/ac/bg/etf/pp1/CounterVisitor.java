@@ -1,6 +1,6 @@
 package rs.ac.bg.etf.pp1;
 
-import rs.ac.bg.etf.pp1.ast.VisitorAdaptor;
+import rs.ac.bg.etf.pp1.ast.*;
 
 public class CounterVisitor extends VisitorAdaptor {
 
@@ -15,12 +15,12 @@ public class CounterVisitor extends VisitorAdaptor {
 		public void visit(FormalParamDecl formParamDecl){
 			count++;
 		}
-	}
+	}*/
 	
 	public static class VarCounter extends CounterVisitor{
 		
-		public void visit(VarDecl varDecl){
+		public void visit(VarDeclaration varDecl){
 			count++;
 		}
-	}*/
+	}
 }

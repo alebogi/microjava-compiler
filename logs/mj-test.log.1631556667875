@@ -1,0 +1,96 @@
+INFO  19:23:25,266 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  19:23:25,584 - #2 program
+INFO  19:23:25,585 - #43 test301
+INFO  19:23:25,586 - #3 {
+INFO  19:23:25,594 - #11 void
+INFO  19:23:25,595 - #43 main
+INFO  19:23:25,596 - #13 (
+INFO  19:23:25,596 - #12 )
+INFO  19:23:25,597 - #43 int
+INFO  19:23:25,600 - #43 x
+INFO  19:23:25,604 - #7 ;
+INFO  19:23:25,614 - #3 {
+INFO  19:23:25,615 - #39 print
+INFO  19:23:25,620 - #13 (
+INFO  19:23:25,621 - #43 x
+INFO  19:23:25,624 - #12 )
+INFO  19:23:25,634 - #7 ;
+INFO  19:23:25,635 - #4 }
+INFO  19:23:25,636 - #4 }
+INFO  19:23:25,682 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NoDeclarationsList(
+  ) [NoDeclarationsList]
+  MethodsDeclarationList(
+    NoMethodsDeclarationList(
+    ) [NoMethodsDeclarationList]
+    MethodDeclaration(
+      MethodVoid(
+       main
+      ) [MethodVoid]
+      ListVarDeclaration(
+        NoListOfVarDeclaration(
+        ) [NoListOfVarDeclaration]
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+         x
+          NoArray(
+          ) [NoArray]
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+        ) [VarDeclaration]
+      ) [ListVarDeclaration]
+      ListOfSatemant(
+        NoListOfSatemant(
+        ) [NoListOfSatemant]
+        MatchedStmt(
+          StmtPrint(
+            Expression(
+              NoMinusExs(
+              ) [NoMinusExs]
+              Term(
+                FactorDesign(
+                  DesignatorIdent(
+                   x
+                  ) [DesignatorIdent]
+                  NoActParamsExists(
+                  ) [NoActParamsExists]
+                ) [FactorDesign]
+                NoMullopFactList(
+                ) [NoMullopFactList]
+              ) [Term]
+              NoListAddopTerm(
+              ) [NoListAddopTerm]
+            ) [Expression]
+          ) [StmtPrint]
+        ) [MatchedStmt]
+      ) [ListOfSatemant]
+    ) [MethodDeclaration]
+  ) [MethodsDeclarationList]
+) [Program]
+INFO  19:23:25,684 - ===================================
+INFO  19:23:25,690 - Pocetak obrade programa test301 na liniji 3
+INFO  19:23:25,691 - NoMethodsDeclarationList posetili
+INFO  19:23:25,691 - MethodVoid posetili
+INFO  19:23:25,691 - Obradjuje se void metoda: main na liniji 7
+INFO  19:23:25,691 - type posetio
+INFO  19:23:25,691 - NoArray posetio
+INFO  19:23:25,691 - NoVarDeclList posetio, kraj rekurzije
+INFO  19:23:25,691 - varDecl posetio
+INFO  19:23:25,694 - Deklarisana lokalna promenljiva x
+INFO  19:23:25,694 - ListVarDeclaration posetili
+INFO  19:23:25,695 - Designator posetili
+INFO  19:23:25,695 - FactorDesign posetili
+INFO  19:23:25,695 - Term posetili
+INFO  19:23:25,696 - Expression posetili
+INFO  19:23:25,696 - StmtPrint posetili
+INFO  19:23:25,696 - MethodDeclaration posetili
+INFO  19:23:25,696 - MethodsDeclarationList posetili
+INFO  19:23:25,696 - Zavrsetak obrade metode main
+INFO  19:23:25,696 - Kraj semanticke obrade programa test301
+INFO  19:23:25,696 - ===================================
+INFO  19:23:25,755 - Parsiranje uspesno zavrseno!

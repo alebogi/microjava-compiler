@@ -9,7 +9,7 @@ import rs.etf.pp1.symboltable.concepts.*;
 
 public class SemanticAnalyzer extends VisitorAdaptor{
 	
-	private static Struct boolType = Tab.insert(Obj.Type, "bool", new Struct(Struct.Bool)).getType();
+	public static Struct boolType = Tab.insert(Obj.Type, "bool", new Struct(Struct.Bool)).getType();
 	
 	private boolean errorDetected = false;
 	

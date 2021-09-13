@@ -1,0 +1,70 @@
+INFO  18:55:14,516 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  18:55:14,791 - #2 program
+INFO  18:55:14,791 - #43 test301
+INFO  18:55:14,793 - #3 {
+INFO  18:55:14,798 - #11 void
+INFO  18:55:14,800 - #43 main
+INFO  18:55:14,801 - #13 (
+INFO  18:55:14,802 - #12 )
+INFO  18:55:14,802 - #3 {
+INFO  18:55:14,804 - #39 print
+INFO  18:55:14,806 - #13 (
+INFO  18:55:14,807 - #42 1
+INFO  18:55:14,812 - #12 )
+INFO  18:55:14,832 - #7 ;
+INFO  18:55:14,833 - #4 }
+INFO  18:55:14,836 - #4 }
+INFO  18:55:14,898 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NoDeclarationsList(
+  ) [NoDeclarationsList]
+  MethodsDeclarationList(
+    NoMethodsDeclarationList(
+    ) [NoMethodsDeclarationList]
+    MethodDeclaration(
+      MethodVoid(
+       main
+      ) [MethodVoid]
+      NoListOfVarDeclaration(
+      ) [NoListOfVarDeclaration]
+      ListOfSatemant(
+        NoListOfSatemant(
+        ) [NoListOfSatemant]
+        MatchedStmt(
+          StmtPrint(
+            Expression(
+              NoMinusExs(
+              ) [NoMinusExs]
+              Term(
+                FactorNumConst(
+                 1
+                ) [FactorNumConst]
+                NoMullopFactList(
+                ) [NoMullopFactList]
+              ) [Term]
+              NoListAddopTerm(
+              ) [NoListAddopTerm]
+            ) [Expression]
+          ) [StmtPrint]
+        ) [MatchedStmt]
+      ) [ListOfSatemant]
+    ) [MethodDeclaration]
+  ) [MethodsDeclarationList]
+) [Program]
+INFO  18:55:14,901 - ===================================
+INFO  18:55:14,924 - Pocetak obrade programa test301 na liniji 3
+INFO  18:55:14,924 - NoMethodsDeclarationList posetili
+INFO  18:55:14,925 - MethodVoid posetili
+INFO  18:55:14,925 - Obradjuje se void metoda: main na liniji 7
+INFO  18:55:14,927 - FactorNumConst posetili
+INFO  18:55:14,928 - Term posetili
+INFO  18:55:14,928 - Expression posetili
+INFO  18:55:14,929 - StmtPrint posetili
+INFO  18:55:14,930 - MethodDeclaration posetili
+INFO  18:55:14,930 - MethodsDeclarationList posetili
+INFO  18:55:14,931 - Zavrsetak obrade metode main
+INFO  18:55:14,931 - Kraj semanticke obrade programa test301
+INFO  18:55:14,931 - ===================================
+INFO  18:55:14,996 - Parsiranje uspesno zavrseno!
