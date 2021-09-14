@@ -5,9 +5,27 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class DivOp extends Mulop {
+public class IfStart implements SyntaxNode {
 
-    public DivOp () {
+    private SyntaxNode parent;
+    private int line;
+    public IfStart () {
+    }
+
+    public SyntaxNode getParent() {
+        return parent;
+    }
+
+    public void setParent(SyntaxNode parent) {
+        this.parent=parent;
+    }
+
+    public int getLine() {
+        return line;
+    }
+
+    public void setLine(int line) {
+        this.line=line;
     }
 
     public void accept(Visitor visitor) {
@@ -28,10 +46,10 @@ public class DivOp extends Mulop {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("DivOp(\n");
+        buffer.append("IfStart(\n");
 
         buffer.append(tab);
-        buffer.append(") [DivOp]");
+        buffer.append(") [IfStart]");
         return buffer.toString();
     }
 }

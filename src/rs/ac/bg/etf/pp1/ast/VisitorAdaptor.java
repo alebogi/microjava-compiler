@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 14/8/2021 20:20:17
+// 14/8/2021 23:18:50
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -21,7 +21,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(Addop Addop) { }
     public void visit(ExprListEnd ExprListEnd) { }
     public void visit(Factor Factor) { }
-    public void visit(StmtUnmatched StmtUnmatched) { }
     public void visit(CondTerm CondTerm) { }
     public void visit(ConstList ConstList) { }
     public void visit(Designator Designator) { }
@@ -44,7 +43,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(CondFact CondFact) { }
     public void visit(MethodDeclList MethodDeclList) { }
     public void visit(Decls Decls) { }
-    public void visit(StmtMatched StmtMatched) { }
     public void visit(ExtendsClass ExtendsClass) { }
     public void visit(Consts Consts) { }
     public void visit(FormPars FormPars) { }
@@ -103,8 +101,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(StatementList StatementList) { visit(); }
     public void visit(NoExprExists NoExprExists) { visit(); }
     public void visit(ExpreExists ExpreExists) { visit(); }
-    public void visit(StmtUnmatchedIfElse StmtUnmatchedIfElse) { visit(); }
-    public void visit(StmtUnmatchedIf StmtUnmatchedIf) { visit(); }
+    public void visit(IfStart IfStart) { visit(); }
     public void visit(StmtIfElse StmtIfElse) { visit(); }
     public void visit(StmtStmt StmtStmt) { visit(); }
     public void visit(StmtRet StmtRet) { visit(); }
@@ -115,8 +112,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(StmtPrintNumConst StmtPrintNumConst) { visit(); }
     public void visit(StmtRead StmtRead) { visit(); }
     public void visit(StmtDesgStmt StmtDesgStmt) { visit(); }
-    public void visit(UnmatchedStmt UnmatchedStmt) { visit(); }
-    public void visit(MatchedStmt MatchedStmt) { visit(); }
     public void visit(Type Type) { visit(); }
     public void visit(FormParsListEndError FormParsListEndError) { visit(); }
     public void visit(FormParamsListEnd FormParamsListEnd) { visit(); }

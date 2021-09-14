@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 14/8/2021 20:20:17
+// 14/8/2021 23:18:50
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -21,7 +21,6 @@ public interface Visitor {
     public void visit(Addop Addop);
     public void visit(ExprListEnd ExprListEnd);
     public void visit(Factor Factor);
-    public void visit(StmtUnmatched StmtUnmatched);
     public void visit(CondTerm CondTerm);
     public void visit(ConstList ConstList);
     public void visit(Designator Designator);
@@ -44,7 +43,6 @@ public interface Visitor {
     public void visit(CondFact CondFact);
     public void visit(MethodDeclList MethodDeclList);
     public void visit(Decls Decls);
-    public void visit(StmtMatched StmtMatched);
     public void visit(ExtendsClass ExtendsClass);
     public void visit(Consts Consts);
     public void visit(FormPars FormPars);
@@ -103,8 +101,7 @@ public interface Visitor {
     public void visit(StatementList StatementList);
     public void visit(NoExprExists NoExprExists);
     public void visit(ExpreExists ExpreExists);
-    public void visit(StmtUnmatchedIfElse StmtUnmatchedIfElse);
-    public void visit(StmtUnmatchedIf StmtUnmatchedIf);
+    public void visit(IfStart IfStart);
     public void visit(StmtIfElse StmtIfElse);
     public void visit(StmtStmt StmtStmt);
     public void visit(StmtRet StmtRet);
@@ -115,8 +112,6 @@ public interface Visitor {
     public void visit(StmtPrintNumConst StmtPrintNumConst);
     public void visit(StmtRead StmtRead);
     public void visit(StmtDesgStmt StmtDesgStmt);
-    public void visit(UnmatchedStmt UnmatchedStmt);
-    public void visit(MatchedStmt MatchedStmt);
     public void visit(Type Type);
     public void visit(FormParsListEndError FormParsListEndError);
     public void visit(FormParamsListEnd FormParamsListEnd);

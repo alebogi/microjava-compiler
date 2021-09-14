@@ -85,8 +85,7 @@ nonterminal Assignop Assignop;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
-nonterminal StmtMatched StmtMatched;
-nonterminal StmtUnmatched StmtUnmatched;
+nonterminal IfStart IfStart;
 
 nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType, FormPars, FormParsListEnd;
 nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor, Term, CondFact, CondTerm, Condition, ExprArrExists, MulopFactorList, AddopTermList, RelopExprExists;
@@ -209,12 +208,9 @@ FormParsListEnd ::= (FormParamsListEnd)	COMMA Type:fpListType IDENT:fpListName A
 Type ::= (Type) IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(typeNameleft); :}
 ;
 
-Statement ::= (MatchedStmt) StmtMatched:S1 {: RESULT=new MatchedStmt(S1); RESULT.setLine(S1left); :}
-			|
-			(UnmatchedStmt) StmtUnmatched:S1 {: RESULT=new UnmatchedStmt(S1); RESULT.setLine(S1left); :}
-;
 
-StmtMatched ::= (StmtDesgStmt) DesignatorStatement:D1 SEMI {: RESULT=new StmtDesgStmt(D1); RESULT.setLine(D1left); :}
+
+Statement ::= (StmtDesgStmt) DesignatorStatement:D1 SEMI {: RESULT=new StmtDesgStmt(D1); RESULT.setLine(D1left); :}
 			|	
 			(StmtRead) READ L_PAREN Designator:D1 R_PAREN SEMI {: RESULT=new StmtRead(D1); RESULT.setLine(D1left); :}
 			|
@@ -232,14 +228,11 @@ StmtMatched ::= (StmtDesgStmt) DesignatorStatement:D1 SEMI {: RESULT=new StmtDes
 			|
 			(StmtStmt) L_BRACE StmtList:S1 R_BRACE {: RESULT=new StmtStmt(S1); RESULT.setLine(S1left); :} 
 			|
-			(StmtIfElse) IF L_PAREN Condition:C1 R_PAREN StmtMatched:S2 ELSE StmtMatched:S3 {: RESULT=new StmtIfElse(C1, S2, S3); RESULT.setLine(C1left); :}
+			(StmtIfElse) IfStart:I1 L_PAREN Condition:C2 R_PAREN Statement:S3 ELSE Statement:S4 {: RESULT=new StmtIfElse(I1, C2, S3, S4); RESULT.setLine(I1left); :}
 ;
 		
-StmtUnmatched ::= (StmtUnmatchedIf) IF L_PAREN Condition:C1 R_PAREN Statement:S2 {: RESULT=new StmtUnmatchedIf(C1, S2); RESULT.setLine(C1left); :}
-				|
-				(StmtUnmatchedIfElse) IF  L_PAREN Condition:C1 R_PAREN StmtMatched:S2 ELSE StmtUnmatched:S3 {: RESULT=new StmtUnmatchedIfElse(C1, S2, S3); RESULT.setLine(C1left); :}
-;
-	
+IfStart ::= (IfStart) IF {: RESULT=new IfStart(); :}
+;	
 				
 ExprExists ::= (ExpreExists) Expr:E1 {: RESULT=new ExpreExists(E1); RESULT.setLine(E1left); :}
 				|

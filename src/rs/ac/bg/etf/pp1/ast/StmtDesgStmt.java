@@ -1,11 +1,11 @@
 // generated with ast extension for cup
 // version 0.8
-// 14/8/2021 20:20:17
+// 14/8/2021 23:18:50
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class StmtDesgStmt extends StmtMatched {
+public class StmtDesgStmt extends Statement {
 
     private DesignatorStatement DesignatorStatement;
 

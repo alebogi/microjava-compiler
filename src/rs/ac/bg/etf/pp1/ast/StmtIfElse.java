@@ -1,23 +1,34 @@
 // generated with ast extension for cup
 // version 0.8
-// 14/8/2021 20:20:17
+// 14/8/2021 23:18:50
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class StmtIfElse extends StmtMatched {
+public class StmtIfElse extends Statement {
 
+    private IfStart IfStart;
     private Condition Condition;
-    private StmtMatched StmtMatched;
-    private StmtMatched StmtMatched1;
+    private Statement Statement;
+    private Statement Statement1;
 
-    public StmtIfElse (Condition Condition, StmtMatched StmtMatched, StmtMatched StmtMatched1) {
+    public StmtIfElse (IfStart IfStart, Condition Condition, Statement Statement, Statement Statement1) {
+        this.IfStart=IfStart;
+        if(IfStart!=null) IfStart.setParent(this);
         this.Condition=Condition;
         if(Condition!=null) Condition.setParent(this);
-        this.StmtMatched=StmtMatched;
-        if(StmtMatched!=null) StmtMatched.setParent(this);
-        this.StmtMatched1=StmtMatched1;
-        if(StmtMatched1!=null) StmtMatched1.setParent(this);
+        this.Statement=Statement;
+        if(Statement!=null) Statement.setParent(this);
+        this.Statement1=Statement1;
+        if(Statement1!=null) Statement1.setParent(this);
+    }
+
+    public IfStart getIfStart() {
+        return IfStart;
+    }
+
+    public void setIfStart(IfStart IfStart) {
+        this.IfStart=IfStart;
     }
 
     public Condition getCondition() {
@@ -28,20 +39,20 @@ public class StmtIfElse extends StmtMatched {
         this.Condition=Condition;
     }
 
-    public StmtMatched getStmtMatched() {
-        return StmtMatched;
+    public Statement getStatement() {
+        return Statement;
     }
 
-    public void setStmtMatched(StmtMatched StmtMatched) {
-        this.StmtMatched=StmtMatched;
+    public void setStatement(Statement Statement) {
+        this.Statement=Statement;
     }
 
-    public StmtMatched getStmtMatched1() {
-        return StmtMatched1;
+    public Statement getStatement1() {
+        return Statement1;
     }
 
-    public void setStmtMatched1(StmtMatched StmtMatched1) {
-        this.StmtMatched1=StmtMatched1;
+    public void setStatement1(Statement Statement1) {
+        this.Statement1=Statement1;
     }
 
     public void accept(Visitor visitor) {
@@ -49,22 +60,25 @@ public class StmtIfElse extends StmtMatched {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(IfStart!=null) IfStart.accept(visitor);
         if(Condition!=null) Condition.accept(visitor);
-        if(StmtMatched!=null) StmtMatched.accept(visitor);
-        if(StmtMatched1!=null) StmtMatched1.accept(visitor);
+        if(Statement!=null) Statement.accept(visitor);
+        if(Statement1!=null) Statement1.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(IfStart!=null) IfStart.traverseTopDown(visitor);
         if(Condition!=null) Condition.traverseTopDown(visitor);
-        if(StmtMatched!=null) StmtMatched.traverseTopDown(visitor);
-        if(StmtMatched1!=null) StmtMatched1.traverseTopDown(visitor);
+        if(Statement!=null) Statement.traverseTopDown(visitor);
+        if(Statement1!=null) Statement1.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(IfStart!=null) IfStart.traverseBottomUp(visitor);
         if(Condition!=null) Condition.traverseBottomUp(visitor);
-        if(StmtMatched!=null) StmtMatched.traverseBottomUp(visitor);
-        if(StmtMatched1!=null) StmtMatched1.traverseBottomUp(visitor);
+        if(Statement!=null) Statement.traverseBottomUp(visitor);
+        if(Statement1!=null) Statement1.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -73,20 +87,26 @@ public class StmtIfElse extends StmtMatched {
         buffer.append(tab);
         buffer.append("StmtIfElse(\n");
 
+        if(IfStart!=null)
+            buffer.append(IfStart.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
         if(Condition!=null)
             buffer.append(Condition.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(StmtMatched!=null)
-            buffer.append(StmtMatched.toString("  "+tab));
+        if(Statement!=null)
+            buffer.append(Statement.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(StmtMatched1!=null)
-            buffer.append(StmtMatched1.toString("  "+tab));
+        if(Statement1!=null)
+            buffer.append(Statement1.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

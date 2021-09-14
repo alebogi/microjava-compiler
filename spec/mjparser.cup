@@ -64,10 +64,12 @@ nonterminal ExtendsClass, ListOfVarDecl, ListOfStmt, Statement, MethodDecl;
 nonterminal FormParsList, DesignatorStatement, ExprList, ExprListEnd;
 nonterminal ActPars, ActParsExists, StmtList, ExprExists;
 nonterminal Assignop, Relop, Addop, Mulop;
-nonterminal StmtMatched, StmtUnmatched;
+nonterminal IfStart;
 
 nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType, FormPars, FormParsListEnd;
 nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor, Term, CondFact, CondTerm, Condition, ExprArrExists, MulopFactorList, AddopTermList, RelopExprExists;
+
+precedence left ELSE;
 
 Program ::= (Program) PROG ProgName:p DeclsList L_BRACE MethodDeclList R_BRACE
 ;
@@ -187,12 +189,9 @@ FormParsListEnd ::= (FormParamsListEnd)	COMMA Type:fpListType IDENT:fpListName A
 Type ::= (Type) IDENT:typeName
 ;
 
-Statement ::= (MatchedStmt) StmtMatched
-			|
-			(UnmatchedStmt) StmtUnmatched
-;
 
-StmtMatched ::= (StmtDesgStmt) DesignatorStatement SEMI
+
+Statement ::= (StmtDesgStmt) DesignatorStatement SEMI
 			|	
 			(StmtRead) READ L_PAREN Designator R_PAREN SEMI
 			|
@@ -210,14 +209,11 @@ StmtMatched ::= (StmtDesgStmt) DesignatorStatement SEMI
 			|
 			(StmtStmt) L_BRACE StmtList R_BRACE 
 			|
-			(StmtIfElse) IF L_PAREN Condition R_PAREN StmtMatched ELSE StmtMatched
+			(StmtIfElse) IfStart L_PAREN Condition R_PAREN Statement ELSE Statement
 ;
 		
-StmtUnmatched ::= (StmtUnmatchedIf) IF L_PAREN Condition R_PAREN Statement
-				|
-				(StmtUnmatchedIfElse) IF  L_PAREN Condition R_PAREN StmtMatched ELSE StmtUnmatched
-;
-	
+IfStart ::= (IfStart) IF
+;	
 				
 ExprExists ::= (ExpreExists) Expr
 				|
