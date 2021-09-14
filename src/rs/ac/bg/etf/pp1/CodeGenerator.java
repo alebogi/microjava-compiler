@@ -3,6 +3,10 @@ package rs.ac.bg.etf.pp1;
 
 
 import java.util.Collection;
+import java.util.LinkedList;
+import java.util.Stack;
+
+import org.apache.log4j.Logger;
 
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.mj.runtime.Code;
@@ -14,6 +18,23 @@ public class CodeGenerator extends VisitorAdaptor {
 	private int mainPC;
 	private Obj currentMethod = null;
 
+//============================
+	Logger log = Logger.getLogger(getClass());
+	
+	public void report_info(String message, SyntaxNode info) {
+		StringBuilder msg = new StringBuilder(message); 
+		int line = (info == null) ? 0: info.getLine();
+		if (line != 0)
+			msg.append (" na liniji ").append(line);
+		log.info(msg.toString());
+	}
+	
+	
+	//===========
+	
+	private LinkedList<Integer> addopStack = new LinkedList<Integer>();
+	private LinkedList<Integer> mulopStack = new LinkedList<Integer>();
+	
 	public int getMainPC() {
 		return mainPC;
 	}
@@ -189,7 +210,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		
 		// ako nam treba VREDNOST, a ne adresa
 		if(FactorDesign.class == d.getParent().getClass()) {
-			Code.put(Code.aload);	// izgled steka:
+			Code.load(d.obj);	// izgled steka:
 									// adr 
 									// index
 		// aload -> sloni adr i index i postavi value
@@ -268,5 +289,74 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(FactorDesign fd) {
 		//??
 	}
+	
+	
+	
+	
 
+	//-----------------------
+	//*** OPERACIJE ***
+	public void visit(OpMul op) {
+		report_info("OpMul posetio", null);
+		mulopStack.addLast(Code.mul);
+	}
+	
+	public void visit(DivOp op) {
+		report_info("DivOp posetio", null);
+		mulopStack.addLast(Code.div);
+	}
+	
+	public void visit(ModOp op) {
+		report_info("ModOp posetio", null);
+		mulopStack.addLast(Code.rem);
+	}
+	
+	public void visit(OpAdd op) {
+		report_info("OpAdd posetio", null);
+		addopStack.addLast(Code.add);
+	}
+	
+	public void visit(SubOp op) {
+		report_info("SubOp posetio", null);
+		addopStack.addLast(Code.sub);
+	}
+	
+	public void visit(ListAddopTerm l) {
+		report_info("ListAddopTerm posetio", null);
+		
+		int op = addopStack.removeLast();
+		if(op==23)
+			report_info("ListAddopTerm add ", null);
+		else
+			report_info("ListAddopTerm sub ", null);
+		Code.put(op);
+	}
+	
+	public void visit(MullopFactList l) {
+		report_info("MullopFactList posetio", null);
+		int op = mulopStack.removeLast();
+		Code.put(op);
+	}
+	
+
+	
+	//-----------------
+	// *** TERM ***
+	
+	public void visit(Term t) {
+		if(t.getParent().getClass() == ExpressionMinus.class) {
+			Code.put(Code.neg);
+		}
+			
+	}
+	
+	//-------------------------------
+	//*** EXPRESSION ***
+	
+	public void visit (Expression e) {
+		report_info("Expression posetio", null);
+	}
+	public void visit (ExpressionMinus e) {
+		report_info("ExpressionMinus posetio", null);
+	}
 }

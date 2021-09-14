@@ -697,6 +697,11 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 		e.struct = e.getTerm().struct;
 	}
 	
+	public void visit(ExpressionMinus e) {
+		report_info("ExpressionMinus posetili", null);
+		e.struct = e.getTerm().struct;
+	}
+	
 	public void visit(RelopExprExist e) {
 		report_info("RelopExprExist posetili", null);
 		e.struct = e.getExpr().struct;

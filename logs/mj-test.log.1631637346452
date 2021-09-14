@@ -1,0 +1,355 @@
+INFO  18:34:47,333 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  18:34:47,809 - #2 program
+INFO  18:34:47,810 - #43 MJProgram
+INFO  18:34:47,811 - #43 int
+INFO  18:34:47,815 - #43 x
+INFO  18:34:47,823 - #14 [
+INFO  18:34:47,824 - #15 ]
+INFO  18:34:47,824 - #7 ;
+INFO  18:34:47,832 - #43 int
+INFO  18:34:47,834 - #43 y
+INFO  18:34:47,842 - #7 ;
+INFO  18:34:47,845 - #3 {
+INFO  18:34:47,848 - #11 void
+INFO  18:34:47,864 - #43 main
+INFO  18:34:47,871 - #13 (
+INFO  18:34:47,889 - #12 )
+INFO  18:34:47,919 - #43 int
+INFO  18:34:47,930 - #43 a
+INFO  18:34:47,932 - #8 ,
+INFO  18:34:47,932 - #43 b
+INFO  18:34:47,933 - #7 ;
+INFO  18:34:47,942 - #3 {
+INFO  18:34:47,943 - #43 x
+INFO  18:34:47,945 - #6 =
+INFO  18:34:47,947 - #31 new
+INFO  18:34:48,010 - #43 int
+INFO  18:34:48,012 - #14 [
+INFO  18:34:48,012 - #42 8
+INFO  18:34:48,013 - #15 ]
+INFO  18:34:48,054 - #7 ;
+INFO  18:34:48,055 - #43 x
+INFO  18:34:48,056 - #14 [
+INFO  18:34:48,056 - #42 3
+INFO  18:34:48,057 - #15 ]
+INFO  18:34:48,057 - #6 =
+INFO  18:34:48,057 - #25 -
+INFO  18:34:48,058 - #13 (
+INFO  18:34:48,060 - #43 x
+INFO  18:34:48,061 - #14 [
+INFO  18:34:48,061 - #42 3
+INFO  18:34:48,061 - #15 ]
+INFO  18:34:48,062 - #24 +
+INFO  18:34:48,064 - #42 8
+INFO  18:34:48,067 - #12 )
+INFO  18:34:48,068 - #26 *
+INFO  18:34:48,069 - #42 6
+INFO  18:34:48,073 - #7 ;
+INFO  18:34:48,073 - #39 print
+INFO  18:34:48,073 - #13 (
+INFO  18:34:48,073 - #43 x
+INFO  18:34:48,074 - #14 [
+INFO  18:34:48,074 - #42 3
+INFO  18:34:48,074 - #15 ]
+INFO  18:34:48,074 - #12 )
+INFO  18:34:48,074 - #7 ;
+INFO  18:34:48,081 - #4 }
+INFO  18:34:48,082 - #4 }
+INFO  18:34:48,213 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    DeclarationsList(
+      NoDeclarationsList(
+      ) [NoDeclarationsList]
+      DeclsVar(
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+         x
+          Array(
+          ) [Array]
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+        ) [VarDeclaration]
+      ) [DeclsVar]
+    ) [DeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         int
+        ) [Type]
+       y
+        NoArray(
+        ) [NoArray]
+        NoVarDeclarationList(
+        ) [NoVarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  MethodsDeclarationList(
+    NoMethodsDeclarationList(
+    ) [NoMethodsDeclarationList]
+    MethodDeclaration(
+      MethodVoid(
+       main
+      ) [MethodVoid]
+      ListVarDeclaration(
+        NoListOfVarDeclaration(
+        ) [NoListOfVarDeclaration]
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+         a
+          NoArray(
+          ) [NoArray]
+          VarDeclarationList(
+            NoVarDeclarationList(
+            ) [NoVarDeclarationList]
+            VarDeclarationListEnd(
+             b
+              NoArray(
+              ) [NoArray]
+            ) [VarDeclarationListEnd]
+          ) [VarDeclarationList]
+        ) [VarDeclaration]
+      ) [ListVarDeclaration]
+      ListOfSatemant(
+        ListOfSatemant(
+          ListOfSatemant(
+            NoListOfSatemant(
+            ) [NoListOfSatemant]
+            MatchedStmt(
+              StmtDesgStmt(
+                DesgnStmtAsgnOp(
+                  DesignatorIdent(
+                   x
+                  ) [DesignatorIdent]
+                  AssignOperator(
+                  ) [AssignOperator]
+                  Expression(
+                    NoMinusExs(
+                    ) [NoMinusExs]
+                    Term(
+                      FactorNewArr(
+                        Type(
+                         int
+                        ) [Type]
+                        Expression(
+                          NoMinusExs(
+                          ) [NoMinusExs]
+                          Term(
+                            FactorNumConst(
+                             8
+                            ) [FactorNumConst]
+                            NoMullopFactList(
+                            ) [NoMullopFactList]
+                          ) [Term]
+                          NoListAddopTerm(
+                          ) [NoListAddopTerm]
+                        ) [Expression]
+                      ) [FactorNewArr]
+                      NoMullopFactList(
+                      ) [NoMullopFactList]
+                    ) [Term]
+                    NoListAddopTerm(
+                    ) [NoListAddopTerm]
+                  ) [Expression]
+                ) [DesgnStmtAsgnOp]
+              ) [StmtDesgStmt]
+            ) [MatchedStmt]
+          ) [ListOfSatemant]
+          MatchedStmt(
+            StmtDesgStmt(
+              DesgnStmtAsgnOp(
+                DesignatorArr(
+                 x
+                  Expression(
+                    NoMinusExs(
+                    ) [NoMinusExs]
+                    Term(
+                      FactorNumConst(
+                       3
+                      ) [FactorNumConst]
+                      NoMullopFactList(
+                      ) [NoMullopFactList]
+                    ) [Term]
+                    NoListAddopTerm(
+                    ) [NoListAddopTerm]
+                  ) [Expression]
+                ) [DesignatorArr]
+                AssignOperator(
+                ) [AssignOperator]
+                Expression(
+                  MinusExs(
+                  ) [MinusExs]
+                  Term(
+                    FactorExpr(
+                      Expression(
+                        NoMinusExs(
+                        ) [NoMinusExs]
+                        Term(
+                          FactorDesign(
+                            DesignatorArr(
+                             x
+                              Expression(
+                                NoMinusExs(
+                                ) [NoMinusExs]
+                                Term(
+                                  FactorNumConst(
+                                   3
+                                  ) [FactorNumConst]
+                                  NoMullopFactList(
+                                  ) [NoMullopFactList]
+                                ) [Term]
+                                NoListAddopTerm(
+                                ) [NoListAddopTerm]
+                              ) [Expression]
+                            ) [DesignatorArr]
+                            NoActParamsExists(
+                            ) [NoActParamsExists]
+                          ) [FactorDesign]
+                          NoMullopFactList(
+                          ) [NoMullopFactList]
+                        ) [Term]
+                        ListAddopTerm(
+                          NoListAddopTerm(
+                          ) [NoListAddopTerm]
+                          OpAdd(
+                          ) [OpAdd]
+                          Term(
+                            FactorNumConst(
+                             8
+                            ) [FactorNumConst]
+                            NoMullopFactList(
+                            ) [NoMullopFactList]
+                          ) [Term]
+                        ) [ListAddopTerm]
+                      ) [Expression]
+                    ) [FactorExpr]
+                    MullopFactList(
+                      NoMullopFactList(
+                      ) [NoMullopFactList]
+                      OpMul(
+                      ) [OpMul]
+                      FactorNumConst(
+                       6
+                      ) [FactorNumConst]
+                    ) [MullopFactList]
+                  ) [Term]
+                  NoListAddopTerm(
+                  ) [NoListAddopTerm]
+                ) [Expression]
+              ) [DesgnStmtAsgnOp]
+            ) [StmtDesgStmt]
+          ) [MatchedStmt]
+        ) [ListOfSatemant]
+        MatchedStmt(
+          StmtPrint(
+            Expression(
+              NoMinusExs(
+              ) [NoMinusExs]
+              Term(
+                FactorDesign(
+                  DesignatorArr(
+                   x
+                    Expression(
+                      NoMinusExs(
+                      ) [NoMinusExs]
+                      Term(
+                        FactorNumConst(
+                         3
+                        ) [FactorNumConst]
+                        NoMullopFactList(
+                        ) [NoMullopFactList]
+                      ) [Term]
+                      NoListAddopTerm(
+                      ) [NoListAddopTerm]
+                    ) [Expression]
+                  ) [DesignatorArr]
+                  NoActParamsExists(
+                  ) [NoActParamsExists]
+                ) [FactorDesign]
+                NoMullopFactList(
+                ) [NoMullopFactList]
+              ) [Term]
+              NoListAddopTerm(
+              ) [NoListAddopTerm]
+            ) [Expression]
+          ) [StmtPrint]
+        ) [MatchedStmt]
+      ) [ListOfSatemant]
+    ) [MethodDeclaration]
+  ) [MethodsDeclarationList]
+) [Program]
+INFO  18:34:48,220 - ===================================
+INFO  18:34:48,254 - Pocetak obrade programa MJProgram na liniji 1
+INFO  18:34:48,255 - type posetio
+INFO  18:34:48,255 - Array posetio
+INFO  18:34:48,255 - NoVarDeclList posetio, kraj rekurzije
+INFO  18:34:48,259 - varDecl posetio
+INFO  18:34:48,329 - Deklarisan globalni niz x na liniji 2
+INFO  18:34:48,330 - type posetio
+INFO  18:34:48,332 - NoArray posetio
+INFO  18:34:48,333 - NoVarDeclList posetio, kraj rekurzije
+INFO  18:34:48,344 - varDecl posetio
+INFO  18:34:48,345 - Deklarisana globalna promenljiva y
+INFO  18:34:48,346 - NoMethodsDeclarationList posetili
+INFO  18:34:48,347 - MethodVoid posetili
+INFO  18:34:48,347 - Obradjuje se void metoda: main na liniji 5
+INFO  18:34:48,347 - type posetio
+INFO  18:34:48,348 - NoArray posetio
+INFO  18:34:48,348 - NoVarDeclList posetio, kraj rekurzije
+INFO  18:34:48,348 - NoArray posetio
+INFO  18:34:48,348 - varDeclListEnd posetio
+INFO  18:34:48,348 - varDeclList posetio
+INFO  18:34:48,348 - varDecl posetio
+INFO  18:34:48,349 - Deklarisana lokalna promenljiva a
+INFO  18:34:48,349 - Deklarisana lokalna promenljiva b
+INFO  18:34:48,349 - ListVarDeclaration posetili
+INFO  18:34:48,351 - Designator posetili
+INFO  18:34:48,352 - type posetio
+INFO  18:34:48,352 - FactorNumConst posetili
+INFO  18:34:48,353 - Term posetili
+INFO  18:34:48,354 - Expression posetili
+INFO  18:34:48,354 - FactorNewArr posetili
+INFO  18:34:48,354 - Term posetili
+INFO  18:34:48,358 - Expression posetili
+INFO  18:34:48,358 - DesgnStmtAsgnOp posetili
+INFO  18:34:48,358 - FactorNumConst posetili
+INFO  18:34:48,359 - Term posetili
+INFO  18:34:48,360 - Expression posetili
+INFO  18:34:48,363 - DesignatorArr posetili
+INFO  18:34:48,365 - FactorNumConst posetili
+INFO  18:34:48,365 - Term posetili
+INFO  18:34:48,366 - Expression posetili
+INFO  18:34:48,366 - DesignatorArr posetili
+INFO  18:34:48,366 - FactorDesign posetili
+INFO  18:34:48,368 - Term posetili
+INFO  18:34:48,371 - FactorNumConst posetili
+INFO  18:34:48,390 - Term posetili
+INFO  18:34:48,390 - ListAddopTerm posetili
+INFO  18:34:48,391 - Expression posetili
+INFO  18:34:48,391 - FactorExpr posetili
+INFO  18:34:48,391 - FactorNumConst posetili
+INFO  18:34:48,392 - MullopFactList posetili
+INFO  18:34:48,392 - Term posetili
+INFO  18:34:48,393 - Expression posetili
+INFO  18:34:48,393 - DesgnStmtAsgnOp posetili
+INFO  18:34:48,393 - FactorNumConst posetili
+INFO  18:34:48,393 - Term posetili
+INFO  18:34:48,394 - Expression posetili
+INFO  18:34:48,395 - DesignatorArr posetili
+INFO  18:34:48,396 - FactorDesign posetili
+INFO  18:34:48,398 - Term posetili
+INFO  18:34:48,398 - Expression posetili
+INFO  18:34:48,398 - StmtPrint posetili
+INFO  18:34:48,399 - MethodDeclaration posetili
+INFO  18:34:48,403 - MethodsDeclarationList posetili
+INFO  18:34:48,403 - Zavrsetak obrade metode main
+INFO  18:34:48,404 - Kraj semanticke obrade programa MJProgram
+INFO  18:34:48,404 - ===================================
+INFO  18:34:48,493 - Parsiranje uspesno zavrseno!

@@ -63,7 +63,7 @@ nonterminal DeclsList, MethodDeclList, Decls, ConstDecl, ClassDecl, ConstList, C
 nonterminal ExtendsClass, ListOfVarDecl, ListOfStmt, Statement, MethodDecl;
 nonterminal FormParsList, DesignatorStatement, ExprList, ExprListEnd;
 nonterminal ActPars, ActParsExists, StmtList, ExprExists;
-nonterminal Assignop, Relop, Addop, Mulop, MinusExists;
+nonterminal Assignop, Relop, Addop, Mulop;
 nonterminal StmtMatched, StmtUnmatched;
 
 nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType, FormPars, FormParsListEnd;
@@ -281,16 +281,14 @@ RelopExprExists ::= (RelopExprExist) Relop Expr
 				(NoRelopExprExist) /* epsilon */
 ;
 	
-Expr ::= (Expression) MinusExists Term AddopTermList
+Expr ::= (Expression) Term AddopTermList
+		|
+		(ExpressionMinus) MINUS Term AddopTermList
 		|
 		(ExprError) error SEMI:l
 		{: parser.report_error("(Greska u iskazu dodele) [Expr] Izvrsen oporavak do ; u liniji " + lleft, null); :}
 ;
-
-MinusExists ::= (MinusExs) MINUS
-				|
-				(NoMinusExs) /* epsilon */
-;	
+	
 				
 AddopTermList ::= (ListAddopTerm) AddopTermList Addop Term
 				|

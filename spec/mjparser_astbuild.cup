@@ -85,7 +85,6 @@ nonterminal Assignop Assignop;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
-nonterminal MinusExists MinusExists;
 nonterminal StmtMatched StmtMatched;
 nonterminal StmtUnmatched StmtUnmatched;
 
@@ -304,16 +303,14 @@ RelopExprExists ::= (RelopExprExist) Relop:R1 Expr:E2 {: RESULT=new RelopExprExi
 				(NoRelopExprExist) {: RESULT=new NoRelopExprExist(); :} /* epsilon */
 ;
 	
-Expr ::= (Expression) MinusExists:M1 Term:T2 AddopTermList:A3 {: RESULT=new Expression(M1, T2, A3); RESULT.setLine(M1left); :}
+Expr ::= (Expression) Term:T1 AddopTermList:A2 {: RESULT=new Expression(T1, A2); RESULT.setLine(T1left); :}
+		|
+		(ExpressionMinus) MINUS Term:T1 AddopTermList:A2 {: RESULT=new ExpressionMinus(T1, A2); RESULT.setLine(T1left); :}
 		|
 		(ExprError) error SEMI:l
 		{: parser.report_error("(Greska u iskazu dodele) [Expr] Izvrsen oporavak do ; u liniji " + lleft, null); :} {: RESULT=new ExprError(); :}
 ;
-
-MinusExists ::= (MinusExs) MINUS {: RESULT=new MinusExs(); :}
-				|
-				(NoMinusExs) {: RESULT=new NoMinusExs(); :} /* epsilon */
-;	
+	
 				
 AddopTermList ::= (ListAddopTerm) AddopTermList:A1 Addop:A2 Term:T3 {: RESULT=new ListAddopTerm(A1, A2, T3); RESULT.setLine(A1left); :}
 				|
