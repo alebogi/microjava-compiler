@@ -42,7 +42,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	
 	private boolean condExprAlone = false;
 	
-	private Scope globalScope;
+	public static Scope globalScope;
 	
 
 	

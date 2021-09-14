@@ -4,8 +4,9 @@ program MJProgram
 
     void main() int a, b; {
     	x = new int[8];
-        x[1]++;
-      	print(x[1]);
+    	x[3] = 14;
+        x[3]++;
+      	print(x[3]);
         
     }
 }

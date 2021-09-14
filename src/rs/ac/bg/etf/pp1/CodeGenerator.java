@@ -1,5 +1,9 @@
 package rs.ac.bg.etf.pp1;
 
+
+
+import java.util.Collection;
+
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.*;
@@ -8,9 +12,74 @@ import rs.etf.pp1.symboltable.concepts.*;
 public class CodeGenerator extends VisitorAdaptor {
 	
 	private int mainPC;
+	private Obj currentMethod = null;
 
 	public int getMainPC() {
 		return mainPC;
+	}
+	
+	public Obj findMethInTab(String name) {
+		Obj res = null;
+		
+		// Prvo gledamo lokalne
+		if(currentMethod != null) {
+			Collection<Obj> currMethLocalSymbols = currentMethod.getLocalSymbols();
+			for (Obj currObj: currMethLocalSymbols) {		
+				if (currObj.getName().equals(name)) {
+					res = currObj;
+					return res;
+				}
+			}
+		}
+		
+		// Ako nema u lokalnim gledamo globalne
+		Collection<Obj> globalSymbols = SemanticAnalyzer.globalScope.values();
+		for (Obj currObj : globalSymbols) {				
+			if (currObj.getKind() == Obj.Meth && currObj.getName().equals(name)) {
+				res = currObj;
+				return res;
+			}
+		}
+		
+		// gledamo universe
+		res = Tab.find(name);
+		if(res == Tab.noObj) {
+			res = null;
+		}		
+			
+		return res;
+	}
+	
+	public Obj findVarInTab(String name) {
+		Obj res = null;
+		
+		// Prvo gledamo lokalne
+		if(currentMethod != null) {
+			Collection<Obj> currMethLocalSymbols = currentMethod.getLocalSymbols();
+			for (Obj currObj: currMethLocalSymbols) {		
+				if (currObj.getName().equals(name)) {
+					res = currObj;
+					return res;
+				}
+			}
+		}
+		
+		// Ako nema u lokalnim gledamo globalne
+		Collection<Obj> globalSymbols = SemanticAnalyzer.globalScope.values();
+		for (Obj currObj : globalSymbols) {				
+			if (currObj.getKind() != Obj.Meth && currObj.getName().equals(name)) {
+				res = currObj;
+				return res;
+			}
+		}
+		
+		// gledamo universe
+		res = Tab.find(name);
+		if(res == Tab.noObj) {
+			res = null;
+		}		
+			
+		return res;
 	}
 	
 	//---------------------------------
@@ -82,25 +151,51 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.sub);
 		Code.store(d.getDesignator().obj);		
 	}
+	
 	public void visit(DesignatorIdent di) {
 		SyntaxNode parent = di.getParent();
 		
 		//if(DesgnStmtAsgnOp.class != parent.getClass() && StmtRead.class != parent.getClass()){
-		if(FactorDesign.class != parent.getClass()) {
-		Code.load(di.obj);
+		// treba nam vrednost 
+		if(FactorDesign.class == parent.getClass()) {
+			Code.load(di.obj);
 		}
 		
 		
 	}
 	
-	public void visit(DesignatorArr di) {
-		SyntaxNode parent = di.getParent();
+	// PRISTUP ELEMENTU NIZA 				
+	public void visit(DesignatorArr d) {
+		// na steku nam treba redom adresa pa indeks
+		String name = d.getDsgnName();
+		Obj objNode = findVarInTab(name);	
 		
-		if(DesgnStmtAsgnOp.class != parent.getClass() && StmtRead.class != parent.getClass()){
-			Code.load(di.obj);
+		// na steku je indeks niza
+		if (objNode != null) {
+			Code.load(objNode);		//stavljamo adresu niza na stek
+									//izgled steka:
+									//  index
+									//	adr 	<-- sp			
+			Code.put(Code.dup_x1); 
+									// izgled steka:
+									// adr - ovo je dup_x1 ubacio
+									// index
+									// adr 	<--- sp
+			Code.put(Code.pop);		//sklanjamo adr jer je visak
+									// izgled steka:
+									// adr 
+									// index
+		}		
+		
+		// ako nam treba VREDNOST, a ne adresa
+		if(FactorDesign.class == d.getParent().getClass()) {
+			Code.put(Code.aload);	// izgled steka:
+									// adr 
+									// index
+		// aload -> sloni adr i index i postavi value
+			// izgled steka:
+			// adr[index]
 		}
-		
-		
 	}
 	
 	
@@ -118,6 +213,9 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.enter);
 		Code.put(mv.obj.getLevel());
 		Code.put( mv.obj.getLocalSymbols().size());
+		
+		//currentMethod = findMethInTab(mv.getMethodName());
+		currentMethod = mv.obj;
     }
 	
 	// METODA SA POVRATIM TIPOM
@@ -127,12 +225,17 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.enter);
 		Code.put(mt.obj.getLevel());
 		Code.put(mt.obj.getLocalSymbols().size());
+		
+		//currentMethod = findMethInTab(mt.getMethodName());
+		currentMethod = mt.obj;
     }
 	
 	// IZLAZ IZ METODE
 	public void visit(MethodDeclaration methodDecl){
 		Code.put(Code.exit);
 		Code.put(Code.return_);
+		
+		currentMethod = null;
 	}
 	
 	// --------------------------------------
@@ -161,5 +264,9 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.put(0); // velicina bajta
 		}
     }
+	
+	public void visit(FactorDesign fd) {
+		//??
+	}
 
 }

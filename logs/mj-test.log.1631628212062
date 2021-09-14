@@ -1,57 +1,57 @@
-INFO  16:05:07,317 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
-INFO  16:05:07,489 - #2 program
-INFO  16:05:07,489 - #43 MJProgram
-INFO  16:05:07,489 - #43 int
-INFO  16:05:07,497 - #43 x
-INFO  16:05:07,499 - #14 [
-INFO  16:05:07,499 - #15 ]
-INFO  16:05:07,499 - #7 ;
-INFO  16:05:07,499 - #43 int
-INFO  16:05:07,507 - #43 y
-INFO  16:05:07,507 - #7 ;
-INFO  16:05:07,509 - #3 {
-INFO  16:05:07,509 - #11 void
-INFO  16:05:07,509 - #43 main
-INFO  16:05:07,509 - #13 (
-INFO  16:05:07,509 - #12 )
-INFO  16:05:07,509 - #43 int
-INFO  16:05:07,509 - #43 a
-INFO  16:05:07,517 - #8 ,
-INFO  16:05:07,517 - #43 b
-INFO  16:05:07,517 - #7 ;
-INFO  16:05:07,517 - #3 {
-INFO  16:05:07,553 - #43 x
-INFO  16:05:07,553 - #6 =
-INFO  16:05:07,553 - #31 new
-INFO  16:05:07,568 - #43 int
-INFO  16:05:07,568 - #14 [
-INFO  16:05:07,568 - #42 8
-INFO  16:05:07,568 - #15 ]
-INFO  16:05:07,568 - #7 ;
-INFO  16:05:07,568 - #43 x
-INFO  16:05:07,568 - #14 [
-INFO  16:05:07,568 - #42 3
-INFO  16:05:07,568 - #15 ]
-INFO  16:05:07,568 - #6 =
-INFO  16:05:07,568 - #42 14
-INFO  16:05:07,584 - #7 ;
-INFO  16:05:07,584 - #43 x
-INFO  16:05:07,584 - #14 [
-INFO  16:05:07,584 - #42 3
-INFO  16:05:07,584 - #15 ]
-INFO  16:05:07,584 - #16 ++
-INFO  16:05:07,584 - #7 ;
-INFO  16:05:07,584 - #39 print
-INFO  16:05:07,584 - #13 (
-INFO  16:05:07,584 - #43 x
-INFO  16:05:07,584 - #14 [
-INFO  16:05:07,584 - #42 3
-INFO  16:05:07,584 - #15 ]
-INFO  16:05:07,584 - #12 )
-INFO  16:05:07,584 - #7 ;
-INFO  16:05:07,584 - #4 }
-INFO  16:05:07,584 - #4 }
-INFO  16:05:07,631 - Program(
+INFO  16:02:21,754 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  16:02:22,747 - #2 program
+INFO  16:02:22,748 - #43 MJProgram
+INFO  16:02:22,748 - #43 int
+INFO  16:02:22,753 - #43 x
+INFO  16:02:22,756 - #14 [
+INFO  16:02:22,756 - #15 ]
+INFO  16:02:22,757 - #7 ;
+INFO  16:02:22,785 - #43 int
+INFO  16:02:22,786 - #43 y
+INFO  16:02:22,786 - #7 ;
+INFO  16:02:22,805 - #3 {
+INFO  16:02:22,805 - #11 void
+INFO  16:02:22,855 - #43 main
+INFO  16:02:22,871 - #13 (
+INFO  16:02:22,876 - #12 )
+INFO  16:02:22,877 - #43 int
+INFO  16:02:22,884 - #43 a
+INFO  16:02:22,884 - #8 ,
+INFO  16:02:22,885 - #43 b
+INFO  16:02:22,885 - #7 ;
+INFO  16:02:22,898 - #3 {
+INFO  16:02:22,903 - #43 x
+INFO  16:02:22,905 - #6 =
+INFO  16:02:22,986 - #31 new
+INFO  16:02:23,003 - #43 int
+INFO  16:02:23,033 - #14 [
+INFO  16:02:23,033 - #42 8
+INFO  16:02:23,036 - #15 ]
+INFO  16:02:23,105 - #7 ;
+INFO  16:02:23,118 - #43 x
+INFO  16:02:23,122 - #14 [
+INFO  16:02:23,122 - #42 3
+INFO  16:02:23,122 - #15 ]
+INFO  16:02:23,133 - #6 =
+INFO  16:02:23,133 - #42 14
+INFO  16:02:23,134 - #7 ;
+INFO  16:02:23,135 - #43 x
+INFO  16:02:23,136 - #14 [
+INFO  16:02:23,137 - #42 3
+INFO  16:02:23,137 - #15 ]
+INFO  16:02:23,137 - #16 ++
+INFO  16:02:23,138 - #7 ;
+INFO  16:02:23,166 - #39 print
+INFO  16:02:23,172 - #13 (
+INFO  16:02:23,176 - #43 x
+INFO  16:02:23,177 - #14 [
+INFO  16:02:23,178 - #42 3
+INFO  16:02:23,181 - #15 ]
+INFO  16:02:23,182 - #12 )
+INFO  16:02:23,184 - #7 ;
+INFO  16:02:23,186 - #4 }
+INFO  16:02:23,187 - #4 }
+INFO  16:02:23,356 - Program(
   ProgName(
    MJProgram
   ) [ProgName]
@@ -258,64 +258,45 @@ INFO  16:05:07,631 - Program(
     ) [MethodDeclaration]
   ) [MethodsDeclarationList]
 ) [Program]
-INFO  16:05:07,637 - ===================================
-INFO  16:05:07,637 - Pocetak obrade programa MJProgram na liniji 1
-INFO  16:05:07,653 - type posetio
-INFO  16:05:07,653 - Array posetio
-INFO  16:05:07,653 - NoVarDeclList posetio, kraj rekurzije
-INFO  16:05:07,653 - varDecl posetio
-INFO  16:05:07,653 - Deklarisan globalni niz x na liniji 2
-INFO  16:05:07,653 - type posetio
-INFO  16:05:07,653 - NoArray posetio
-INFO  16:05:07,653 - NoVarDeclList posetio, kraj rekurzije
-INFO  16:05:07,653 - varDecl posetio
-INFO  16:05:07,653 - Deklarisana globalna promenljiva y
-INFO  16:05:07,653 - NoMethodsDeclarationList posetili
-INFO  16:05:07,653 - MethodVoid posetili
-INFO  16:05:07,669 - Obradjuje se void metoda: main na liniji 5
-INFO  16:05:07,669 - type posetio
-INFO  16:05:07,669 - NoArray posetio
-INFO  16:05:07,669 - NoVarDeclList posetio, kraj rekurzije
-INFO  16:05:07,669 - NoArray posetio
-INFO  16:05:07,669 - varDeclListEnd posetio
-INFO  16:05:07,669 - varDeclList posetio
-INFO  16:05:07,669 - varDecl posetio
-INFO  16:05:07,669 - Deklarisana lokalna promenljiva a
-INFO  16:05:07,669 - Deklarisana lokalna promenljiva b
-INFO  16:05:07,669 - ListVarDeclaration posetili
-INFO  16:05:07,669 - Designator posetili
-INFO  16:05:07,669 - type posetio
-INFO  16:05:07,669 - FactorNumConst posetili
-INFO  16:05:07,669 - Term posetili
-INFO  16:05:07,669 - Expression posetili
-INFO  16:05:07,669 - FactorNewArr posetili
-INFO  16:05:07,669 - Term posetili
-INFO  16:05:07,669 - Expression posetili
-INFO  16:05:07,669 - DesgnStmtAsgnOp posetili
-INFO  16:05:07,684 - FactorNumConst posetili
-INFO  16:05:07,684 - Term posetili
-INFO  16:05:07,684 - Expression posetili
-INFO  16:05:07,684 - DesignatorArr posetili
-INFO  16:05:07,684 - FactorNumConst posetili
-INFO  16:05:07,684 - Term posetili
-INFO  16:05:07,684 - Expression posetili
-INFO  16:05:07,684 - DesgnStmtAsgnOp posetili
-INFO  16:05:07,684 - FactorNumConst posetili
-INFO  16:05:07,684 - Term posetili
-INFO  16:05:07,684 - Expression posetili
-INFO  16:05:07,684 - DesignatorArr posetili
-INFO  16:05:07,684 - DesgnStmtIncr posetili
-INFO  16:05:07,684 - FactorNumConst posetili
-INFO  16:05:07,684 - Term posetili
-INFO  16:05:07,684 - Expression posetili
-INFO  16:05:07,684 - DesignatorArr posetili
-INFO  16:05:07,684 - FactorDesign posetili
-INFO  16:05:07,684 - Term posetili
-INFO  16:05:07,684 - Expression posetili
-INFO  16:05:07,684 - StmtPrint posetili
-INFO  16:05:07,684 - MethodDeclaration posetili
-INFO  16:05:07,684 - MethodsDeclarationList posetili
-INFO  16:05:07,684 - Zavrsetak obrade metode main
-INFO  16:05:07,684 - Kraj semanticke obrade programa MJProgram
-INFO  16:05:07,684 - ===================================
-INFO  16:05:07,716 - Parsiranje uspesno zavrseno!
+INFO  16:02:23,363 - ===================================
+INFO  16:02:23,452 - Pocetak obrade programa MJProgram na liniji 1
+INFO  16:02:23,453 - type posetio
+INFO  16:02:23,453 - Array posetio
+INFO  16:02:23,453 - NoVarDeclList posetio, kraj rekurzije
+INFO  16:02:23,454 - varDecl posetio
+INFO  16:02:23,465 - Deklarisan globalni niz x na liniji 2
+INFO  16:02:23,466 - type posetio
+INFO  16:02:23,467 - NoArray posetio
+INFO  16:02:23,467 - NoVarDeclList posetio, kraj rekurzije
+INFO  16:02:23,471 - varDecl posetio
+INFO  16:02:23,472 - Deklarisana globalna promenljiva y
+INFO  16:02:23,481 - NoMethodsDeclarationList posetili
+INFO  16:02:23,482 - MethodVoid posetili
+INFO  16:02:23,493 - Obradjuje se void metoda: main na liniji 5
+INFO  16:02:23,494 - type posetio
+INFO  16:02:23,496 - NoArray posetio
+INFO  16:02:23,497 - NoVarDeclList posetio, kraj rekurzije
+INFO  16:02:23,498 - NoArray posetio
+INFO  16:02:23,498 - varDeclListEnd posetio
+INFO  16:02:23,504 - varDeclList posetio
+INFO  16:02:23,504 - varDecl posetio
+INFO  16:02:23,505 - Deklarisana lokalna promenljiva a
+INFO  16:02:23,505 - Deklarisana lokalna promenljiva b
+INFO  16:02:23,584 - ListVarDeclaration posetili
+INFO  16:02:23,585 - Designator posetili
+INFO  16:02:23,612 - type posetio
+INFO  16:02:23,612 - FactorNumConst posetili
+INFO  16:02:23,612 - Term posetili
+INFO  16:02:23,613 - Expression posetili
+INFO  16:02:23,614 - FactorNewArr posetili
+INFO  16:02:23,614 - Term posetili
+INFO  16:02:23,615 - Expression posetili
+INFO  16:02:23,615 - DesgnStmtAsgnOp posetili
+INFO  16:02:23,617 - FactorNumConst posetili
+INFO  16:02:23,617 - Term posetili
+INFO  16:02:23,617 - Expression posetili
+INFO  16:02:23,619 - DesignatorArr posetili
+INFO  16:02:23,625 - FactorNumConst posetili
+INFO  16:02:23,626 - Term posetili
+INFO  16:02:23,626 - Expression posetili
+INFO  16:02:23,626 - DesgnStmtAsgnOp posetili
