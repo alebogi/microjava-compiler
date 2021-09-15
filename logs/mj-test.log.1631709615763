@@ -1,0 +1,168 @@
+INFO  14:36:41,183 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  14:36:41,354 - #2 program
+INFO  14:36:41,354 - #43 MJProgram
+INFO  14:36:41,354 - #43 int
+INFO  14:36:41,354 - #43 x
+INFO  14:36:41,364 - #14 [
+INFO  14:36:41,364 - #15 ]
+INFO  14:36:41,364 - #7 ;
+INFO  14:36:41,364 - #5 const
+INFO  14:36:41,364 - #43 int
+INFO  14:36:41,364 - #43 N
+INFO  14:36:41,364 - #6 =
+INFO  14:36:41,364 - #42 4
+INFO  14:36:41,364 - #7 ;
+INFO  14:36:41,375 - #5 const
+INFO  14:36:41,377 - #43 int
+INFO  14:36:41,378 - #43 y
+INFO  14:36:41,378 - #6 =
+INFO  14:36:41,379 - #42 7
+INFO  14:36:41,382 - #7 ;
+INFO  14:36:41,384 - #3 {
+INFO  14:36:41,384 - #11 void
+INFO  14:36:41,387 - #43 main
+INFO  14:36:41,387 - #13 (
+INFO  14:36:41,388 - #12 )
+INFO  14:36:41,388 - #43 int
+INFO  14:36:41,389 - #43 b
+INFO  14:36:41,389 - #7 ;
+INFO  14:36:41,392 - #3 {
+INFO  14:36:41,394 - #39 print
+INFO  14:36:41,396 - #13 (
+INFO  14:36:41,396 - #43 y
+INFO  14:36:41,396 - #12 )
+INFO  14:36:41,403 - #7 ;
+INFO  14:36:41,403 - #4 }
+INFO  14:36:41,403 - #4 }
+INFO  14:36:41,433 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    DeclarationsList(
+      DeclarationsList(
+        NoDeclarationsList(
+        ) [NoDeclarationsList]
+        DeclsVar(
+          VarDeclaration(
+            Type(
+             int
+            ) [Type]
+           x
+            Array(
+            ) [Array]
+            NoVarDeclarationList(
+            ) [NoVarDeclarationList]
+          ) [VarDeclaration]
+        ) [DeclsVar]
+      ) [DeclarationsList]
+      DeclsConst(
+        ConstDeclaration(
+          Type(
+           int
+          ) [Type]
+         N
+          NumConst(
+           4
+          ) [NumConst]
+          NoConstantsList(
+          ) [NoConstantsList]
+        ) [ConstDeclaration]
+      ) [DeclsConst]
+    ) [DeclarationsList]
+    DeclsConst(
+      ConstDeclaration(
+        Type(
+         int
+        ) [Type]
+       y
+        NumConst(
+         7
+        ) [NumConst]
+        NoConstantsList(
+        ) [NoConstantsList]
+      ) [ConstDeclaration]
+    ) [DeclsConst]
+  ) [DeclarationsList]
+  MethodsDeclarationList(
+    NoMethodsDeclarationList(
+    ) [NoMethodsDeclarationList]
+    MethodDeclaration(
+      MethodVoid(
+       main
+      ) [MethodVoid]
+      ListVarDeclaration(
+        NoListOfVarDeclaration(
+        ) [NoListOfVarDeclaration]
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+         b
+          NoArray(
+          ) [NoArray]
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+        ) [VarDeclaration]
+      ) [ListVarDeclaration]
+      ListOfSatemant(
+        NoListOfSatemant(
+        ) [NoListOfSatemant]
+        StmtPrint(
+          Expression(
+            Term(
+              FactorDesign(
+                DesignatorIdent(
+                 y
+                ) [DesignatorIdent]
+                NoActParamsExists(
+                ) [NoActParamsExists]
+              ) [FactorDesign]
+              NoMullopFactList(
+              ) [NoMullopFactList]
+            ) [Term]
+            NoListAddopTerm(
+            ) [NoListAddopTerm]
+          ) [Expression]
+        ) [StmtPrint]
+      ) [ListOfSatemant]
+    ) [MethodDeclaration]
+  ) [MethodsDeclarationList]
+) [Program]
+INFO  14:36:41,433 - ===================================
+INFO  14:36:41,448 - Pocetak obrade programa MJProgram na liniji 1
+INFO  14:36:41,448 - type posetio
+INFO  14:36:41,448 - Array posetio
+INFO  14:36:41,448 - NoVarDeclList posetio, kraj rekurzije
+INFO  14:36:41,448 - varDecl posetio
+INFO  14:36:41,448 - Deklarisan globalni niz x na liniji 2
+INFO  14:36:41,448 - type posetio
+INFO  14:36:41,448 - NumConst posetio, vrednost=4
+INFO  14:36:41,448 - NoConstantsList posetio, kraj rekurzije
+INFO  14:36:41,448 - ConstDeclaration posetio
+INFO  14:36:41,448 - Deklarisana konstanta N
+INFO  14:36:41,448 - type posetio
+INFO  14:36:41,448 - NumConst posetio, vrednost=7
+INFO  14:36:41,448 - NoConstantsList posetio, kraj rekurzije
+INFO  14:36:41,448 - ConstDeclaration posetio
+INFO  14:36:41,464 - Deklarisana konstanta y
+INFO  14:36:41,464 - NoMethodsDeclarationList posetili
+INFO  14:36:41,464 - MethodVoid posetili
+INFO  14:36:41,464 - Obradjuje se void metoda: main na liniji 7
+INFO  14:36:41,464 - type posetio
+INFO  14:36:41,464 - NoArray posetio
+INFO  14:36:41,464 - NoVarDeclList posetio, kraj rekurzije
+INFO  14:36:41,464 - varDecl posetio
+INFO  14:36:41,464 - Deklarisana lokalna promenljiva b
+INFO  14:36:41,464 - ListVarDeclaration posetili
+INFO  14:36:41,464 - Designator posetili
+INFO  14:36:41,464 - FactorDesign posetili
+INFO  14:36:41,464 - Term posetili
+INFO  14:36:41,464 - Expression posetili
+INFO  14:36:41,464 - StmtPrint posetili
+INFO  14:36:41,464 - MethodDeclaration posetili
+INFO  14:36:41,464 - MethodsDeclarationList posetili
+INFO  14:36:41,464 - Zavrsetak obrade metode main
+INFO  14:36:41,464 - Kraj semanticke obrade programa MJProgram
+INFO  14:36:41,464 - ===================================
+INFO  14:36:41,495 - Parsiranje uspesno zavrseno!

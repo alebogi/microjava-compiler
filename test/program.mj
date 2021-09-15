@@ -1,18 +1,39 @@
 program MJProgram 
-    int x[]; int y;
-    const int N = 4;
+    bool x,y;
 {
 
-    void main() int a, b; {
-    	x = new int[8];
-    	x[3] = 2;
-        x[3] = -x[3] - (2 * N - 1) * x[3] - (3 % 2 + 3 * 2 - 3);
-        // 2-(2*4-1)*2-(1+6-3)= 2-14-4=-16
-        // 2+(2*4-1)*2-(1+6-3)= 2+14-4=16-4=12
-        //-2-(2*4-1)*2-(1+6-3)= -2-14-4=-20
-        //-2+(2*4-1)*2-(1+6-3)= -2+14-4=8
-      //  x = x + (x*2-1);
-      	print(x[3]);
-        
+    void main() bool a, b; {
+    
+    	a = true;
+    	b = true;
+    	
+		print('p',1);
+		print('r',1);     	
+		print('e',1);
+		print('o',2);
+		print('k',1);
+			
+		if(a){
+		  print('i',4);
+		  print('f',1);
+		  print('o',2);
+		  print('k',1);
+		}
+		else{
+		  print('e',4);
+		  print('l',1);
+		  print('s',1);
+		  print('e',1);
+		  print('o',2);
+		  print('k',1);
+		}
+		  	
+		print('p',4);
+		print('o',1);
+		print('s',1);
+		print('l',1);     	
+		print('e',1);
+		print('o',2);
+		print('k',1);
     }
 }

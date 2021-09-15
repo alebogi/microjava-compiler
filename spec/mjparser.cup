@@ -210,6 +210,8 @@ Statement ::= (StmtDesgStmt) DesignatorStatement SEMI
 			(StmtStmt) L_BRACE StmtList R_BRACE 
 			|
 			(StmtIfElse) IfStart L_PAREN Condition R_PAREN Statement ELSE Statement
+			|
+			(StmtIf) IfStart L_PAREN Condition R_PAREN Statement 
 ;
 		
 IfStart ::= (IfStart) IF

@@ -90,6 +90,8 @@ nonterminal IfStart IfStart;
 nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType, FormPars, FormParsListEnd;
 nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor, Term, CondFact, CondTerm, Condition, ExprArrExists, MulopFactorList, AddopTermList, RelopExprExists;
 
+precedence left ELSE;
+
 Program ::= (Program) PROG ProgName:p DeclsList:D1 L_BRACE MethodDeclList:M2 R_BRACE {: RESULT=new Program(p, D1, M2); RESULT.setLine(pleft); :}
 ;
 
@@ -229,6 +231,8 @@ Statement ::= (StmtDesgStmt) DesignatorStatement:D1 SEMI {: RESULT=new StmtDesgS
 			(StmtStmt) L_BRACE StmtList:S1 R_BRACE {: RESULT=new StmtStmt(S1); RESULT.setLine(S1left); :} 
 			|
 			(StmtIfElse) IfStart:I1 L_PAREN Condition:C2 R_PAREN Statement:S3 ELSE Statement:S4 {: RESULT=new StmtIfElse(I1, C2, S3, S4); RESULT.setLine(I1left); :}
+			|
+			(StmtIf) IfStart:I1 L_PAREN Condition:C2 R_PAREN Statement:S3 {: RESULT=new StmtIf(I1, C2, S3); RESULT.setLine(I1left); :} 
 ;
 		
 IfStart ::= (IfStart) IF {: RESULT=new IfStart(); :}

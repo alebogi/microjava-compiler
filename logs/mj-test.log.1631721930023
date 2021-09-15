@@ -1,0 +1,45 @@
+INFO  18:05:17,628 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  18:05:17,808 - #2 program
+INFO  18:05:17,808 - #43 MJProgram
+INFO  18:05:17,808 - #43 int
+INFO  18:05:17,808 - #43 x
+INFO  18:05:17,808 - #14 [
+INFO  18:05:17,808 - #15 ]
+INFO  18:05:17,808 - #7 ;
+INFO  18:05:17,818 - #5 const
+INFO  18:05:17,818 - #43 int
+INFO  18:05:17,818 - #43 N
+INFO  18:05:17,818 - #6 =
+INFO  18:05:17,818 - #42 4
+INFO  18:05:17,818 - #7 ;
+INFO  18:05:17,818 - #5 const
+INFO  18:05:17,828 - #43 int
+INFO  18:05:17,828 - #43 y
+INFO  18:05:17,828 - #6 =
+INFO  18:05:17,828 - #42 7
+INFO  18:05:17,828 - #7 ;
+INFO  18:05:17,828 - #3 {
+INFO  18:05:17,828 - #11 void
+INFO  18:05:17,833 - #43 main
+INFO  18:05:17,833 - #13 (
+INFO  18:05:17,833 - #12 )
+INFO  18:05:17,833 - #43 int
+INFO  18:05:17,833 - #43 a
+INFO  18:05:17,838 - #8 ,
+INFO  18:05:17,838 - #43 b
+INFO  18:05:17,838 - #7 ;
+INFO  18:05:17,843 - #3 {
+INFO  18:05:17,843 - #40 if
+INFO  18:05:17,843 - #13 (
+INFO  18:05:17,843 - #43 a
+INFO  18:05:17,858 - #19 !=
+INFO  18:05:17,888 - #48 ?
+ERROR 18:05:17,893 - 
+Sintaksna greska na liniji 10
+INFO  18:05:17,898 - #43 b
+INFO  18:05:17,898 - #12 )
+INFO  18:05:17,898 - #3 {
+INFO  18:05:17,903 - #4 }
+INFO  18:05:17,903 - #4 }
+INFO  18:05:17,903 - #4 }
+ERROR 18:05:17,903 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 14

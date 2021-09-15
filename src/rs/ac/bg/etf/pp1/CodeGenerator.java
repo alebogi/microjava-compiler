@@ -34,42 +34,12 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	private LinkedList<Integer> addopStack = new LinkedList<Integer>();
 	private LinkedList<Integer> mulopStack = new LinkedList<Integer>();
+	private LinkedList<Integer> relopStack = new LinkedList<Integer>();
 	
 	public int getMainPC() {
 		return mainPC;
 	}
 	
-	public Obj findMethInTab(String name) {
-		Obj res = null;
-		
-		// Prvo gledamo lokalne
-		if(currentMethod != null) {
-			Collection<Obj> currMethLocalSymbols = currentMethod.getLocalSymbols();
-			for (Obj currObj: currMethLocalSymbols) {		
-				if (currObj.getName().equals(name)) {
-					res = currObj;
-					return res;
-				}
-			}
-		}
-		
-		// Ako nema u lokalnim gledamo globalne
-		Collection<Obj> globalSymbols = SemanticAnalyzer.globalScope.values();
-		for (Obj currObj : globalSymbols) {				
-			if (currObj.getKind() == Obj.Meth && currObj.getName().equals(name)) {
-				res = currObj;
-				return res;
-			}
-		}
-		
-		// gledamo universe
-		res = Tab.find(name);
-		if(res == Tab.noObj) {
-			res = null;
-		}		
-			
-		return res;
-	}
 	
 	public Obj findVarInTab(String name) {
 		Obj res = null;
@@ -125,7 +95,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(StmtPrint p) {
 		Struct type = p.getExpr().struct;
 		if(type == Tab.intType || type == SemanticAnalyzer.boolType){
-			Code.loadConst(5);
+			Code.loadConst(0);
 			Code.put(Code.print);
 		}else{
 			Code.loadConst(1);
@@ -235,7 +205,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(mv.obj.getLevel());
 		Code.put( mv.obj.getLocalSymbols().size());
 		
-		//currentMethod = findMethInTab(mv.getMethodName());
+		
 		currentMethod = mv.obj;
     }
 	
@@ -247,7 +217,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(mt.obj.getLevel());
 		Code.put(mt.obj.getLocalSymbols().size());
 		
-		//currentMethod = findMethInTab(mt.getMethodName());
+		
 		currentMethod = mt.obj;
     }
 	
@@ -297,48 +267,61 @@ public class CodeGenerator extends VisitorAdaptor {
 	//-----------------------
 	//*** OPERACIJE ***
 	public void visit(OpMul op) {
-		report_info("OpMul posetio", null);
 		mulopStack.addLast(Code.mul);
 	}
 	
 	public void visit(DivOp op) {
-		report_info("DivOp posetio", null);
 		mulopStack.addLast(Code.div);
 	}
 	
 	public void visit(ModOp op) {
-		report_info("ModOp posetio", null);
 		mulopStack.addLast(Code.rem);
 	}
 	
 	public void visit(OpAdd op) {
-		report_info("OpAdd posetio", null);
 		addopStack.addLast(Code.add);
 	}
 	
 	public void visit(SubOp op) {
-		report_info("SubOp posetio", null);
 		addopStack.addLast(Code.sub);
 	}
 	
 	public void visit(ListAddopTerm l) {
-		report_info("ListAddopTerm posetio", null);
-		
 		int op = addopStack.removeLast();
-		if(op==23)
-			report_info("ListAddopTerm add ", null);
-		else
-			report_info("ListAddopTerm sub ", null);
 		Code.put(op);
 	}
 	
 	public void visit(MullopFactList l) {
-		report_info("MullopFactList posetio", null);
 		int op = mulopStack.removeLast();
 		Code.put(op);
 	}
 	
+	//----------------------------------------------
+	// *** RELACIJE ***
+	
+	public void visit(RelopE r) {
+		relopStack.addLast(Code.eq);
+	}
 
+	public void visit(RelopNE r) {
+		relopStack.addLast(Code.ne);	
+	}
+	
+	public void visit(RelopG r) {
+		relopStack.addLast(Code.gt);
+	}
+	
+	public void visit(RelopGE r) {
+		relopStack.addLast(Code.ge);
+	}
+	
+	public void visit(RelopL r) {
+		relopStack.addLast(Code.lt);
+	}
+	
+	public void visit(RelopLE r) {
+		relopStack.addLast(Code.le);
+	}
 	
 	//-----------------
 	// *** TERM ***
@@ -354,9 +337,9 @@ public class CodeGenerator extends VisitorAdaptor {
 	//*** EXPRESSION ***
 	
 	public void visit (Expression e) {
-		report_info("Expression posetio", null);
+		
 	}
 	public void visit (ExpressionMinus e) {
-		report_info("ExpressionMinus posetio", null);
+		
 	}
 }

@@ -1,0 +1,760 @@
+INFO  19:57:23,754 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  19:57:24,116 - #2 program
+INFO  19:57:24,119 - #43 MJProgram
+INFO  19:57:24,119 - #43 bool
+INFO  19:57:24,127 - #43 x
+INFO  19:57:24,129 - #8 ,
+INFO  19:57:24,137 - #43 y
+INFO  19:57:24,137 - #7 ;
+INFO  19:57:24,139 - #3 {
+INFO  19:57:24,139 - #11 void
+INFO  19:57:24,139 - #43 main
+INFO  19:57:24,144 - #13 (
+INFO  19:57:24,144 - #12 )
+INFO  19:57:24,145 - #43 bool
+INFO  19:57:24,147 - #43 a
+INFO  19:57:24,149 - #8 ,
+INFO  19:57:24,149 - #43 b
+INFO  19:57:24,149 - #7 ;
+INFO  19:57:24,157 - #3 {
+INFO  19:57:24,159 - #39 print
+INFO  19:57:24,165 - #13 (
+INFO  19:57:24,167 - #44 p
+INFO  19:57:24,169 - #8 ,
+INFO  19:57:24,175 - #42 1
+INFO  19:57:24,175 - #12 )
+INFO  19:57:24,175 - #7 ;
+INFO  19:57:24,177 - #39 print
+INFO  19:57:24,177 - #13 (
+INFO  19:57:24,179 - #44 r
+INFO  19:57:24,179 - #8 ,
+INFO  19:57:24,179 - #42 1
+INFO  19:57:24,179 - #12 )
+INFO  19:57:24,179 - #7 ;
+INFO  19:57:24,179 - #39 print
+INFO  19:57:24,179 - #13 (
+INFO  19:57:24,179 - #44 e
+INFO  19:57:24,184 - #8 ,
+INFO  19:57:24,184 - #42 1
+INFO  19:57:24,184 - #12 )
+INFO  19:57:24,184 - #7 ;
+INFO  19:57:24,186 - #39 print
+INFO  19:57:24,186 - #13 (
+INFO  19:57:24,186 - #44 o
+INFO  19:57:24,189 - #8 ,
+INFO  19:57:24,189 - #42 2
+INFO  19:57:24,189 - #12 )
+INFO  19:57:24,189 - #7 ;
+INFO  19:57:24,194 - #39 print
+INFO  19:57:24,194 - #13 (
+INFO  19:57:24,194 - #44 k
+INFO  19:57:24,198 - #8 ,
+INFO  19:57:24,199 - #42 1
+INFO  19:57:24,199 - #12 )
+INFO  19:57:24,199 - #7 ;
+INFO  19:57:24,199 - #40 if
+INFO  19:57:24,199 - #13 (
+INFO  19:57:24,199 - #43 a
+INFO  19:57:24,199 - #12 )
+INFO  19:57:24,209 - #3 {
+INFO  19:57:24,209 - #39 print
+INFO  19:57:24,209 - #13 (
+INFO  19:57:24,209 - #44 i
+INFO  19:57:24,213 - #8 ,
+INFO  19:57:24,213 - #42 4
+INFO  19:57:24,218 - #12 )
+INFO  19:57:24,219 - #7 ;
+INFO  19:57:24,219 - #39 print
+INFO  19:57:24,219 - #13 (
+INFO  19:57:24,226 - #44 f
+INFO  19:57:24,236 - #8 ,
+INFO  19:57:24,238 - #42 1
+INFO  19:57:24,239 - #12 )
+INFO  19:57:24,239 - #7 ;
+INFO  19:57:24,239 - #39 print
+INFO  19:57:24,239 - #13 (
+INFO  19:57:24,244 - #44 o
+INFO  19:57:24,244 - #8 ,
+INFO  19:57:24,244 - #42 2
+INFO  19:57:24,244 - #12 )
+INFO  19:57:24,244 - #7 ;
+INFO  19:57:24,244 - #39 print
+INFO  19:57:24,246 - #13 (
+INFO  19:57:24,246 - #44 k
+INFO  19:57:24,248 - #8 ,
+INFO  19:57:24,254 - #42 1
+INFO  19:57:24,254 - #12 )
+INFO  19:57:24,258 - #7 ;
+INFO  19:57:24,258 - #4 }
+INFO  19:57:24,258 - #41 else
+INFO  19:57:24,263 - #3 {
+INFO  19:57:24,263 - #39 print
+INFO  19:57:24,263 - #13 (
+INFO  19:57:24,263 - #44 e
+INFO  19:57:24,263 - #8 ,
+INFO  19:57:24,263 - #42 4
+INFO  19:57:24,263 - #12 )
+INFO  19:57:24,267 - #7 ;
+INFO  19:57:24,267 - #39 print
+INFO  19:57:24,267 - #13 (
+INFO  19:57:24,267 - #44 l
+INFO  19:57:24,267 - #8 ,
+INFO  19:57:24,274 - #42 1
+INFO  19:57:24,277 - #12 )
+INFO  19:57:24,277 - #7 ;
+INFO  19:57:24,277 - #39 print
+INFO  19:57:24,279 - #13 (
+INFO  19:57:24,279 - #44 s
+INFO  19:57:24,279 - #8 ,
+INFO  19:57:24,284 - #42 1
+INFO  19:57:24,284 - #12 )
+INFO  19:57:24,284 - #7 ;
+INFO  19:57:24,284 - #39 print
+INFO  19:57:24,284 - #13 (
+INFO  19:57:24,284 - #44 e
+INFO  19:57:24,284 - #8 ,
+INFO  19:57:24,287 - #42 1
+INFO  19:57:24,287 - #12 )
+INFO  19:57:24,287 - #7 ;
+INFO  19:57:24,287 - #39 print
+INFO  19:57:24,294 - #13 (
+INFO  19:57:24,299 - #44 o
+INFO  19:57:24,299 - #8 ,
+INFO  19:57:24,299 - #42 2
+INFO  19:57:24,299 - #12 )
+INFO  19:57:24,299 - #7 ;
+INFO  19:57:24,299 - #39 print
+INFO  19:57:24,299 - #13 (
+INFO  19:57:24,299 - #44 k
+INFO  19:57:24,299 - #8 ,
+INFO  19:57:24,304 - #42 1
+INFO  19:57:24,304 - #12 )
+INFO  19:57:24,304 - #7 ;
+INFO  19:57:24,304 - #4 }
+INFO  19:57:24,304 - #39 print
+INFO  19:57:24,304 - #13 (
+INFO  19:57:24,304 - #44 p
+INFO  19:57:24,304 - #8 ,
+INFO  19:57:24,304 - #42 4
+INFO  19:57:24,304 - #12 )
+INFO  19:57:24,309 - #7 ;
+INFO  19:57:24,314 - #39 print
+INFO  19:57:24,314 - #13 (
+INFO  19:57:24,314 - #44 o
+INFO  19:57:24,314 - #8 ,
+INFO  19:57:24,314 - #42 1
+INFO  19:57:24,317 - #12 )
+INFO  19:57:24,317 - #7 ;
+INFO  19:57:24,317 - #39 print
+INFO  19:57:24,317 - #13 (
+INFO  19:57:24,318 - #44 s
+INFO  19:57:24,320 - #8 ,
+INFO  19:57:24,320 - #42 1
+INFO  19:57:24,320 - #12 )
+INFO  19:57:24,320 - #7 ;
+INFO  19:57:24,320 - #39 print
+INFO  19:57:24,320 - #13 (
+INFO  19:57:24,320 - #44 l
+INFO  19:57:24,320 - #8 ,
+INFO  19:57:24,320 - #42 1
+INFO  19:57:24,320 - #12 )
+INFO  19:57:24,320 - #7 ;
+INFO  19:57:24,324 - #39 print
+INFO  19:57:24,324 - #13 (
+INFO  19:57:24,324 - #44 e
+INFO  19:57:24,324 - #8 ,
+INFO  19:57:24,324 - #42 1
+INFO  19:57:24,324 - #12 )
+INFO  19:57:24,328 - #7 ;
+INFO  19:57:24,328 - #39 print
+INFO  19:57:24,328 - #13 (
+INFO  19:57:24,328 - #44 o
+INFO  19:57:24,334 - #8 ,
+INFO  19:57:24,334 - #42 2
+INFO  19:57:24,334 - #12 )
+INFO  19:57:24,334 - #7 ;
+INFO  19:57:24,334 - #39 print
+INFO  19:57:24,334 - #13 (
+INFO  19:57:24,334 - #44 k
+INFO  19:57:24,334 - #8 ,
+INFO  19:57:24,334 - #42 1
+INFO  19:57:24,334 - #12 )
+INFO  19:57:24,334 - #7 ;
+INFO  19:57:24,338 - #4 }
+INFO  19:57:24,338 - #4 }
+INFO  19:57:24,401 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    NoDeclarationsList(
+    ) [NoDeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         bool
+        ) [Type]
+       x
+        NoArray(
+        ) [NoArray]
+        VarDeclarationList(
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+          VarDeclarationListEnd(
+           y
+            NoArray(
+            ) [NoArray]
+          ) [VarDeclarationListEnd]
+        ) [VarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  MethodsDeclarationList(
+    NoMethodsDeclarationList(
+    ) [NoMethodsDeclarationList]
+    MethodDeclaration(
+      MethodVoid(
+       main
+      ) [MethodVoid]
+      ListVarDeclaration(
+        NoListOfVarDeclaration(
+        ) [NoListOfVarDeclaration]
+        VarDeclaration(
+          Type(
+           bool
+          ) [Type]
+         a
+          NoArray(
+          ) [NoArray]
+          VarDeclarationList(
+            NoVarDeclarationList(
+            ) [NoVarDeclarationList]
+            VarDeclarationListEnd(
+             b
+              NoArray(
+              ) [NoArray]
+            ) [VarDeclarationListEnd]
+          ) [VarDeclarationList]
+        ) [VarDeclaration]
+      ) [ListVarDeclaration]
+      ListOfSatemant(
+        ListOfSatemant(
+          ListOfSatemant(
+            ListOfSatemant(
+              ListOfSatemant(
+                ListOfSatemant(
+                  ListOfSatemant(
+                    ListOfSatemant(
+                      ListOfSatemant(
+                        ListOfSatemant(
+                          ListOfSatemant(
+                            ListOfSatemant(
+                              ListOfSatemant(
+                                NoListOfSatemant(
+                                ) [NoListOfSatemant]
+                                StmtPrintNumConst(
+                                  Expression(
+                                    Term(
+                                      FactorCharConst(
+                                       p
+                                      ) [FactorCharConst]
+                                      NoMullopFactList(
+                                      ) [NoMullopFactList]
+                                    ) [Term]
+                                    NoListAddopTerm(
+                                    ) [NoListAddopTerm]
+                                  ) [Expression]
+                                 1
+                                ) [StmtPrintNumConst]
+                              ) [ListOfSatemant]
+                              StmtPrintNumConst(
+                                Expression(
+                                  Term(
+                                    FactorCharConst(
+                                     r
+                                    ) [FactorCharConst]
+                                    NoMullopFactList(
+                                    ) [NoMullopFactList]
+                                  ) [Term]
+                                  NoListAddopTerm(
+                                  ) [NoListAddopTerm]
+                                ) [Expression]
+                               1
+                              ) [StmtPrintNumConst]
+                            ) [ListOfSatemant]
+                            StmtPrintNumConst(
+                              Expression(
+                                Term(
+                                  FactorCharConst(
+                                   e
+                                  ) [FactorCharConst]
+                                  NoMullopFactList(
+                                  ) [NoMullopFactList]
+                                ) [Term]
+                                NoListAddopTerm(
+                                ) [NoListAddopTerm]
+                              ) [Expression]
+                             1
+                            ) [StmtPrintNumConst]
+                          ) [ListOfSatemant]
+                          StmtPrintNumConst(
+                            Expression(
+                              Term(
+                                FactorCharConst(
+                                 o
+                                ) [FactorCharConst]
+                                NoMullopFactList(
+                                ) [NoMullopFactList]
+                              ) [Term]
+                              NoListAddopTerm(
+                              ) [NoListAddopTerm]
+                            ) [Expression]
+                           2
+                          ) [StmtPrintNumConst]
+                        ) [ListOfSatemant]
+                        StmtPrintNumConst(
+                          Expression(
+                            Term(
+                              FactorCharConst(
+                               k
+                              ) [FactorCharConst]
+                              NoMullopFactList(
+                              ) [NoMullopFactList]
+                            ) [Term]
+                            NoListAddopTerm(
+                            ) [NoListAddopTerm]
+                          ) [Expression]
+                         1
+                        ) [StmtPrintNumConst]
+                      ) [ListOfSatemant]
+                      StmtIfElse(
+                        IfStart(
+                        ) [IfStart]
+                        Cond(
+                          ConditionTerm(
+                            ConditionFact(
+                              Expression(
+                                Term(
+                                  FactorDesign(
+                                    DesignatorIdent(
+                                     a
+                                    ) [DesignatorIdent]
+                                    NoActParamsExists(
+                                    ) [NoActParamsExists]
+                                  ) [FactorDesign]
+                                  NoMullopFactList(
+                                  ) [NoMullopFactList]
+                                ) [Term]
+                                NoListAddopTerm(
+                                ) [NoListAddopTerm]
+                              ) [Expression]
+                              NoRelopExprExist(
+                              ) [NoRelopExprExist]
+                            ) [ConditionFact]
+                          ) [ConditionTerm]
+                        ) [Cond]
+                        StmtStmt(
+                          StatementList(
+                            StatementList(
+                              StatementList(
+                                StatementList(
+                                  NoStatementList(
+                                  ) [NoStatementList]
+                                  StmtPrintNumConst(
+                                    Expression(
+                                      Term(
+                                        FactorCharConst(
+                                         i
+                                        ) [FactorCharConst]
+                                        NoMullopFactList(
+                                        ) [NoMullopFactList]
+                                      ) [Term]
+                                      NoListAddopTerm(
+                                      ) [NoListAddopTerm]
+                                    ) [Expression]
+                                   4
+                                  ) [StmtPrintNumConst]
+                                ) [StatementList]
+                                StmtPrintNumConst(
+                                  Expression(
+                                    Term(
+                                      FactorCharConst(
+                                       f
+                                      ) [FactorCharConst]
+                                      NoMullopFactList(
+                                      ) [NoMullopFactList]
+                                    ) [Term]
+                                    NoListAddopTerm(
+                                    ) [NoListAddopTerm]
+                                  ) [Expression]
+                                 1
+                                ) [StmtPrintNumConst]
+                              ) [StatementList]
+                              StmtPrintNumConst(
+                                Expression(
+                                  Term(
+                                    FactorCharConst(
+                                     o
+                                    ) [FactorCharConst]
+                                    NoMullopFactList(
+                                    ) [NoMullopFactList]
+                                  ) [Term]
+                                  NoListAddopTerm(
+                                  ) [NoListAddopTerm]
+                                ) [Expression]
+                               2
+                              ) [StmtPrintNumConst]
+                            ) [StatementList]
+                            StmtPrintNumConst(
+                              Expression(
+                                Term(
+                                  FactorCharConst(
+                                   k
+                                  ) [FactorCharConst]
+                                  NoMullopFactList(
+                                  ) [NoMullopFactList]
+                                ) [Term]
+                                NoListAddopTerm(
+                                ) [NoListAddopTerm]
+                              ) [Expression]
+                             1
+                            ) [StmtPrintNumConst]
+                          ) [StatementList]
+                        ) [StmtStmt]
+                        StmtStmt(
+                          StatementList(
+                            StatementList(
+                              StatementList(
+                                StatementList(
+                                  StatementList(
+                                    StatementList(
+                                      NoStatementList(
+                                      ) [NoStatementList]
+                                      StmtPrintNumConst(
+                                        Expression(
+                                          Term(
+                                            FactorCharConst(
+                                             e
+                                            ) [FactorCharConst]
+                                            NoMullopFactList(
+                                            ) [NoMullopFactList]
+                                          ) [Term]
+                                          NoListAddopTerm(
+                                          ) [NoListAddopTerm]
+                                        ) [Expression]
+                                       4
+                                      ) [StmtPrintNumConst]
+                                    ) [StatementList]
+                                    StmtPrintNumConst(
+                                      Expression(
+                                        Term(
+                                          FactorCharConst(
+                                           l
+                                          ) [FactorCharConst]
+                                          NoMullopFactList(
+                                          ) [NoMullopFactList]
+                                        ) [Term]
+                                        NoListAddopTerm(
+                                        ) [NoListAddopTerm]
+                                      ) [Expression]
+                                     1
+                                    ) [StmtPrintNumConst]
+                                  ) [StatementList]
+                                  StmtPrintNumConst(
+                                    Expression(
+                                      Term(
+                                        FactorCharConst(
+                                         s
+                                        ) [FactorCharConst]
+                                        NoMullopFactList(
+                                        ) [NoMullopFactList]
+                                      ) [Term]
+                                      NoListAddopTerm(
+                                      ) [NoListAddopTerm]
+                                    ) [Expression]
+                                   1
+                                  ) [StmtPrintNumConst]
+                                ) [StatementList]
+                                StmtPrintNumConst(
+                                  Expression(
+                                    Term(
+                                      FactorCharConst(
+                                       e
+                                      ) [FactorCharConst]
+                                      NoMullopFactList(
+                                      ) [NoMullopFactList]
+                                    ) [Term]
+                                    NoListAddopTerm(
+                                    ) [NoListAddopTerm]
+                                  ) [Expression]
+                                 1
+                                ) [StmtPrintNumConst]
+                              ) [StatementList]
+                              StmtPrintNumConst(
+                                Expression(
+                                  Term(
+                                    FactorCharConst(
+                                     o
+                                    ) [FactorCharConst]
+                                    NoMullopFactList(
+                                    ) [NoMullopFactList]
+                                  ) [Term]
+                                  NoListAddopTerm(
+                                  ) [NoListAddopTerm]
+                                ) [Expression]
+                               2
+                              ) [StmtPrintNumConst]
+                            ) [StatementList]
+                            StmtPrintNumConst(
+                              Expression(
+                                Term(
+                                  FactorCharConst(
+                                   k
+                                  ) [FactorCharConst]
+                                  NoMullopFactList(
+                                  ) [NoMullopFactList]
+                                ) [Term]
+                                NoListAddopTerm(
+                                ) [NoListAddopTerm]
+                              ) [Expression]
+                             1
+                            ) [StmtPrintNumConst]
+                          ) [StatementList]
+                        ) [StmtStmt]
+                      ) [StmtIfElse]
+                    ) [ListOfSatemant]
+                    StmtPrintNumConst(
+                      Expression(
+                        Term(
+                          FactorCharConst(
+                           p
+                          ) [FactorCharConst]
+                          NoMullopFactList(
+                          ) [NoMullopFactList]
+                        ) [Term]
+                        NoListAddopTerm(
+                        ) [NoListAddopTerm]
+                      ) [Expression]
+                     4
+                    ) [StmtPrintNumConst]
+                  ) [ListOfSatemant]
+                  StmtPrintNumConst(
+                    Expression(
+                      Term(
+                        FactorCharConst(
+                         o
+                        ) [FactorCharConst]
+                        NoMullopFactList(
+                        ) [NoMullopFactList]
+                      ) [Term]
+                      NoListAddopTerm(
+                      ) [NoListAddopTerm]
+                    ) [Expression]
+                   1
+                  ) [StmtPrintNumConst]
+                ) [ListOfSatemant]
+                StmtPrintNumConst(
+                  Expression(
+                    Term(
+                      FactorCharConst(
+                       s
+                      ) [FactorCharConst]
+                      NoMullopFactList(
+                      ) [NoMullopFactList]
+                    ) [Term]
+                    NoListAddopTerm(
+                    ) [NoListAddopTerm]
+                  ) [Expression]
+                 1
+                ) [StmtPrintNumConst]
+              ) [ListOfSatemant]
+              StmtPrintNumConst(
+                Expression(
+                  Term(
+                    FactorCharConst(
+                     l
+                    ) [FactorCharConst]
+                    NoMullopFactList(
+                    ) [NoMullopFactList]
+                  ) [Term]
+                  NoListAddopTerm(
+                  ) [NoListAddopTerm]
+                ) [Expression]
+               1
+              ) [StmtPrintNumConst]
+            ) [ListOfSatemant]
+            StmtPrintNumConst(
+              Expression(
+                Term(
+                  FactorCharConst(
+                   e
+                  ) [FactorCharConst]
+                  NoMullopFactList(
+                  ) [NoMullopFactList]
+                ) [Term]
+                NoListAddopTerm(
+                ) [NoListAddopTerm]
+              ) [Expression]
+             1
+            ) [StmtPrintNumConst]
+          ) [ListOfSatemant]
+          StmtPrintNumConst(
+            Expression(
+              Term(
+                FactorCharConst(
+                 o
+                ) [FactorCharConst]
+                NoMullopFactList(
+                ) [NoMullopFactList]
+              ) [Term]
+              NoListAddopTerm(
+              ) [NoListAddopTerm]
+            ) [Expression]
+           2
+          ) [StmtPrintNumConst]
+        ) [ListOfSatemant]
+        StmtPrintNumConst(
+          Expression(
+            Term(
+              FactorCharConst(
+               k
+              ) [FactorCharConst]
+              NoMullopFactList(
+              ) [NoMullopFactList]
+            ) [Term]
+            NoListAddopTerm(
+            ) [NoListAddopTerm]
+          ) [Expression]
+         1
+        ) [StmtPrintNumConst]
+      ) [ListOfSatemant]
+    ) [MethodDeclaration]
+  ) [MethodsDeclarationList]
+) [Program]
+INFO  19:57:24,404 - ===================================
+INFO  19:57:24,419 - Pocetak obrade programa MJProgram na liniji 1
+INFO  19:57:24,421 - type posetio
+INFO  19:57:24,421 - NoArray posetio
+INFO  19:57:24,424 - NoVarDeclList posetio, kraj rekurzije
+INFO  19:57:24,424 - NoArray posetio
+INFO  19:57:24,424 - varDeclListEnd posetio
+INFO  19:57:24,424 - varDeclList posetio
+INFO  19:57:24,424 - varDecl posetio
+INFO  19:57:24,424 - Deklarisana globalna promenljiva x
+INFO  19:57:24,424 - Deklarisana globalna promenljiva y
+INFO  19:57:24,434 - NoMethodsDeclarationList posetili
+INFO  19:57:24,434 - MethodVoid posetili
+INFO  19:57:24,434 - Obradjuje se void metoda: main na liniji 5
+INFO  19:57:24,434 - type posetio
+INFO  19:57:24,434 - NoArray posetio
+INFO  19:57:24,434 - NoVarDeclList posetio, kraj rekurzije
+INFO  19:57:24,434 - NoArray posetio
+INFO  19:57:24,434 - varDeclListEnd posetio
+INFO  19:57:24,434 - varDeclList posetio
+INFO  19:57:24,434 - varDecl posetio
+INFO  19:57:24,434 - Deklarisana lokalna promenljiva a
+INFO  19:57:24,439 - Deklarisana lokalna promenljiva b
+INFO  19:57:24,440 - ListVarDeclaration posetili
+INFO  19:57:24,444 - FactorCharConst posetili
+INFO  19:57:24,444 - Term posetili
+INFO  19:57:24,444 - Expression posetili
+INFO  19:57:24,444 - StmtPrintNumConst posetili
+INFO  19:57:24,444 - FactorCharConst posetili
+INFO  19:57:24,444 - Term posetili
+INFO  19:57:24,444 - Expression posetili
+INFO  19:57:24,444 - StmtPrintNumConst posetili
+INFO  19:57:24,444 - FactorCharConst posetili
+INFO  19:57:24,444 - Term posetili
+INFO  19:57:24,444 - Expression posetili
+INFO  19:57:24,444 - StmtPrintNumConst posetili
+INFO  19:57:24,444 - FactorCharConst posetili
+INFO  19:57:24,444 - Term posetili
+INFO  19:57:24,444 - Expression posetili
+INFO  19:57:24,444 - StmtPrintNumConst posetili
+INFO  19:57:24,444 - FactorCharConst posetili
+INFO  19:57:24,444 - Term posetili
+INFO  19:57:24,444 - Expression posetili
+INFO  19:57:24,444 - StmtPrintNumConst posetili
+INFO  19:57:24,444 - Designator posetili
+INFO  19:57:24,444 - FactorDesign posetili
+INFO  19:57:24,444 - Term posetili
+INFO  19:57:24,444 - Expression posetili
+INFO  19:57:24,444 - NoRelopExprExist posetili
+INFO  19:57:24,449 - ConditionFact posetili
+INFO  19:57:24,449 - ConditionTerm posetili
+INFO  19:57:24,449 - Cond posetili
+INFO  19:57:24,450 - FactorCharConst posetili
+INFO  19:57:24,450 - Term posetili
+INFO  19:57:24,450 - Expression posetili
+INFO  19:57:24,450 - StmtPrintNumConst posetili
+INFO  19:57:24,450 - FactorCharConst posetili
+INFO  19:57:24,450 - Term posetili
+INFO  19:57:24,450 - Expression posetili
+INFO  19:57:24,450 - StmtPrintNumConst posetili
+INFO  19:57:24,450 - FactorCharConst posetili
+INFO  19:57:24,450 - Term posetili
+INFO  19:57:24,450 - Expression posetili
+INFO  19:57:24,450 - StmtPrintNumConst posetili
+INFO  19:57:24,450 - FactorCharConst posetili
+INFO  19:57:24,450 - Term posetili
+INFO  19:57:24,450 - Expression posetili
+INFO  19:57:24,450 - StmtPrintNumConst posetili
+INFO  19:57:24,450 - FactorCharConst posetili
+INFO  19:57:24,450 - Term posetili
+INFO  19:57:24,450 - Expression posetili
+INFO  19:57:24,454 - StmtPrintNumConst posetili
+INFO  19:57:24,454 - FactorCharConst posetili
+INFO  19:57:24,454 - Term posetili
+INFO  19:57:24,454 - Expression posetili
+INFO  19:57:24,454 - StmtPrintNumConst posetili
+INFO  19:57:24,454 - FactorCharConst posetili
+INFO  19:57:24,454 - Term posetili
+INFO  19:57:24,454 - Expression posetili
+INFO  19:57:24,454 - StmtPrintNumConst posetili
+INFO  19:57:24,454 - FactorCharConst posetili
+INFO  19:57:24,454 - Term posetili
+INFO  19:57:24,454 - Expression posetili
+INFO  19:57:24,464 - StmtPrintNumConst posetili
+INFO  19:57:24,464 - FactorCharConst posetili
+INFO  19:57:24,464 - Term posetili
+INFO  19:57:24,464 - Expression posetili
+INFO  19:57:24,464 - StmtPrintNumConst posetili
+INFO  19:57:24,464 - FactorCharConst posetili
+INFO  19:57:24,464 - Term posetili
+INFO  19:57:24,464 - Expression posetili
+INFO  19:57:24,464 - StmtPrintNumConst posetili
+INFO  19:57:24,464 - StmtIfElse posetili
+INFO  19:57:24,464 - FactorCharConst posetili
+INFO  19:57:24,464 - Term posetili
+INFO  19:57:24,464 - Expression posetili
+INFO  19:57:24,464 - StmtPrintNumConst posetili
+INFO  19:57:24,464 - FactorCharConst posetili
+INFO  19:57:24,464 - Term posetili
+INFO  19:57:24,464 - Expression posetili
+INFO  19:57:24,464 - StmtPrintNumConst posetili
+INFO  19:57:24,464 - FactorCharConst posetili
+INFO  19:57:24,464 - Term posetili
+INFO  19:57:24,464 - Expression posetili
+INFO  19:57:24,464 - StmtPrintNumConst posetili
+INFO  19:57:24,464 - FactorCharConst posetili
+INFO  19:57:24,464 - Term posetili
+INFO  19:57:24,464 - Expression posetili
+INFO  19:57:24,464 - StmtPrintNumConst posetili
+INFO  19:57:24,464 - FactorCharConst posetili
+INFO  19:57:24,464 - Term posetili
+INFO  19:57:24,464 - Expression posetili
+INFO  19:57:24,464 - StmtPrintNumConst posetili
+INFO  19:57:24,464 - FactorCharConst posetili
+INFO  19:57:24,464 - Term posetili
+INFO  19:57:24,464 - Expression posetili
+INFO  19:57:24,464 - StmtPrintNumConst posetili
+INFO  19:57:24,464 - FactorCharConst posetili
+INFO  19:57:24,464 - Term posetili
+INFO  19:57:24,464 - Expression posetili
+INFO  19:57:24,469 - StmtPrintNumConst posetili
+INFO  19:57:24,474 - MethodDeclaration posetili
+INFO  19:57:24,474 - MethodsDeclarationList posetili
+INFO  19:57:24,474 - Zavrsetak obrade metode main
+INFO  19:57:24,474 - Kraj semanticke obrade programa MJProgram
+INFO  19:57:24,474 - ===================================
+INFO  19:57:24,501 - Parsiranje uspesno zavrseno!

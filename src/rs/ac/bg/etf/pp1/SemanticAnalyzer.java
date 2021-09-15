@@ -640,23 +640,16 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 		
 	}
 	
-	//IF L_PAREN Condition R_PAREN Statement			 						!!!!!!!!!!!!!1
-	public void visit(StmtUnmatchedIf s) {
-		report_info("StmtUnmatchedIf posetili", null);
+	public void visit(StmtIf s) { 
+		report_info("StmtIfElse posetili", null);
 		
 	/*	if(s.getCondition().struct != boolType) {
 			report_error("Semanticka greska - Condition mora biti tipa bool", s);
 		}*/
+		
 	}
 	
-	//IF  L_PAREN Condition R_PAREN StmtMatched ELSE StmtUnmatched		 						!!!!!!!!!!!!!1
-	public void visit(StmtUnmatchedIfElse s) {
-		report_info("StmtUnmatchedIfElse posetili", null);
-		
-	/*	if(s.getCondition().struct != boolType) {
-			report_error("Semanticka greska - Condition mora biti tipa bool", s);
-		}*/
-	}
+
 	
 	
 	// ---- CONDITION
@@ -674,11 +667,11 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 		report_info("ConditionTerm posetili", null);
 		c.struct = c.getCondFact().struct;
 		
-		if(condExprAlone) { //	!!!
+	/*	if(condExprAlone) { //	!!!
 			if(c.getCondFact().struct != boolType) {
 				report_error("Semanticka greska - Condition mora biti tipa bool", c);
 			}
-		}
+		}*/
 	}
 
 	public void visit(ConditionTermAnd c) {
