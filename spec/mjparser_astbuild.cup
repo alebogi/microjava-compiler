@@ -86,6 +86,8 @@ nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 nonterminal IfStart IfStart;
+nonterminal IfBody IfBody;
+nonterminal ElseBody ElseBody;
 
 nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType, FormPars, FormParsListEnd;
 nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor, Term, CondFact, CondTerm, Condition, ExprArrExists, MulopFactorList, AddopTermList, RelopExprExists;
@@ -230,13 +232,19 @@ Statement ::= (StmtDesgStmt) DesignatorStatement:D1 SEMI {: RESULT=new StmtDesgS
 			|
 			(StmtStmt) L_BRACE StmtList:S1 R_BRACE {: RESULT=new StmtStmt(S1); RESULT.setLine(S1left); :} 
 			|
-			(StmtIfElse) IfStart:I1 L_PAREN Condition:C2 R_PAREN Statement:S3 ELSE Statement:S4 {: RESULT=new StmtIfElse(I1, C2, S3, S4); RESULT.setLine(I1left); :}
+			(StmtIfElse) IfStart:I1 IfBody:I2 ElseBody:E3 {: RESULT=new StmtIfElse(I1, I2, E3); RESULT.setLine(I1left); :}
 			|
-			(StmtIf) IfStart:I1 L_PAREN Condition:C2 R_PAREN Statement:S3 {: RESULT=new StmtIf(I1, C2, S3); RESULT.setLine(I1left); :} 
+			(StmtIf) IfStart:I1 IfBody:I2 {: RESULT=new StmtIf(I1, I2); RESULT.setLine(I1left); :}
 ;
 		
 IfStart ::= (IfStart) IF {: RESULT=new IfStart(); :}
 ;	
+
+IfBody ::= (IfBody) L_PAREN Condition:C1 R_PAREN Statement:S2 {: RESULT=new IfBody(C1, S2); RESULT.setLine(C1left); :}
+;
+
+ElseBody ::= (ElseBody) ELSE Statement:S1 {: RESULT=new ElseBody(S1); RESULT.setLine(S1left); :}
+;
 				
 ExprExists ::= (ExpreExists) Expr:E1 {: RESULT=new ExpreExists(E1); RESULT.setLine(E1left); :}
 				|

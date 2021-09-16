@@ -35,6 +35,15 @@ public class CodeGenerator extends VisitorAdaptor {
 	private LinkedList<Integer> addopStack = new LinkedList<Integer>();
 	private LinkedList<Integer> mulopStack = new LinkedList<Integer>();
 	private LinkedList<Integer> relopStack = new LinkedList<Integer>();
+	private int currentRelop = -1;
+	private boolean noRelop = false;
+	
+	//za skokove iz uslova u if-else naredbi
+	private LinkedList<LinkedList<MyCond>> ifCondsStack = new LinkedList<LinkedList<MyCond>>(); 
+	//za bezuslovne skokove sa kraja if-body na mesto posle else (preskakanje else grane)
+	private LinkedList<Integer> skipElseStack = new LinkedList<Integer>(); 
+	// brojac and-ova, do prve pojave or-a
+	private int andNumCnt = 0;
 	
 	public int getMainPC() {
 		return mainPC;
@@ -95,7 +104,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(StmtPrint p) {
 		Struct type = p.getExpr().struct;
 		if(type == Tab.intType || type == SemanticAnalyzer.boolType){
-			Code.loadConst(0);
+			Code.loadConst(5);
 			Code.put(Code.print);
 		}else{
 			Code.loadConst(1);
@@ -260,9 +269,9 @@ public class CodeGenerator extends VisitorAdaptor {
 		//??
 	}
 	
-	
-	
-	
+	public void visit(FactorExpr fe) {
+		//???
+	}
 
 	//-----------------------
 	//*** OPERACIJE ***
@@ -301,26 +310,32 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(RelopE r) {
 		relopStack.addLast(Code.eq);
+		currentRelop = Code.eq;
 	}
 
 	public void visit(RelopNE r) {
 		relopStack.addLast(Code.ne);	
+		currentRelop = Code.ne;
 	}
 	
 	public void visit(RelopG r) {
 		relopStack.addLast(Code.gt);
+		currentRelop = Code.gt;
 	}
 	
 	public void visit(RelopGE r) {
 		relopStack.addLast(Code.ge);
+		currentRelop = Code.ge;
 	}
 	
 	public void visit(RelopL r) {
 		relopStack.addLast(Code.lt);
+		currentRelop = Code.lt;
 	}
 	
 	public void visit(RelopLE r) {
 		relopStack.addLast(Code.le);
+		currentRelop = Code.le;
 	}
 	
 	//-----------------
@@ -329,8 +344,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(Term t) {
 		if(t.getParent().getClass() == ExpressionMinus.class) {
 			Code.put(Code.neg);
-		}
-			
+		}		
 	}
 	
 	//-------------------------------
@@ -339,7 +353,78 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit (Expression e) {
 		
 	}
+	
+	
 	public void visit (ExpressionMinus e) {
 		
 	}
+	
+	
+	
+	//----------------------
+	// *** CONDITIONS ***
+	
+	public void visit(ConditionFact c) {
+		if(noRelop) { // ako imamo samo jedan uslov moramo da dodamo 1 na stek zbog skoka
+			Code.loadConst(1); 
+			Code.put(Code.jcc + Code.eq);
+		} else {
+			Code.put(Code.jcc + Code.inverse[relOp]);
+		}
+	}
+	
+	public void visit(RelopExprExist e) {
+		noRelop = false;
+	}
+	
+	public void visit(NoRelopExprExist e) {
+		noRelop = true;
+	}
+	
+	public void visit(ConditionTerm c) {
+		//nista?
+		andNumCnt++;
+	}
+	
+	public void visit(ConditionTermAnd c) {
+		andNumCnt++;
+	}
+	
+	public void visit(Cond c) {
+		// nista?
+		andNumCnt = 0;
+	}
+	
+	public void visit(CondOr c) {
+		andNumCnt = 0;
+	}
+	
+	
+	//--------------------------------------------------------------
+	// *** IF ELSE ZEZANJE ***
+	
+	// IZLAZ
+	public void visit(StmtIf s) {
+		
+	}
+	
+	// IZLAZ
+	public void visit(StmtIfElse s) {
+		
+	}
+	
+	// ULAZ U IF
+	public void visit(IfStart s) {
+		ifCondsStack.addLast(new LinkedList<MyCond>());
+	}
+	
+	public void visit(IfBody s) {
+		//skociti iza else grane
+	}
+
+	public void visit(ElseBody s) {
+		//fixovati i popuniti adrese u Conditionu za skakanje na else granu
+	}
+	//nakon else-fixovati i popuniti adresu u ifbody 
+	
 }

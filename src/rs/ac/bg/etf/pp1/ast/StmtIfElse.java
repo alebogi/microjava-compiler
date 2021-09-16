@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 15/8/2021 19:10:30
+// 16/8/2021 10:52:26
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,19 +8,16 @@ package rs.ac.bg.etf.pp1.ast;
 public class StmtIfElse extends Statement {
 
     private IfStart IfStart;
-    private Condition Condition;
-    private Statement Statement;
-    private Statement Statement1;
+    private IfBody IfBody;
+    private ElseBody ElseBody;
 
-    public StmtIfElse (IfStart IfStart, Condition Condition, Statement Statement, Statement Statement1) {
+    public StmtIfElse (IfStart IfStart, IfBody IfBody, ElseBody ElseBody) {
         this.IfStart=IfStart;
         if(IfStart!=null) IfStart.setParent(this);
-        this.Condition=Condition;
-        if(Condition!=null) Condition.setParent(this);
-        this.Statement=Statement;
-        if(Statement!=null) Statement.setParent(this);
-        this.Statement1=Statement1;
-        if(Statement1!=null) Statement1.setParent(this);
+        this.IfBody=IfBody;
+        if(IfBody!=null) IfBody.setParent(this);
+        this.ElseBody=ElseBody;
+        if(ElseBody!=null) ElseBody.setParent(this);
     }
 
     public IfStart getIfStart() {
@@ -31,28 +28,20 @@ public class StmtIfElse extends Statement {
         this.IfStart=IfStart;
     }
 
-    public Condition getCondition() {
-        return Condition;
+    public IfBody getIfBody() {
+        return IfBody;
     }
 
-    public void setCondition(Condition Condition) {
-        this.Condition=Condition;
+    public void setIfBody(IfBody IfBody) {
+        this.IfBody=IfBody;
     }
 
-    public Statement getStatement() {
-        return Statement;
+    public ElseBody getElseBody() {
+        return ElseBody;
     }
 
-    public void setStatement(Statement Statement) {
-        this.Statement=Statement;
-    }
-
-    public Statement getStatement1() {
-        return Statement1;
-    }
-
-    public void setStatement1(Statement Statement1) {
-        this.Statement1=Statement1;
+    public void setElseBody(ElseBody ElseBody) {
+        this.ElseBody=ElseBody;
     }
 
     public void accept(Visitor visitor) {
@@ -61,24 +50,21 @@ public class StmtIfElse extends Statement {
 
     public void childrenAccept(Visitor visitor) {
         if(IfStart!=null) IfStart.accept(visitor);
-        if(Condition!=null) Condition.accept(visitor);
-        if(Statement!=null) Statement.accept(visitor);
-        if(Statement1!=null) Statement1.accept(visitor);
+        if(IfBody!=null) IfBody.accept(visitor);
+        if(ElseBody!=null) ElseBody.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(IfStart!=null) IfStart.traverseTopDown(visitor);
-        if(Condition!=null) Condition.traverseTopDown(visitor);
-        if(Statement!=null) Statement.traverseTopDown(visitor);
-        if(Statement1!=null) Statement1.traverseTopDown(visitor);
+        if(IfBody!=null) IfBody.traverseTopDown(visitor);
+        if(ElseBody!=null) ElseBody.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(IfStart!=null) IfStart.traverseBottomUp(visitor);
-        if(Condition!=null) Condition.traverseBottomUp(visitor);
-        if(Statement!=null) Statement.traverseBottomUp(visitor);
-        if(Statement1!=null) Statement1.traverseBottomUp(visitor);
+        if(IfBody!=null) IfBody.traverseBottomUp(visitor);
+        if(ElseBody!=null) ElseBody.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -93,20 +79,14 @@ public class StmtIfElse extends Statement {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Condition!=null)
-            buffer.append(Condition.toString("  "+tab));
+        if(IfBody!=null)
+            buffer.append(IfBody.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Statement!=null)
-            buffer.append(Statement.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(Statement1!=null)
-            buffer.append(Statement1.toString("  "+tab));
+        if(ElseBody!=null)
+            buffer.append(ElseBody.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

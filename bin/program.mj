@@ -7,33 +7,18 @@ program MJProgram
     	a = true;
     	b = true;
     	
-		print('p',1);
-		print('r',1);     	
-		print('e',1);
-		print('o',2);
-		print('k',1);
+		print(0);
 			
-		if(a){
-		  print('i',4);
-		  print('f',1);
-		  print('o',2);
-		  print('k',1);
+		if(a)
+		{
+		  print(1);
 		}
-		else{
-		  print('e',4);
-		  print('l',1);
-		  print('s',1);
-		  print('e',1);
-		  print('o',2);
-		  print('k',1);
+		else
+		{
+		  print(2);
 		}
 		  	
-		print('p',4);
-		print('o',1);
-		print('s',1);
-		print('l',1);     	
-		print('e',1);
-		print('o',2);
-		print('k',1);
+		print(3);
+		
     }
 }
