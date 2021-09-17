@@ -64,7 +64,7 @@ nonterminal ExtendsClass, ListOfVarDecl, ListOfStmt, Statement, MethodDecl;
 nonterminal FormParsList, DesignatorStatement, ExprList, ExprListEnd;
 nonterminal ActPars, ActParsExists, StmtList, ExprExists;
 nonterminal Assignop, Relop, Addop, Mulop;
-nonterminal IfStart, IfBody, ElseBody;
+nonterminal IfStart, IfBody, ElseBody, ElseStart, IfCond;
 
 nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType, FormPars, FormParsListEnd;
 nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor, Term, CondFact, CondTerm, Condition, ExprArrExists, MulopFactorList, AddopTermList, RelopExprExists;
@@ -217,10 +217,16 @@ Statement ::= (StmtDesgStmt) DesignatorStatement SEMI
 IfStart ::= (IfStart) IF
 ;	
 
-IfBody ::= (IfBody) L_PAREN Condition R_PAREN Statement
+IfBody ::= (IfBody) IfCond Statement
 ;
 
-ElseBody ::= (ElseBody) ELSE Statement
+IfCond ::= (IfCond) L_PAREN Condition R_PAREN
+;
+
+ElseBody ::= (ElseBody) ElseStart Statement
+;
+
+ElseStart ::= (ElseStart) ELSE
 ;
 				
 ExprExists ::= (ExpreExists) Expr

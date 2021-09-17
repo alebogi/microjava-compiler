@@ -1,0 +1,303 @@
+INFO  15:20:16,645 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  15:20:16,837 - #2 program
+INFO  15:20:16,837 - #43 MJProgram
+INFO  15:20:16,838 - #43 bool
+INFO  15:20:16,841 - #43 x
+INFO  15:20:16,843 - #8 ,
+INFO  15:20:16,847 - #43 y
+INFO  15:20:16,848 - #7 ;
+INFO  15:20:16,848 - #3 {
+INFO  15:20:16,850 - #11 void
+INFO  15:20:16,852 - #43 main
+INFO  15:20:16,852 - #13 (
+INFO  15:20:16,853 - #12 )
+INFO  15:20:16,853 - #43 bool
+INFO  15:20:16,854 - #43 a
+INFO  15:20:16,855 - #8 ,
+INFO  15:20:16,855 - #43 b
+INFO  15:20:16,855 - #7 ;
+INFO  15:20:16,857 - #3 {
+INFO  15:20:16,860 - #43 a
+INFO  15:20:16,862 - #6 =
+INFO  15:20:16,862 - #45 true
+INFO  15:20:16,866 - #7 ;
+INFO  15:20:16,872 - #43 b
+INFO  15:20:16,873 - #6 =
+INFO  15:20:16,873 - #45 false
+INFO  15:20:16,873 - #7 ;
+INFO  15:20:16,873 - #39 print
+INFO  15:20:16,874 - #13 (
+INFO  15:20:16,874 - #42 0
+INFO  15:20:16,874 - #12 )
+INFO  15:20:16,874 - #7 ;
+INFO  15:20:16,874 - #40 if
+INFO  15:20:16,875 - #13 (
+INFO  15:20:16,877 - #43 a
+INFO  15:20:16,877 - #12 )
+INFO  15:20:16,882 - #3 {
+INFO  15:20:16,882 - #39 print
+INFO  15:20:16,883 - #13 (
+INFO  15:20:16,884 - #42 1
+INFO  15:20:16,884 - #12 )
+INFO  15:20:16,884 - #7 ;
+INFO  15:20:16,884 - #4 }
+INFO  15:20:16,885 - #39 print
+INFO  15:20:16,887 - #13 (
+INFO  15:20:16,887 - #42 3
+INFO  15:20:16,888 - #12 )
+INFO  15:20:16,888 - #7 ;
+INFO  15:20:16,888 - #4 }
+INFO  15:20:16,888 - #4 }
+INFO  15:20:16,921 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    NoDeclarationsList(
+    ) [NoDeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         bool
+        ) [Type]
+       x
+        NoArray(
+        ) [NoArray]
+        VarDeclarationList(
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+          VarDeclarationListEnd(
+           y
+            NoArray(
+            ) [NoArray]
+          ) [VarDeclarationListEnd]
+        ) [VarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  MethodsDeclarationList(
+    NoMethodsDeclarationList(
+    ) [NoMethodsDeclarationList]
+    MethodDeclaration(
+      MethodVoid(
+       main
+      ) [MethodVoid]
+      ListVarDeclaration(
+        NoListOfVarDeclaration(
+        ) [NoListOfVarDeclaration]
+        VarDeclaration(
+          Type(
+           bool
+          ) [Type]
+         a
+          NoArray(
+          ) [NoArray]
+          VarDeclarationList(
+            NoVarDeclarationList(
+            ) [NoVarDeclarationList]
+            VarDeclarationListEnd(
+             b
+              NoArray(
+              ) [NoArray]
+            ) [VarDeclarationListEnd]
+          ) [VarDeclarationList]
+        ) [VarDeclaration]
+      ) [ListVarDeclaration]
+      ListOfSatemant(
+        ListOfSatemant(
+          ListOfSatemant(
+            ListOfSatemant(
+              ListOfSatemant(
+                NoListOfSatemant(
+                ) [NoListOfSatemant]
+                StmtDesgStmt(
+                  DesgnStmtAsgnOp(
+                    DesignatorIdent(
+                     a
+                    ) [DesignatorIdent]
+                    AssignOperator(
+                    ) [AssignOperator]
+                    Expression(
+                      Term(
+                        FactorBoolConst(
+                         true
+                        ) [FactorBoolConst]
+                        NoMullopFactList(
+                        ) [NoMullopFactList]
+                      ) [Term]
+                      NoListAddopTerm(
+                      ) [NoListAddopTerm]
+                    ) [Expression]
+                  ) [DesgnStmtAsgnOp]
+                ) [StmtDesgStmt]
+              ) [ListOfSatemant]
+              StmtDesgStmt(
+                DesgnStmtAsgnOp(
+                  DesignatorIdent(
+                   b
+                  ) [DesignatorIdent]
+                  AssignOperator(
+                  ) [AssignOperator]
+                  Expression(
+                    Term(
+                      FactorBoolConst(
+                       false
+                      ) [FactorBoolConst]
+                      NoMullopFactList(
+                      ) [NoMullopFactList]
+                    ) [Term]
+                    NoListAddopTerm(
+                    ) [NoListAddopTerm]
+                  ) [Expression]
+                ) [DesgnStmtAsgnOp]
+              ) [StmtDesgStmt]
+            ) [ListOfSatemant]
+            StmtPrint(
+              Expression(
+                Term(
+                  FactorNumConst(
+                   0
+                  ) [FactorNumConst]
+                  NoMullopFactList(
+                  ) [NoMullopFactList]
+                ) [Term]
+                NoListAddopTerm(
+                ) [NoListAddopTerm]
+              ) [Expression]
+            ) [StmtPrint]
+          ) [ListOfSatemant]
+          StmtIf(
+            IfStart(
+            ) [IfStart]
+            IfBody(
+              Cond(
+                ConditionTerm(
+                  ConditionFact(
+                    Expression(
+                      Term(
+                        FactorDesign(
+                          DesignatorIdent(
+                           a
+                          ) [DesignatorIdent]
+                          NoActParamsExists(
+                          ) [NoActParamsExists]
+                        ) [FactorDesign]
+                        NoMullopFactList(
+                        ) [NoMullopFactList]
+                      ) [Term]
+                      NoListAddopTerm(
+                      ) [NoListAddopTerm]
+                    ) [Expression]
+                    NoRelopExprExist(
+                    ) [NoRelopExprExist]
+                  ) [ConditionFact]
+                ) [ConditionTerm]
+              ) [Cond]
+              StmtStmt(
+                StatementList(
+                  NoStatementList(
+                  ) [NoStatementList]
+                  StmtPrint(
+                    Expression(
+                      Term(
+                        FactorNumConst(
+                         1
+                        ) [FactorNumConst]
+                        NoMullopFactList(
+                        ) [NoMullopFactList]
+                      ) [Term]
+                      NoListAddopTerm(
+                      ) [NoListAddopTerm]
+                    ) [Expression]
+                  ) [StmtPrint]
+                ) [StatementList]
+              ) [StmtStmt]
+            ) [IfBody]
+          ) [StmtIf]
+        ) [ListOfSatemant]
+        StmtPrint(
+          Expression(
+            Term(
+              FactorNumConst(
+               3
+              ) [FactorNumConst]
+              NoMullopFactList(
+              ) [NoMullopFactList]
+            ) [Term]
+            NoListAddopTerm(
+            ) [NoListAddopTerm]
+          ) [Expression]
+        ) [StmtPrint]
+      ) [ListOfSatemant]
+    ) [MethodDeclaration]
+  ) [MethodsDeclarationList]
+) [Program]
+INFO  15:20:16,976 - ===================================
+INFO  15:20:16,993 - Pocetak obrade programa MJProgram na liniji 1
+INFO  15:20:16,993 - type posetio
+INFO  15:20:16,993 - NoArray posetio
+INFO  15:20:16,994 - NoVarDeclList posetio, kraj rekurzije
+INFO  15:20:16,994 - NoArray posetio
+INFO  15:20:16,994 - varDeclListEnd posetio
+INFO  15:20:16,996 - varDeclList posetio
+INFO  15:20:16,996 - varDecl posetio
+INFO  15:20:16,997 - Deklarisana globalna promenljiva x
+INFO  15:20:16,997 - Deklarisana globalna promenljiva y
+INFO  15:20:16,997 - NoMethodsDeclarationList posetili
+INFO  15:20:16,998 - MethodVoid posetili
+INFO  15:20:16,998 - Obradjuje se void metoda: main na liniji 5
+INFO  15:20:16,998 - type posetio
+INFO  15:20:16,998 - NoArray posetio
+INFO  15:20:16,998 - NoVarDeclList posetio, kraj rekurzije
+INFO  15:20:16,998 - NoArray posetio
+INFO  15:20:16,999 - varDeclListEnd posetio
+INFO  15:20:17,002 - varDeclList posetio
+INFO  15:20:17,003 - varDecl posetio
+INFO  15:20:17,003 - Deklarisana lokalna promenljiva a
+INFO  15:20:17,003 - Deklarisana lokalna promenljiva b
+INFO  15:20:17,003 - ListVarDeclaration posetili
+INFO  15:20:17,003 - Designator posetili
+INFO  15:20:17,003 - FactorBoolConst posetili
+INFO  15:20:17,003 - Term posetili
+INFO  15:20:17,004 - Expression posetili
+INFO  15:20:17,004 - DesgnStmtAsgnOp posetili
+INFO  15:20:17,004 - Designator posetili
+INFO  15:20:17,004 - FactorBoolConst posetili
+INFO  15:20:17,004 - Term posetili
+INFO  15:20:17,004 - Expression posetili
+INFO  15:20:17,004 - DesgnStmtAsgnOp posetili
+INFO  15:20:17,005 - FactorNumConst posetili
+INFO  15:20:17,005 - Term posetili
+INFO  15:20:17,005 - Expression posetili
+INFO  15:20:17,005 - StmtPrint posetili
+INFO  15:20:17,005 - Designator posetili
+INFO  15:20:17,005 - FactorDesign posetili
+INFO  15:20:17,005 - Term posetili
+INFO  15:20:17,006 - Expression posetili
+INFO  15:20:17,007 - NoRelopExprExist posetili
+INFO  15:20:17,007 - ConditionFact posetili
+INFO  15:20:17,008 - ConditionTerm posetili
+INFO  15:20:17,008 - Cond posetili
+INFO  15:20:17,010 - FactorNumConst posetili
+INFO  15:20:17,011 - Term posetili
+INFO  15:20:17,011 - Expression posetili
+INFO  15:20:17,011 - StmtPrint posetili
+INFO  15:20:17,012 - StmtIfElse posetili
+INFO  15:20:17,012 - FactorNumConst posetili
+INFO  15:20:17,012 - Term posetili
+INFO  15:20:17,012 - Expression posetili
+INFO  15:20:17,012 - StmtPrint posetili
+INFO  15:20:17,012 - MethodDeclaration posetili
+INFO  15:20:17,012 - MethodsDeclarationList posetili
+INFO  15:20:17,012 - Zavrsetak obrade metode main
+INFO  15:20:17,012 - Kraj semanticke obrade programa MJProgram
+INFO  15:20:17,013 - ===================================
+INFO  15:20:17,034 - IfStart posetili
+INFO  15:20:17,038 - NoRelopExprExist posetili
+INFO  15:20:17,039 - ConditionFact posetili
+INFO  15:20:17,042 - ConditionTerm posetili
+INFO  15:20:17,043 - Cond posetili
+INFO  15:20:17,043 - IfBody posetili
+INFO  15:20:17,044 - StmtIf posetili
+INFO  15:20:17,047 - 
+ Parsiranje uspesno zavrseno!

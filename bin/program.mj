@@ -2,22 +2,29 @@ program MJProgram
     bool x,y;
 {
 
-    void main() bool a, b; {
+    void main() bool a, b; int i, j, k;{
     
     	a = true;
-    	b = true;
+    	b = false;
+    	
+    	x = true;
+    	y = false;
+    	
+    	i = 1;
+    	j = 2;
     	
 		print(0);
-			
-		if(a)
+		
+			//	if(x && y || y && y && x || y && y && x)	
+		if(a || b) //loadConst(1) jmp inverse[eq] elseGrana
 		{
-		  print(1);
+		  print(1); //jmp na liniju print(3)
 		}
-		else
+		else //fixjmp za liniju iz if
 		{
 		  print(2);
 		}
-		  	
+		  	//fixjmp za liniju print(1)
 		print(3);
 		
     }

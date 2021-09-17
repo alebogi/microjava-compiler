@@ -69,9 +69,9 @@ public class MJParserTest {
 				Code.mainPc = codeGen.getMainPC();
 				Code.write(new FileOutputStream(objFile));
 				
-				log.info("Parsiranje uspesno zavrseno!");
+				log.info("\n Parsiranje uspesno zavrseno!");
 			}else{
-				log.error("Parsiranje NIJE uspesno zavrseno!");
+				log.error("\n Parsiranje NIJE uspesno zavrseno!");
 			}
 		} 
 		finally {

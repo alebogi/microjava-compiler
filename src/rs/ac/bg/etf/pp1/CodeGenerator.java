@@ -36,7 +36,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	private LinkedList<Integer> mulopStack = new LinkedList<Integer>();
 	private LinkedList<Integer> relopStack = new LinkedList<Integer>();
 	private int currentRelop = -1;
-	private boolean noRelop = false;
+
 	
 	//za skokove iz uslova u if-else naredbi
 	private LinkedList<LinkedList<MyCond>> ifCondsStack = new LinkedList<LinkedList<MyCond>>(); 
@@ -44,7 +44,19 @@ public class CodeGenerator extends VisitorAdaptor {
 	private LinkedList<Integer> skipElseStack = new LinkedList<Integer>(); 
 	// brojac and-ova, do prve pojave or-a
 	private int andNumCnt = 0;
+	private int orNumCnt = 0;
+	private int skipElse_AdrToFix = -1;
+	private int skipToElse_AdrToFix = 0;
+	//private boolean skipToElse = false;
 	
+	//----------
+	//TEST TEST
+	private LinkedList<Integer> listaAdresaZaFix_skipToElse;// = new LinkedList<Integer>(); 
+	private LinkedList<Integer> listaAdresaZaFix_skipElse;// = new LinkedList<Integer>();
+	private LinkedList<Integer> listaAdresaZaFix_nextCond;// = new LinkedList<Integer>();
+	private LinkedList<Integer> listaAdresaZaFix_skipToThen;// = new LinkedList<Integer>();
+	
+	//-----
 	public int getMainPC() {
 		return mainPC;
 	}
@@ -309,31 +321,43 @@ public class CodeGenerator extends VisitorAdaptor {
 	// *** RELACIJE ***
 	
 	public void visit(RelopE r) {
+		report_info("EQ == posetili", null);
+		
 		relopStack.addLast(Code.eq);
 		currentRelop = Code.eq;
 	}
 
 	public void visit(RelopNE r) {
+		report_info("NEQ != posetili", null);
+		
 		relopStack.addLast(Code.ne);	
 		currentRelop = Code.ne;
 	}
 	
 	public void visit(RelopG r) {
+		report_info("GT > posetili", null);
+		
 		relopStack.addLast(Code.gt);
 		currentRelop = Code.gt;
 	}
 	
 	public void visit(RelopGE r) {
+		report_info("GE >= posetili", null);
+		
 		relopStack.addLast(Code.ge);
 		currentRelop = Code.ge;
 	}
 	
 	public void visit(RelopL r) {
+		report_info("LT < posetili", null);
+		
 		relopStack.addLast(Code.lt);
 		currentRelop = Code.lt;
 	}
 	
 	public void visit(RelopLE r) {
+		report_info("RelopLE <= posetili", null);
+		
 		relopStack.addLast(Code.le);
 		currentRelop = Code.le;
 	}
@@ -365,38 +389,66 @@ public class CodeGenerator extends VisitorAdaptor {
 	// *** CONDITIONS ***
 	
 	public void visit(ConditionFact c) {
-		if(noRelop) { // ako imamo samo jedan uslov moramo da dodamo 1 na stek zbog skoka
-			Code.loadConst(1); 
-			Code.put(Code.jcc + Code.eq);
-		} else {
-			Code.put(Code.jcc + Code.inverse[relOp]);
+		
+		report_info("ConditionFact posetili", null);
+		
+		if(c.getRelopExprExists().getClass() == RelopExprExist.class) {
+			Code.putFalseJump(currentRelop, 0); //vec ima neki izraz na steku
+		}else {
+			Code.loadConst(1); //izraz je sam, poredimo ga sa true (1)
+			Code.putFalseJump(Code.eq, 0); //ako true(1) NIJE == 1, skocice se na else granu
+			
 		}
+		skipToElse_AdrToFix = Code.pc-2; 
+		listaAdresaZaFix_skipToElse.add(skipToElse_AdrToFix);
+		
+		if(c.getParent().getClass() == ConditionTermAnd.class && c.getParent().getParent().getClass() == CondOr.class) {
+			report_info("deda JE COND OR---", null);
+			//
+		}
+		
 	}
 	
 	public void visit(RelopExprExist e) {
-		noRelop = false;
+		report_info("RelopExprExist posetili", null);
 	}
 	
 	public void visit(NoRelopExprExist e) {
-		noRelop = true;
+		report_info("NoRelopExprExist posetili", null);
 	}
 	
 	public void visit(ConditionTerm c) {
-		//nista?
-		andNumCnt++;
+		String str = "ConditionTerm posetili";
+		
+		
+
+		report_info(str, null);
 	}
 	
 	public void visit(ConditionTermAnd c) {
-		andNumCnt++;
+		report_info("ConditionTermAnd posetili", null);
+		
+		//???nesto
+		
+		if(c.getParent().getClass() == CondOr.class) {
+			report_info("PARENT JE COND OR", null);
+		}
+		//popuni fixeve za next cond !!!!!!!!!!!!
+		while(!listaAdresaZaFix_nextCond.isEmpty()) {
+			int adr = listaAdresaZaFix_nextCond.removeLast();
+			Code.fixup(adr);
+		}
 	}
 	
 	public void visit(Cond c) {
-		// nista?
-		andNumCnt = 0;
+		report_info("Cond posetili", null);
+		
 	}
 	
 	public void visit(CondOr c) {
-		andNumCnt = 0;
+		report_info("CondOr posetili", null);
+		
+
 	}
 	
 	
@@ -405,25 +457,67 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	// IZLAZ
 	public void visit(StmtIf s) {
-		
+		report_info("StmtIf posetili", null);
+		//Code.fixup(skipToElse_AdrToFix);
+		while(!listaAdresaZaFix_skipToElse.isEmpty()) {
+			int adr = listaAdresaZaFix_skipToElse.removeLast();
+			Code.fixup(adr);
+		}
 	}
 	
 	// IZLAZ
 	public void visit(StmtIfElse s) {
-		
+		report_info("StmtIfElse posetili", null);
+	//	Code.fixup(skipElse_AdrToFix);
+		while(!listaAdresaZaFix_skipElse.isEmpty()) {
+			int adr = listaAdresaZaFix_skipElse.removeLast();
+			Code.fixup(adr);
+		}
 	}
 	
 	// ULAZ U IF
 	public void visit(IfStart s) {
-		ifCondsStack.addLast(new LinkedList<MyCond>());
+		report_info("IfStart posetili", null);
+		
+		listaAdresaZaFix_skipToElse = new LinkedList<Integer>();
+		listaAdresaZaFix_skipElse = new LinkedList<Integer>();
+		listaAdresaZaFix_nextCond = new LinkedList<Integer>();
+		listaAdresaZaFix_skipToThen = new LinkedList<Integer>();
+		
+	}
+	
+	public void visit(IfCond s) {
+		report_info("IfCond posetili", null);
+		
+		
 	}
 	
 	public void visit(IfBody s) {
-		//skociti iza else grane
+		report_info("IfBody posetili", null);
+		
+		if(s.getParent().getClass() == StmtIfElse.class) {
+			//skociti iza else grane bezuslovno
+			Code.put(Code.jmp);
+			skipElse_AdrToFix = Code.pc;
+			listaAdresaZaFix_skipElse.add(skipElse_AdrToFix);
+			Code.put2(0); 
+			
+		}
+	}
+	
+	public void visit(ElseStart s) {
+		report_info("ElseBody posetili", null);
+		//fixovati i popuniti adrese  za skakanje na else granu
+	//	Code.fixup(skipToElse_AdrToFix);
+		while(!listaAdresaZaFix_skipToElse.isEmpty()) {
+			int adr = listaAdresaZaFix_skipToElse.removeLast();
+			Code.fixup(adr);
+		}
 	}
 
 	public void visit(ElseBody s) {
-		//fixovati i popuniti adrese u Conditionu za skakanje na else granu
+		report_info("ElseBody posetili", null);
+		
 	}
 	//nakon else-fixovati i popuniti adresu u ifbody 
 	
