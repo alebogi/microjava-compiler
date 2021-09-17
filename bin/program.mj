@@ -1,11 +1,11 @@
 program MJProgram 
-    bool x,y;
+    int i, j;
 {
 
-    void main() bool a, b; int i, j, k;{
+    void main() bool x,y;{
     
-    	a = true;
-    	b = false;
+    //	a = true;
+    //	b = false;
     	
     	x = true;
     	y = false;
@@ -15,17 +15,19 @@ program MJProgram
     	
 		print(0);
 		
-			//	if(x && y || y && y && x || y && y && x)	
-		if(a || b) //loadConst(1) jmp inverse[eq] elseGrana
+		if(i==2 && y || j<=4 && x || x)	
 		{
-		  print(1); //jmp na liniju print(3)
+		  print(1); 
+		  
 		}
-		else //fixjmp za liniju iz if
+		else 
 		{
 		  print(2);
+		  
 		}
-		  	//fixjmp za liniju print(1)
+		  	
 		print(3);
 		
     }
 }
+//y && y && x

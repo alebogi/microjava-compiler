@@ -64,7 +64,7 @@ nonterminal ExtendsClass, ListOfVarDecl, ListOfStmt, Statement, MethodDecl;
 nonterminal FormParsList, DesignatorStatement, ExprList, ExprListEnd;
 nonterminal ActPars, ActParsExists, StmtList, ExprExists;
 nonterminal Assignop, Relop, Addop, Mulop;
-nonterminal IfStart, IfBody, ElseBody, ElseStart, IfCond;
+nonterminal IfStart, IfBody, ElseBody, ElseStart, IfCond, LogOr;
 
 nonterminal  rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, Designator,  VarDeclListEnd, VarDecl, MethodType, FormPars, FormParsListEnd;
 nonterminal  rs.etf.pp1.symboltable.concepts.Struct Type, Consts, Expr, Factor, Term, CondFact, CondTerm, Condition, ExprArrExists, MulopFactorList, AddopTermList, RelopExprExists;
@@ -272,10 +272,13 @@ ExprListEnd ::= (ExpListEnd) COMMA Expr
 
 	
 
-Condition ::= (CondOr) Condition LOGICAL_OR CondTerm
+Condition ::= (CondOr) Condition LogOr CondTerm
 				|
 				(Cond) CondTerm
-;		
+;	
+
+LogOr ::= (LogOr) LOGICAL_OR
+;
 			
 CondTerm ::= (ConditionTermAnd) CondTerm LOGICAL_AND CondFact
 			|	

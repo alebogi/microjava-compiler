@@ -51,11 +51,12 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	//----------
 	//TEST TEST
-	private LinkedList<Integer> listaAdresaZaFix_skipToElse;// = new LinkedList<Integer>(); 
 	private LinkedList<Integer> listaAdresaZaFix_skipElse;// = new LinkedList<Integer>();
-	private LinkedList<Integer> listaAdresaZaFix_nextCond;// = new LinkedList<Integer>();
-	private LinkedList<Integer> listaAdresaZaFix_skipToThen;// = new LinkedList<Integer>();
+
 	
+	private LinkedList<MyCond> listaAdresaZaFix_andIzraz = new LinkedList<MyCond>();
+	private LinkedList<MyCond> listaAdresaZaFix_skociNaThen = new LinkedList<MyCond>();
+	private LinkedList<MyCond> listaAdresaZaFix_skociNaSledeciUslov = new LinkedList<MyCond>();
 	//-----
 	public int getMainPC() {
 		return mainPC;
@@ -114,6 +115,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	// PRINT
 	public void visit(StmtPrint p) {
+		report_info("-------PRINT------",  null);
 		Struct type = p.getExpr().struct;
 		if(type == Tab.intType || type == SemanticAnalyzer.boolType){
 			Code.loadConst(5);
@@ -392,20 +394,24 @@ public class CodeGenerator extends VisitorAdaptor {
 		
 		report_info("ConditionFact posetili", null);
 		
+		MyCond elem = new MyCond();
+		
 		if(c.getRelopExprExists().getClass() == RelopExprExist.class) {
 			Code.putFalseJump(currentRelop, 0); //vec ima neki izraz na steku
+			elem.setRelop(currentRelop);
 		}else {
 			Code.loadConst(1); //izraz je sam, poredimo ga sa true (1)
 			Code.putFalseJump(Code.eq, 0); //ako true(1) NIJE == 1, skocice se na else granu
-			
+			elem.setRelop(Code.eq);
 		}
 		skipToElse_AdrToFix = Code.pc-2; 
-		listaAdresaZaFix_skipToElse.add(skipToElse_AdrToFix);
+	//	listaAdresaZaFix_skipToElse.add(skipToElse_AdrToFix);
+		elem.setAdr(skipToElse_AdrToFix);
+		elem.setPoslednji(true);
+		if(listaAdresaZaFix_andIzraz.size() > 0)
+			listaAdresaZaFix_andIzraz.getLast().setPoslednji(false);
+		listaAdresaZaFix_andIzraz.add(elem);
 		
-		if(c.getParent().getClass() == ConditionTermAnd.class && c.getParent().getParent().getClass() == CondOr.class) {
-			report_info("deda JE COND OR---", null);
-			//
-		}
 		
 	}
 	
@@ -433,11 +439,13 @@ public class CodeGenerator extends VisitorAdaptor {
 		if(c.getParent().getClass() == CondOr.class) {
 			report_info("PARENT JE COND OR", null);
 		}
-		//popuni fixeve za next cond !!!!!!!!!!!!
-		while(!listaAdresaZaFix_nextCond.isEmpty()) {
-			int adr = listaAdresaZaFix_nextCond.removeLast();
-			Code.fixup(adr);
-		}
+		
+		//!!!!!!!!!!!!
+		/*		while(!listaAdresaZaFix_skipToElse.isEmpty()) {
+					int adr = listaAdresaZaFix_skipToElse.removeLast();
+					listaAdresaZaFix_and_skip.add(adr);
+				}*/
+		
 	}
 	
 	public void visit(Cond c) {
@@ -451,6 +459,38 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	}
 	
+	public void visit(LogOr lo) {
+		report_info("OR posetili", null);
+		
+		
+				
+
+		while(!listaAdresaZaFix_andIzraz.isEmpty()) {
+			MyCond elem = listaAdresaZaFix_andIzraz.removeFirst();
+			int adr = elem.getAdr();
+			if (elem.isPoslednji()) {
+				//u pitanju je poslednji, promeni uslov skakanja
+				//i promeni adresu skakakanja na then
+				int oldRelop = elem.getRelop();
+				elem.setRelop(Code.inverse[oldRelop]);
+				listaAdresaZaFix_skociNaThen.add(elem);
+			}else {
+				//promeni adresu skakanja sa else next cond
+				listaAdresaZaFix_skociNaSledeciUslov.add(elem);
+			}
+		}
+		// KAD SE POZOVE OR, POSLEDNJEM IZ NIZA AND-OVA SE OBRCE USLOV + SE MENJA ADRESA
+				//SKOKA NA THEN
+		// OSTALIMA SE MENJA SAMO ADRESA SKOKA NA NEXT COND
+		
+		//popuni fixeve za next cond !!!!!!!!!!!!
+				while(!listaAdresaZaFix_skociNaSledeciUslov.isEmpty()) {
+					MyCond elem = listaAdresaZaFix_skociNaSledeciUslov.removeFirst();
+					int adr = elem.getAdr();
+					Code.fixup(adr);
+					Code.put2(adr-1, (Code.jcc+Code.inverse[elem.getRelop()])<<8);
+				}//??
+	}
 	
 	//--------------------------------------------------------------
 	// *** IF ELSE ZEZANJE ***
@@ -459,9 +499,13 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(StmtIf s) {
 		report_info("StmtIf posetili", null);
 		//Code.fixup(skipToElse_AdrToFix);
-		while(!listaAdresaZaFix_skipToElse.isEmpty()) {
+	/*	while(!listaAdresaZaFix_skipToElse.isEmpty()) {
 			int adr = listaAdresaZaFix_skipToElse.removeLast();
 			Code.fixup(adr);
+		}*/
+		while(!listaAdresaZaFix_andIzraz.isEmpty()) {
+			int adr = listaAdresaZaFix_andIzraz.removeFirst().getAdr();
+			Code.fixup(adr);			
 		}
 	}
 	
@@ -470,7 +514,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		report_info("StmtIfElse posetili", null);
 	//	Code.fixup(skipElse_AdrToFix);
 		while(!listaAdresaZaFix_skipElse.isEmpty()) {
-			int adr = listaAdresaZaFix_skipElse.removeLast();
+			int adr = listaAdresaZaFix_skipElse.removeFirst();
 			Code.fixup(adr);
 		}
 	}
@@ -479,17 +523,22 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(IfStart s) {
 		report_info("IfStart posetili", null);
 		
-		listaAdresaZaFix_skipToElse = new LinkedList<Integer>();
+		
 		listaAdresaZaFix_skipElse = new LinkedList<Integer>();
-		listaAdresaZaFix_nextCond = new LinkedList<Integer>();
-		listaAdresaZaFix_skipToThen = new LinkedList<Integer>();
+		
 		
 	}
 	
 	public void visit(IfCond s) {
 		report_info("IfCond posetili", null);
 		
-		
+		//OVDE POCINJE THEN GRANA, OVDE SE FIXUJU SKAKANJA NA THEN
+		while(!listaAdresaZaFix_skociNaThen.isEmpty()) {
+			MyCond elem = listaAdresaZaFix_skociNaThen.removeFirst();
+			int adr = elem.getAdr();
+			Code.put2(adr-1, (Code.jcc+Code.inverse[elem.getRelop()])<<8);
+			Code.fixup(adr);			
+		}
 	}
 	
 	public void visit(IfBody s) {
@@ -509,9 +558,13 @@ public class CodeGenerator extends VisitorAdaptor {
 		report_info("ElseBody posetili", null);
 		//fixovati i popuniti adrese  za skakanje na else granu
 	//	Code.fixup(skipToElse_AdrToFix);
-		while(!listaAdresaZaFix_skipToElse.isEmpty()) {
+	/*	while(!listaAdresaZaFix_skipToElse.isEmpty()) {
 			int adr = listaAdresaZaFix_skipToElse.removeLast();
 			Code.fixup(adr);
+		}*/
+		while(!listaAdresaZaFix_andIzraz.isEmpty()) {
+			int adr = listaAdresaZaFix_andIzraz.removeFirst().getAdr();
+			Code.fixup(adr);			
 		}
 	}
 

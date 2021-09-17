@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/8/2021 18:41:45
+// 17/8/2021 22:23:49
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,11 +8,14 @@ package rs.ac.bg.etf.pp1.ast;
 public class CondOr extends Condition {
 
     private Condition Condition;
+    private LogOr LogOr;
     private CondTerm CondTerm;
 
-    public CondOr (Condition Condition, CondTerm CondTerm) {
+    public CondOr (Condition Condition, LogOr LogOr, CondTerm CondTerm) {
         this.Condition=Condition;
         if(Condition!=null) Condition.setParent(this);
+        this.LogOr=LogOr;
+        if(LogOr!=null) LogOr.setParent(this);
         this.CondTerm=CondTerm;
         if(CondTerm!=null) CondTerm.setParent(this);
     }
@@ -23,6 +26,14 @@ public class CondOr extends Condition {
 
     public void setCondition(Condition Condition) {
         this.Condition=Condition;
+    }
+
+    public LogOr getLogOr() {
+        return LogOr;
+    }
+
+    public void setLogOr(LogOr LogOr) {
+        this.LogOr=LogOr;
     }
 
     public CondTerm getCondTerm() {
@@ -39,17 +50,20 @@ public class CondOr extends Condition {
 
     public void childrenAccept(Visitor visitor) {
         if(Condition!=null) Condition.accept(visitor);
+        if(LogOr!=null) LogOr.accept(visitor);
         if(CondTerm!=null) CondTerm.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Condition!=null) Condition.traverseTopDown(visitor);
+        if(LogOr!=null) LogOr.traverseTopDown(visitor);
         if(CondTerm!=null) CondTerm.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Condition!=null) Condition.traverseBottomUp(visitor);
+        if(LogOr!=null) LogOr.traverseBottomUp(visitor);
         if(CondTerm!=null) CondTerm.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -61,6 +75,12 @@ public class CondOr extends Condition {
 
         if(Condition!=null)
             buffer.append(Condition.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(LogOr!=null)
+            buffer.append(LogOr.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

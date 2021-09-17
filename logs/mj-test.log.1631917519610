@@ -1,0 +1,765 @@
+INFO  00:22:49,120 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\moj template\workspace\MJCompiler\test\program.mj
+INFO  00:22:49,445 - #2 program
+INFO  00:22:49,450 - #43 MJProgram
+INFO  00:22:49,450 - #43 bool
+INFO  00:22:49,465 - #43 x
+INFO  00:22:49,471 - #8 ,
+INFO  00:22:49,475 - #43 y
+INFO  00:22:49,475 - #7 ;
+INFO  00:22:49,475 - #3 {
+INFO  00:22:49,485 - #11 void
+INFO  00:22:49,496 - #43 main
+INFO  00:22:49,496 - #13 (
+INFO  00:22:49,496 - #12 )
+INFO  00:22:49,496 - #43 bool
+INFO  00:22:49,504 - #43 a
+INFO  00:22:49,506 - #8 ,
+INFO  00:22:49,506 - #43 b
+INFO  00:22:49,506 - #7 ;
+INFO  00:22:49,506 - #43 int
+INFO  00:22:49,506 - #43 i
+INFO  00:22:49,511 - #8 ,
+INFO  00:22:49,514 - #43 j
+INFO  00:22:49,516 - #8 ,
+INFO  00:22:49,516 - #43 k
+INFO  00:22:49,516 - #7 ;
+INFO  00:22:49,516 - #3 {
+INFO  00:22:49,516 - #43 a
+INFO  00:22:49,521 - #6 =
+INFO  00:22:49,526 - #45 true
+INFO  00:22:49,534 - #7 ;
+INFO  00:22:49,541 - #43 b
+INFO  00:22:49,544 - #6 =
+INFO  00:22:49,544 - #45 false
+INFO  00:22:49,544 - #7 ;
+INFO  00:22:49,546 - #43 x
+INFO  00:22:49,621 - #6 =
+INFO  00:22:49,621 - #45 true
+INFO  00:22:49,626 - #7 ;
+INFO  00:22:49,626 - #43 y
+INFO  00:22:49,626 - #6 =
+INFO  00:22:49,626 - #45 false
+INFO  00:22:49,626 - #7 ;
+INFO  00:22:49,626 - #43 i
+INFO  00:22:49,628 - #6 =
+INFO  00:22:49,628 - #42 1
+INFO  00:22:49,631 - #7 ;
+INFO  00:22:49,631 - #43 j
+INFO  00:22:49,631 - #6 =
+INFO  00:22:49,631 - #42 2
+INFO  00:22:49,631 - #7 ;
+INFO  00:22:49,631 - #39 print
+INFO  00:22:49,631 - #13 (
+INFO  00:22:49,631 - #42 0
+INFO  00:22:49,631 - #12 )
+INFO  00:22:49,631 - #7 ;
+INFO  00:22:49,631 - #40 if
+INFO  00:22:49,636 - #13 (
+INFO  00:22:49,636 - #43 x
+INFO  00:22:49,638 - #30 &&
+INFO  00:22:49,641 - #43 y
+INFO  00:22:49,641 - #29 ||
+INFO  00:22:49,641 - #43 y
+INFO  00:22:49,658 - #30 &&
+INFO  00:22:49,658 - #43 y
+INFO  00:22:49,667 - #30 &&
+INFO  00:22:49,667 - #43 x
+INFO  00:22:49,667 - #29 ||
+INFO  00:22:49,667 - #43 y
+INFO  00:22:49,669 - #30 &&
+INFO  00:22:49,676 - #43 y
+INFO  00:22:49,677 - #30 &&
+INFO  00:22:49,677 - #43 x
+INFO  00:22:49,677 - #12 )
+INFO  00:22:49,691 - #3 {
+INFO  00:22:49,697 - #39 print
+INFO  00:22:49,701 - #13 (
+INFO  00:22:49,701 - #42 1
+INFO  00:22:49,701 - #12 )
+INFO  00:22:49,707 - #7 ;
+INFO  00:22:49,726 - #4 }
+INFO  00:22:49,728 - #41 else
+INFO  00:22:49,731 - #3 {
+INFO  00:22:49,736 - #39 print
+INFO  00:22:49,738 - #13 (
+INFO  00:22:49,738 - #42 2
+INFO  00:22:49,741 - #12 )
+INFO  00:22:49,741 - #7 ;
+INFO  00:22:49,746 - #4 }
+INFO  00:22:49,748 - #39 print
+INFO  00:22:49,751 - #13 (
+INFO  00:22:49,751 - #42 3
+INFO  00:22:49,751 - #12 )
+INFO  00:22:49,751 - #7 ;
+INFO  00:22:49,751 - #4 }
+INFO  00:22:49,751 - #4 }
+INFO  00:22:49,856 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  DeclarationsList(
+    NoDeclarationsList(
+    ) [NoDeclarationsList]
+    DeclsVar(
+      VarDeclaration(
+        Type(
+         bool
+        ) [Type]
+       x
+        NoArray(
+        ) [NoArray]
+        VarDeclarationList(
+          NoVarDeclarationList(
+          ) [NoVarDeclarationList]
+          VarDeclarationListEnd(
+           y
+            NoArray(
+            ) [NoArray]
+          ) [VarDeclarationListEnd]
+        ) [VarDeclarationList]
+      ) [VarDeclaration]
+    ) [DeclsVar]
+  ) [DeclarationsList]
+  MethodsDeclarationList(
+    NoMethodsDeclarationList(
+    ) [NoMethodsDeclarationList]
+    MethodDeclaration(
+      MethodVoid(
+       main
+      ) [MethodVoid]
+      ListVarDeclaration(
+        ListVarDeclaration(
+          NoListOfVarDeclaration(
+          ) [NoListOfVarDeclaration]
+          VarDeclaration(
+            Type(
+             bool
+            ) [Type]
+           a
+            NoArray(
+            ) [NoArray]
+            VarDeclarationList(
+              NoVarDeclarationList(
+              ) [NoVarDeclarationList]
+              VarDeclarationListEnd(
+               b
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclarationListEnd]
+            ) [VarDeclarationList]
+          ) [VarDeclaration]
+        ) [ListVarDeclaration]
+        VarDeclaration(
+          Type(
+           int
+          ) [Type]
+         i
+          NoArray(
+          ) [NoArray]
+          VarDeclarationList(
+            VarDeclarationList(
+              NoVarDeclarationList(
+              ) [NoVarDeclarationList]
+              VarDeclarationListEnd(
+               j
+                NoArray(
+                ) [NoArray]
+              ) [VarDeclarationListEnd]
+            ) [VarDeclarationList]
+            VarDeclarationListEnd(
+             k
+              NoArray(
+              ) [NoArray]
+            ) [VarDeclarationListEnd]
+          ) [VarDeclarationList]
+        ) [VarDeclaration]
+      ) [ListVarDeclaration]
+      ListOfSatemant(
+        ListOfSatemant(
+          ListOfSatemant(
+            ListOfSatemant(
+              ListOfSatemant(
+                ListOfSatemant(
+                  ListOfSatemant(
+                    ListOfSatemant(
+                      ListOfSatemant(
+                        NoListOfSatemant(
+                        ) [NoListOfSatemant]
+                        StmtDesgStmt(
+                          DesgnStmtAsgnOp(
+                            DesignatorIdent(
+                             a
+                            ) [DesignatorIdent]
+                            AssignOperator(
+                            ) [AssignOperator]
+                            Expression(
+                              Term(
+                                FactorBoolConst(
+                                 true
+                                ) [FactorBoolConst]
+                                NoMullopFactList(
+                                ) [NoMullopFactList]
+                              ) [Term]
+                              NoListAddopTerm(
+                              ) [NoListAddopTerm]
+                            ) [Expression]
+                          ) [DesgnStmtAsgnOp]
+                        ) [StmtDesgStmt]
+                      ) [ListOfSatemant]
+                      StmtDesgStmt(
+                        DesgnStmtAsgnOp(
+                          DesignatorIdent(
+                           b
+                          ) [DesignatorIdent]
+                          AssignOperator(
+                          ) [AssignOperator]
+                          Expression(
+                            Term(
+                              FactorBoolConst(
+                               false
+                              ) [FactorBoolConst]
+                              NoMullopFactList(
+                              ) [NoMullopFactList]
+                            ) [Term]
+                            NoListAddopTerm(
+                            ) [NoListAddopTerm]
+                          ) [Expression]
+                        ) [DesgnStmtAsgnOp]
+                      ) [StmtDesgStmt]
+                    ) [ListOfSatemant]
+                    StmtDesgStmt(
+                      DesgnStmtAsgnOp(
+                        DesignatorIdent(
+                         x
+                        ) [DesignatorIdent]
+                        AssignOperator(
+                        ) [AssignOperator]
+                        Expression(
+                          Term(
+                            FactorBoolConst(
+                             true
+                            ) [FactorBoolConst]
+                            NoMullopFactList(
+                            ) [NoMullopFactList]
+                          ) [Term]
+                          NoListAddopTerm(
+                          ) [NoListAddopTerm]
+                        ) [Expression]
+                      ) [DesgnStmtAsgnOp]
+                    ) [StmtDesgStmt]
+                  ) [ListOfSatemant]
+                  StmtDesgStmt(
+                    DesgnStmtAsgnOp(
+                      DesignatorIdent(
+                       y
+                      ) [DesignatorIdent]
+                      AssignOperator(
+                      ) [AssignOperator]
+                      Expression(
+                        Term(
+                          FactorBoolConst(
+                           false
+                          ) [FactorBoolConst]
+                          NoMullopFactList(
+                          ) [NoMullopFactList]
+                        ) [Term]
+                        NoListAddopTerm(
+                        ) [NoListAddopTerm]
+                      ) [Expression]
+                    ) [DesgnStmtAsgnOp]
+                  ) [StmtDesgStmt]
+                ) [ListOfSatemant]
+                StmtDesgStmt(
+                  DesgnStmtAsgnOp(
+                    DesignatorIdent(
+                     i
+                    ) [DesignatorIdent]
+                    AssignOperator(
+                    ) [AssignOperator]
+                    Expression(
+                      Term(
+                        FactorNumConst(
+                         1
+                        ) [FactorNumConst]
+                        NoMullopFactList(
+                        ) [NoMullopFactList]
+                      ) [Term]
+                      NoListAddopTerm(
+                      ) [NoListAddopTerm]
+                    ) [Expression]
+                  ) [DesgnStmtAsgnOp]
+                ) [StmtDesgStmt]
+              ) [ListOfSatemant]
+              StmtDesgStmt(
+                DesgnStmtAsgnOp(
+                  DesignatorIdent(
+                   j
+                  ) [DesignatorIdent]
+                  AssignOperator(
+                  ) [AssignOperator]
+                  Expression(
+                    Term(
+                      FactorNumConst(
+                       2
+                      ) [FactorNumConst]
+                      NoMullopFactList(
+                      ) [NoMullopFactList]
+                    ) [Term]
+                    NoListAddopTerm(
+                    ) [NoListAddopTerm]
+                  ) [Expression]
+                ) [DesgnStmtAsgnOp]
+              ) [StmtDesgStmt]
+            ) [ListOfSatemant]
+            StmtPrint(
+              Expression(
+                Term(
+                  FactorNumConst(
+                   0
+                  ) [FactorNumConst]
+                  NoMullopFactList(
+                  ) [NoMullopFactList]
+                ) [Term]
+                NoListAddopTerm(
+                ) [NoListAddopTerm]
+              ) [Expression]
+            ) [StmtPrint]
+          ) [ListOfSatemant]
+          StmtIfElse(
+            IfStart(
+            ) [IfStart]
+            IfBody(
+              IfCond(
+                CondOr(
+                  CondOr(
+                    Cond(
+                      ConditionTermAnd(
+                        ConditionTerm(
+                          ConditionFact(
+                            Expression(
+                              Term(
+                                FactorDesign(
+                                  DesignatorIdent(
+                                   x
+                                  ) [DesignatorIdent]
+                                  NoActParamsExists(
+                                  ) [NoActParamsExists]
+                                ) [FactorDesign]
+                                NoMullopFactList(
+                                ) [NoMullopFactList]
+                              ) [Term]
+                              NoListAddopTerm(
+                              ) [NoListAddopTerm]
+                            ) [Expression]
+                            NoRelopExprExist(
+                            ) [NoRelopExprExist]
+                          ) [ConditionFact]
+                        ) [ConditionTerm]
+                        ConditionFact(
+                          Expression(
+                            Term(
+                              FactorDesign(
+                                DesignatorIdent(
+                                 y
+                                ) [DesignatorIdent]
+                                NoActParamsExists(
+                                ) [NoActParamsExists]
+                              ) [FactorDesign]
+                              NoMullopFactList(
+                              ) [NoMullopFactList]
+                            ) [Term]
+                            NoListAddopTerm(
+                            ) [NoListAddopTerm]
+                          ) [Expression]
+                          NoRelopExprExist(
+                          ) [NoRelopExprExist]
+                        ) [ConditionFact]
+                      ) [ConditionTermAnd]
+                    ) [Cond]
+                    LogOr(
+                    ) [LogOr]
+                    ConditionTermAnd(
+                      ConditionTermAnd(
+                        ConditionTerm(
+                          ConditionFact(
+                            Expression(
+                              Term(
+                                FactorDesign(
+                                  DesignatorIdent(
+                                   y
+                                  ) [DesignatorIdent]
+                                  NoActParamsExists(
+                                  ) [NoActParamsExists]
+                                ) [FactorDesign]
+                                NoMullopFactList(
+                                ) [NoMullopFactList]
+                              ) [Term]
+                              NoListAddopTerm(
+                              ) [NoListAddopTerm]
+                            ) [Expression]
+                            NoRelopExprExist(
+                            ) [NoRelopExprExist]
+                          ) [ConditionFact]
+                        ) [ConditionTerm]
+                        ConditionFact(
+                          Expression(
+                            Term(
+                              FactorDesign(
+                                DesignatorIdent(
+                                 y
+                                ) [DesignatorIdent]
+                                NoActParamsExists(
+                                ) [NoActParamsExists]
+                              ) [FactorDesign]
+                              NoMullopFactList(
+                              ) [NoMullopFactList]
+                            ) [Term]
+                            NoListAddopTerm(
+                            ) [NoListAddopTerm]
+                          ) [Expression]
+                          NoRelopExprExist(
+                          ) [NoRelopExprExist]
+                        ) [ConditionFact]
+                      ) [ConditionTermAnd]
+                      ConditionFact(
+                        Expression(
+                          Term(
+                            FactorDesign(
+                              DesignatorIdent(
+                               x
+                              ) [DesignatorIdent]
+                              NoActParamsExists(
+                              ) [NoActParamsExists]
+                            ) [FactorDesign]
+                            NoMullopFactList(
+                            ) [NoMullopFactList]
+                          ) [Term]
+                          NoListAddopTerm(
+                          ) [NoListAddopTerm]
+                        ) [Expression]
+                        NoRelopExprExist(
+                        ) [NoRelopExprExist]
+                      ) [ConditionFact]
+                    ) [ConditionTermAnd]
+                  ) [CondOr]
+                  LogOr(
+                  ) [LogOr]
+                  ConditionTermAnd(
+                    ConditionTermAnd(
+                      ConditionTerm(
+                        ConditionFact(
+                          Expression(
+                            Term(
+                              FactorDesign(
+                                DesignatorIdent(
+                                 y
+                                ) [DesignatorIdent]
+                                NoActParamsExists(
+                                ) [NoActParamsExists]
+                              ) [FactorDesign]
+                              NoMullopFactList(
+                              ) [NoMullopFactList]
+                            ) [Term]
+                            NoListAddopTerm(
+                            ) [NoListAddopTerm]
+                          ) [Expression]
+                          NoRelopExprExist(
+                          ) [NoRelopExprExist]
+                        ) [ConditionFact]
+                      ) [ConditionTerm]
+                      ConditionFact(
+                        Expression(
+                          Term(
+                            FactorDesign(
+                              DesignatorIdent(
+                               y
+                              ) [DesignatorIdent]
+                              NoActParamsExists(
+                              ) [NoActParamsExists]
+                            ) [FactorDesign]
+                            NoMullopFactList(
+                            ) [NoMullopFactList]
+                          ) [Term]
+                          NoListAddopTerm(
+                          ) [NoListAddopTerm]
+                        ) [Expression]
+                        NoRelopExprExist(
+                        ) [NoRelopExprExist]
+                      ) [ConditionFact]
+                    ) [ConditionTermAnd]
+                    ConditionFact(
+                      Expression(
+                        Term(
+                          FactorDesign(
+                            DesignatorIdent(
+                             x
+                            ) [DesignatorIdent]
+                            NoActParamsExists(
+                            ) [NoActParamsExists]
+                          ) [FactorDesign]
+                          NoMullopFactList(
+                          ) [NoMullopFactList]
+                        ) [Term]
+                        NoListAddopTerm(
+                        ) [NoListAddopTerm]
+                      ) [Expression]
+                      NoRelopExprExist(
+                      ) [NoRelopExprExist]
+                    ) [ConditionFact]
+                  ) [ConditionTermAnd]
+                ) [CondOr]
+              ) [IfCond]
+              StmtStmt(
+                StatementList(
+                  NoStatementList(
+                  ) [NoStatementList]
+                  StmtPrint(
+                    Expression(
+                      Term(
+                        FactorNumConst(
+                         1
+                        ) [FactorNumConst]
+                        NoMullopFactList(
+                        ) [NoMullopFactList]
+                      ) [Term]
+                      NoListAddopTerm(
+                      ) [NoListAddopTerm]
+                    ) [Expression]
+                  ) [StmtPrint]
+                ) [StatementList]
+              ) [StmtStmt]
+            ) [IfBody]
+            ElseBody(
+              ElseStart(
+              ) [ElseStart]
+              StmtStmt(
+                StatementList(
+                  NoStatementList(
+                  ) [NoStatementList]
+                  StmtPrint(
+                    Expression(
+                      Term(
+                        FactorNumConst(
+                         2
+                        ) [FactorNumConst]
+                        NoMullopFactList(
+                        ) [NoMullopFactList]
+                      ) [Term]
+                      NoListAddopTerm(
+                      ) [NoListAddopTerm]
+                    ) [Expression]
+                  ) [StmtPrint]
+                ) [StatementList]
+              ) [StmtStmt]
+            ) [ElseBody]
+          ) [StmtIfElse]
+        ) [ListOfSatemant]
+        StmtPrint(
+          Expression(
+            Term(
+              FactorNumConst(
+               3
+              ) [FactorNumConst]
+              NoMullopFactList(
+              ) [NoMullopFactList]
+            ) [Term]
+            NoListAddopTerm(
+            ) [NoListAddopTerm]
+          ) [Expression]
+        ) [StmtPrint]
+      ) [ListOfSatemant]
+    ) [MethodDeclaration]
+  ) [MethodsDeclarationList]
+) [Program]
+INFO  00:22:49,896 - ===================================
+INFO  00:22:49,911 - Pocetak obrade programa MJProgram na liniji 1
+INFO  00:22:49,911 - type posetio
+INFO  00:22:49,911 - NoArray posetio
+INFO  00:22:49,913 - NoVarDeclList posetio, kraj rekurzije
+INFO  00:22:49,916 - NoArray posetio
+INFO  00:22:49,916 - varDeclListEnd posetio
+INFO  00:22:49,916 - varDeclList posetio
+INFO  00:22:49,916 - varDecl posetio
+INFO  00:22:49,916 - Deklarisana globalna promenljiva x
+INFO  00:22:49,921 - Deklarisana globalna promenljiva y
+INFO  00:22:49,926 - NoMethodsDeclarationList posetili
+INFO  00:22:49,926 - MethodVoid posetili
+INFO  00:22:49,926 - Obradjuje se void metoda: main na liniji 5
+INFO  00:22:49,926 - type posetio
+INFO  00:22:49,926 - NoArray posetio
+INFO  00:22:49,926 - NoVarDeclList posetio, kraj rekurzije
+INFO  00:22:49,926 - NoArray posetio
+INFO  00:22:49,931 - varDeclListEnd posetio
+INFO  00:22:49,931 - varDeclList posetio
+INFO  00:22:49,931 - varDecl posetio
+INFO  00:22:49,931 - Deklarisana lokalna promenljiva a
+INFO  00:22:49,933 - Deklarisana lokalna promenljiva b
+INFO  00:22:49,933 - ListVarDeclaration posetili
+INFO  00:22:49,933 - type posetio
+INFO  00:22:49,956 - NoArray posetio
+INFO  00:22:49,956 - NoVarDeclList posetio, kraj rekurzije
+INFO  00:22:49,956 - NoArray posetio
+INFO  00:22:49,956 - varDeclListEnd posetio
+INFO  00:22:49,966 - varDeclList posetio
+INFO  00:22:49,984 - NoArray posetio
+INFO  00:22:49,986 - varDeclListEnd posetio
+INFO  00:22:49,986 - varDeclList posetio
+INFO  00:22:49,986 - varDecl posetio
+INFO  00:22:49,986 - Deklarisana lokalna promenljiva i
+INFO  00:22:49,986 - Deklarisana lokalna promenljiva j
+INFO  00:22:49,986 - Deklarisana lokalna promenljiva k
+INFO  00:22:49,986 - ListVarDeclaration posetili
+INFO  00:22:49,986 - Designator posetili
+INFO  00:22:49,986 - FactorBoolConst posetili
+INFO  00:22:49,986 - Term posetili
+INFO  00:22:49,992 - Expression posetili
+INFO  00:22:49,992 - DesgnStmtAsgnOp posetili
+INFO  00:22:49,992 - Designator posetili
+INFO  00:22:49,992 - FactorBoolConst posetili
+INFO  00:22:49,992 - Term posetili
+INFO  00:22:49,992 - Expression posetili
+INFO  00:22:49,992 - DesgnStmtAsgnOp posetili
+INFO  00:22:49,992 - Designator posetili
+INFO  00:22:49,994 - FactorBoolConst posetili
+INFO  00:22:49,996 - Term posetili
+INFO  00:22:49,996 - Expression posetili
+INFO  00:22:49,996 - DesgnStmtAsgnOp posetili
+INFO  00:22:49,996 - Designator posetili
+INFO  00:22:49,996 - FactorBoolConst posetili
+INFO  00:22:49,996 - Term posetili
+INFO  00:22:49,996 - Expression posetili
+INFO  00:22:49,996 - DesgnStmtAsgnOp posetili
+INFO  00:22:49,996 - Designator posetili
+INFO  00:22:49,996 - FactorNumConst posetili
+INFO  00:22:49,996 - Term posetili
+INFO  00:22:49,996 - Expression posetili
+INFO  00:22:49,996 - DesgnStmtAsgnOp posetili
+INFO  00:22:49,996 - Designator posetili
+INFO  00:22:49,996 - FactorNumConst posetili
+INFO  00:22:49,996 - Term posetili
+INFO  00:22:49,996 - Expression posetili
+INFO  00:22:49,996 - DesgnStmtAsgnOp posetili
+INFO  00:22:49,996 - FactorNumConst posetili
+INFO  00:22:49,996 - Term posetili
+INFO  00:22:49,996 - Expression posetili
+INFO  00:22:50,001 - StmtPrint posetili
+INFO  00:22:50,001 - Designator posetili
+INFO  00:22:50,002 - FactorDesign posetili
+INFO  00:22:50,002 - Term posetili
+INFO  00:22:50,006 - Expression posetili
+INFO  00:22:50,006 - NoRelopExprExist posetili
+INFO  00:22:50,006 - ConditionFact posetili
+INFO  00:22:50,006 - ConditionTerm posetili
+INFO  00:22:50,006 - Designator posetili
+INFO  00:22:50,006 - FactorDesign posetili
+INFO  00:22:50,006 - Term posetili
+INFO  00:22:50,006 - Expression posetili
+INFO  00:22:50,006 - NoRelopExprExist posetili
+INFO  00:22:50,006 - ConditionFact posetili
+INFO  00:22:50,006 - ConditionTermAnd posetili
+INFO  00:22:50,006 - Cond posetili
+INFO  00:22:50,006 - Designator posetili
+INFO  00:22:50,006 - FactorDesign posetili
+INFO  00:22:50,006 - Term posetili
+INFO  00:22:50,011 - Expression posetili
+INFO  00:22:50,013 - NoRelopExprExist posetili
+INFO  00:22:50,013 - ConditionFact posetili
+INFO  00:22:50,013 - ConditionTerm posetili
+INFO  00:22:50,013 - Designator posetili
+INFO  00:22:50,013 - FactorDesign posetili
+INFO  00:22:50,015 - Term posetili
+INFO  00:22:50,015 - Expression posetili
+INFO  00:22:50,015 - NoRelopExprExist posetili
+INFO  00:22:50,015 - ConditionFact posetili
+INFO  00:22:50,015 - ConditionTermAnd posetili
+INFO  00:22:50,015 - Designator posetili
+INFO  00:22:50,015 - FactorDesign posetili
+INFO  00:22:50,015 - Term posetili
+INFO  00:22:50,015 - Expression posetili
+INFO  00:22:50,015 - NoRelopExprExist posetili
+INFO  00:22:50,015 - ConditionFact posetili
+INFO  00:22:50,015 - ConditionTermAnd posetili
+INFO  00:22:50,015 - CondOr posetili
+INFO  00:22:50,015 - Designator posetili
+INFO  00:22:50,015 - FactorDesign posetili
+INFO  00:22:50,015 - Term posetili
+INFO  00:22:50,021 - Expression posetili
+INFO  00:22:50,021 - NoRelopExprExist posetili
+INFO  00:22:50,021 - ConditionFact posetili
+INFO  00:22:50,021 - ConditionTerm posetili
+INFO  00:22:50,021 - Designator posetili
+INFO  00:22:50,023 - FactorDesign posetili
+INFO  00:22:50,023 - Term posetili
+INFO  00:22:50,023 - Expression posetili
+INFO  00:22:50,023 - NoRelopExprExist posetili
+INFO  00:22:50,023 - ConditionFact posetili
+INFO  00:22:50,023 - ConditionTermAnd posetili
+INFO  00:22:50,023 - Designator posetili
+INFO  00:22:50,023 - FactorDesign posetili
+INFO  00:22:50,023 - Term posetili
+INFO  00:22:50,023 - Expression posetili
+INFO  00:22:50,023 - NoRelopExprExist posetili
+INFO  00:22:50,023 - ConditionFact posetili
+INFO  00:22:50,025 - ConditionTermAnd posetili
+INFO  00:22:50,025 - CondOr posetili
+INFO  00:22:50,025 - FactorNumConst posetili
+INFO  00:22:50,025 - Term posetili
+INFO  00:22:50,025 - Expression posetili
+INFO  00:22:50,025 - StmtPrint posetili
+INFO  00:22:50,025 - FactorNumConst posetili
+INFO  00:22:50,043 - Term posetili
+INFO  00:22:50,043 - Expression posetili
+INFO  00:22:50,043 - StmtPrint posetili
+INFO  00:22:50,043 - StmtIfElse posetili
+INFO  00:22:50,045 - FactorNumConst posetili
+INFO  00:22:50,045 - Term posetili
+INFO  00:22:50,045 - Expression posetili
+INFO  00:22:50,045 - StmtPrint posetili
+INFO  00:22:50,045 - MethodDeclaration posetili
+INFO  00:22:50,045 - MethodsDeclarationList posetili
+INFO  00:22:50,045 - Zavrsetak obrade metode main
+INFO  00:22:50,045 - Kraj semanticke obrade programa MJProgram
+INFO  00:22:50,045 - ===================================
+INFO  00:22:50,149 - -------PRINT------
+INFO  00:22:50,150 - IfStart posetili
+INFO  00:22:50,150 - NoRelopExprExist posetili
+INFO  00:22:50,150 - ConditionFact posetili
+INFO  00:22:50,152 - ConditionTerm posetili
+INFO  00:22:50,153 - NoRelopExprExist posetili
+INFO  00:22:50,153 - ConditionFact posetili
+INFO  00:22:50,153 - ConditionTermAnd posetili
+INFO  00:22:50,154 - Cond posetili
+INFO  00:22:50,154 - OR posetili
+INFO  00:22:50,155 - NoRelopExprExist posetili
+INFO  00:22:50,155 - ConditionFact posetili
+INFO  00:22:50,155 - ConditionTerm posetili
+INFO  00:22:50,155 - NoRelopExprExist posetili
+INFO  00:22:50,156 - ConditionFact posetili
+INFO  00:22:50,156 - ConditionTermAnd posetili
+INFO  00:22:50,156 - NoRelopExprExist posetili
+INFO  00:22:50,156 - ConditionFact posetili
+INFO  00:22:50,156 - ConditionTermAnd posetili
+INFO  00:22:50,157 - PARENT JE COND OR
+INFO  00:22:50,157 - CondOr posetili
+INFO  00:22:50,157 - OR posetili
+INFO  00:22:50,157 - NoRelopExprExist posetili
+INFO  00:22:50,157 - ConditionFact posetili
+INFO  00:22:50,157 - ConditionTerm posetili
+INFO  00:22:50,157 - NoRelopExprExist posetili
+INFO  00:22:50,158 - ConditionFact posetili
+INFO  00:22:50,158 - ConditionTermAnd posetili
+INFO  00:22:50,158 - NoRelopExprExist posetili
+INFO  00:22:50,158 - ConditionFact posetili
+INFO  00:22:50,158 - ConditionTermAnd posetili
+INFO  00:22:50,158 - PARENT JE COND OR
+INFO  00:22:50,158 - CondOr posetili
+INFO  00:22:50,158 - IfCond posetili
+INFO  00:22:50,159 - -------PRINT------
+INFO  00:22:50,159 - IfBody posetili
+INFO  00:22:50,159 - ElseBody posetili
+INFO  00:22:50,159 - -------PRINT------
+INFO  00:22:50,159 - ElseBody posetili
+INFO  00:22:50,159 - StmtIfElse posetili
+INFO  00:22:50,159 - -------PRINT------
+INFO  00:22:50,164 - 
+ Parsiranje uspesno zavrseno!
