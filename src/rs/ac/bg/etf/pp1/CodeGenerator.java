@@ -27,6 +27,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		if (line != 0)
 			msg.append (" na liniji ").append(line);
 		log.info(msg.toString());
+	
 	}
 	
 	
@@ -124,7 +125,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	// PRINT
 	public void visit(StmtPrint p) {
-		report_info("-------PRINT------",  null);
+		
 		Struct type = p.getExpr().struct;
 		if(type == Tab.intType || type == SemanticAnalyzer.boolType){
 			Code.loadConst(5);
@@ -332,42 +333,41 @@ public class CodeGenerator extends VisitorAdaptor {
 	// *** RELACIJE ***
 	
 	public void visit(RelopE r) {
-		report_info("EQ == posetili", null);
 		
 		relopStack.addLast(Code.eq);
 		currentRelop = Code.eq;
 	}
 
 	public void visit(RelopNE r) {
-		report_info("NEQ != posetili", null);
+		
 		
 		relopStack.addLast(Code.ne);	
 		currentRelop = Code.ne;
 	}
 	
 	public void visit(RelopG r) {
-		report_info("GT > posetili", null);
+		
 		
 		relopStack.addLast(Code.gt);
 		currentRelop = Code.gt;
 	}
 	
 	public void visit(RelopGE r) {
-		report_info("GE >= posetili", null);
+		
 		
 		relopStack.addLast(Code.ge);
 		currentRelop = Code.ge;
 	}
 	
 	public void visit(RelopL r) {
-		report_info("LT < posetili", null);
+		
 		
 		relopStack.addLast(Code.lt);
 		currentRelop = Code.lt;
 	}
 	
 	public void visit(RelopLE r) {
-		report_info("RelopLE <= posetili", null);
+		
 		
 		relopStack.addLast(Code.le);
 		currentRelop = Code.le;
@@ -401,7 +401,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(ConditionFact c) {
 		
-		report_info("ConditionFact posetili", null);
+		
 		
 		MyCond elem = new MyCond();
 		
@@ -425,28 +425,24 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(RelopExprExist e) {
-		report_info("RelopExprExist posetili", null);
+		
 	}
 	
 	public void visit(NoRelopExprExist e) {
-		report_info("NoRelopExprExist posetili", null);
+		
 	}
 	
 	public void visit(ConditionTerm c) {
-		String str = "ConditionTerm posetili";
 		
-		
-
-		report_info(str, null);
 	}
 	
 	public void visit(ConditionTermAnd c) {
-		report_info("ConditionTermAnd posetili", null);
+		
 		
 		//???nesto
 		
 		if(c.getParent().getClass() == CondOr.class) {
-			report_info("PARENT JE COND OR", null);
+			//report_info("PARENT JE COND OR", null);
 		}
 		
 		//!!!!!!!!!!!!
@@ -458,18 +454,18 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(Cond c) {
-		report_info("Cond posetili", null);
+		
 		
 	}
 	
 	public void visit(CondOr c) {
-		report_info("CondOr posetili", null);
+		
 		
 
 	}
 	
 	public void visit(LogOr lo) {
-		report_info("OR posetili", null);
+		
 		
 		
 				
@@ -506,7 +502,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	// IZLAZ
 	public void visit(StmtIf s) {
-		report_info("StmtIf posetili", null);
+		
 		//Code.fixup(skipToElse_AdrToFix);
 
 		while(!listaAdresaZaFix_andIzraz.isEmpty()) {
@@ -549,12 +545,12 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 		
 		ifCnt--;
-		report_info("NAPUSTILI IF ifCnt="+ifCnt, null);
+		
 	}
 	
 	// IZLAZ
 	public void visit(StmtIfElse s) {
-		report_info("StmtIfElse posetili", null);
+		
 	//	Code.fixup(skipElse_AdrToFix);
 		while(!listaAdresaZaFix_skipElse.isEmpty()) {
 			int adr = listaAdresaZaFix_skipElse.removeFirst();
@@ -593,12 +589,12 @@ public class CodeGenerator extends VisitorAdaptor {
 			listaAdresaZaFix_skociNaThen = stackListi_skociNaThen.removeLast();
 		}
 		ifCnt--;
-		report_info("NAPUSTILI IF-ELSE ifCnt="+ifCnt, null);
+		
 	}
 	
 	// ULAZ U IF
 	public void visit(IfStart s) {
-		report_info("IfStart posetili ---ifCnt="+ifCnt, null);
+		
 		
 		if(ifCnt>0) {
 			stackListi_andIzraz.addLast(listaAdresaZaFix_andIzraz);
@@ -618,11 +614,11 @@ public class CodeGenerator extends VisitorAdaptor {
 		listaAdresaZaFix_skipElse = stackListi_skipElse.removeLast();
 		listaAdresaZaFix_skociNaSledeciUslov = stackListi_skociNaSledeciUslov.removeLast();
 		listaAdresaZaFix_skociNaThen = stackListi_skociNaThen.removeLast();
-		report_info("DOBRODOSLI ifCnt="+ifCnt, null);
+		
 	}
 	
 	public void visit(IfCond s) {
-		report_info("IfCond posetili", null);
+		
 		
 		//OVDE POCINJE THEN GRANA, OVDE SE FIXUJU SKAKANJA NA THEN
 		while(!listaAdresaZaFix_skociNaThen.isEmpty()) {
@@ -634,7 +630,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(IfBody s) {
-		report_info("IfBody posetili", null);
+		
 		
 		if(s.getParent().getClass() == StmtIfElse.class) {
 			//skociti iza else grane bezuslovno
@@ -649,7 +645,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(ElseStart s) {
-		report_info("ElseBody posetili", null);
+		
 		//fixovati i popuniti adrese  za skakanje na else granu
 	//	Code.fixup(skipToElse_AdrToFix);
 
@@ -661,7 +657,7 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	//izlazak iz if i elsa
 	public void visit(ElseBody s) {
-		report_info("ElseBody posetili", null);
+		
 		
 	}
 	//nakon else-fixovati i popuniti adresu u ifbody 

@@ -29,11 +29,18 @@ parser code {:
     }
 
     public void report_error(String message, Object info) {
+    int brlinija;
     	errorDetected = true;
+    	int linija = 0;
     	StringBuilder msg = new StringBuilder(message); 
-    	if (info instanceof Symbol)
-            msg.append (" na liniji ").append(((Symbol)info).left);
+    	if (info instanceof Symbol){
+    		msg.append (" na liniji ").append(((Symbol)info).left);
+    		linija = ((Symbol)info).left;
+    	}
+  		   
+        MJParserTest.dodajGresku(new CompilerError(linija, message , CompilerError.CompilerErrorType.SYNTAX_ERROR));
         log.error(msg.toString());
+      
     }
 
 
@@ -110,8 +117,8 @@ Consts ::= (NumConst) NUM_CONST:numValue
 
 VarDecl ::= (VarDeclaration) Type:varType IDENT:varName Arr:a VarDeclList SEMI
 			|
-			(VarDeclError) error SEMI:l
-				{: parser.report_error("(Greska u definisanju promenljive) [VarDecl] Izvrsen oporavak do ; u liniji " + lleft, null); :}			
+			(VarDeclError) error:l SEMI
+				{: parser.report_error("(Greska u definisanju promenljive) [VarDecl] Izvrsen oporavak do ; u liniji " + lleft, l); :}			
 ;
 
 Arr ::= (Array) L_SQUARE_BRACKET R_SQUARE_BRACKET
@@ -127,8 +134,8 @@ VarDeclList ::= (VarDeclarationList) VarDeclList VarDeclListEnd
 
 VarDeclListEnd ::= (VarDeclarationListEnd) COMMA IDENT:varDeclListEndName Arr 
 				|
-			(VarDeclListEndError) error COMMA:l
-				{: parser.report_error("(Greska u definisanju promenljive) [VarDeclListEnd] Izvrsen oporavak do , u liniji " + lleft, null); :}
+			(VarDeclListEndError) error:l COMMA
+				{: parser.report_error("(Greska u definisanju promenljive) [VarDeclListEnd] Izvrsen oporavak do , u liniji " + lleft, l); :}
 ;
 
 ClassDecl ::= (ClassDeclarationMethods) CLASS IDENT:className ExtendsClass L_BRACE ListOfVarDecl L_BRACE MethodDeclList R_BRACE R_BRACE
@@ -171,8 +178,8 @@ ListOfStmt ::= (ListOfSatemant) ListOfStmt Statement
 			
 FormPars ::= (FormParams) Type:formParsType IDENT:formParsName Arr FormParsList
 			|
-			(FormParsError) error COMMA:l
-			{: parser.report_error("(Greska u deklaraciji form.par.funkcije) [FormPars] Izvrsen oporavak do ) u liniji " + lleft, null); :}
+			(FormParsError) error:l COMMA
+			{: parser.report_error("(Greska u deklaraciji form.par.funkcije) [FormPars] Izvrsen oporavak do ) u liniji " + lleft, l); :}
 ;
 
 FormParsList ::= (FormParamsList) FormParsList FormParsListEnd
@@ -182,8 +189,8 @@ FormParsList ::= (FormParamsList) FormParsList FormParsListEnd
 			
 FormParsListEnd ::= (FormParamsListEnd)	COMMA Type:fpListType IDENT:fpListName Arr
 					|
-				(FormParsListEndError) error COMMA:l
-				{: parser.report_error("(Greska u deklaraciji form.par.funkcije) [FormParsListEnd] Izvrsen oporavak do , u liniji " + lleft, null); :}
+				(FormParsListEndError) error:l COMMA
+				{: parser.report_error("(Greska u deklaraciji form.par.funkcije) [FormParsListEnd] Izvrsen oporavak do , u liniji " + lleft, l); :}
 ;	
 			
 Type ::= (Type) IDENT:typeName
@@ -249,8 +256,8 @@ DesignatorStatement ::=	(DesgnStmtAsgnOp) Designator Assignop Expr
 						|
 						(DesgnStmtDecr) Designator DECREMENT
 						|
-					(DesgStmtEndtError) error SEMI:l
-						{: parser.report_error("(Greska u iskazu dodele) [DesgStmt] Izvrsen oporavak do ; u liniji " + lleft, null); :}
+					(DesgStmtEndtError) error:l SEMI
+						{: parser.report_error("(Greska u iskazu dodele) [DesgStmt] Izvrsen oporavak do ; u liniji " + lleft, l); :}
 ;
 
 			
@@ -298,8 +305,8 @@ Expr ::= (Expression) Term AddopTermList
 		|
 		(ExpressionMinus) MINUS Term AddopTermList
 		|
-		(ExprError) error SEMI:l
-		{: parser.report_error("(Greska u iskazu dodele) [Expr] Izvrsen oporavak do ; u liniji " + lleft, null); :}
+		(ExprError) error:l SEMI
+		{: parser.report_error("(Greska u iskazu dodele) [Expr] Izvrsen oporavak do ; u liniji " + lleft, l); :}
 ;
 	
 				

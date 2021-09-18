@@ -1,0 +1,44 @@
+INFO  14:52:24,063 - Compiling source file: F:\etf\4. godina\7. semestar\pp1\projekat\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  14:52:26,234 - #2 program
+INFO  14:52:26,235 - #43 test301
+INFO  14:52:26,235 - #5 const
+INFO  14:52:26,252 - #43 int
+INFO  14:52:26,253 - #43 nula
+INFO  14:52:26,259 - #6 =
+INFO  14:52:26,261 - #42 0
+INFO  14:52:26,262 - #7 ;
+INFO  14:52:26,269 - #5 const
+INFO  14:52:26,272 - #43 int
+INFO  14:52:26,272 - #43 jedan
+INFO  14:52:26,273 - #6 =
+INFO  14:52:26,273 - #42 1
+INFO  14:52:26,273 - #7 ;
+INFO  14:52:26,274 - #5 const
+INFO  14:52:26,274 - #43 int
+INFO  14:52:26,275 - #43 pet
+INFO  14:52:26,275 - #6 =
+INFO  14:52:26,275 - #42 5
+INFO  14:52:26,276 - #7 ;
+INFO  14:52:26,277 - #43 int
+INFO  14:52:26,278 - #43 niz
+INFO  14:52:26,279 - #14 [
+INFO  14:52:26,283 - #15 ]
+INFO  14:52:26,376 - #7 ;
+INFO  14:52:27,165 - #43 char
+INFO  14:52:27,170 - #43 nizch
+INFO  14:52:27,171 - #14 [
+INFO  14:52:27,171 - #15 ]
+INFO  14:52:27,171 - #7 ;
+INFO  14:52:27,172 - #43 int
+INFO  14:52:27,172 - #43 c
+INFO  14:52:27,172 - #6 =
+ERROR 14:52:27,175 - 
+Sintaksna greska na liniji 11
+INFO  14:52:27,175 - #42 3
+INFO  14:52:27,175 - #7 ;
+INFO  14:52:27,175 - #3 {
+INFO  14:52:27,179 - #11 void
+INFO  14:52:27,180 - #43 main
+ERROR 14:52:27,184 - Parsiranje NIJE uspesno!
+ERROR 14:52:27,197 - [Line #11]  SYNTAX_ERROR: 
+Sintaksna greska

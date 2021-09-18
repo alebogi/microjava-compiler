@@ -58,6 +58,8 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 		if (line != 0)
 			msg.append (" na liniji ").append(line);
 		log.error(msg.toString());
+		
+		MJParserTest.dodajGresku(new CompilerError(line, message , CompilerError.CompilerErrorType.SYNTAX_ERROR));
 	}
 
 	public void report_info(String message, SyntaxNode info) {
@@ -95,7 +97,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 		Tab.openScope();
 		globalScope = Tab.currentScope;
 
-		report_info("Pocetak obrade programa " + progName.getProgName() , progName);
+	//	report_info("Pocetak obrade programa " + progName.getProgName() , progName);
 	}
 
     // Kraj programa
@@ -128,7 +130,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     		}
     	}
     	
-    	report_info("type posetio", null);
+    //	report_info("type posetio", null);
     	lastTypeLeft = type;
 	}
     
@@ -137,7 +139,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     
     // izlaz - root
     public void visit(VarDeclaration varDecl) {
-    	report_info("varDecl posetio", null);
+    //	report_info("varDecl posetio", null);
     	
     	String varName = varDecl.getVarName();
     	Type varType = varDecl.getType();
@@ -188,15 +190,15 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     }
     
     public void visit(VarDeclarationList varDeclList){ 
-    	report_info("varDeclList posetio", null);
+    //	report_info("varDeclList posetio", null);
 	}
     
     public void visit(NoVarDeclarationList noVarDeclList){ 
-    	report_info("NoVarDeclList posetio, kraj rekurzije", null);	
+    //	report_info("NoVarDeclList posetio, kraj rekurzije", null);	
 	}
     
     public void visit(VarDeclarationListEnd varDecl) {
-    	report_info("varDeclListEnd posetio", null);
+    //	report_info("varDeclListEnd posetio", null);
     	
     	String varName = varDecl.getVarDeclListEndName();
     	//Obj obj = Tab.find(varName);  	
@@ -228,14 +230,14 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     // --------------------------------------------------------------------------------------
     // *** JESTE ARRAY ILI NIJE ***
     public void visit(Array arr) {
-    	report_info("Array posetio", null);
+   // 	report_info("Array posetio", null);
     	
     	isArray = true;
     	isArrayUsed = false;
     }
     
     public void visit(NoArray noArr) {
-    	report_info("NoArray posetio", null);
+    //	report_info("NoArray posetio", null);
     	
     	isArray = false;
     	isArrayUsed = false;
@@ -246,7 +248,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     
     // izlaz - root
     public void visit(ConstDeclaration constDecl) {
-    	report_info("ConstDeclaration posetio", null);
+    	//report_info("ConstDeclaration posetio", null);
     	
     	String constName = constDecl.getConstName();
     	Type constTypeLeft = constDecl.getType();
@@ -303,7 +305,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     }
        
     public void visit(NumConst consts) {
-    	report_info("NumConst posetio, vrednost=" + consts.getNumValue(), null);
+    //	report_info("NumConst posetio, vrednost=" + consts.getNumValue(), null);
     	
     	if(constCnt<1)
     		firstConstIntVal = consts.getNumValue();
@@ -315,7 +317,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     }
     
     public void visit(CharConst consts) {
-    	report_info("CharConst posetio, vrednost=" + consts.getCharValue(), null);
+    //	report_info("CharConst posetio, vrednost=" + consts.getCharValue(), null);
     	
     	if(constCnt<1)
     		firstConstCharVal = consts.getCharValue();
@@ -327,7 +329,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     }
 
 	public void visit(BoolConst consts) {
-		report_info("BoolConst posetio, vrednost=" + consts.getBoolValue(), null);
+	//	report_info("BoolConst posetio, vrednost=" + consts.getBoolValue(), null);
 		
 		if(constCnt<1)
     		firstConstBoolVal = consts.getBoolValue();
@@ -339,15 +341,15 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	}
     
     public void visit(ConstantsList constsLists) {
-    	report_info("ConstantsList posetio", null);
+    //	report_info("ConstantsList posetio", null);
     }
     
     public void visit(NoConstantsList noConstsLists) {
-    	report_info("NoConstantsList posetio, kraj rekurzije", null);
+    //	report_info("NoConstantsList posetio, kraj rekurzije", null);
     }
     
     public void visit(ConstantsListEnd constsListEnd) {
-    	report_info("ConstantsListEnd posetio", null);
+    //	report_info("ConstantsListEnd posetio", null);
     	
     	String constName = constsListEnd.getConstEndName();
     	Obj obj = Tab.find(constName);
@@ -387,12 +389,12 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     
     // izlaz - root - NE
     public void visit(MethodDeclList mdl) {
-    	report_info("MethodDeclList posetili", null);
+    //	report_info("MethodDeclList posetili", null);
     }
     
     // izlaz - root - DAAAAA
     public void visit(MethodsDeclarationList mdl) {
-    	report_info("MethodsDeclarationList posetili", null);
+    //	report_info("MethodsDeclarationList posetili", null);
     	
     	if (!methodIsVoid && !hasReturn) {
 			report_error("Semanticka greska: metoda " + currentMethod.getName() + " treba da ima povratnu vrednost!", null);
@@ -410,26 +412,26 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     
     // izlaz iz rekurzije 
     public void visit(NoMethodsDeclarationList mdl) {
-    	report_info("NoMethodsDeclarationList posetili", null);
+    //	report_info("NoMethodsDeclarationList posetili", null);
     }
     
     //izlaz - NE
     public void visit(MethodDecl md) {
-    	report_info("MethodsDecl posetili", null);
+    //	report_info("MethodsDecl posetili", null);
     }
     
     // IZLAZ KAD IMAMO FORM PARS
     public void visit(MethodDeclarationFormPars mdfp) {
-    	report_info("MethodDeclarationFormPars posetili", null);
+    //	report_info("MethodDeclarationFormPars posetili", null);
     }
     
     // IZLAZ KAD NEMAMO FORM PARS
     public void visit(MethodDeclaration md) {
-    	report_info("MethodDeclaration posetili", null);
+    //	report_info("MethodDeclaration posetili", null);
     }
     
     public void visit(MethodWithType mt) {
-    	report_info("MethodWithType posetili", null);
+    //	report_info("MethodWithType posetili", null);
     	
     	String name = mt.getMethodName();
     	Type type = mt.getType();	
@@ -446,7 +448,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     }
     
     public void visit(MethodVoid mv) {
-    	report_info("MethodVoid posetili", null);
+    //	report_info("MethodVoid posetili", null);
     	
     	String name = mv.getMethodName();
     	currentMethod = Tab.insert(Obj.Meth, name, Tab.noType);
@@ -460,7 +462,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     }
     
     public void visit(FormParams fp) {
-    	report_info("FormParams posetili", null);
+    //	report_info("FormParams posetili", null);
     	
     	String varName = fp.getFormParsName();
     	Type varType = fp.getType();
@@ -511,11 +513,11 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     }
     
     public void visit(FormParsList fpl) {
-    	report_info("FormParsList posetili", null);
+   // 	report_info("FormParsList posetili", null);
     }
     
     public void visit(FormParamsListEnd fple) {
-    	report_info("FormParsListEnd posetili", null);
+   // 	report_info("FormParsListEnd posetili", null);
     	
     	String varName = fple.getFpListName();
     	Type varType = fple.getType();
@@ -548,7 +550,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     }
     
     public void visit(ListVarDeclaration lvd) {
-    	report_info("ListVarDeclaration posetili", null);
+    //	report_info("ListVarDeclaration posetili", null);
     }
     
     // ---------------------------------------------------------------
@@ -556,12 +558,12 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     
     // ---------DESIGNATOR
     public void visit(FactorDesign fd) { //??	ZASTO OVDE ULAZI
-    	report_info("FactorDesign posetili", null);
+    //	report_info("FactorDesign posetili", null);
     	fd.struct = fd.getDesignator().obj.getType();
     }
    
     public void visit(DesignatorIdent d) {
-    	report_info("Designator posetili", null);
+    //	report_info("Designator posetili", null);
     	
     	String name = d.getDsgnName();
     	Obj obj = Tab.find(name);
@@ -572,7 +574,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     }
     
     public void visit(DesignatorArr d) {
-    	report_info("DesignatorArr posetili", null);
+  //  	report_info("DesignatorArr posetili", null);
     	
     	String name = d.getDsgnName();
     	Obj node = Tab.find(name);
@@ -601,7 +603,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     
     //--
 	public void visit(DesgnStmtAsgnOp d) {
-		report_info("DesgnStmtAsgnOp posetili", null);
+	//	report_info("DesgnStmtAsgnOp posetili", null);
 		
 		Struct leftStrType = d.getDesignator().obj.getType();
 		Struct rightStrType = d.getExpr().struct;
@@ -611,7 +613,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	}
 	
 	public void visit(DesgnStmtIncr d) {
-		report_info("DesgnStmtIncr posetili", null);
+	//	report_info("DesgnStmtIncr posetili", null);
 		
 		Struct rightStrType = d.getDesignator().obj.getType();
 		if (rightStrType != Tab.intType  && d.getDesignator().obj.getKind() != Obj.Elem) {
@@ -620,7 +622,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	}
 
 	public void visit(DesgnStmtDecr d) {
-		report_info("DesgnStmtDecr posetili", null);
+	//	report_info("DesgnStmtDecr posetili", null);
 		
 		Struct rightStrType = d.getDesignator().obj.getType();
 		if (rightStrType != Tab.intType   && d.getDesignator().obj.getKind() != Obj.Elem) {
@@ -632,7 +634,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	
 	//IF L_PAREN Condition R_PAREN StmtMatched ELSE StmtMatched  						!!!!!!!!!!!!!1
 	public void visit(StmtIfElse s) { 
-		report_info("StmtIfElse posetili", null);
+	//	report_info("StmtIfElse posetili", null);
 		
 	/*	if(s.getCondition().struct != boolType) {
 			report_error("Semanticka greska - Condition mora biti tipa bool", s);
@@ -641,7 +643,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	}
 	
 	public void visit(StmtIf s) { 
-		report_info("StmtIfElse posetili", null);
+	//	report_info("StmtIfElse posetili", null);
 		
 	/*	if(s.getCondition().struct != boolType) {
 			report_error("Semanticka greska - Condition mora biti tipa bool", s);
@@ -654,17 +656,17 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	
 	// ---- CONDITION
 	public void visit(Cond c) {
-		report_info("Cond posetili", null);
+	//	report_info("Cond posetili", null);
 		c.struct = c.getCondTerm().struct;
 	}
 	
 	public void visit(CondOr c) {
-		report_info("CondOr posetili", null);
+	//	report_info("CondOr posetili", null);
 		c.struct = c.getCondTerm().struct;
 	}
 	
 	public void visit(ConditionTerm c) {
-		report_info("ConditionTerm posetili", null);
+	//	report_info("ConditionTerm posetili", null);
 		c.struct = c.getCondFact().struct;
 		
 	/*	if(condExprAlone) { //	!!!
@@ -675,57 +677,57 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	}
 
 	public void visit(ConditionTermAnd c) {
-		report_info("ConditionTermAnd posetili", null);
+	//	report_info("ConditionTermAnd posetili", null);
 		c.struct =c.getCondFact().struct;
 	}
 
 	public void visit(ConditionFact c) {
-		report_info("ConditionFact posetili", null);
+	//	report_info("ConditionFact posetili", null);
 		c.struct = c.getExpr().struct;
 	}
 	
 	// --- EXPR
 	public void visit(Expression e) {
-		report_info("Expression posetili", null);
+	//	report_info("Expression posetili", null);
 		e.struct = e.getTerm().struct;
 	}
 	
 	public void visit(ExpressionMinus e) {
-		report_info("ExpressionMinus posetili", null);
+	//	report_info("ExpressionMinus posetili", null);
 		e.struct = e.getTerm().struct;
 	}
 	
 	public void visit(RelopExprExist e) {
-		report_info("RelopExprExist posetili", null);
+	//	report_info("RelopExprExist posetili", null);
 		e.struct = e.getExpr().struct;
 		condExprAlone = false;
 	}
 	
 	public void visit(NoRelopExprExist e) {
-		report_info("NoRelopExprExist posetili", null);
+	//	report_info("NoRelopExprExist posetili", null);
 		condExprAlone = true;
 	}
 	
 	// ---- TERM
 	public void visit(Term t) {
-		report_info("Term posetili", null);
+	//	report_info("Term posetili", null);
 		t.struct = t.getFactor().struct;
 	}
 	
 	
 	// *** FACTOR *** propagiramo ovima gore 
     public void visit(FactorNumConst f) {
-    	report_info("FactorNumConst posetili", null);
+    //	report_info("FactorNumConst posetili", null);
     	f.struct = Tab.intType;
     }
     
     public void visit(FactorCharConst f) {
-    	report_info("FactorCharConst posetili", null);
+    //	report_info("FactorCharConst posetili", null);
     	f.struct = Tab.charType;
     }
 
 	public void visit(FactorBoolConst f) {
-		report_info("FactorBoolConst posetili", null);
+	//	report_info("FactorBoolConst posetili", null);
 		f.struct = boolType;
 	}
 	
@@ -734,7 +736,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	}
 	
 	public void visit(FactorNewArr f) {
-		report_info("FactorNewArr posetili", null);
+	//	report_info("FactorNewArr posetili", null);
 		if (f.getExpr().struct != Tab.intType) {
 			report_error("Semanticka greska na liniji " + f.getLine() + ": pri alociranju niza treba proslediti int", f);
 			f.struct = new Struct(Struct.Array, f.getType().struct); 
@@ -745,14 +747,14 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	
 	
 	public void visit(FactorExpr f) {
-		report_info("FactorExpr posetili", null);
+	//	report_info("FactorExpr posetili", null);
 		f.struct = f.getExpr().struct;
 	}
 
 
 	//----- MULOP ADDOP
 	public void visit(ListAddopTerm l) {
-		report_info("ListAddopTerm posetili", null);
+	//	report_info("ListAddopTerm posetili", null);
 		l.struct = l.getTerm().struct;
 		if (l.getTerm().struct != Tab.intType) {
 			report_error("Greska - Samo int tipovi mogu da se sabiraju ---> " + l.struct, l);
@@ -760,7 +762,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 	}
 	
 	public void visit(MullopFactList m) {
-		report_info("MullopFactList posetili", null);
+	//	report_info("MullopFactList posetili", null);
 		m.struct = m.getFactor().struct;
 		if (m.getFactor().struct != Tab.intType) {
 			report_error("Greska  - Samo int tipovi mogu da se mnoze", m);
@@ -770,7 +772,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 
 	// ------ READ
     public void visit(StmtRead sr) {
-    	report_info("StmtRead posetili", null);
+    	//report_info("StmtRead posetili", null);
     	
     	Struct type = sr.getDesignator().obj.getType();
     	if (type!=Tab.charType && type!=Tab.intType && type!=boolType) {
@@ -781,7 +783,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     
     // ---- PRINT
     public void visit(StmtPrintNumConst sp) {
-    	report_info("StmtPrintNumConst posetili", null);
+    //	report_info("StmtPrintNumConst posetili", null);
     	
     	Struct type = sp.getExpr().struct;
 		if (type!=Tab.charType && type!=Tab.intType && type!=boolType) {
@@ -790,7 +792,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     }
     
     public void visit(StmtPrint sp) {
-    	report_info("StmtPrint posetili", null);
+   // 	report_info("StmtPrint posetili", null);
     	
     	Struct type = sp.getExpr().struct;
 		if (type!=Tab.charType && type!=Tab.intType && type!=boolType) {
@@ -802,14 +804,14 @@ public class SemanticAnalyzer extends VisitorAdaptor{
 
     // *** RETURNS ***
     public void visit(StmtRet sr) {
-    	report_info("StmtRet posetili", null);
+   // 	report_info("StmtRet posetili", null);
     	
     	hasReturn = true;
     }
     
     // return expr
     public void visit(ExpreExists e) {
-    	report_info("ExpreExists posetili", null);
+   // 	report_info("ExpreExists posetili", null);
     	Struct curMethTypeStruct = currentMethod.getType();
 		if (!curMethTypeStruct.compatibleWith(e.getExpr().struct)) {
 			report_error("Semanticka greska na liniji " + e.getLine()+ ": tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije "
@@ -819,7 +821,7 @@ public class SemanticAnalyzer extends VisitorAdaptor{
     
     // return
     public void visit(NoExprExists e) {
-    	report_info("NoExprExists posetili", null);
+    //	report_info("NoExprExists posetili", null);
     	
     }
     
