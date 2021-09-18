@@ -50,13 +50,22 @@ public class CodeGenerator extends VisitorAdaptor {
 	//private boolean skipToElse = false;
 	
 	//----------
-	//TEST TEST
-	private LinkedList<Integer> listaAdresaZaFix_skipElse;// = new LinkedList<Integer>();
+	
+	private LinkedList<Integer> listaAdresaZaFix_skipElse = new LinkedList<Integer>();
 
 	
 	private LinkedList<MyCond> listaAdresaZaFix_andIzraz = new LinkedList<MyCond>();
 	private LinkedList<MyCond> listaAdresaZaFix_skociNaThen = new LinkedList<MyCond>();
 	private LinkedList<MyCond> listaAdresaZaFix_skociNaSledeciUslov = new LinkedList<MyCond>();
+	
+	
+	
+	private LinkedList<LinkedList<Integer>> stackListi_skipElse = new LinkedList<LinkedList<Integer>>();
+	private LinkedList<LinkedList<MyCond>> stackListi_andIzraz = new LinkedList<LinkedList<MyCond>>();
+	private LinkedList<LinkedList<MyCond>> stackListi_skociNaThen = new LinkedList<LinkedList<MyCond>>();
+	private LinkedList<LinkedList<MyCond>> stackListi_skociNaSledeciUslov = new LinkedList<LinkedList<MyCond>>();
+	
+	private int ifCnt = 0;
 	//-----
 	public int getMainPC() {
 		return mainPC;
@@ -499,14 +508,48 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(StmtIf s) {
 		report_info("StmtIf posetili", null);
 		//Code.fixup(skipToElse_AdrToFix);
-	/*	while(!listaAdresaZaFix_skipToElse.isEmpty()) {
-			int adr = listaAdresaZaFix_skipToElse.removeLast();
-			Code.fixup(adr);
-		}*/
+
 		while(!listaAdresaZaFix_andIzraz.isEmpty()) {
 			int adr = listaAdresaZaFix_andIzraz.removeFirst().getAdr();
 			Code.fixup(adr);			
 		}
+		
+		//kraj
+		//pop sa steka, izlazimo iz if-a, else ne postoji
+	/*	if(!stackListi_andIzraz.isEmpty()) {
+			stackListi_andIzraz.removeLast();
+		}
+		if(!stackListi_skipElse.isEmpty()) {
+			stackListi_skipElse.removeLast();		
+		}
+		
+		if(!stackListi_skociNaSledeciUslov.isEmpty()) {
+			stackListi_skociNaSledeciUslov.removeLast();
+		}
+		
+		if(!stackListi_skociNaThen.isEmpty()) {
+			stackListi_skociNaThen.removeLast();
+		}*/
+		
+		
+		//restauracija konteksta
+		if(!stackListi_andIzraz.isEmpty()) {
+			listaAdresaZaFix_andIzraz = stackListi_andIzraz.removeLast();
+		}
+		if(!stackListi_skipElse.isEmpty()) {
+			listaAdresaZaFix_skipElse = stackListi_skipElse.removeLast();		
+		}
+		
+		if(!stackListi_skociNaSledeciUslov.isEmpty()) {
+			listaAdresaZaFix_skociNaSledeciUslov = stackListi_skociNaSledeciUslov.removeLast();			
+		}
+		
+		if(!stackListi_skociNaThen.isEmpty()) {
+			listaAdresaZaFix_skociNaThen = stackListi_skociNaThen.removeLast();
+		}
+		
+		ifCnt--;
+		report_info("NAPUSTILI IF ifCnt="+ifCnt, null);
 	}
 	
 	// IZLAZ
@@ -517,16 +560,65 @@ public class CodeGenerator extends VisitorAdaptor {
 			int adr = listaAdresaZaFix_skipElse.removeFirst();
 			Code.fixup(adr);
 		}
+		
+		//kraj
+		//pop sa steka
+	/*	if(!stackListi_andIzraz.isEmpty()) {
+			stackListi_andIzraz.removeLast();
+		}
+		if(!stackListi_skipElse.isEmpty()) {
+			stackListi_skipElse.removeLast();		
+		}
+		
+		if(!stackListi_skociNaSledeciUslov.isEmpty()) {
+			stackListi_skociNaSledeciUslov.removeLast();
+		}
+		
+		if(!stackListi_skociNaThen.isEmpty()) {
+			stackListi_skociNaThen.removeLast();
+		}*/
+		//restauracija konteksta
+		if(!stackListi_andIzraz.isEmpty()) {
+			listaAdresaZaFix_andIzraz = stackListi_andIzraz.removeLast();
+		}
+		if(!stackListi_skipElse.isEmpty()) {
+			listaAdresaZaFix_skipElse = stackListi_skipElse.removeLast();		
+		}
+		
+		if(!stackListi_skociNaSledeciUslov.isEmpty()) {
+			listaAdresaZaFix_skociNaSledeciUslov = stackListi_skociNaSledeciUslov.removeLast();			
+		}
+		
+		if(!stackListi_skociNaThen.isEmpty()) {
+			listaAdresaZaFix_skociNaThen = stackListi_skociNaThen.removeLast();
+		}
+		ifCnt--;
+		report_info("NAPUSTILI IF-ELSE ifCnt="+ifCnt, null);
 	}
 	
 	// ULAZ U IF
 	public void visit(IfStart s) {
-		report_info("IfStart posetili", null);
+		report_info("IfStart posetili ---ifCnt="+ifCnt, null);
 		
+		if(ifCnt>0) {
+			stackListi_andIzraz.addLast(listaAdresaZaFix_andIzraz);
+			stackListi_skipElse.addLast(listaAdresaZaFix_skipElse);
+			stackListi_skociNaSledeciUslov.addLast(listaAdresaZaFix_skociNaSledeciUslov);
+			stackListi_skociNaThen.addLast(listaAdresaZaFix_skociNaThen);
+			
+		}
+	
+		ifCnt++;
+		stackListi_andIzraz.addLast(new LinkedList<MyCond>());
+		stackListi_skipElse.addLast(new LinkedList<Integer>());
+		stackListi_skociNaSledeciUslov.addLast(new LinkedList<MyCond>());
+		stackListi_skociNaThen.addLast(new LinkedList<MyCond>());
 		
-		listaAdresaZaFix_skipElse = new LinkedList<Integer>();
-		
-		
+		listaAdresaZaFix_andIzraz = stackListi_andIzraz.removeLast();
+		listaAdresaZaFix_skipElse = stackListi_skipElse.removeLast();
+		listaAdresaZaFix_skociNaSledeciUslov = stackListi_skociNaSledeciUslov.removeLast();
+		listaAdresaZaFix_skociNaThen = stackListi_skociNaThen.removeLast();
+		report_info("DOBRODOSLI ifCnt="+ifCnt, null);
 	}
 	
 	public void visit(IfCond s) {
@@ -536,7 +628,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		while(!listaAdresaZaFix_skociNaThen.isEmpty()) {
 			MyCond elem = listaAdresaZaFix_skociNaThen.removeFirst();
 			int adr = elem.getAdr();
-			Code.put2(adr-1, (Code.jcc+Code.inverse[elem.getRelop()])<<8);
+			Code.put2(adr-1, (Code.jcc+Code.inverse[elem.getRelop()])<<8); //posto ne postoji put sa ovim argumentima
 			Code.fixup(adr);			
 		}
 	}
@@ -552,22 +644,22 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.put2(0); 
 			
 		}
+		
+		
 	}
 	
 	public void visit(ElseStart s) {
 		report_info("ElseBody posetili", null);
 		//fixovati i popuniti adrese  za skakanje na else granu
 	//	Code.fixup(skipToElse_AdrToFix);
-	/*	while(!listaAdresaZaFix_skipToElse.isEmpty()) {
-			int adr = listaAdresaZaFix_skipToElse.removeLast();
-			Code.fixup(adr);
-		}*/
+
 		while(!listaAdresaZaFix_andIzraz.isEmpty()) {
 			int adr = listaAdresaZaFix_andIzraz.removeFirst().getAdr();
 			Code.fixup(adr);			
 		}
 	}
 
+	//izlazak iz if i elsa
 	public void visit(ElseBody s) {
 		report_info("ElseBody posetili", null);
 		
